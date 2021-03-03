@@ -1,1 +1,1 @@
-# Online-Secondhand-Book-Buying-and-Selling-Portal
+# eBookshelf - a Book Cataloging Social Platform
