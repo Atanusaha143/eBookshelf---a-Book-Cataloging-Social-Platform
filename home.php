@@ -8,18 +8,27 @@
     <title>eBookShelf</title>
 </head>
 <body background="./images/background.jpg">
-    <div>
+    <div width='100px'>
         <form>
             <fieldset>
                 <legend>
-                    LOG IN
+                    <b>LOG IN</b>
                 </legend>
                 <table>
                     <tr>
-                        <td>Username:</td>
+                        <td align="right">Username:</td>
+                        <td><input type='text' name='username'/></td>
                     </tr>
                     <tr>
-                        <td><input type='text' name='username'/></td>
+                        <td align="right">Password:</td>
+                        <td><input type='password' name='password'/></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><hr></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><input type='submit' value="Log In"></td>
+                        <td><a href="./forgot.php">Forgot Password?</a></td>
                     </tr>
                 </table>
             </fieldset>
