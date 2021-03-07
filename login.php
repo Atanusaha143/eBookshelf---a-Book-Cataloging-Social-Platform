@@ -7,14 +7,15 @@
     <link rel='icon' href='./images/favicon.png'>
     <title>eBookShelf</title>
 </head>
-<body>
+<body background="./images/background.jpg">
+    <?php include('./header.php'); ?>
     <div width='100px'>
         <form>
             <fieldset>
                 <legend>
                     <b>LOG IN</b>
                 </legend>
-                <table>
+                <table align="center">
                     <tr>
                         <td align="right">Username:</td>
                         <td><input type='text' name='username'/></td>
@@ -27,8 +28,14 @@
                         <td colspan="2"><hr></td>
                     </tr>
                     <tr>
-                        <td align="center"><input type='submit' value="Log In"></td>
-                        <td><a href="./forgot.php">Forgot Password?</a></td>
+                        <td align="center" colspan="2"><input type='submit' value="Log In"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2"><a href="./forgot.php">Forgot Password?</a></td>
+                    </tr>
+                    <tr>
+                        
+                        <td align="center" colspan="2"><a href="./forgot.php">Sign up</a></td>
                     </tr>
                 </table>
             </fieldset>
