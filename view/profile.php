@@ -15,6 +15,7 @@
     <fieldset>
     <br>
         <nav>
+            <a href="./dashboard.php">Dashboard</a> ||
             <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
             <a href="./addUser.php">Add a new user</a> ||
             <a href="./search.php">Search</a> ||
@@ -24,7 +25,7 @@
     </fieldset>
     <table border="1px solid black" width='100%'>
         <tr>
-            <td>
+            <td border="1px solid black">
                 <label>Menu</label>
                 <br>
                 <hr>
@@ -37,7 +38,6 @@
                 </ul>
             </td>
             <td>
-                
                 <table align="center" border="1px solid black">
                     <tr>
                         <td>
@@ -91,15 +91,10 @@
                         </td>
                     </tr>
                 </table>
+                <br>
             </td>
         </tr>
     </table>
-    <fieldset>
-        <center>
-            <label>
-                Copyright © 2017
-            </label>
-        </center>
-    </fieldset>
+    <?php include('./footer.php'); ?>
 </body>
 </html>
