@@ -40,10 +40,10 @@
             <td>
                 <table align="center" border="1px solid black">
                     <tr>
-                        <td>
-                            User Type:
+                        <td align="right">
+                            <b>User Type:</b>
                         </td>
-                        <td>
+                        <td width='40%'>
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
@@ -51,40 +51,40 @@
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Name:
+                        <td align="right">
+                            <b>Name:</b>
                         </td>
                         <td>
                             <?php echo $_SESSION['fullname']; ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Email:
+                        <td align="right">
+                            <b>Email:</b>
                         </td>
                         <td>
                             <?php echo $_SESSION['email']; ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Username:
+                        <td align="right">
+                            <b>Username:</b>
                         </td>
                         <td>
                             <?php echo $_SESSION['username']; ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Date of Birth:
+                        <td align="right">
+                            <b>Date of Birth:</b>
                         </td>
                         <td>
                             <?php echo $_SESSION['dateOfBirth']; ?>
                         </td>
                     </tr>
                     <tr>
-                        <td>
-                            Registration Date:
+                        <td align="right">
+                            <b>Registration Date:</b>
                         </td>
                         <td>
                             <?php echo $_SESSION['regdate']; ?>

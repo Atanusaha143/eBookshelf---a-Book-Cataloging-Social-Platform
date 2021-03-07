@@ -32,7 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body background="../images/background.jpg">
+<body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
     <fieldset>
     <br>

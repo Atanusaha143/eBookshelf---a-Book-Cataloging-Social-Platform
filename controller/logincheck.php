@@ -1,6 +1,10 @@
 <?php
     session_start();
-    if(isset($_POST['username']) && isset($_POST['password']))
+    if(empty($_POST['username']) && empty($_POST['password']))
+    {
+        echo "One or more of the fields are empty!";
+    }
+    else if(isset($_POST['username']) && isset($_POST['password']))
     {
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -24,9 +28,5 @@
         {
             echo "Invalid user!";
         }
-    }
-    else
-    {
-        echo "One or more of the fields are empty!";
     }
 ?>

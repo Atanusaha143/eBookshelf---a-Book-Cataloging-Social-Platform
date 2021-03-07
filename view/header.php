@@ -2,7 +2,7 @@
     <table>
         <tr>
             <td>
-                <img src="../images/favicon.png" alt="Image not available" height="80">
+                <img src="../images/assets/favicon.png" alt="Image not available" height="80">
             </td>
             <td>
                 <h2>eBookShelf</h2>

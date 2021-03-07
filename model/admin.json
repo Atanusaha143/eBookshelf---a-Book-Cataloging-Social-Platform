@@ -20,5 +20,16 @@
         "password":"1234",
         "regdate":"01-01-2021",
         "type":"admin"
+    },
+    {
+        "id":"1003", 
+        "fullname":"Md. Shamil Hossain",
+        "email":"alsanysamil@gmail.com",
+        "phone":"+8801712345678",
+        "dateOfBirth":"22-11-1998",
+        "username":"samil123",
+        "password":"1234",
+        "regdate":"01-01-2021",
+        "type":"admin"
     }
 ]
