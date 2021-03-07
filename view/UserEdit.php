@@ -1,71 +1,134 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Edit Profile</title>
-</head>
-<body>
+<?php
+	session_start();
+	if(!isset($_SESSION['flag']))
+	{
+		header('location: ../');
+	}
+?>
+
+<?php
+	$title = "Edit Profile";
+	include ('header.php');
+?>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
 				&nbsp | &nbsp
-				<a href="../index.php"> Logout</a>
+				<a href="UserLogout.php"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-				<fieldset style="width: 50%">
-					<legend> <b> PROFILE </b> </legend>
-					<table>
-						<tr>
-							<td>
-								<b>Name:</b>
-							</td>
-							<td colspan="2">
-							</td>
-							<td rowspan="5">
-								&nbsp &nbsp &nbsp &nbsp &nbsp
-								<img src="user.png" alt="User Profile Picture" width="150" height="100">
-								<p align="center"> <a href="changeProfilePicture.php"> Change </a> </p>
-							</td>
-						</tr>
-						<tr> <td colspan="2"> <hr> </td> </tr>
-						<tr>
-							<td>
-								<b>Email:</b>
-							</td>
-							<td>
+					<form method="POST" action="../controller/UserUpdateCheck.php" enctype="multipart/form-data">
+						<fieldset style="width: 50%">
+						<legend> <b> EDIT PROFILE </b> </legend>
+						<table>
+							<?php
+								$userFile = fopen("../model/AllUserDetails.json", "r");
+								$userData = fread($userFile, filesize('../model/AllUserDetails.json'));
+								$userInfo = json_decode($userData, true);
+							?>
+							<tr>
+								<td>
+									<b>Name:</b>
+								</td>
+								<td colspan="2">
+									<input type="text" name="name" value="<?php echo $userInfo['name']; ?>">
+								</td>
+								<td rowspan="5">
 
-							</td>
-						</tr>
-						<tr> <td colspan="2"> <hr> </td> </tr>
-						<tr>
-							<td>
-								<b>Gender:</b>
-							</td>
-							<td>
+									&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <b> Upload Photo</b>
+									<br> <br>
+									<?php 
+										if(isset($userInfo['profilePic']))
+										{
+											$path = '../resources/'.$userInfo['profilePic']; 
+											echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
+										}
+										else echo "	&nbsp &nbsp &nbsp &nbsp No Profile Picture";
+									 ?>
+									<br> <br>
+									&nbsp &nbsp &nbsp &nbsp &nbsp <input type="file" name="profilePic">
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
 
-							</td>
-						</tr>
-						<tr> <td colspan="2"> <hr> </td> </tr>
-						<tr>
-							<td>
-								<b>Date of Birth:</b>
-							</td>
-							<td>
-	
-							</td>
-						</tr>
-						<tr> <td colspan="4"> <hr> </td> </tr>
-						<tr>
-							<td> 
-								<a href="editProfile.php"> Edit Profile </a>
-							</td>
-						</tr>
-					</table>
-				</fieldset>
+							<tr>
+								<td>
+									<b>Username:</b>
+								</td>
+								<td>
+									<input type="text" name="user" size="50%" value="<?php echo $userInfo['user']; ?>" >
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+
+							<tr>
+								<td>
+									<b>Current Password:</b>
+								</td>
+								<td>
+									<input type="text" name="currPass" size="50%" placeholder="To update this field is necessary">
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+
+							<tr>
+								<td>
+									<b>New Password:</b>
+								</td>
+								<td>
+									<input type="text" name="newPass" size="50%">
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+
+							<tr>
+								<td>
+									<b>Email:</b>
+								</td>
+								<td>
+									<input type="email" name="email" size="50%" value="<?php echo $userInfo['email']; ?>" >
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+
+													<tr>
+								<td>
+									<b>Gender:</b>
+								</td>
+								<td>
+									<select name="gender">
+										<option value="Male" <?php if($userInfo['gender'] == "Male") echo "selected"; ?> > Male </option>
+										<option value="Female" <?php if($userInfo['gender'] == "Female") echo "selected"; ?>> Female </option>
+										<option value="Other" <?php if($userInfo['gender'] == "Other") echo "selected"; ?> > Other </option>
+									</select>
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+
+							<tr>
+								<td>
+									<b>Phone Number:</b>
+								</td>
+								<td>
+									<input type="text" name="phoneNumber" size="50%" value="<?php echo $userInfo['phoneNumber']; ?>" >
+								</td>
+							</tr>
+							<tr> <td colspan="2"> <hr> </td> </tr>
+							<tr>
+								<td>
+									<center>
+										<input type="submit" name="update" value="Update">
+									</center>
+								</td>
+							</tr>
+						</table>
+					</fieldset>
+					</form>
 				<br> 
 			</td>
 		</tr>
@@ -75,5 +138,6 @@
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+<?php
+	include ('footer.php');
+?>

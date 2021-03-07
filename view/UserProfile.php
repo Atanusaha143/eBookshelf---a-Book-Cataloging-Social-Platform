@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>View Profile</title>
-</head>
-<body>
+<?php
+	session_start();
+	if(!isset($_SESSION['flag']))
+	{
+		header('location: ../');
+	}
+?>
+
+<?php
+	$title = "Profile";
+	include ('header.php');
+?>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
 				&nbsp | &nbsp
-				<a href="../index.php"> Logout</a>
+				<a href="UserLogout.php"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -19,41 +25,70 @@
 				<fieldset style="width: 50%">
 					<legend> <b> PROFILE </b> </legend>
 					<table>
+						<?php
+							$userFile = fopen("../model/AllUserDetails.json", "r");
+							$userData = fread($userFile, filesize('../model/AllUserDetails.json'));
+							$userInfo = json_decode($userData, true);
+						?>
 						<tr>
 							<td>
 								<b>Name:</b>
 							</td>
 							<td colspan="2">
+								<?php echo $userInfo['name']; ?>
 							</td>
 							<td rowspan="5">
 								&nbsp &nbsp &nbsp &nbsp &nbsp
-								<img src="user.png" alt="User Profile Picture" width="150" height="100">
-								<p align="center"> <a href="changeProfilePicture.php"> Change </a> </p>
+							</td>
+							<td>
+								<img src="user.png" alt="No Profile Picture" width="150" height="100">
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
+
+						<tr>
+							<td>
+								<b>Username:</b>
+							</td>
+							<td colspan="2">
+								<?php echo $userInfo['user']; ?>
+							</td>
+						</tr>
+						<tr> <td colspan="2"> <hr> </td> </tr>
+
 						<tr>
 							<td>
 								<b>Email:</b>
 							</td>
 							<td>
-
+								<?php echo $userInfo['email']; ?>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
+
+						<tr>
+							<td>
+								<b>Phone Number:</b>
+							</td>
+							<td>
+								<?php echo $userInfo['phoneNumber']; ?>
+							</td>
+						</tr>
+						<tr> <td colspan="2"> <hr> </td> </tr>
+
 						<tr>
 							<td>
 								<b>Gender:</b>
 							</td>
 							<td>
-
+								<?php echo $userInfo['gender']; ?>
 							</td>
 						</tr>
-						<tr> <td colspan="2"> <hr> </td> </tr>
+
 						<tr> <td colspan="4"> <hr> </td> </tr>
 						<tr>
 							<td> 
-								<a href="UserEdit.php"> Edit Profile </a>
+								<center> <a href="UserEdit.php"> Edit Profile </a> </center>
 							</td>
 						</tr>
 					</table>
@@ -67,5 +102,6 @@
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+<?php
+	include ('footer.php');
+?>

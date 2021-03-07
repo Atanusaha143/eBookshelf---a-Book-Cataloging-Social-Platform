@@ -1,18 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>eBookShelf</title>
-</head>
-<body>
+<?php
+	$title = "eBookShelf";
+	include ('view/header.php');
+?>
+
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="left">
 				<a href="publicHome.html"> <img src="resources/logo.png"> </a>
 			</td>
 			<td align="right">
-				Username &nbsp <input type="text" name="userName" align="right"> &nbsp &nbsp &nbsp &nbsp
-				Password &nbsp <input type="password" name="password" align="right"> &nbsp &nbsp 
-				<input type="submit" name="login" value="Login"> &nbsp &nbsp
+				<form method="POST" action="controller/UserLogCheck.php">
+					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
+					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
+					<input type="submit" name="login" value="Login"> &nbsp &nbsp
+				</form>
 			</td>
 		</tr>
 		<tr height = "200px">
@@ -23,7 +24,7 @@
 			</td>
 			<td align="center">
 				<br>
-					<form>
+					<form action="controller/UserRegCheck.php" method="POST">
 						<fieldset style="width:70px">
 							<legend> <b> Registration </b> </legend>
 							<table>
@@ -52,6 +53,12 @@
 									</td>
 								</tr>
 								<tr>
+									<td> Confirm Password </td>
+									<td>
+										<input type="password" name="rPassword">
+									</td>
+								</tr>
+								<tr>
 									<td> Phone Number </td>
 									<td>
 										<input type="text" name="PhoneNumber">
@@ -60,10 +67,10 @@
 								<tr>
 									<td> Gender </td>
 									<td>
-										<select>
-											<option value="Male"> Male </option>
-											<option value="Female"> Female </option>
-											<option value="Other"> Other </option>
+										<select name = "Gender">
+											<option value="Male"> Male </option> Male
+											<option value="Female"> Female </option> Female
+											<option value="Others"> Other </option> Other
 										</select>
 									</td>
 								</tr>
@@ -84,5 +91,8 @@
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+
+
+<?php
+	include ('view/footer.php');
+?>

@@ -1,15 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Activities</title>
-</head>
-<body>
+<?php
+	session_start();
+	if(!isset($_SESSION['flag']))
+	{
+		header('location: ../');
+	}
+?>
+
+<?php
+	$title = "Activities";
+	include ('header.php');
+?>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
 				&nbsp | &nbsp
-				<a href="../index.php"> Logout</a>
+				<a href="UserLogout.php"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -26,5 +32,6 @@
 			</td>
 		</tr>
 	</table>
-</body>
-</html>
+<?php
+	include ('footer.php');
+?>
