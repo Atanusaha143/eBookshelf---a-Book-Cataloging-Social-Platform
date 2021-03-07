@@ -1,6 +1,10 @@
 <?php
     session_start();
     //print_r($_SESSION);
+    if(isset($_SESSION['flag']))
+    {
+
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +23,7 @@
                 <legend>
                     <b>LOG IN</b>
                 </legend>
+                <br><br><br>
                 <table align="center">
                     <tr>
                         <td align="right">Username:</td>
@@ -41,8 +46,10 @@
                         <td align="center" colspan="2"><a href="./signup.php">Sign up</a></td>
                     </tr>
                 </table>
+                <br><br><br>
             </fieldset>
         </form>
     </div>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

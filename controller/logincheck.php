@@ -9,6 +9,8 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        $usernameValidation = false;
+
         for($i=0;$i<strlen($username);$i++)
         {
             if(!((ord($username[$i]) >= 97 && ord($username[$i]) <= 122)) 
@@ -17,7 +19,6 @@
             && !($username[$i] == '.') && !($username[$i] == '-') && !($username[$i] == '_'))
             {
                 echo 'Username can be only alphanumeric';break;
-                return;
             }
         }
 
