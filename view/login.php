@@ -34,7 +34,7 @@
                         <td align="center" colspan="2"><a href="./forgot.php">Forgot Password?</a></td>
                     </tr>
                     <tr>
-                        <td align="center" colspan="2"><a href="./forgot.php">Sign up</a></td>
+                        <td align="center" colspan="2"><a href="./signup.php">Sign up</a></td>
                     </tr>
                 </table>
             </fieldset>
