@@ -5,8 +5,8 @@
         "email":"snigdho.howlader@gmail.com",
         "phone":"+8801712345678",
         "dateOfBirth":"06-11-1996",
-        "username":"abc123",
-        "password":"1234567Aa",
+        "username":"snigdho123",
+        "password":"abcd",
         "regdate":"01-01-2021"
     },
     {
@@ -15,8 +15,8 @@
         "email":"atanu.saha415@gmail.com",
         "phone":"+8801712345678",
         "dateOfBirth":"06-11-1996",
-        "username":"abc123",
-        "password":"1234567Aa",
+        "username":"atanu123",
+        "password":"1234",
         "regdate":"01-01-2021"
     }
 ]

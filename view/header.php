@@ -1,3 +1,15 @@
 <fieldset>
-    <h3>eBookShelf</h3>
+    <table>
+        <tr>
+            <td>
+                <img src="../images/favicon.png" alt="Image not available" height="80">
+            </td>
+            <td>
+                <h2>eBookShelf</h2>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    
+    
 </fieldset>
