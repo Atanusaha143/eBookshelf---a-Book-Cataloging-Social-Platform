@@ -9,6 +9,18 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
+        for($i=0;$i<strlen($username);$i++)
+        {
+            if(!((ord($username[$i]) >= 97 && ord($username[$i]) <= 122)) 
+            && !((ord($username[$i]) >= 65 && ord($username[$i]) <= 90))  
+            && !((ord($username[$i]) >= 48 && ord($username[$i]) <= 57)) 
+            && !($username[$i] == '.') && !($username[$i] == '-') && !($username[$i] == '_'))
+            {
+                echo 'Username can be only alphanumeric';break;
+                return;
+            }
+        }
+
         $dataString = file_get_contents('../model/login.json');
         $dataJSON = json_decode($dataString, true);
         $userFoundFlag = false;
