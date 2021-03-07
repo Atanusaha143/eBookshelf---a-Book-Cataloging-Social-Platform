@@ -7,10 +7,10 @@
     <link rel='icon' href='./images/favicon.png'>
     <title>eBookShelf</title>
 </head>
-<body background="./images/background.jpg">
+<body background="../images/background.jpg">
     <?php include('./header.php'); ?>
     <div width='100px'>
-        <form>
+        <form action='../controller/logincheck.php' method="POST">
             <fieldset>
                 <legend>
                     <b>LOG IN</b>
@@ -34,7 +34,6 @@
                         <td align="center" colspan="2"><a href="./forgot.php">Forgot Password?</a></td>
                     </tr>
                     <tr>
-                        
                         <td align="center" colspan="2"><a href="./forgot.php">Sign up</a></td>
                     </tr>
                 </table>

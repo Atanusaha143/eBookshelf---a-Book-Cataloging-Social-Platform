@@ -1,6 +1,6 @@
 [
     {
-        "aid":"1001", 
+        "id":"1001", 
         "fullname":"Snigdho Dip Howlader",
         "email":"snigdho.howlader@gmail.com",
         "phone":"+8801712345678",
@@ -10,7 +10,7 @@
         "regdate":"01-01-2021"
     },
     {
-        "aid":"1002", 
+        "id":"1002", 
         "fullname":"Atanu Saha",
         "email":"atanu.saha415@gmail.com",
         "phone":"+8801712345678",
