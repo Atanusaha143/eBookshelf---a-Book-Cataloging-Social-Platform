@@ -19,20 +19,49 @@
 				&nbsp
 			</td>
 		</tr>
-		<tr height = "200px">
-			<td width="15%">
-				<ul>
-					<li> <a href="UserProfile.php"> View Profile </a></li>
-					<li> <a href="UserBookList.php"> Create Bookshelf </a></li>
-					<li> <a href="UserPost.php"> Create Post </a></li>
-					<li> <a href="UserActivities.php"> Check Activities </a></li>
-					<li> <a href="UserContact.php"> Contact </a></li>
-				</ul>
+		<tr>
+			<td height="50px" colspan="2">
+				  <a href="UserProfile.php" style="margin-left: 25em"> View Profile </a> &nbsp &nbsp &nbsp |
+				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Create Bookshelf </a> &nbsp &nbsp &nbsp |
+				&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
+				&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
+				&nbsp &nbsp &nbsp <a href="UserContact.php"> Contact </a> &nbsp &nbsp &nbsp 
 			</td>
+		</tr>
+		<tr height = "200px">
 			<td colspan="2">
-				<h3>
-					&nbsp &nbsp
-				</h3> 
+				<?php
+
+					$post_file = fopen('../model/Posts.json', 'r');
+					$post_data = fread($post_file, filesize('../model/Posts.json'));
+					$post_info = json_decode($post_data, true);
+					
+					echo "<center>";
+					echo "Public Posts";
+					echo "</center>";
+					for ($i=0; $i<count($post_info); $i++) 
+					{
+						 echo "<fieldset>";
+						 echo "<br>";
+						 echo "<table>";
+					     echo "<tr>";
+					     echo "<td>Book Name:</td>";
+					     echo "<td>".$post_info[$i]['bookName']."</td>";
+					     echo "</tr>";
+					     echo "<tr>";
+					     echo "<td>Author:</td>";
+					     echo "<td>".$post_info[$i]['author']."</td>";
+					     echo "</tr>";
+					     echo "<tr>";
+					     echo "<td>Post:</td>";
+					     echo "<td>".$post_info[$i]['post']."</td>";
+					     echo "</tr>";
+					     echo "</table>";
+					     echo "<br>";
+					     echo "</fieldset>";
+					}
+
+				?>
 			</td>
 		</tr>
 		<tr height = "50px">
