@@ -1,0 +1,52 @@
+[
+	{
+		"bookName" : "The 7 Habits of Highly Effective People",
+		"author" : "Stephen Covey",
+		"post" : "While he gets a bit preachy sometimes, Stephen Covey's road map for living doesn't just help you develop better habits. It also convinces you that acquiring them will make you a better person."
+	},
+	{
+		"bookName" : "How to Win Friends & Influence People",
+		"author" : "Dale Carnegie",
+		"post" : "Prior to Dale Carnegie's classic, mixing business relationships with personal relationships was considered a bit underhanded, like nepotism. After Carnegie, business relationships and personal relationships were seen not just as compatible, but as absolutely inseparable."	
+	},
+	{
+		"bookName" : "Think and Grow Rich",
+		"author" : "Napoleon Hill",
+		"post" : "Napoleon Hill interviewed 40 millionaires to discover the common thought processes and behaviors that had led to their success. His study of these best practices was revolutionary in a world where it was largely assumed that great wealth resulted from a combination of greed and luck."	
+	},
+	{
+		"bookName" : "Awaken the Giant Within",
+		"author" : "Tony Robbins",
+		"post" : "Anthony Robbins is unlike most motivational writers in two ways. First, he treats training the mind and body as a technological challenge rather than moral imperative. Second, he somehow manages to be both an inspirational role model and the most annoying guy on the planet."	
+	},
+	{
+		"bookName" : "As a Man Thinketh",
+		"author" : "James Allen",
+		"post" : "Motivational books are usually about taking immediate action. By contrast, this 1902 classic by James Allen is a bit more, well, thoughtful. It explains how your thoughts mold your personality, and how that personality drives you to take action and determines the type of action you'll take."	
+	},
+	{
+		"bookName" : "The Greatest Salesman in the World",
+		"author" : "Og Mandino",
+		"post" : "Far more than just a sales book, Og Mandino's faux-biblical parable encourages you to live your life to the fullest by believing in yourself and your ability to help others. Required reading for anybody who sells. Which is just about everybody."	
+	},
+	{
+		"bookName" : "Don't Sweat the Small Stuff",
+		"author" : "Richard Carlson",
+		"post" : "A big part of motivation is clearing your mind of the clutter that weighs it down. Richard Carlson helps you differentiate between what's really important--and deserving of your attention--and what's just noise in the system."	
+	},
+	{
+		"bookName" : "Drive",
+		"author" : "Daniel H. Pink",
+		"post" : "Motivation comes from the judicious use of carrots and sticks, right? Not so, says author Daniel Pink. His book illustrates the fact that motivation comes from many sources and that, at the highest level of performance, motivation come from your deepest and most profound sense of who you are and want to be."	
+	},
+	{
+		"bookName" : "The Power of Positive Thinking",
+		"author" : "Norman Vincent Peale",
+		"post" : "When it was first published, both psychologists and theologians attacked this book as heretical, and accused author Norman Vincent Peale of being a crank. Today, science has verified the book's basic concept--that being optimistic makes you healthier and happier and thus more likely to succeed."	
+	},
+	{
+		"bookName" : "The Magic of Thinking Big",
+		"author" : "David J. Schwartz",
+		"post" : "Think small and you will have small success. Think big and you will have big success. These are the core concepts espoused by this motivational book."	
+	}
+]
