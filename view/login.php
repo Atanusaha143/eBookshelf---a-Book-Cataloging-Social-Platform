@@ -7,7 +7,7 @@
     <link rel='icon' href='./images/favicon.png'>
     <title>eBookShelf</title>
 </head>
-<body background="../images/background.jpg">
+<body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
     <div width='100px'>
         <form action='../controller/logincheck.php' method="POST">

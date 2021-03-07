@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['fullname']; ?></title>
 </head>
-<body>
+<body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
     <fieldset>
     <br>
@@ -41,13 +41,13 @@
                 <table align="center" border="1px solid black">
                     <tr>
                         <td>
-                            Name:
+                            User Type:
                         </td>
                         <td>
-                            <?php echo $_SESSION['fullname']; ?>
+                            <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../images/".$_SESSION['id'].".jpeg"; ?>'>
+                            <img src= '<?php echo "../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>

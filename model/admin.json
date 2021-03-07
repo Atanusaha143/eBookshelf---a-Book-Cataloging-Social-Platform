@@ -7,7 +7,8 @@
         "dateOfBirth":"06-11-1996",
         "username":"snigdho123",
         "password":"abcd",
-        "regdate":"01-01-2021"
+        "regdate":"01-01-2021",
+        "type":"admin"
     },
     {
         "id":"1002", 
@@ -17,6 +18,7 @@
         "dateOfBirth":"06-11-1996",
         "username":"atanu123",
         "password":"1234",
-        "regdate":"01-01-2021"
+        "regdate":"01-01-2021",
+        "type":"admin"
     }
 ]
