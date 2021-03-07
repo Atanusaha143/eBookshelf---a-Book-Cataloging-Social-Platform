@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body background="../images/assets/background.jpg">
-    <?php include('./header.php'); ?>
+<body background="../../images/assets/background.jpg">
+    <?php include('./adminheader.php'); ?>
     <fieldset>
     <br>
         <nav>
@@ -18,7 +18,7 @@
             <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
             <a href="./addUser.php">Add a new user</a> ||
             <a href="./search.php">Search</a> ||
-            <a href="../controller/logout.php">Log Out</a>
+            <a href="../../controller/logout.php">Log Out</a>
         </nav>
     <br>
     </fieldset>
@@ -84,6 +84,6 @@
             </td>
         </tr>
     </table>
-    <?php include('./footer.php'); ?>
+    <?php include('../footer.php'); ?>
 </body>
 </html>

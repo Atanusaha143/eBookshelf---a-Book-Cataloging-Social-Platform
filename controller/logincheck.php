@@ -21,7 +21,7 @@
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['type'] = $user['type'];
                 $userFoundFlag = true;
-                header('location: ../view/dashboard.php');
+                header('location: ./redirect.php');
             }
         }
         if($userFoundFlag == false)

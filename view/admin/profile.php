@@ -1,5 +1,13 @@
 <?php 
     session_start();
+    if(isset($_SESSION['flag']))
+    {
+
+    }
+    else
+    {
+        header('location: ../login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +18,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $_SESSION['fullname']; ?></title>
 </head>
-<body background="../images/assets/background.jpg">
-    <?php include('./header.php'); ?>
+<body background="../../images/assets/background.jpg">
+    <?php include('./adminheader.php'); ?>
     <fieldset>
     <br>
         <nav>
@@ -19,7 +27,7 @@
             <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
             <a href="./addUser.php">Add a new user</a> ||
             <a href="./search.php">Search</a> ||
-            <a href="../controller/logout.php">Log Out</a>
+            <a href="../../controller/logout.php">Log Out</a>
         </nav>
         <br>
     </fieldset>
@@ -34,7 +42,6 @@
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
                     <li><a href='./changepass'>Change Password</a></li>
-                    <li><a href='./logout.php'>Logout</a></li>
                 </ul>
             </td>
             <td>
@@ -47,7 +54,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                            <img src= '<?php echo "../../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>
@@ -95,6 +102,6 @@
             </td>
         </tr>
     </table>
-    <?php include('./footer.php'); ?>
+    <?php include('../footer.php'); ?>
 </body>
 </html>

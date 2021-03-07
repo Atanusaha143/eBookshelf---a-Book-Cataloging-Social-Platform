@@ -1,10 +1,11 @@
 <?php
     session_start();
-    if(isset($_SESSION['flag']) == true)
+    //print_r($_SESSION);
+    if($_SESSION['flag'] == true)
     {
         if(isset($_SESSION['type']) == 'admin')
         {
-            $dataString = file_get_contents('../model/admin.json');
+            $dataString = file_get_contents('../../model/admin.json');
             $dataJSON = json_decode($dataString, true);
             
             foreach($dataJSON as $user)
@@ -22,6 +23,10 @@
             }
         }
     }
+    else
+    {
+        header('location: ../login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body background="../images/assets/background.jpg">
-    <?php include('./header.php'); ?>
+<body background="../../images/assets/background.jpg">
+    <?php include('./adminheader.php'); ?>
     <fieldset>
     <br>
         <nav>
@@ -41,7 +46,7 @@
             <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
             <a href="./addUser.php">Add New User</a> ||
             <a href="./search.php">Search</a> ||
-            <a href="../controller/logout.php">Log Out</a>
+            <a href="../../controller/logout.php">Log Out</a>
         </nav>
         <br>
     </fieldset>
@@ -74,21 +79,3 @@
     </table>
 </body>
 </html>
-
-<!-- <table>
-                    <tr>
-                        <td>
-                            <label>Account</label>
-                            <br>
-                            <hr>
-                            <ul>
-                                <li><a href='./dashboard.php'>Dashboard</a></li>
-                                <li><a href='./profile.php'>View Profile</a></li>
-                                <li><a href='./editprofile.php'>Edit Profile</a></li>
-                                <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                                <li><a href='./changepass'>Change Password</a></li>
-                                <li><a href='./logout.php'>Logout</a></li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table> -->
