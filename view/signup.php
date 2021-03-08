@@ -21,7 +21,7 @@
 <body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
     <div width='100px'>
-        <form action='../controller/logincheck.php' method="POST">
+        <form action='../controller/recheck.php' method="POST">
             <fieldset>
                 <legend>
                     <b>SIGN UP</b>
