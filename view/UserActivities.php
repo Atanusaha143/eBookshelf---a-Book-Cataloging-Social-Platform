@@ -22,7 +22,70 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<h4> All Activity List </h4>
+					<h3> 
+						<u>
+							<?php echo $_SESSION['Name']; ?>'s All Activity List
+						</u> 
+					</h3>
+					<?php 
+
+						$all_files = scandir('../model/');
+						$need_file = $_SESSION['Name'].'AllActivity.json';
+
+						foreach ($all_files as $file)
+						{
+							if(strstr($file, $need_file) && filesize('../model/'.$need_file)>0)
+							{
+								$activity_file = fopen('../model/'.$need_file, 'r');
+								$activity_data = fread($activity_file, filesize('../model/'.$need_file));
+								$activity_filter = explode("\n", $activity_data);
+								for($i=0; $i<count($activity_filter)-1; $i++) 
+								{
+					
+									$activityInfo = json_decode($activity_filter[$i], true);
+									$dateTime = $activityInfo['timeAndDate'];
+									$bookName = $activityInfo['bookName'];
+									$authorName = $activityInfo['authorName'];
+									$postContent = $activityInfo['postContent'];
+									$activityType = $activityInfo['activity_type'];
+
+									 echo "<br>";
+									 echo "<table>";
+								     echo "<tr>";
+								     echo "<td>Book Name:</td>";
+								     echo "<td>".$bookName."</td>";
+								     echo "</tr>";
+								     echo "<tr>";
+								     echo "<td>Author Name:</td>";
+								     echo "<td>".$authorName."</td>";
+								     echo "</tr>";
+								     echo "<tr>";
+								     echo "<td>Post Content:</td>";
+								     echo "<td>".$postContent."</td>";
+								     echo "</tr>";
+								     echo "<tr>";
+								     echo "<td>Activity Time:</td>";
+								     echo "<td>".$dateTime."</td>";
+								     echo "</tr>";
+								     echo "<tr>";
+								     echo "<td>Activity Type:</td>";
+								     echo "<td>".$activityType."</td>";
+								     echo "</tr>";
+								     echo "</table>";
+								     if($i != count($activity_filter)-2)
+								     {
+								     	echo "_______________________________________________________________________________________________________";
+								     	echo "<br>";
+								     }			
+									
+								}
+							}
+							elseif(strstr($file, $need_file) && filesize('../model/'.$need_file)==0)
+							{
+								echo "No activities yet!";
+							}
+						}
+					?>
 				<br> 
 			</td>
 		</tr>
