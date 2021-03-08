@@ -16,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href='../../images/assets/icon.png'>
     <title>Change Photograph</title>
 </head>
 <body background="../../images/assets/background.jpg">
@@ -26,7 +26,7 @@
         <nav>
             <a href="./dashboard.php">Dashboard</a> ||
             <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
-            <a href="./addUser.php">Add a new user</a> ||
+            <a href="./addtype.php">Add a new user</a> ||
             <a href="./search.php">Search</a> ||
             <a href="../../controller/logout.php">Log Out</a>
         </nav>
