@@ -11,7 +11,7 @@
 		$post = array( "bookName" => $book_name, "authorName" => $author, "categoryName" => $post_category, "postContent" => $post_content);
 
 		$post_encode = json_encode($post);
-		$post_data = fopen("../model/$user_name".".json", "a");
+		$post_data = fopen("../model/$user_name"."AllPost".".json", "a");
 		fwrite($post_data, $post_encode."\r\n");
 		fclose($post_data);
 		header('location: ../view/UserHome.php');
