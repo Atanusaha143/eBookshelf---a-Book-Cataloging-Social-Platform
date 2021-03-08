@@ -25,17 +25,12 @@
 				<fieldset style="width: 50%">
 					<legend> <b> PROFILE </b> </legend>
 					<table>
-						<?php
-							$userFile = fopen("../model/AllUserDetails.json", "r");
-							$userData = fread($userFile, filesize('../model/AllUserDetails.json'));
-							$userInfo = json_decode($userData, true);
-						?>
 						<tr>
 							<td>
 								<b>Name:</b>
 							</td>
 							<td colspan="2">
-								<?php echo $userInfo['name']; ?>
+								<?php echo $_SESSION['Name']; ?>
 							</td>
 							<td rowspan="5">
 								&nbsp &nbsp &nbsp &nbsp &nbsp
@@ -51,7 +46,7 @@
 								<b>Username:</b>
 							</td>
 							<td colspan="2">
-								<?php echo $userInfo['user']; ?>
+								<?php echo $_SESSION['UserName']; ?>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
@@ -61,7 +56,7 @@
 								<b>Email:</b>
 							</td>
 							<td>
-								<?php echo $userInfo['email']; ?>
+								<?php echo $_SESSION['Email']; ?>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
@@ -71,7 +66,7 @@
 								<b>Phone Number:</b>
 							</td>
 							<td>
-								<?php echo $userInfo['phoneNumber']; ?>
+								<?php echo $_SESSION['PhoneNumber']; ?>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
@@ -81,7 +76,7 @@
 								<b>Gender:</b>
 							</td>
 							<td>
-								<?php echo $userInfo['gender']; ?>
+								<?php echo $_SESSION['Gender']; ?>
 							</td>
 						</tr>
 
