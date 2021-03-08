@@ -38,7 +38,6 @@
                 <br>
                 <hr>
                 <ul>
-                    <li><a href='./dashboard.php'>Dashboard</a></li>
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
                     <li><a href='./changepass'>Change Password</a></li>

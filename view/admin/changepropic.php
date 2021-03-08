@@ -9,13 +9,14 @@
         header('location: ../login.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>Change Photograph</title>
 </head>
 <body background="../../images/assets/background.jpg">
     <?php include('./adminheader.php'); ?>
@@ -46,36 +47,13 @@
                 <form>
                     <table align="center" border="1px solid black">
                         <tr>
-                            <td align="right">
-                                Name:
-                            </td>
-                            <td width='50%' >
-                            
-                                <input size='30' type='text' value="<?php echo $_SESSION['fullname']; ?>"/>
+                            <td align="center">
+                                <img src= '<?php echo "../../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                Email:
-                            </td>
                             <td>
-                                <input size='30' type='email' value="<?php echo $_SESSION['email']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Phone:
-                            </td>
-                            <td>
-                                <input size='30' type='text' value="<?php echo $_SESSION['phone']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Date of Birth:
-                            </td>
-                            <td>
-                                <input size='30' type='date' value="<?php echo $_SESSION['dateOfBirth']; ?>"/>
+                                <input type='file'/>
                             </td>
                         </tr>
                         <tr>
