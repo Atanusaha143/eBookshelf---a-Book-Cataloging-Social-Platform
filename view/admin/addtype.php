@@ -22,7 +22,16 @@
 <body background="../../images/assets/background.jpg">
     <?php include('./adminheader.php'); ?>
     <div width='100px'>
-        
+        <center>
+            <form action="../../controller/typeselectcheck.php" method='GET'>
+                <h2>What type of user would you like to add?</h2>
+                <input type='radio' name='type' value='admin'><b>Add Administrator</b><br><br>
+                <input type='radio' name='type' value='ruser'><b>Add Regular User</b><br><br>
+                <input type='radio' name='type' value='bpage'><b>Add Business Page</b><br><br>
+                <input type='submit'><br><br>
+                <a href="./dashboard.php">Go Back</a>
+            </form>
+        </center>
     </div>
     <?php include('../footer.php'); ?>
 </body>

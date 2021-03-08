@@ -29,14 +29,6 @@
                 </legend>
                 <table align="center">
                     <tr>
-                        <td align="right">Type:</td>
-                        <td>
-                            <input type='radio' name='type'/>
-                            <input type='radio' name='type'/>
-                            <input type='radio' name='type'/>
-                        </td>
-                    </tr>
-                    <tr>
                         <td align="right">ID:</td>
                         <td><input type='text' name='id'/></td>
                     </tr>
@@ -80,6 +72,11 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="2"><input type='reset' value="Reset"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <a href="./addtype.php">Go Back</a>
+                        </td>
                     </tr>
                 </table>
             </fieldset>
