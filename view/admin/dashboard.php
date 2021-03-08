@@ -1,32 +1,14 @@
 <?php
     session_start();
-    echo $_COOKIE['flag'];
+    //echo $_COOKIE['flag'];
     //print_r($_SESSION);
     if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
-        if(isset($_SESSION['type']) == 'admin')
-        {
-            $dataString = file_get_contents('../../model/admin.json');
-            $dataJSON = json_decode($dataString, true);
-            
-            foreach($dataJSON as $user)
-            {
-                if($_SESSION['id'] == $user['id'])
-                {
-                    $_SESSION['id'] = $user['id'];
-                    $_SESSION['username'] = $user['username'];
-                    $_SESSION['fullname'] = $user['fullname'];
-                    $_SESSION['email'] = $user['email'];
-                    $_SESSION['dateOfBirth'] = $user['dateOfBirth'];
-                    $_SESSION['phone'] = $user['phone'];
-                    $_SESSION['regdate'] = $user['regdate'];
-                }
-            }
-        }
+        //continue
     }
     else if(!isset($_COOKIE['flag']))
     {
-        echo "Session expired, please log in again!";
+        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
         return;
     }
     else 
