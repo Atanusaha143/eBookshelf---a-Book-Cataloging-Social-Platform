@@ -21,7 +21,7 @@
 <body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
     <div width='100px'>
-        <form action='../controller/recheck.php' method="POST">
+        <form action='../controller/regcheck.php' method="POST">
             <fieldset>
                 <legend>
                     <b>SIGN UP</b>
@@ -29,7 +29,7 @@
                 <table align="center">
                     <tr>
                         <td align="right">ID:</td>
-                        <td><input type='numeric' name='id'/></td>
+                        <td><input type='text' name='id'/></td>
                     </tr>
                     <tr>
                         <td align="right">Full Name:</td>
@@ -41,7 +41,7 @@
                     </tr>
                     <tr>
                         <td align="right">Phone:</td>
-                        <td><input type='text' name='phone'/></td>
+                        <td><input type='text' name='phone' value="+88"/></td>
                     </tr>
                     <tr>
                         <td align="right">Date of Birth:</td>
