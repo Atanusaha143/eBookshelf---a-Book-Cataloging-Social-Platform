@@ -26,26 +26,21 @@
 						<fieldset style="width: 50%">
 						<legend> <b> EDIT PROFILE </b> </legend>
 						<table>
-							<?php
-								$userFile = fopen("../model/AllUserDetails.json", "r");
-								$userData = fread($userFile, filesize('../model/AllUserDetails.json'));
-								$userInfo = json_decode($userData, true);
-							?>
 							<tr>
 								<td>
 									<b>Name:</b>
 								</td>
 								<td colspan="2">
-									<input type="text" name="name" value="<?php echo $userInfo['name']; ?>">
+									<input type="text" name="name" value="<?php echo $_SESSION['Name']; ?>">
 								</td>
 								<td rowspan="5">
 
 									&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <b> Upload Photo</b>
 									<br> <br>
 									<?php 
-										if(isset($userInfo['profilePic']))
+										if(isset($_SESSION['profilePic']))
 										{
-											$path = '../resources/'.$userInfo['profilePic']; 
+											$path = '../resources/'.$_SESSION['profilePic']; 
 											echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
 										}
 										else echo "	&nbsp &nbsp &nbsp &nbsp No Profile Picture";
@@ -61,7 +56,7 @@
 									<b>Username:</b>
 								</td>
 								<td>
-									<input type="text" name="user" size="50%" value="<?php echo $userInfo['user']; ?>" >
+									<input type="text" name="user" size="50%" value="<?php echo $_SESSION['UserName']; ?>" >
 								</td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
@@ -91,7 +86,7 @@
 									<b>Email:</b>
 								</td>
 								<td>
-									<input type="email" name="email" size="50%" value="<?php echo $userInfo['email']; ?>" >
+									<input type="email" name="email" size="50%" value="<?php echo $_SESSION['Email']; ?>" >
 								</td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
@@ -102,9 +97,9 @@
 								</td>
 								<td>
 									<select name="gender">
-										<option value="Male" <?php if($userInfo['gender'] == "Male") echo "selected"; ?> > Male </option>
-										<option value="Female" <?php if($userInfo['gender'] == "Female") echo "selected"; ?>> Female </option>
-										<option value="Other" <?php if($userInfo['gender'] == "Other") echo "selected"; ?> > Other </option>
+										<option value="Male" <?php if($_SESSION['Gender'] == "Male") echo "selected"; ?> > Male </option>
+										<option value="Female" <?php if($_SESSION['Gender'] == "Female") echo "selected"; ?>> Female </option>
+										<option value="Other" <?php if($_SESSION['Gender'] == "Other") echo "selected"; ?> > Other </option>
 									</select>
 								</td>
 							</tr>
@@ -115,7 +110,7 @@
 									<b>Phone Number:</b>
 								</td>
 								<td>
-									<input type="text" name="phoneNumber" size="50%" value="<?php echo $userInfo['phoneNumber']; ?>" >
+									<input type="text" name="phoneNumber" size="50%" value="<?php echo $_SESSION['PhoneNumber']; ?>" >
 								</td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
