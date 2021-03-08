@@ -10,10 +10,25 @@
 	$title = "Contact";
 	include ('header.php');
 ?>
+
+<?php
+	if(isset($_POST['send']))
+	{
+		if($_POST['message'] != "")
+		{
+			echo "Your message has been sent to the administration!";
+		}
+		else
+		{
+			echo "Please write a message";
+		}
+	}
+?>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
+				<a href="UserHome.php"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout</a>
 				&nbsp
@@ -22,7 +37,8 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-				<fieldset style="width: 50%">
+				<form method="POST" action="">
+					<fieldset style="width: 50%">
 					<legend> <b> Contact </b> </legend>
 					<table>
 							<tr>
@@ -30,16 +46,15 @@
 									Message
 								</td>
 								<td>
-									<textarea style="width: 200px">
-										<input type="text" name="message" style="width: 200px;">
-									</textarea>
+										<input type="text" name="message" style="height: 100px;">
 								</td>
 								<td>
 									&nbsp <input type="submit" name="send" value="Send">
 								</td>
 							</tr>
 					</table>
-				</fieldset>
+					</fieldset>
+				</form>
 				<br> 
 			</td>
 		</tr>
