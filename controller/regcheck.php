@@ -1,11 +1,10 @@
 <?php 
-    if(empty($_POST['id']) && empty($_POST['fullname']) && empty($_POST['email']) && empty($_POST['phone']) && empty($_POST['dateOfBirth']) && empty($_POST['username']) && empty($_POST['password']) && empty($_POST['confirmpassword']))
+    if(empty($_POST['fullname']) && empty($_POST['email']) && empty($_POST['phone']) && empty($_POST['dateOfBirth']) && empty($_POST['username']) && empty($_POST['password']) && empty($_POST['confirmpassword']))
     {
         echo "One or more of the fields are empty!";
     }
     else
     {
-        $id = $_POST['id'];
         $fullname = $_POST['fullname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
@@ -14,15 +13,10 @@
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
 
-        $idFlag = false;
-        $fullnameFlag = false;
-        $emailFlag = false;
-        $phoneFlag = false;
-        $dobFlag = false;
-        $usernameFlag = false;
-        $passwordFlag = false;
-        $confirmpasswordFlag = false;
+        //$idFlag = false;
+        $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = $confirmpasswordFlag = false;
 
+        /*
         for($i = 0 ; $i<strlen($id) ; $i=$i+1)
         {
             if(!(ord($id[$i]) >= 48 && ord($id[$i]) <= 57))
@@ -36,7 +30,7 @@
         {
             echo "ID must be a numeric value!<br>";
         }
-
+        */
         
         for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
         {
@@ -49,6 +43,34 @@
         }
 
         if($fullnameFlag == true)
+        {
+            echo "Name must be alphabetical!<br>";
+        }
+
+        for($i = 0 ; $i<strlen($email) ; $i=$i+1)
+        {
+            if($email[$i] == '@')
+            {
+                $emailFlag = true;
+                break;
+            }
+        }
+
+        if($emailFlag == false)
+        {
+            echo "Name must be alphabetical!<br>";
+        }
+
+        for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
+        {
+            if(!(ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57)||!($phone=='+'))
+            {
+                $phoneFlag = false;
+                break;
+            }
+        }
+
+        if($phoneFlag == true)
         {
             echo "Name must be alphabetical!<br>";
         }

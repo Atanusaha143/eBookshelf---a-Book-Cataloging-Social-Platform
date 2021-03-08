@@ -29,10 +29,6 @@
                 </legend>
                 <table align="center">
                     <tr>
-                        <td align="right">ID:</td>
-                        <td><input type='text' name='id'/></td>
-                    </tr>
-                    <tr>
                         <td align="right">Full Name:</td>
                         <td><input type='text' name='fullname'/></td>
                     </tr>
