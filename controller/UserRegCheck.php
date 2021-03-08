@@ -12,11 +12,38 @@
 		$phoneNumber = $_POST['PhoneNumber'];
 		$flag = false;
 
-		if($username == "" || $email == "" || $password == "" || $repass == "" || $gender=="" || $phoneNumber=="")
+		$userFile = fopen("../model/AllUserDetails.json", "r");
+		$userData = fread($userFile, filesize('../model/AllUserDetails.json'));
+		$userInfo_filter = explode("\n", $userData);
+
+		for($i=0; $i<count($userInfo_filter); $i++) 
+		{
+			$userInfo = json_decode($userInfo_filter[$i], true);
+			if(!empty($username) && $userInfo['user'] == $username)
+			{
+				echo "Username already exist!";
+				$flag = true;
+				break;
+			}
+			elseif(!empty($email) && $userInfo['email'] == $email)
+			{
+				echo "Email already exist!";
+				$flag = true;
+				break;
+			}
+			elseif(!empty($phoneNumber) && $userInfo['phoneNumber'] == $phoneNumber)
+			{
+				echo "Phone Number already exist!";
+				$flag = true;
+				break;
+			}
+		}
+
+		if($flag == false && $username == "" || $email == "" || $password == "" || $repass == "" || $gender=="" || $phoneNumber=="")
 		{
 			echo "Please fill all the field";
 		}
-		else
+		elseif($flag == false)
 		{
 			if($flag == false && strlen($username)<3)  { echo "Username must contain at least 3 charecters"; $flag = true; }
 			else if($flag == false && strlen($password) <8) { echo "Password must contain at least 8 charecters"; $flag = true; }
@@ -37,20 +64,26 @@
 			if($flag == false)
 			{
 
-				$userInfo = [
-							 'name' => $name,
-							 'user' => $username,
-							 'pass' => $password,
-							 'email' => $email,
-							 'gender' => $gender,
-							 'phoneNumber' => $phoneNumber,
-				      		];
+				$userInfo = array(
+							 	'name' => $name,
+								 'user' => $username,
+								 'pass' => $password,
+								 'email' => $email,
+								 'gender' => $gender,
+								 'phoneNumber' => $phoneNumber,
+				      		);
 
 				$allData = json_encode($userInfo);
-				$userData = fopen("../model/AllUserDetails.json", "w");
-				fwrite($userData, $allData);
+				$userData = fopen("../model/AllUserDetails.json", "a");
+				fwrite($userData, $allData."\r\n");
 				fclose($userData);
 				$_SESSION['flag'] = true;
+				$_SESSION['Name'] = $userInfo['name'];
+				$_SESSION['UserName'] = $userInfo['user'];
+				$_SESSION['Password'] = $userInfo['pass'];
+				$_SESSION['Email'] = $userInfo['email'];
+				$_SESSION['Gender'] = $userInfo['gender'];
+				$_SESSION['PhoneNumber'] = $userInfo['phoneNumber'];
 				header('location: ../view/UserHome.php');
 			}
 		}
