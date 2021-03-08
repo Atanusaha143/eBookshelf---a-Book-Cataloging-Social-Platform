@@ -46,33 +46,33 @@
 							<td> Category </td>
 							<td>
 								<select name = "Category">
-											<option value="Action and adventure"> Action and adventure </option> Action and adventure
-											<option value="Alternate history"> Alternate history </option> Alternate history
-											<option value="Anthology"> Anthology </option> Anthology
-											<option value="Chick lit"> Chick lit </option> Chick lit
-											<option value="Children's"> Children's </option> Children's
-											<option value="Classic "> Classic  </option> Classic 
-											<option value="Comic book"> Comic book </option> Comic book
-											<option value="Coming-of-age"> Coming-of-age </option> Coming-of-age
-											<option value="Drama"> Drama </option> Drama
-											<option value="Fairytale"> Fairytale </option> Fairytale
-											<option value="Fantasy"> Fantasy </option> Fantasy
-											<option value="Graphic novel"> Graphic novel </option> Graphic novel
-											<option value="Historical fiction"> Historical fiction </option> Historical fiction
-											<option value="Horror"> Horror </option> Horror
-											<option value="Mystery"> Mystery </option> Mystery'
-											<option value="Paranormal romance"> Paranormal romance </option> Paranormal romance
-											<option value="Picture book"> Picture book </option> Picture book
-											<option value="Poetry"> Poetry </option> Poetry
-											<option value="Political thriller"> Political thriller </option> Political thriller
-											<option value="Romance"> Romance </option> Romance
-											<option value="Satire"> Satire </option> Satire
-											<option value="Science fiction"> Science fiction </option> Science fiction
-											<option value="Short story"> Short story </option> Short story
-											<option value="Suspense"> Suspense </option> Suspense
-											<option value="Thriller"> Thriller </option> Thriller
-											<option value="Western"> Western </option> Western
-											<option value="Young adult"> Young adult </option> Young adult
+									<option value="Action and adventure"> Action and adventure </option> Action and adventure
+									<option value="Alternate history"> Alternate history </option> Alternate history
+									<option value="Anthology"> Anthology </option> Anthology
+									<option value="Chick lit"> Chick lit </option> Chick lit
+									<option value="Children's"> Children's </option> Children's
+									<option value="Classic "> Classic  </option> Classic 
+									<option value="Comic book"> Comic book </option> Comic book
+									<option value="Coming-of-age"> Coming-of-age </option> Coming-of-age
+									<option value="Drama"> Drama </option> Drama
+									<option value="Fairytale"> Fairytale </option> Fairytale
+									<option value="Fantasy"> Fantasy </option> Fantasy
+									<option value="Graphic novel"> Graphic novel </option> Graphic novel
+									<option value="Historical fiction"> Historical fiction </option> Historical fiction
+									<option value="Horror"> Horror </option> Horror
+									<option value="Mystery"> Mystery </option> Mystery'
+									<option value="Paranormal romance"> Paranormal romance </option> Paranormal romance
+									<option value="Picture book"> Picture book </option> Picture book
+									<option value="Poetry"> Poetry </option> Poetry
+									<option value="Political thriller"> Political thriller </option> Political thriller
+									<option value="Romance"> Romance </option> Romance
+									<option value="Satire"> Satire </option> Satire
+									<option value="Science fiction"> Science fiction </option> Science fiction
+									<option value="Short story"> Short story </option> Short story
+									<option value="Suspense"> Suspense </option> Suspense
+									<option value="Thriller"> Thriller </option> Thriller
+									<option value="Western"> Western </option> Western
+									<option value="Young adult"> Young adult </option> Young adult
 								</select>
 							</td>
 						</tr>
@@ -93,7 +93,7 @@
 		</tr>
 		<tr height = "50px">
 			<td colspan="3">
-				<center> Copyright &copy 2021 </center>
+				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
