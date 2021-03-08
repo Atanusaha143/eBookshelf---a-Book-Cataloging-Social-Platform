@@ -26,6 +26,6 @@
     }
     else
     {
-        header('location: ./login.php');
+        header('location: ../view/login.php');
     }
 ?>
