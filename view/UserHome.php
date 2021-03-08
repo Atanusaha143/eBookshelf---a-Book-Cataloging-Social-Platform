@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td height="50px" colspan="2">
-				  <a href="UserProfile.php" style="margin-left: 25em"> View Profile </a> &nbsp &nbsp &nbsp |
+				  <a href="UserProfile.php" style="margin-left: 25em"> Profile </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Create Bookshelf </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
