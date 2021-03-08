@@ -8,10 +8,10 @@
 		$post_content = $_POST['postContent'];
 		$post_category = $_POST['Category'];
 		$user_name = $_SESSION['Name'];
-
 		$date_time = date('Y-m-d H:i:s');
-		$post = array( "bookName" => $book_name, "authorName" => $author, "categoryName" => $post_category, "postContent" => $post_content);
-		$activity = array("timeAndDate" => $date_time, "bookName" => $book_name, "authorName" => $author, "categoryName" => $post_category, "postContent" => $post_content, "activity_type" => 'Create');
+
+		$post = array( "bookName" => $book_name, "authorName" => $author, "categoryName" => $post_category, "postContent" => $post_content, "username" => $user_name);
+		$activity = array("timeAndDate" => $date_time, "bookName" => $book_name, "authorName" => $author, "categoryName" => $post_category, "postContent" => $post_content, "activity_type" => 'Create Post');
 
 		$post_encode = json_encode($post);
 		$post_data = fopen("../model/$user_name"."AllPost".".json", "a");
