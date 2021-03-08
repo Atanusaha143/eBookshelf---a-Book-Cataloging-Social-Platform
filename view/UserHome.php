@@ -22,7 +22,7 @@
 		<tr>
 			<td height="50px" colspan="2">
 				  <a href="UserProfile.php" style="margin-left: 25em"> Profile </a> &nbsp &nbsp &nbsp |
-				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Create Bookshelf </a> &nbsp &nbsp &nbsp |
+				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Bookshelf </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserContact.php"> Contact </a> &nbsp &nbsp &nbsp 
@@ -61,12 +61,57 @@
 					     echo "</fieldset>";
 					}
 
+
+					$all_files = scandir('../model/');
+					$need_file = $_SESSION['Name'].'AllPost.json';
+
+					foreach ($all_files as $file)
+					{
+						if(strstr($file, $need_file) && filesize('../model/'.$need_file)>0)
+						{
+							$activity_file = fopen('../model/'.$need_file, 'r');
+							$activity_data = fread($activity_file, filesize('../model/'.$need_file));
+							$activity_filter = explode("\n", $activity_data);
+							for($i=0; $i<count($activity_filter)-1; $i++) 
+							{
+				
+								$activityInfo = json_decode($activity_filter[$i], true);
+								$bookName = $activityInfo['bookName'];
+								$authorName = $activityInfo['authorName'];
+								$postContent = $activityInfo['postContent'];
+								$username = $activityInfo['username'];
+								 echo "<fieldset>";
+								 echo "<br>";
+								 echo "<table>";
+							     echo "<tr>";
+							     echo "<td>Book Name:</td>";
+							     echo "<td>".$bookName."</td>";
+							     echo "</tr>";
+							     echo "<tr>";
+							     echo "<td>Author:</td>";
+							     echo "<td>".$authorName."</td>";
+							     echo "</tr>";
+							     echo "<tr>";
+							     echo "<td>Post:</td>";
+							     echo "<td>".$postContent."</td>";
+							     echo "</tr>";
+							     echo "<tr>";
+							     echo "<td>Added By :</td>";
+							     echo "<td>".$username."</td>";
+							     echo "</tr>";
+							     echo "</table>";
+							     echo "<br>";
+							     echo "</fieldset>";			
+											
+							}
+						}
+					}
 				?>
 			</td>
 		</tr>
 		<tr height = "50px">
 			<td colspan="3">
-				<center> Copyright &copy 2021 </center>
+				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
