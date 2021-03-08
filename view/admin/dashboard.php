@@ -1,7 +1,8 @@
 <?php
     session_start();
+    echo $_COOKIE['flag'];
     //print_r($_SESSION);
-    if($_SESSION['flag'] == true)
+    if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         if(isset($_SESSION['type']) == 'admin')
         {
@@ -23,7 +24,12 @@
             }
         }
     }
-    else
+    else if(!isset($_COOKIE['flag']))
+    {
+        echo "Session expired, please log in again!";
+        return;
+    }
+    else 
     {
         header('location: ../login.php');
     }

@@ -34,6 +34,7 @@
                 $_SESSION['id'] = $user['id'];
                 $_SESSION['type'] = $user['type'];
                 $userFoundFlag = true;
+                setcookie('flag', true, time()+60, '/');
                 header('location: ./redirect.php');
             }
         }
