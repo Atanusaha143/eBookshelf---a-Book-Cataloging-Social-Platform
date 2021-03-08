@@ -14,6 +14,7 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
+				<a href="UserHome.php"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout</a>
 				&nbsp
