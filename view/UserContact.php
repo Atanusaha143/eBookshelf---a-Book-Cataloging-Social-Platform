@@ -45,7 +45,7 @@
 		</tr>
 		<tr height = "50px">
 			<td colspan="3">
-				<center> Copyright &copy 2021 </center>
+				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
