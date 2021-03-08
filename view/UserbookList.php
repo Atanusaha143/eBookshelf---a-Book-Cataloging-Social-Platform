@@ -20,15 +20,71 @@
 			</td>
 		</tr>
 		<tr height = "200px">
-			<td colspan="2" align="center">
+			<td colspan="3" align="center">
+				<h3> 
+					<u>
+						<?php echo $_SESSION['Name']; ?>'s Bookshelf
+					</u> 
+				</h3>
 				<br>
-					<h4> All Books </h4>
+				<?php
+					if(isset($_POST['add']))
+					{
+						if(!empty($_POST['book']))
+						{
+							foreach($_POST['book'] as $selected)
+							{
+								$book = array("bookName" => $selected);
+								$book_encode = json_encode($book);
+								$book_data = fopen("../model/".$_SESSION['Name']."Bookshelf".".json", "a");
+								fwrite($book_data, $book_encode."\r\n");
+								//echo $selected."</br>";
+							}
+							fclose($book_data);
+						}
+					}
+					if(filesize("../model/".$_SESSION['Name']."Bookshelf".".json")>0)
+					{
+						$book_file = fopen("../model/".$_SESSION['Name']."Bookshelf".".json", 'r');
+						$book_data = fread($book_file, filesize("../model/".$_SESSION['Name']."Bookshelf".".json"));
+						$book_filter = explode("\n", $book_data);
+						for($i=0; $i<count($book_filter); $i++) 
+						{
+							$selectedBook = json_decode($book_filter[$i], true);
+							if(isset($selectedBook['bookName']))
+							{
+								echo "<ul>";
+								echo "<li>"; 
+								echo $selectedBook['bookName'];
+								echo "</li>";
+								echo "</ul>"; 
+							}
+						}
+					}
+					else
+					{
+						echo "Oops! Your bookshelf is empty :(";
+					}
+				?>
+				<br>
+					<h4> <a href="UserBookshelf.php"> Create Bookshelf </a> 
+						<?php 
+							echo "&nbsp";
+							echo "&nbsp";
+							echo "&nbsp";
+							echo "|";
+							echo "&nbsp";
+							echo "&nbsp";
+							echo "&nbsp"; 
+						?> 
+						<a href="UserBookshelfClean.php"> Clean Bookshelf </a> 
+					</h4>
 				<br> 
 			</td>
 		</tr>
 		<tr height = "50px">
 			<td colspan="3">
-				<center> Copyright &copy 2021 </center>
+				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
