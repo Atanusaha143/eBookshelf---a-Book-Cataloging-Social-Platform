@@ -1,20 +1,32 @@
 [
     {
-        "id":"1001",
+        "id":"a-1001",
         "username":"snigdho123",
         "password":"abcd",
         "type":"admin"
     },
     {
-        "id":"1002",
+        "id":"a-1002",
         "username":"atanu123",
         "password":"1234",
         "type":"admin"
     },
     {
-        "id":"1003",
+        "id":"a-1003",
         "username":"samil123",
         "password":"1234",
         "type":"admin"
+    },
+    {
+        "id":"u-1000",
+        "username":"atanusaha143",
+        "password":"12345678@",
+        "type":"ruser"
+    },
+    {
+        "id":"u-1001",
+        "username":"snigdho",
+        "password":"12345678@",
+        "type":"ruser"
     }
 ]

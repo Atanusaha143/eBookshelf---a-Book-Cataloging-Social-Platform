@@ -2,7 +2,7 @@
     session_start();
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-
+        //continue
     }
     else if(!(isset($_COOKIE['flag'])))
     {

@@ -42,5 +42,6 @@
         {
             echo "Invalid user!";
         }
+        //print_r($_SESSION);
     }
 ?>

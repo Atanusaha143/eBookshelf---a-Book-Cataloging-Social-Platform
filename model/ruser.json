@@ -1,0 +1,20 @@
+[
+    {
+        "id":"u-1000",
+        "name":"Atanu",
+        "username":"atanusaha143",
+        "pass":"12345678@",
+        "email":"atanu.saha415@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01828675754"
+    },
+    {
+        "id":"u-1001",
+        "name":"Snigdho",
+        "username":"snigdho",
+        "pass":"12345678@",
+        "email":"snigdho@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01777777777"
+    }
+]
