@@ -31,11 +31,12 @@
 
 						$all_files = scandir('../model/');
 						$need_file = $_SESSION['Name'].'AllActivity.json';
-
+						$flag = false;
 						foreach ($all_files as $file)
 						{
 							if(strstr($file, $need_file) && filesize('../model/'.$need_file)>0)
 							{
+								$flag = true;
 								$activity_file = fopen('../model/'.$need_file, 'r');
 								$activity_data = fread($activity_file, filesize('../model/'.$need_file));
 								$activity_filter = explode("\n", $activity_data);
@@ -80,10 +81,50 @@
 									
 								}
 							}
-							elseif(strstr($file, $need_file) && filesize('../model/'.$need_file)==0)
+						}
+
+						$need_file_book = $_SESSION['Name'].'Bookshelf.json';
+						foreach ($all_files as $file)
+						{
+							if(strstr($file, $need_file_book) && filesize('../model/'.$need_file_book)>0)
 							{
-								echo "No activities yet!";
+								$flag = true;
+								$activity_file = fopen('../model/'.$need_file_book, 'r');
+								$activity_data = fread($activity_file, filesize('../model/'.$need_file_book));
+								$activity_filter = explode("\n", $activity_data);
+								for($i=0; $i<count($activity_filter)-1; $i++) 
+								{
+					
+									$activityInfo = json_decode($activity_filter[$i], true);
+									$bookName = $activityInfo['bookName'];
+
+									 if($i != count($activity_filter)-2)
+								     {
+								     	echo "_______________________________________________________________________________________________________";
+								     	echo "<br>";
+								     }	
+									 echo "<br>";
+									 echo "<table>";
+								     echo "<tr>";
+								     echo "<td>Book Name: ".$bookName."</td>";
+								     echo "</tr>";
+								     echo "<tr>";
+								     echo "<td>Activity Type: Create Bookshelf</td>";
+								     echo "</tr>";
+								     echo "</table>";
+								     if($i != count($activity_filter)-2)
+								     {
+								     	echo "_______________________________________________________________________________________________________";
+								     	echo "<br>";
+								     }			
+									
+								}
 							}
+						}
+
+						if($flag==false)
+						{
+							echo "No activities yet!";
 						}
 					?>
 				<br> 
@@ -91,7 +132,7 @@
 		</tr>
 		<tr height = "50px">
 			<td colspan="3">
-				<center> Copyright &copy 2021 </center>
+				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
