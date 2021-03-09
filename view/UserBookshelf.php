@@ -30,11 +30,6 @@
 						$post_file = fopen('../model/Posts.json', 'r');
 						$post_data = fread($post_file, filesize('../model/Posts.json'));
 						$post_info = json_decode($post_data, true);
-						// for ($i=0; $i<count($post_info); $i++) 
-						// {
-
-						//      echo $post_info[$i]['bookName'];
-						// }
 					?>
 					<form method="POST" action="UserbookList.php">
 						&nbsp

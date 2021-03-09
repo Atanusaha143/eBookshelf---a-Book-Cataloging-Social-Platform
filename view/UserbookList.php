@@ -39,7 +39,6 @@
 								$book_encode = json_encode($book);
 								$book_data = fopen("../model/".$_SESSION['Name']."Bookshelf".".json", "a");
 								fwrite($book_data, $book_encode."\r\n");
-								//echo $selected."</br>";
 							}
 							fclose($book_data);
 						}
@@ -68,7 +67,7 @@
 					}
 				?>
 				<br>
-					<h4> <a href="UserBookshelf.php"> Create Bookshelf </a> 
+					<h4> <a href="UserBookshelf.php"> Add book </a> 
 						<?php 
 							echo "&nbsp";
 							echo "&nbsp";

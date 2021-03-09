@@ -51,26 +51,32 @@
 									$postContent = $activityInfo['postContent'];
 									$activityType = $activityInfo['activity_type'];
 
+								     if($i != count($activity_filter)-2)
+								     {
+								     	echo "_______________________________________________________________________________________________________";
+								     	echo "<br>";
+								     }
+
 									 echo "<br>";
 									 echo "<table>";
 								     echo "<tr>";
-								     echo "<td>Book Name:</td>";
+								     echo "<td> <b> Book Name: </b> </td>";
 								     echo "<td>".$bookName."</td>";
 								     echo "</tr>";
 								     echo "<tr>";
-								     echo "<td>Author Name:</td>";
+								     echo "<td> <b> Author Name: </b> </td>";
 								     echo "<td>".$authorName."</td>";
 								     echo "</tr>";
 								     echo "<tr>";
-								     echo "<td>Post Content:</td>";
+								     echo "<td> <b> Post Content: </b> </td>";
 								     echo "<td>".$postContent."</td>";
 								     echo "</tr>";
 								     echo "<tr>";
-								     echo "<td>Activity Time:</td>";
+								     echo "<td> <b> Activity Time: </b></td>";
 								     echo "<td>".$dateTime."</td>";
 								     echo "</tr>";
 								     echo "<tr>";
-								     echo "<td>Activity Type:</td>";
+								     echo "<td> <b> Activity Type: </b> </td>";
 								     echo "<td>".$activityType."</td>";
 								     echo "</tr>";
 								     echo "</table>";
@@ -99,7 +105,7 @@
 									$activityInfo = json_decode($activity_filter[$i], true);
 									$bookName = $activityInfo['bookName'];
 
-									 if($i != count($activity_filter)-2)
+									 if($i == 0)
 								     {
 								     	echo "_______________________________________________________________________________________________________";
 								     	echo "<br>";
@@ -107,10 +113,10 @@
 									 echo "<br>";
 									 echo "<table>";
 								     echo "<tr>";
-								     echo "<td>Book Name: ".$bookName."</td>";
+								     echo "<td> <b> Book Name:  </b> ".$bookName." </td>";
 								     echo "</tr>";
 								     echo "<tr>";
-								     echo "<td>Activity Type: Create Bookshelf</td>";
+								     echo "<td> <b> Activity Type: </b> Create Bookshelf</td>";
 								     echo "</tr>";
 								     echo "</table>";
 								     if($i != count($activity_filter)-2)

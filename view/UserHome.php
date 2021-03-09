@@ -37,7 +37,7 @@
 					$post_info = json_decode($post_data, true);
 					echo "<br>";
 					echo "<center>";
-					echo "Public Posts";
+					echo " <b> <u> Public Posts </u> </b>";
 					echo "</center>";
 					echo "<br>";
 					for ($i=0; $i<count($post_info); $i++) 
