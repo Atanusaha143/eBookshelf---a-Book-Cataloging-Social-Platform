@@ -14,7 +14,7 @@
         $confirmpassword = $_POST['confirmpassword'];
 
         //$idFlag = false;
-        $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = $confirmpasswordFlag = false;
+        $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = false;
 
         /*
         for($i = 0 ; $i<strlen($id) ; $i=$i+1)
@@ -63,16 +63,66 @@
 
         for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
         {
-            if(!(ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57)||!($phone=='+'))
+            if(!(ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57)||!($phone[$i]=='+'))
             {
-                $phoneFlag = false;
+                $phoneFlag = true;
                 break;
             }
         }
 
         if($phoneFlag == true)
         {
-            echo "Name must be alphabetical!<br>";
+            echo "Phone number can only have a '+' or numeric values!<br>";
+        }
+
+        for($i = 0 ; $i<strlen($username) ; $i=$i+1)
+        {
+            if(!((ord($username[$i]) >= 97 && ord($username[$i]) <= 122)) 
+            && !((ord($username[$i]) >= 65 && ord($username[$i]) <= 90))&&!(ord($username[$i]) >= 48 && ord($username[$i]) <= 57))
+            {
+                $usernameFlag = true;
+                break;
+            }
+        }
+
+        if($usernameFlag == true)
+        {
+            echo "Username must be alphanumeric!<br>";
+        }
+
+        if(strlen($password) < 8)
+        {
+            echo "password must be atleast 8 characters long!<br>";
+        }
+        else if(strlen($password) >= 8)
+        {
+            for($i = 0 ; $i<strlen($password) ; $i=$i+1)
+            {
+                if(($password[$i] == '@' || $password[$i] == '#' || $password[$i] == '!' || $password[$i] == '$'))
+                {
+                    $passwordFlag = true;
+                    break;
+                }
+            }
+
+            if($passwordFlag == true)
+            {
+                echo "password must contain '@', '#', '!' or '$'!<br>";
+            }
+        }
+        if($password != $confirmpassword)
+        {
+            echo "passwords do not match!<br>";
+        }
+
+        if($fullnameFlag == false &&
+        $emailFlag == false &&
+        $phoneFlag == false &&
+        $dobFlag == false &&
+        $usernameFlag == false &&
+        $passwordFlag == false)
+        {
+            echo "validated!";
         }
     }
 ?>
