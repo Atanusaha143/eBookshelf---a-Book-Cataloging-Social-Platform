@@ -1,4 +1,57 @@
 <?php
+
+    function nameValidation($fullname)
+    {
+        for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
+        {
+            if(!((ord($fullname[$i]) >= 97 && ord($fullname[$i]) <= 122)) 
+            && !((ord($fullname[$i]) >= 65 && ord($fullname[$i]) <= 90))&& !($fullname[$i] == ' '))
+            {
+                return true;
+            }
+        }
+    }
+
+    function emailValidation($email)
+    {
+        $count = 0;
+        for($i = 0 ; $i<strlen($email) ; $i=$i+1)
+        {
+            if($email[$i] == '@')
+            {
+                $count = $count + 1;
+            }
+        }
+        if($count==0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function phoneValidation($phone)
+    {
+        $count = 0;
+        for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
+        {
+            if((ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57) || $phone[$i] == '+')
+            {
+                $count = $count + 1;
+            }
+        }
+        if($count!=strlen($phone))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
     if(empty($_POST['fullname']) && empty($_POST['email']) && empty($_POST['username']) && empty($_POST['password'])&& empty($_POST['dateOfBirth']) && empty($_POST['confirmpassword']))
     {
         echo "One or more of the fields are empty!";
@@ -13,64 +66,31 @@
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
 
-        //$idFlag = false;
         $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = '';
-
-        /*
-        for($i = 0 ; $i<strlen($id) ; $i=$i+1)
-        {
-            if(!(ord($id[$i]) >= 48 && ord($id[$i]) <= 57))
-            {
-                $idFlag = true;
-                break;
-            }
-        }
-
-        if($idFlag == true)
-        {
-            echo "ID must be a numeric value!<br>";
-        }
-        */
-        
-        for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
-        {
-            if(!((ord($fullname[$i]) >= 97 && ord($fullname[$i]) <= 122)) 
-            && !((ord($fullname[$i]) >= 65 && ord($fullname[$i]) <= 90))&& !($fullname[$i] == ' '))
-            {
-                $fullnameFlag = true;
-                break;
-            }
-        }
+        $fullnameFlag = nameValidation($fullname);
+        $emailFlag = emailValidation($email);
+        $phoneFlag = phoneValidation($phone);
+        // for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
+        // {
+        //     if(!((ord($fullname[$i]) >= 97 && ord($fullname[$i]) <= 122)) 
+        //     && !((ord($fullname[$i]) >= 65 && ord($fullname[$i]) <= 90))&& !($fullname[$i] == ' '))
+        //     {
+        //         $fullnameFlag = true;
+        //         break;
+        //     }
+        // }
 
         if($fullnameFlag == true)
         {
             echo "Name must be alphabetical!<br>";
         }
 
-        for($i = 0 ; $i<strlen($email) ; $i=$i+1)
-        {
-            if($email[$i] == '@')
-            {
-                $emailFlag = true;
-                break;
-            }
-        }
-
-        if($emailFlag == false)
+        if($emailFlag == true)
         {
             echo "Email must have '@' symbol!<br>";
-        }
+        }        
 
-        for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
-        {
-            if((ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57) || $phone[$i] == '+')
-            {
-                $phoneFlag = true;
-            }
-        }
-        
-
-        if($phoneFlag == false)
+        if($phoneFlag == true)
         {
             echo "Phone number can only have a '+' or numeric values!<br>";
         }
