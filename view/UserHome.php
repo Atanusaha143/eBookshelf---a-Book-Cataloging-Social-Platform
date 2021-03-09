@@ -10,10 +10,10 @@
 	$title = "Home";
 	include ('header.php');
 ?>
-	<table border="1" width="100%" cellspacing="0">
+	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"  width="100%" height="150"> </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout </a>
 				&nbsp
@@ -21,7 +21,7 @@
 		</tr>
 		<tr>
 			<td height="50px" colspan="2">
-				  <a href="UserProfile.php" style="margin-left: 25em"> Profile </a> &nbsp &nbsp &nbsp |
+				  <a href="UserProfile.php" style="margin-left: 30em"> Profile </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Bookshelf </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
 				&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
@@ -35,10 +35,11 @@
 					$post_file = fopen('../model/Posts.json', 'r');
 					$post_data = fread($post_file, filesize('../model/Posts.json'));
 					$post_info = json_decode($post_data, true);
-					
+					echo "<br>";
 					echo "<center>";
 					echo "Public Posts";
 					echo "</center>";
+					echo "<br>";
 					for ($i=0; $i<count($post_info); $i++) 
 					{
 						 echo "<fieldset>";

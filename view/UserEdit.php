@@ -13,7 +13,7 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"> </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
 				<a href="UserProfile.php"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout</a>

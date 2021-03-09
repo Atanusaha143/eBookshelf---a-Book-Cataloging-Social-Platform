@@ -3,4 +3,4 @@
 <head>
 	<title><?=$title?></title>
 </head>
-<body>
+<body style="background-color:#c5fcf7;">

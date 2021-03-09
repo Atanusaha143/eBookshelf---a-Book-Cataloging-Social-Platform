@@ -3,17 +3,17 @@
 	include ('view/header.php');
 ?>
 
-	<table border="1" width="100%" cellspacing="0">
+	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="left">
-				<a href="publicHome.html"> <img src="resources/logo.png"> </a>
+				<a href="index.php"> <img src="resources/logo.png" width="100%" height="100"> </a>
 			</td>
-			<td align="right">
+			<td align="right" colspan="2">
 				<form method="POST" action="controller/UserLogCheck.php">
-					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
-					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
-					<input type="submit" name="login" value="Login"> &nbsp &nbsp
-				</form>
+				Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
+				Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
+				<input type="submit" name="login" value="Login"> &nbsp &nbsp
+			</form> 
 			</td>
 		</tr>
 		<tr height = "200px">
