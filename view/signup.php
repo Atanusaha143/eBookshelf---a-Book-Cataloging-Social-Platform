@@ -21,7 +21,7 @@
 </head>
 <body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
-    <div width='100px'>
+    <div>
         <form action='../controller/regcheck.php' method="POST">
             <fieldset>
                 <legend>
@@ -64,6 +64,11 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="2"><input type='reset' value="Reset"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2">
+                            <a href='./login.php'>Go Back</a>
+                        </td>
                     </tr>
                 </table>
             </fieldset>

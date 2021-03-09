@@ -17,7 +17,7 @@
 </head>
 <body background="../images/assets/background.jpg">
     <?php include('./header.php'); ?>
-    <div width='100px'>
+    <div>
         <form action='../controller/logincheck.php' method="POST">
             <fieldset>
                 <legend>
