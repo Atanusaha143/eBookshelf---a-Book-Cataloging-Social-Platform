@@ -56,10 +56,6 @@
                         <td align="right">Confirm Password:</td>
                         <td><input type='text' name='confirmpassword'/></td>
                     </tr>
-                    <!-- <tr>
-                        <td align="right">Type of User:</td>
-                        <td><input type='password' name='confirmpassword'/></td>
-                    </tr> -->
                     <tr>
                         <td colspan="2"><hr></td>
                     </tr>
