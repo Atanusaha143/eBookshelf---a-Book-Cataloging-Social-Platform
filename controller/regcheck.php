@@ -14,7 +14,7 @@
         $confirmpassword = $_POST['confirmpassword'];
 
         //$idFlag = false;
-        $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = false;
+        $fullnameFlag = $emailFlag = $phoneFlag = $dobFlag = $usernameFlag = $passwordFlag = '';
 
         /*
         for($i = 0 ; $i<strlen($id) ; $i=$i+1)
@@ -58,19 +58,19 @@
 
         if($emailFlag == false)
         {
-            echo "Name must be alphabetical!<br>";
+            echo "Email must have '@' symbol!<br>";
         }
 
         for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
         {
-            if(!(ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57)||!($phone[$i]=='+'))
+            if((ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57) || $phone[$i] == '+')
             {
                 $phoneFlag = true;
-                break;
             }
         }
+        
 
-        if($phoneFlag == true)
+        if($phoneFlag == false)
         {
             echo "Phone number can only have a '+' or numeric values!<br>";
         }
@@ -105,25 +105,26 @@
                 }
             }
 
-            if($passwordFlag == true)
+            if($passwordFlag == false)
             {
                 echo "password must contain '@', '#', '!' or '$'!<br>";
             }
         }
         if($password != $confirmpassword)
         {
+            $passwordFlag=false;
             echo "passwords do not match!<br>";
         }
 
         if($fullnameFlag == false &&
-        $emailFlag == false &&
-        $phoneFlag == false &&
-        $dobFlag == false &&
+        $emailFlag == true &&
+        $phoneFlag == true &&
         $usernameFlag == false &&
-        $passwordFlag == false)
+        $passwordFlag == true)
         {
-            echo "validated!";
+            echo "validated!<br>";
         }
+        echo "fullname: ".$fullnameFlag."<br>"."email: ".$emailFlag."<br>"."phone: ".$phoneFlag."<br>"."username: ".$usernameFlag."<br>"."password: ".$passwordFlag;
     }
 ?>
 
