@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
+    if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
     }
@@ -46,7 +46,7 @@
                 <ul>
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass'>Change Password</a></li>
+                    <li><a href='./changepass.php'>Change Password</a></li>
                 </ul>
             </td>
             <td>
@@ -59,7 +59,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                            <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>
