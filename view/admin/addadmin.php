@@ -26,7 +26,7 @@
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <div width='100px'>
-        <form action='../../controller/addadmincheck.php' method="POST">
+        <form action='../../controller/addadmincheck.php' method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>
                     <b>SIGN UP</b>
@@ -64,6 +64,12 @@
                         <td align="right">Type of User:</td>
                         <td><input type='password' name='confirmpassword'/></td>
                     </tr> -->
+                    <tr>
+                        <td colspan="2">
+                            Upload Profile Picture:
+                            <input type='file' name='propic'>
+                        </td>
+                    </tr>
                     <tr>
                         <td colspan="2"><hr></td>
                     </tr>

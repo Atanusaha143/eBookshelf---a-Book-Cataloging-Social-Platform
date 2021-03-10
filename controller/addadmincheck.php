@@ -1,14 +1,8 @@
 <?php
     include('./validate_functions.php');
-    /*
-    $dataString = file_get_contents('../model/ruser.json');
-    $dataJSON = json_decode($dataString, true);
-    $last = sizeof($dataJSON);
-    print_r(intval(substr($dataJSON[$last-1]['id'], 2))+1);
-    */
-    if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']))
+    if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
     {
-        echo "One or more of the fields are empty!";
+        echo "Please enter all fields, including your profile picture.";
     }
     else
     {
@@ -91,9 +85,21 @@
             array_push($dataJSONLogIn, $inputLogInArray);
             $dataJSONLogIn = json_encode($dataJSONLogIn);
             file_put_contents('../model/login.json', $dataJSONLogIn);
-        
-            echo "New Admin added successfully!";
 
+            $picture = $_FILES['propic'];
+            $path = '../images/profile/'.$id.'.jpeg';
+
+            if(move_uploaded_file($picture['tmp_name'], $path))
+            {
+                echo "Photo uploaded!";
+            }
+            else
+            {
+                echo "Photo upload failed!";
+            }
+        
+            echo "New Admin added successfully!<br>";
+            echo "<a href='../view/admin/addadmin.php'>Go Back</a>";
 
         }
 
