@@ -20,7 +20,7 @@
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-        
+
         if($password != $confirmpassword)
         {
             $passwordFlag=true;
