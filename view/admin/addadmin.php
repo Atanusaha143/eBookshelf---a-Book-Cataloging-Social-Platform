@@ -26,7 +26,7 @@
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <div width='100px'>
-        <form action='../controller/admincheck.php' method="POST">
+        <form action='../../controller/addadmincheck.php' method="POST">
             <fieldset>
                 <legend>
                     <b>SIGN UP</b>

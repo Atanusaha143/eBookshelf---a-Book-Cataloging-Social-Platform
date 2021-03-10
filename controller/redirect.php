@@ -7,7 +7,7 @@
         {
             $dataString = file_get_contents('../model/admin.json');
             $dataJSON = json_decode($dataString, true);
-            
+            print_r($dataJSON);
             foreach($dataJSON as $user)
             {
                 if($_SESSION['id'] == $user['id'])
