@@ -26,16 +26,12 @@
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <div width='100px'>
-        <form action='../controller/regcheck.php' method="POST">
+        <form action='../controller/admincheck.php' method="POST">
             <fieldset>
                 <legend>
                     <b>SIGN UP</b>
                 </legend>
                 <table align="center">
-                    <tr>
-                        <td align="right">ID:</td>
-                        <td><input type='text' name='id'/></td>
-                    </tr>
                     <tr>
                         <td align="right">Full Name:</td>
                         <td><input type='text' name='fullname'/></td>

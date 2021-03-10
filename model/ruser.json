@@ -10,6 +10,33 @@
     },
     {
         "id":"u-1001",
+        "name":"Jack",
+        "username":"jack123",
+        "pass":"12345678@",
+        "email":"jack@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01777777777"
+    },
+    {
+        "id":"u-1003",
+        "name":"Brian",
+        "username":"brian123",
+        "pass":"12345678@",
+        "email":"reiner@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01777777777"
+    },
+    {
+        "id":"u-1004",
+        "name":"Reiner",
+        "username":"reiner123",
+        "pass":"12345678@",
+        "email":"reiner@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01777777777"
+    },
+    {
+        "id":"u-1005",
         "name":"Snigdho",
         "username":"snigdho",
         "pass":"12345678@",

@@ -1,4 +1,6 @@
 <?php
+    //Return false in case conditions are met. 
+    //Return true in case they are not met. 
     function nameValidation($fullname)
     {
         for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
@@ -9,6 +11,7 @@
                 return true;
             }
         }
+        return false;
     }
 
     function emailValidation($email)
@@ -87,22 +90,16 @@
 
     function usernameValidation($username)
     {
-        $count = 0;
+        //$count = 0;
         for($i = 0 ; $i<strlen($username) ; $i=$i+1)
         {
             if(!((ord($username[$i]) >= 97 && ord($username[$i]) <= 122)) 
-            && !((ord($username[$i]) >= 65 && ord($username[$i]) <= 90)) && !(ord($username[$i]) >= 48 && ord($username[$i]) <= 57))
+            && !((ord($username[$i]) >= 65 && ord($username[$i]) <= 90)) 
+            && !(ord($username[$i]) >= 48 && ord($username[$i]) <= 57))
             {
-                $count = $count + 1;
+                return true;
             }
         }
-        if($count > 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return false;
     }
 ?>

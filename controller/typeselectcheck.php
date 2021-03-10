@@ -7,7 +7,7 @@
     {
         if($_GET['type'] == 'admin')
         {
-            header('location: ../view/admin/adduser.php');
+            header('location: ../view/admin/addadmin.php');
         }
     }
 ?>

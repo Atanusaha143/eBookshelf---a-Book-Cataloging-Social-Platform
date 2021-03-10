@@ -55,7 +55,7 @@
         {
             echo "validated!<br>";
         }
-        echo "fullname: ".$fullnameFlag."<br>"."email: ".$emailFlag."<br>"."phone: ".$phoneFlag."<br>"."username: ".$usernameFlag."<br>"."password: ".$passwordFlag;
+        //echo "fullname: ".$fullnameFlag."<br>"."email: ".$emailFlag."<br>"."phone: ".$phoneFlag."<br>"."username: ".$usernameFlag."<br>"."password: ".$passwordFlag;
     }
 ?>
 
