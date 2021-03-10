@@ -44,6 +44,10 @@
             }*/
             echo "Regular user logged in!";
         }
+        else if($_SESSION['type'] == 'bpage')
+        {
+            echo "Business page logged in!";
+        }
     }
     else
     {

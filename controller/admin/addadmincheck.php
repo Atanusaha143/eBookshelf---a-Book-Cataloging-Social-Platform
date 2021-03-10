@@ -1,5 +1,5 @@
 <?php
-    include('./validate_functions.php');
+    include('../validate_functions.php');
     if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
     {
         echo "Please enter all fields, including your profile picture.";
@@ -52,7 +52,7 @@
         $usernameFlag == false &&
         $passwordFlag == false)
         {
-            $dataStringAdmin = file_get_contents('../model/admin.json');
+            $dataStringAdmin = file_get_contents('../../model/admin.json');
             $dataJSONAdmin = json_decode($dataStringAdmin, true);
             $last = sizeof($dataJSONAdmin);
             $id = "a-".strval((intval(substr($dataJSONAdmin[$last-1]['id'], 2))+1));
@@ -71,7 +71,7 @@
 
             array_push($dataJSONAdmin, $inputAdminArray);
             $dataJSONAdmin = json_encode($dataJSONAdmin);
-            file_put_contents('../model/admin.json', $dataJSONAdmin);
+            file_put_contents('../../model/admin.json', $dataJSONAdmin);
 
             $inputLogInArray = [
                 "id"=>$id,
@@ -80,26 +80,26 @@
                 "type"=>"admin"
             ];
 
-            $dataStringLogIn = file_get_contents('../model/login.json');
+            $dataStringLogIn = file_get_contents('../../model/login.json');
             $dataJSONLogIn = json_decode($dataStringLogIn, true);
             array_push($dataJSONLogIn, $inputLogInArray);
             $dataJSONLogIn = json_encode($dataJSONLogIn);
-            file_put_contents('../model/login.json', $dataJSONLogIn);
+            file_put_contents('../../model/login.json', $dataJSONLogIn);
 
             $picture = $_FILES['propic'];
-            $path = '../images/profile/'.$id.'.jpeg';
+            $path = '../../images/profile/admin/'.$id.'.jpeg';
 
             if(move_uploaded_file($picture['tmp_name'], $path))
             {
-                echo "Photo uploaded!";
+                echo "Photo uploaded!<br>";
             }
             else
             {
-                echo "Photo upload failed!";
+                echo "Photo upload failed!<br>";
             }
         
             echo "New Admin added successfully!<br>";
-            echo "<a href='../view/admin/addadmin.php'>Go Back</a>";
+            echo "<a href='../../view/admin/addadmin.php'>Go Back</a>";
 
         }
 
