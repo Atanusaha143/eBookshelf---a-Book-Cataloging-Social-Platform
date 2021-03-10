@@ -20,27 +20,7 @@
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-
-        if($fullnameFlag == true)
-        {
-            echo "Name must be alphabetical!<br>";
-        }
-
-        if($emailFlag == true)
-        {
-            echo "Email must have '@' symbol!<br>";
-        }        
-
-        if($phoneFlag == true)
-        {
-            echo "Phone number can only have a '+' or numeric values!<br>";
-        }
-
-        if($usernameFlag == true)
-        {
-            echo "Username must be alphanumeric!<br>";
-        }
-
+        
         if($password != $confirmpassword)
         {
             $passwordFlag=true;

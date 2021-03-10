@@ -27,7 +27,7 @@
     <?php include('./adminheader.php'); ?>
     <div width='100px'>
         <center>
-            <form action="../../controller/typeselectcheck.php" method='GET'>
+            <form action="../../controller/changepassword.php" method='POST'>
                 <h2>Enter the following fields to change your password.</h2>
                 <table>
                     <tr>

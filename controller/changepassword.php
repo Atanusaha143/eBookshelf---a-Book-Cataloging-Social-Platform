@@ -1,16 +1,12 @@
 <?php
+    include('./validate_functions.php');
     session_start();
-    if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
+    if(empty($_POST['currentpass']) || empty($_POST['newpass']) || empty($_POST['confirmpass']))
     {
-        //continue
-    }
-    else if(!(isset($_COOKIE['flag'])))
-    {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        echo "Please enter all three fields.";
     }
     else
     {
-        header('location: ../view/admin/passchanged.php');
+        
     }
 ?>
