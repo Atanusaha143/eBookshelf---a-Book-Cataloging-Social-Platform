@@ -7,7 +7,7 @@
     <link rel='icon' href='../images/assets/icon.png'>
     <title>eBookShelf</title>
 </head>
-<body background="./images/background.jpg">
+<body bgcolor="#c5fcf7">
     <div width='100px'>
         <form>
             <fieldset>

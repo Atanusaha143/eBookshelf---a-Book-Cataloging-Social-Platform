@@ -19,7 +19,7 @@
     <link rel='icon' href='../images/assets/icon.png'>
     <title>Sign Up</title>
 </head>
-<body background="../images/assets/background.jpg">
+<body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <div>
         <form action='../controller/regcheck.php' method="POST">

@@ -26,7 +26,7 @@
     <link rel='icon' href='../../images/assets/icon.png'>
     <title>Dashboard</title>
 </head>
-<body background="../../images/assets/background.jpg">
+<body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <fieldset>
     <br>
