@@ -32,6 +32,7 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
+    <?php include('./navbar.php'); ?>
     <table>
         <tr>
             <td>

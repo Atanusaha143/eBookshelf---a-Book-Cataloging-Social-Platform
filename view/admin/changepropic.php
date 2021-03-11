@@ -25,17 +25,7 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
-    <fieldset>
-    <br>
-        <nav>
-            <a href="./dashboard.php">Dashboard</a> ||
-            <a href="./profile.php"><?php echo $_SESSION['fullname']; ?></a> ||
-            <a href="./addtype.php">Add a new user</a> ||
-            <a href="./search.php">Search</a> ||
-            <a href="../../controller/logout.php">Log Out</a>
-        </nav>
-    <br>
-    </fieldset>
+    <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
         <tr>
             <td>
