@@ -89,7 +89,7 @@
 
             if($capitalLetterCount == 0)
             {
-                echo "Password must contain atleast capital small letter!<br>";
+                echo "Password must contain atleast one capital letter!<br>";
                 return true;
             }
             else if($smallLetterCount == 0)
