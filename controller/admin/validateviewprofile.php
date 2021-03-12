@@ -19,7 +19,6 @@
                     $_GET['username'] = $user['username'];
                     $_GET['regdate'] = $user['regdate'];
                     $_GET['type'] = $user['type'];
-
                 }
             }
         }
