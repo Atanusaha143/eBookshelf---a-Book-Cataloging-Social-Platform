@@ -29,7 +29,7 @@
         <form action='../../controller/admin/addadmincheck.php' method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>
-                    <b>SIGN UP</b>
+                    <b>ADD ADMIN</b>
                 </legend>
                 <table align="center">
                     <tr>
