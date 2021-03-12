@@ -27,24 +27,24 @@
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-        <form>
+        <form method="GET" action="../../controller/admin/searchprocess.php">
             <select name='type'>
-                <option>
+                <option value='admin'>
                     Administrator
                 </option>
-                <option>
+                <option value='ruser'>
                     Regular User
                 </option>
-                <option>
+                <option value='bpage'>
                     Business Page
                 </option>
                 <option selected disabled hidden>
                     Search for an user
                 </option>
             </select>
-            <br>
-            <input type='text' name='search'>
-            <br>
+            <br><br>
+            <input type='text' name='search' placeholder="Type a name to search here">
+            <br><br>
             <input type='submit' value='Search'>
         </form>
     </center>
