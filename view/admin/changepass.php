@@ -35,7 +35,7 @@
                             <b>Current Password:</b>
                         </td>
                         <td>
-                            <input type='text' name='currentpass'>
+                            <input type='password' name='currentpass'>
                         </td>
                     </tr>
                     <tr>
@@ -43,7 +43,7 @@
                             <b>New Password:</b>
                         </td>
                         <td>
-                            <input type='text' name='newpass'>
+                            <input type='password' name='newpass'>
                         </td>
                     </tr>
                     <tr>
@@ -51,7 +51,7 @@
                             <b>Confirm Password:</b>
                         </td>
                         <td>
-                            <input type='text' name='confirmpass'>
+                            <input type='password' name='confirmpass'>
                         </td>
                     </tr>
                 </table>
