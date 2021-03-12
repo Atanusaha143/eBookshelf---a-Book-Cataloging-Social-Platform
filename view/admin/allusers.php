@@ -33,33 +33,55 @@
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table>
+    <table border='1px solid black' width='100%'>
+        <tr>
+            <th>
+                ADMINS
+            </th>
+            <th>
+                REGULAR USERS
+            </th>
+            <th>
+                BUSINESS USERS
+            </th>
+        </tr>
         <tr>
             <td>
-                <?php 
-                    foreach($dataJSON as $values)
-                    {
-                        if($_SESSION['id'] != $values['id'])
+                <table>
+                    <?php
+                        foreach($dataJSON as $values)
                         {
-                            // echo 
-                            // "<form>
-                            //     <table>
-                            //         <tr>
-                            //             <td>
-                            //                 <
-                            //             </td>
-                            //         </tr>
-                            //     </table>
-                            // </form>"
-                            print_r($values['id']);
-                            echo "||";
-                            echo "<a href='anotheruser.php?userid=".$values['id']."'>";
-                                print_r($values['fullname']);
-                            echo "</a>";
-                            echo "<br>";
+                            if($_SESSION['id'] != $values['id'])
+                            {   
+                                echo 
+                                "<tr>
+                                    <td align='center'>"
+                                        .$values['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotheruser.php?userid=".$values['id']."'>"
+                                            .$values['fullname'].
+                                        "</a>
+                                    </td>
+                                </tr>";
+                            }
                         }
-                    }
-                ?>
+                    ?>
+                    <!-- <?php 
+                        foreach($dataJSON as $values)
+                        {
+                            if($_SESSION['id'] != $values['id'])
+                            {
+                                print_r($values['id']);
+                                echo "||";
+                                echo "<a href='anotheruser.php?userid=".$values['id']."'>";
+                                    print_r($values['fullname']);
+                                echo "</a>";
+                                echo "<br>";
+                            }
+                        }
+                    ?> -->
+                </table>
             </td>
             <td>
             
