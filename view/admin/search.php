@@ -1,9 +1,8 @@
-<?php
+<?php 
     session_start();
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        //include('../../controller/admin/validateviewprofile.php');
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -15,26 +14,39 @@
         header('location: ../login.php');
     }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href="../../images/assets/icon.png">
-    <title>Send a message</title>
+    <title>Search for an Item</title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./adminheader.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
-        <h3>Send a message to </h3>
-        <form method='POST' action='#'>
-            <textarea name='message'>Write your message here</textarea><br>
-            <input type="submit" value='Send'>
+        <h3>What would you like to search for?</h3>
+        <form>
+            <select name='type'>
+                <option>
+                    Administrator
+                </option>
+                <option>
+                    Regular User
+                </option>
+                <option>
+                    Business Page
+                </option>
+                <option selected disabled hidden>
+                    Search for an user
+                </option>
+            </select>
+            <br>
+            <input type='text' name='search'>
+            <br>
+            <input type='submit' value='Search'>
         </form>
     </center>
-    <?php include('../footer.php') ?>
 </body>
 </html>

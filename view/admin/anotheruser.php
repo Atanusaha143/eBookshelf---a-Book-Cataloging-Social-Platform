@@ -14,7 +14,6 @@
     {
         header('location: ../login.php');
     }
-    
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +95,7 @@
                     </tr>
                     <tr>
                         <td colspan="3" align="center">
-                            <a href="./sendmessage.php">Send a message</a>
+                            <a href="./sendmessage.php?userid=<?php echo $_GET['userid']; ?>">Send a message</a>
                         </td>
                     </tr>
                 </table>
