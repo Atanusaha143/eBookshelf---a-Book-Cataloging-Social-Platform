@@ -43,6 +43,8 @@
                 </option>
             </select>
             <br><br>
+            <input type='radio' name='searchopt' value='id'>
+            <input type='radio' name='searchopt' value='name'>
             <input type='text' name='search' placeholder="Type a name to search here">
             <br><br>
             <input type='submit' value='Search'>
