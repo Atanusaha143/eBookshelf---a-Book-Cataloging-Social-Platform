@@ -28,6 +28,7 @@
     <div width='100px'>
         <center>
             <h3>Password changed successfully!</h3>
+            <a href="./dashboard.php">Go Back</a>
         </center>
     </div>
     <?php include('../footer.php'); ?>

@@ -5,11 +5,6 @@
         //continue
         $dataString = file_get_contents('../../model/admin.json');
         $dataJSON = json_decode($dataString, true);
-        // foreach($dataJSON as $values)
-        // {
-        //     print($values['fullname']);
-        // }
-        
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -28,6 +23,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href='../../images/assets/icon.png'>
     <title>Viewing All Users</title>
 </head>
 <body bgcolor="#c5fcf7">
