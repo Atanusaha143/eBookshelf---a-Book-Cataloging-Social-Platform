@@ -43,7 +43,7 @@
         </tr>
         <tr>
             <td>
-                <table>
+                <table align="center">
                     <?php
                         foreach($dataJSON as $values)
                         {

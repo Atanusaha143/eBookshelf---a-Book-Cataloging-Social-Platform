@@ -4,3 +4,4 @@
         echo "one or more of the fields is empty!";
         return;
     }
+?>

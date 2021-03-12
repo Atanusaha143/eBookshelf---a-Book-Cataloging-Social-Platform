@@ -94,6 +94,11 @@
                             <?php echo $_GET['regdate']; ?>
                         </td>
                     </tr>
+                    <tr>
+                        <td colspan="3" align="center">
+                            <a href="./sendmessage.php">Send a message</a>
+                        </td>
+                    </tr>
                 </table>
                 <br>
             </td>
