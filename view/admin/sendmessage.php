@@ -29,6 +29,30 @@
     <?php include('./adminheader.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
+        <table border="1px solid black" width='80%'>
+            <?php 
+                $dataString = file_get_contents('../../model/messages.json');
+                $dataJSON = json_decode($dataString, true);
+                foreach($dataJSON as $message)
+                {
+                    echo
+                    "<tr>
+                        <td>
+                            ".$message['from']."
+                            <br>
+                            ".$message['time']."
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan='2'>
+                            ".$message['content']."
+                        </td>
+                    </tr>";
+                }
+            ?>
+        </table>
+    </center>
+    <center>
         <h3>Send a message to </h3>
         <form method='POST' action='#'>
             <textarea name='message'>Write your message here</textarea><br>
