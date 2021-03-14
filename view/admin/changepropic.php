@@ -39,16 +39,16 @@
                 </ul>
             </td>
             <td>
-                <form>
+                <form action="../../controller/propicvalidate.php" method="POST" enctype="multipart/form-data">
                     <table align="center" border="1px solid black">
                         <tr>
                             <td align="center">
-                                <img src= '<?php echo "../../images/profile/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                                <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input type='file'/>
+                                <input type='file' name='propic'/>
                             </td>
                         </tr>
                         <tr>

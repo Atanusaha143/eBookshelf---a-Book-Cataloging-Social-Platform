@@ -9,5 +9,13 @@
         {
             header('location: ../../view/admin/addadmin.php');
         }
+        else if($_GET['type'] == 'ruser')
+        {
+            header('location: ../../view/admin/addruser.php');
+        }
+        else if($_GET['type'] == 'bpage')
+        {
+            header('location: ../../view/admin/addbpage.php');
+        }
     }
 ?>

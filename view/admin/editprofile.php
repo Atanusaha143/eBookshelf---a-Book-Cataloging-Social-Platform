@@ -39,7 +39,7 @@
                 </ul>
             </td>
             <td>
-                <form>
+                <form action="../../controller/editprofilevalidate.php" method="POST">
                     <table align="center" border="1px solid black">
                         <tr>
                             <td align="right">
