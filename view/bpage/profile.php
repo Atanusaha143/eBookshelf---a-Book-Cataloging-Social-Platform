@@ -25,7 +25,7 @@
     <title><?php echo $_SESSION['fullname']; ?></title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./bpageheader.php'); ?>
+    <?php include('../bpageheader.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
         <tr>
@@ -49,7 +49,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                            <img src= '<?php echo "../../images/profile/bpage/".$_SESSION['id'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>
@@ -74,14 +74,6 @@
                         </td>
                         <td>
                             <?php echo $_SESSION['username']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Date of Birth:</b>
-                        </td>
-                        <td>
-                            <?php echo $_SESSION['dateOfBirth']; ?>
                         </td>
                     </tr>
                     <tr>
