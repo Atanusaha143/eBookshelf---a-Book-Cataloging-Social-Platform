@@ -24,7 +24,7 @@
     <title>Add User</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('../header.php'); ?>
+    <?php include('./header.php'); ?>
     <div width='100px'>
         <center>
             <form action="../../controller/changepassword.php" method='POST'>

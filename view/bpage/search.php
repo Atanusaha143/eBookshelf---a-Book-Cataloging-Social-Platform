@@ -23,7 +23,7 @@
     <title>Search for an Item</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('../bpageheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
