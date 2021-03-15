@@ -6,6 +6,4 @@
             </td>
         </tr>
     </table>
-    
-    
 </fieldset>

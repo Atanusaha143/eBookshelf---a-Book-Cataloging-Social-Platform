@@ -46,7 +46,27 @@
         }
         else if($_SESSION['type'] == 'bpage')
         {
+<<<<<<< HEAD
             echo "Business page logged in!";
+=======
+            //echo "Business page logged in!";
+            $dataString = file_get_contents('../model/bpage.json');
+            $dataJSON = json_decode($dataString, true);
+            print_r($dataJSON);
+            foreach($dataJSON as $user)
+            {
+                if($_SESSION['id'] == $user['id'])
+                {
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['fullname'] = $user['fullname'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['phone'] = $user['phone'];
+                    $_SESSION['regdate'] = $user['regdate'];
+                    header('location: ../view/bpage/dashboard.php');
+                }
+            }
+>>>>>>> business_page_module
         }
     }
     else
