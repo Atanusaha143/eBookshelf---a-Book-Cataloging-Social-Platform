@@ -16,12 +16,16 @@
 				<a href="index.php"> <img src="resources/logo.png" width="100%" height="100"> </a>
 			</td>
 			<td align="right" colspan="2">
-				<form method="POST" action="controller/UserLogCheck.php">
+				<br>
+				<fieldset style="width: 70%">
+					<form method="POST" action="controller/UserLogCheck.php">
 					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
 					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
-					<input type="checkbox" name="rememberMe"> Remember Me &nbsp &nbsp
+					<input type="checkbox" name="rememberMe"> Remember Me &nbsp | &nbsp
 					<input type="submit" name="login" value="Login"> &nbsp &nbsp
-				</form> 
+				</form>
+				</fieldset> 
+				<br> <a href="view/UserForgotPassowrd.php">Forgot Password? </a> &nbsp &nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
