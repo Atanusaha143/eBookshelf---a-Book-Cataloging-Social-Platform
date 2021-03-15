@@ -25,7 +25,7 @@
         }
         else if($_SESSION['type'] == 'ruser')
         {
-            $dataString = file_get_contents('../model/AllUserDetails.json');
+            $dataString = file_get_contents('../model/ruser.json');
             $dataJSON = json_decode($dataString, true);
             print_r($dataJSON);
             foreach($dataJSON as $user)
@@ -34,7 +34,7 @@
                 {
                     $_SESSION['id'] = $user['id'];
                     $_SESSION['username'] = $user['username'];
-                    $_SESSION['fullname'] = $user['fullname'];
+                    $_SESSION['Name'] = $user['name'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['phone'] = $user['phone'];
                     $_SESSION['regdate'] = $user['regdate'];

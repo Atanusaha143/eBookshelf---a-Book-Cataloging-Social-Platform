@@ -25,5 +25,14 @@
         "email":"reiner@gmail.com",
         "gender":"Male",
         "phoneNumber":"01777777777"
+    },
+    {
+        "id":"u-1002",
+        "name":"Atanu",
+        "username":"atanusaha143",
+        "password":"12345678@",
+        "email":"atanu.saha415@gmail.com",
+        "gender":"Male",
+        "phoneNumber":"01777777777"
     }
 ]

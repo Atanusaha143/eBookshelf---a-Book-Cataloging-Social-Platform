@@ -13,7 +13,7 @@
 	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"  width="100%" height="150"> </a>
+				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left"  width="100%" height="150"> </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout </a>
 				&nbsp
@@ -32,8 +32,8 @@
 			<td colspan="2">
 				<?php
 
-					$post_file = fopen('../model/Posts.json', 'r');
-					$post_data = fread($post_file, filesize('../model/Posts.json'));
+					$post_file = fopen('../../model/Posts.json', 'r');
+					$post_data = fread($post_file, filesize('../../model/Posts.json'));
 					$post_info = json_decode($post_data, true);
 					echo "<br>";
 					echo "<center>";
@@ -63,15 +63,15 @@
 					}
 
 
-					$all_files = scandir('../model/');
+					$all_files = scandir('../../model/');
 					$need_file = $_SESSION['Name'].'AllPost.json';
 
 					foreach ($all_files as $file)
 					{
-						if(strstr($file, $need_file) && filesize('../model/'.$need_file)>0)
+						if(strstr($file, $need_file) && filesize('../../model/'.$need_file)>0)
 						{
-							$activity_file = fopen('../model/'.$need_file, 'r');
-							$activity_data = fread($activity_file, filesize('../model/'.$need_file));
+							$activity_file = fopen('../../model/'.$need_file, 'r');
+							$activity_data = fread($activity_file, filesize('../../model/'.$need_file));
 							$activity_filter = explode("\n", $activity_data);
 							for($i=0; $i<count($activity_filter)-1; $i++) 
 							{
