@@ -13,7 +13,7 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
 				<a href="UserHome.php"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout</a>
@@ -43,10 +43,10 @@
 							fclose($book_data);
 						}
 					}
-					if(filesize("../model/".$_SESSION['Name']."Bookshelf".".json")>0)
+					if(filesize("../../model/".$_SESSION['Name']."Bookshelf".".json")>0)
 					{
-						$book_file = fopen("../model/".$_SESSION['Name']."Bookshelf".".json", 'r');
-						$book_data = fread($book_file, filesize("../model/".$_SESSION['Name']."Bookshelf".".json"));
+						$book_file = fopen("../../model/".$_SESSION['Name']."Bookshelf".".json", 'r');
+						$book_data = fread($book_file, filesize("../../model/".$_SESSION['Name']."Bookshelf".".json"));
 						$book_filter = explode("\n", $book_data);
 						for($i=0; $i<count($book_filter); $i++) 
 						{

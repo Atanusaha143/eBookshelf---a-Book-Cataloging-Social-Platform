@@ -33,10 +33,11 @@
                 if($_SESSION['id'] == $user['id'])
                 {
                     $_SESSION['id'] = $user['id'];
-                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['UserName'] = $user['username'];
                     $_SESSION['Name'] = $user['name'];
-                    $_SESSION['email'] = $user['email'];
-                    $_SESSION['phone'] = $user['phone'];
+                    $_SESSION['Email'] = $user['email'];
+                    $_SESSION['PhoneNumber'] = $user['phoneNumber'];
+                    $_SESSION['Gender'] = $user['gender'];
                     $_SESSION['regdate'] = $user['regdate'];
                     header('location: ../view/ruser/UserHome.php');
                 }
