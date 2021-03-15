@@ -27,7 +27,7 @@
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-        <form method="GET" action="../../controller/admin/searchprocess.php">
+        <form method="GET" action="../../controller/bpage/searchprocess.php">
             <select name='type'>
                 <option value='ruser'>
                     Regular User
