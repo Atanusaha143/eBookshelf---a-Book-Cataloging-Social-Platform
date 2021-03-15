@@ -1,0 +1,16 @@
+[
+    {
+        "id":"m-1001",
+        "content":"Hello! How have you been?",
+        "to":"a-1002",
+        "from":"a-1001",
+        "time":"2021-03-01:05:04:21"
+    },
+    {
+        "id":"m-1002",
+        "content":"I am well, what about you?",
+        "to":"a-1001",
+        "from":"a-1002",
+        "time":"2021-03-01:05:10:23"
+    }
+]
