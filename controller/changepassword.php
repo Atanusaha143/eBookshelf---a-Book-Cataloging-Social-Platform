@@ -26,11 +26,7 @@
         else
         {
             echo "Password validated";
-<<<<<<< HEAD
-            header('location: ../view/admin/passchanged.php');
-=======
             header('location: ./redirect.php');
->>>>>>> business_page_module
         }
     }
 ?>
