@@ -46,9 +46,6 @@
         }
         else if($_SESSION['type'] == 'bpage')
         {
-<<<<<<< HEAD
-            echo "Business page logged in!";
-=======
             //echo "Business page logged in!";
             $dataString = file_get_contents('../model/bpage.json');
             $dataJSON = json_decode($dataString, true);
@@ -66,7 +63,6 @@
                     header('location: ../view/bpage/dashboard.php');
                 }
             }
->>>>>>> business_page_module
         }
     }
     else
