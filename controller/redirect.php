@@ -25,9 +25,9 @@
         }
         else if($_SESSION['type'] == 'ruser')
         {
-            /*$dataString = file_get_contents('../model/admin.json');
+            $dataString = file_get_contents('../model/AllUserDetails.json');
             $dataJSON = json_decode($dataString, true);
-            
+            print_r($dataJSON);
             foreach($dataJSON as $user)
             {
                 if($_SESSION['id'] == $user['id'])
@@ -36,13 +36,11 @@
                     $_SESSION['username'] = $user['username'];
                     $_SESSION['fullname'] = $user['fullname'];
                     $_SESSION['email'] = $user['email'];
-                    $_SESSION['dateOfBirth'] = $user['dateOfBirth'];
                     $_SESSION['phone'] = $user['phone'];
                     $_SESSION['regdate'] = $user['regdate'];
-                    header('location: ../view/admin/dashboard.php');
+                    header('location: ../view/ruser/UserHome.php');
                 }
-            }*/
-            echo "Regular user logged in!";
+            }
         }
         else if($_SESSION['type'] == 'bpage')
         {
