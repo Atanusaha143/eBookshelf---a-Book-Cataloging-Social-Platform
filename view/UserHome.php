@@ -10,22 +10,48 @@
 	$title = "Home";
 	include ('header.php');
 ?>
+
+<?php
+	if(isset($_POST['go']))
+	{
+		if($_POST['search'] == "")
+		{
+			echo "Please write something!";
+		}
+		else
+		{
+			echo "Searched!";
+		}
+	}
+?>
 	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"  width="100%" height="150"> </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
 		<tr>
 			<td height="50px" colspan="2">
-				  <a href="UserProfile.php" style="margin-left: 30em"> Profile </a> &nbsp &nbsp &nbsp |
-				&nbsp &nbsp &nbsp <a href="UserBookList.php"> Bookshelf </a> &nbsp &nbsp &nbsp |
-				&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
-				&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
-				&nbsp &nbsp &nbsp <a href="UserContact.php"> Contact </a> &nbsp &nbsp &nbsp 
+				<fieldset>
+					<a href="UserProfile.php" style="margin-left: 15em"> Profile </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserBookList.php"> Bookshelf </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserAddReview.php"> Add Review </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserAddRating.php"> Add Rating </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserSendMessage.php"> Send Message </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserContact.php"> Contact </a> &nbsp &nbsp &nbsp 
+				</fieldset>
+				<br> <br>
+				<form method="post" action="">
+					<label style="margin-left: 37em">  </label>
+					<input type="Search" name="search" style="width: 20%" placeholder=" Search here...">
+					<input type="submit" name="go" value="Go">
+				</form>
 			</td>
 		</tr>
 		<tr height = "200px">
