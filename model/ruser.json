@@ -3,7 +3,7 @@
         "id":"u-1000",
         "name":"Atanu",
         "username":"atanusaha143",
-        "pass":"12345678@",
+        "password":"12345678@",
         "email":"atanu.saha415@gmail.com",
         "gender":"Male",
         "phoneNumber":"01828675754"
@@ -12,7 +12,7 @@
         "id":"u-1001",
         "name":"Jack",
         "username":"jack123",
-        "pass":"12345678@",
+        "password":"12345678@",
         "email":"jack@gmail.com",
         "gender":"Male",
         "phoneNumber":"01777777777"
@@ -21,26 +21,8 @@
         "id":"u-1003",
         "name":"Brian",
         "username":"brian123",
-        "pass":"12345678@",
+        "password":"12345678@",
         "email":"reiner@gmail.com",
-        "gender":"Male",
-        "phoneNumber":"01777777777"
-    },
-    {
-        "id":"u-1004",
-        "name":"Reiner",
-        "username":"reiner123",
-        "pass":"12345678@",
-        "email":"reiner@gmail.com",
-        "gender":"Male",
-        "phoneNumber":"01777777777"
-    },
-    {
-        "id":"u-1005",
-        "name":"Snigdho",
-        "username":"snigdho",
-        "pass":"12345678@",
-        "email":"snigdho@gmail.com",
         "gender":"Male",
         "phoneNumber":"01777777777"
     }

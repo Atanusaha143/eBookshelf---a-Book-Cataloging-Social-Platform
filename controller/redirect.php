@@ -67,7 +67,7 @@
     }
     else
     {
-        header('location: ../view/login.php');
+        header('location: ../view/home.php');
     }
     //print_r($_SESSION);
 ?>

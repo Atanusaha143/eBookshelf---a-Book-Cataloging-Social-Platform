@@ -1,1 +1,57 @@
-[{"id":"a-1001","fullname":"Snigdho Dip Howlader","email":"snigdho.howlader@gmail.com","phone":"+8801712345678","dateOfBirth":"06-11-1996","username":"snigdho123","password":"123abc@A","regdate":"01-01-2021","type":"admin"},{"id":"a-1002","fullname":"Atanu Saha","email":"atanu.saha415@gmail.com","phone":"+8801712345678","dateOfBirth":"01-01-1998","username":"atanu123","password":"1234","regdate":"01-01-2021","type":"admin"},{"id":"a-1003","fullname":"Md. Shamil Hossain","email":"alsanysamil@gmail.com","phone":"+8801712345678","dateOfBirth":"22-11-1998","username":"samil123","password":"1234","regdate":"01-01-2021","type":"admin"},{"id":"a-1004","fullname":"Abir-Al-Arafat","email":"abirantor@gmail.com","phone":"+881771234567","dateOfBirth":"2021-03-03","username":"abir123","password":"abc123@A","regdate":"2021-03-11","type":"admin"},{"id":"a-1005","fullname":"Chinmoy Mondol","email":"chinmoysaha@gmail.com","phone":"+8801696969696","dateOfBirth":"2021-03-19","username":"csaha123","password":"abc123@B","regdate":"2021-03-11","type":"admin"}]
+[
+    {
+        "id":"a-1001",
+        "fullname":"Snigdho Dip Howlader",
+        "email":"snigdho.howlader@gmail.com",
+        "phone":"+8801712345678",
+        "dateOfBirth":"06-11-1996",
+        "username":"snigdho123",
+        "password":"123abc@A",
+        "regdate":"01-01-2021",
+        "type":"admin"
+    },
+    {
+        "id":"a-1002",
+        "fullname":"Atanu Saha",
+        "email":"atanu.saha415@gmail.com",
+        "phone":"+8801712345678",
+        "dateOfBirth":"01-01-1998",
+        "username":"atanu123",
+        "password":"1234",
+        "regdate":"01-01-2021",
+        "type":"admin"
+    },
+    {
+        "id":"a-1003",
+        "fullname":"Md. Shamil Hossain",
+        "email":"alsanysamil@gmail.com",
+        "phone":"+8801712345678",
+        "dateOfBirth":"22-11-1998",
+        "username":"samil123",
+        "password":"1234",
+        "regdate":"01-01-2021",
+        "type":"admin"
+    },
+    {
+        "id":"a-1004",
+        "fullname":"Abir-Al-Arafat",
+        "email":"abirantor@gmail.com",
+        "phone":"+881771234567",
+        "dateOfBirth":"2021-03-03",
+        "username":"abir123",
+        "password":"abc123@A",
+        "regdate":"2021-03-11",
+        "type":"admin"
+    },
+    {
+        "id":"a-1005",
+        "fullname":"Chinmoy Mondol",
+        "email":"chinmoysaha@gmail.com",
+        "phone":"+8801696969696",
+        "dateOfBirth":"2021-03-19",
+        "username":"csaha123",
+        "password":"abc123@B",
+        "regdate":"2021-03-11",
+        "type":"admin"
+    }
+]

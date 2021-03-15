@@ -17,6 +17,7 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
+    <?php include('./homenav.php'); ?>
     <div>
         <form action='../controller/logincheck.php' method="POST">
             <fieldset>
