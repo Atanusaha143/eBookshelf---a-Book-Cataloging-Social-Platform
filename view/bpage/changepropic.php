@@ -35,7 +35,7 @@
                 <ul>
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass'>Change Password</a></li>
+                    <li><a href='./changepass.php'>Change Password</a></li>
                 </ul>
             </td>
             <td>
