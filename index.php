@@ -3,17 +3,25 @@
 	include ('view/header.php');
 ?>
 
-	<table border="0" width="100%" cellspacing="0">
+<?php
+	if(isset($_POST['rememberMe']) || isset($_COOKIE['checkLogin']))
+	{
+		header('location: controller/UserLogCookieCheck.php');
+	}
+?>
+
+	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="left">
 				<a href="index.php"> <img src="resources/logo.png" width="100%" height="100"> </a>
 			</td>
 			<td align="right" colspan="2">
 				<form method="POST" action="controller/UserLogCheck.php">
-				Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
-				Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
-				<input type="submit" name="login" value="Login"> &nbsp &nbsp
-			</form> 
+					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
+					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
+					<input type="checkbox" name="rememberMe"> Remember Me &nbsp &nbsp
+					<input type="submit" name="login" value="Login"> &nbsp &nbsp
+				</form> 
 			</td>
 		</tr>
 		<tr height = "200px">
@@ -25,7 +33,7 @@
 			<td align="center">
 				<br>
 					<form action="controller/UserRegCheck.php" method="POST">
-						<fieldset style="width:70px">
+						<fieldset style="width:100px">
 							<legend> <b> Registration </b> </legend>
 							<table>
 								<tr>
