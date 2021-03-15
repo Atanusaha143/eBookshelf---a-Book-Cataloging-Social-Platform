@@ -37,7 +37,14 @@
 								&nbsp &nbsp &nbsp &nbsp &nbsp
 							</td>
 							<td>
-								<img src="user.png" alt="No Profile Picture" width="150" height="100">
+								<?php 
+									if(isset($_SESSION['profilePic']))
+									{
+										$path = '../resources/'.$_SESSION['profilePic']; 
+										echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
+									}
+									else echo "	&nbsp &nbsp &nbsp &nbsp No Profile Picture";
+								?>
 							</td>
 						</tr>
 						<tr> <td colspan="2"> <hr> </td> </tr>
