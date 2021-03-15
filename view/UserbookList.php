@@ -43,6 +43,7 @@
 							fclose($book_data);
 						}
 					}
+					fopen("../model/".$_SESSION['Name']."Bookshelf".".json", 'a');
 					if(filesize("../model/".$_SESSION['Name']."Bookshelf".".json")>0)
 					{
 						$book_file = fopen("../model/".$_SESSION['Name']."Bookshelf".".json", 'r');
