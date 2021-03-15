@@ -29,6 +29,11 @@
 						$_SESSION['Email'] = $userInfo['email'];
 						$_SESSION['Gender'] = $userInfo['gender'];
 						$_SESSION['PhoneNumber'] = $userInfo['phoneNumber'];
+						if(isset($_POST['rememberMe']))
+						{
+							setcookie('checkLogin', true, time()+86400, "/");
+							setcookie('username', $userInfo['user'], time()+86400, "/");
+						}
 						header('location: ../view/UserHome.php');
 					}
 					else
