@@ -61,6 +61,7 @@
 									<option value="Graphic novel"> Graphic novel </option> Graphic novel
 									<option value="Historical fiction"> Historical fiction </option> Historical fiction
 									<option value="Horror"> Horror </option> Horror
+									<option value="Motivational"> Motivational </option> Motivational
 									<option value="Mystery"> Mystery </option> Mystery'
 									<option value="Paranormal romance"> Paranormal romance </option> Paranormal romance
 									<option value="Picture book"> Picture book </option> Picture book
