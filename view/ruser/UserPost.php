@@ -13,7 +13,7 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
 				<a href="UserHome.php"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php"> Logout</a>
@@ -61,6 +61,7 @@
 									<option value="Graphic novel"> Graphic novel </option> Graphic novel
 									<option value="Historical fiction"> Historical fiction </option> Historical fiction
 									<option value="Horror"> Horror </option> Horror
+									<option value="Motivational"> Motivational </option> Motivational
 									<option value="Mystery"> Mystery </option> Mystery'
 									<option value="Paranormal romance"> Paranormal romance </option> Paranormal romance
 									<option value="Picture book"> Picture book </option> Picture book

@@ -16,11 +16,22 @@
 	{
 		if($_POST['message'] != "")
 		{
-			echo "Your message has been sent to the administration!";
+			echo "Your message has been sent to the desired person!";
 		}
 		else
 		{
 			echo "Please write a message";
+		}
+	}
+	if(isset($_POST['search']))
+	{
+		if($_POST['searchBox'] == "")
+		{
+			echo "Please write someone name into the search box!";
+		}
+		else
+		{
+			echo "Searched";
 		}
 	}
 ?>
@@ -39,19 +50,23 @@
 				<br>
 				<form method="POST" action="">
 					<fieldset style="width: 50%">
-					<legend> <b> Contact </b> </legend>
+					<legend> <b> Send Message </b> </legend>
 					<table>
-							<tr>
-								<td>
-									Message
-								</td>
-								<td>
-										<input type="text" name="message" style="height: 100px;">
-								</td>
-								<td>
-									&nbsp <input type="submit" name="send" value="Send">
-								</td>
-							</tr>
+						<tr>
+							<td>
+								<label for="search" style="margin-left: 5em"></label>
+								<input id="search" type="search" style="width: 55%" name="searchBox" placeholder=" search someone...">
+								<input type="submit" name="search" value="Search">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<br>
+								<label for="message" style="margin-left: 1em"> Write Message </label>
+									<input  id="message" type="text" name="message" style="height: 100px;">
+								&nbsp <input id="message" type="submit" name="send" value="Send">
+							</td>
+						</tr>
 					</table>
 					</fieldset>
 				</form>

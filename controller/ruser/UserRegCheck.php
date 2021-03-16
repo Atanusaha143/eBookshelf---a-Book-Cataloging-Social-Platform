@@ -84,6 +84,8 @@
 				$_SESSION['Email'] = $userInfo['email'];
 				$_SESSION['Gender'] = $userInfo['gender'];
 				$_SESSION['PhoneNumber'] = $userInfo['phoneNumber'];
+				setcookie('checkLogin', true, time()+86400, "/");
+				setcookie('username', $userInfo['user'], time()+86400, "/");
 				header('location: ../view/UserHome.php');
 			}
 		}
