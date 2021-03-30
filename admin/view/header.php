@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title><?=$title?></title>
-	<link rel="stylesheet" type="text/css" href="../resources/CSS/style.css">
-</head>
-<body style="background-color:#c5fcf7;">
+<fieldset>
+    <table>
+        <tr>
+            <td>
+            <a href="../controller/redirect.php"><img src="../images/assets/logo.png" alt="Image not available" height="100"></a>
+            </td>
+        </tr>
+    </table>
+</fieldset>
