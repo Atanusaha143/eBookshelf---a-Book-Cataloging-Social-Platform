@@ -22,10 +22,11 @@
 					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
 					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
 					<input type="checkbox" name="rememberMe"> Remember Me &nbsp | &nbsp
-					<input type="submit" name="login" value="Login"> &nbsp &nbsp
+					<input type="submit" name="login" value="Login" class="submitBtn"> &nbsp &nbsp
 				</form>
 				</fieldset> 
-				<br> <a href="view/UserForgotPassowrd.php">Forgot Password? </a> &nbsp &nbsp
+				<br> <a href="">Login as Business User </a> &nbsp &nbsp
+				<br> <a href="view/UserForgotPassowrd.php" class="linkBtn">Forgot Password? </a> &nbsp &nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
@@ -88,7 +89,7 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="submit" name="registration" value="Create Account">
+										<input type="submit" name="registration" value="Create Account" class="submitBtn">
 									</td>
 								</tr>
 							</table>
