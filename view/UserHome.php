@@ -29,28 +29,32 @@
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"  width="100%" height="150"> </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout </a>
+				<a href="UserLogout.php" class="linkBtn"> Logout </a>
 				<br>
 				&nbsp
 			</td>
 		</tr>
-		<tr>
+		<tr class="sticky">
 			<td height="50px" colspan="2">
 				<fieldset>
-					<a href="UserProfile.php" style="margin-left: 15em"> Profile </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserBookList.php"> Bookshelf </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserPost.php"> Create Post </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserAddReview.php"> Add Review </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserAddRating.php"> Add Rating </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserSendMessage.php"> Send Message </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserActivities.php"> Check Activities </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserContact.php"> Contact </a> &nbsp &nbsp &nbsp 
+					<a href="UserProfile.php" style="margin-left: 15em" class="linkBtn"> Profile </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserBookList.php" class="linkBtn"> Bookshelf </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserPost.php" class="linkBtn"> Create Post </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserAddReview.php" class="linkBtn"> Add Review </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserAddRating.php" class="linkBtn"> Add Rating </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserSendMessage.php" class="linkBtn"> Send Message </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserActivities.php" class="linkBtn"> Check Activities </a> &nbsp &nbsp &nbsp |
+					&nbsp &nbsp &nbsp <a href="UserContact.php" class="linkBtn"> Contact </a> &nbsp &nbsp &nbsp 
 				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td>
 				<br> <br>
 				<form method="post" action="">
 					<label style="margin-left: 37em">  </label>
 					<input type="Search" name="search" style="width: 20%" placeholder=" Search here...">
-					<input type="submit" name="go" value="Go">
+					<input type="submit" name="go" value="Go" class="submitBtn">
 				</form>
 			</td>
 		</tr>
@@ -63,7 +67,7 @@
 					$post_info = json_decode($post_data, true);
 					echo "<br>";
 					echo "<center>";
-					echo " <b> <u> Public Posts </u> </b>";
+					echo " <b class = 'title'> Public Posts </b>";
 					echo "</center>";
 					echo "<br>";
 					for ($i=0; $i<count($post_info); $i++) 
