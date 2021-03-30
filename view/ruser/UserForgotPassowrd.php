@@ -37,7 +37,7 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="../"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="../"> Go Back </a>
+				<a href="../" class="linkBtn"> Go Back </a>
 				&nbsp
 			</td>
 		</tr>

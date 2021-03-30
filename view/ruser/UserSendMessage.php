@@ -38,10 +38,10 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php"> Go Back </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php" class="linkBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -54,9 +54,9 @@
 					<table>
 						<tr>
 							<td>
-								<label for="search" style="margin-left: 5em"></label>
+								<label for="search" style="margin-left: 4em"></label>
 								<input id="search" type="search" style="width: 55%" name="searchBox" placeholder=" search someone...">
-								<input type="submit" name="search" value="Search">
+								<input type="submit" name="search" value="Search" class="submitBtn">
 							</td>
 						</tr>
 						<tr>
@@ -64,7 +64,7 @@
 								<br>
 								<label for="message" style="margin-left: 1em"> Write Message </label>
 									<input  id="message" type="text" name="message" style="height: 100px;">
-								&nbsp <input id="message" type="submit" name="send" value="Send">
+								&nbsp <input id="message" type="submit" name="send" value="Send" class="submitBtn">
 							</td>
 						</tr>
 					</table>

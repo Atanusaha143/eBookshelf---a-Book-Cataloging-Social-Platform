@@ -13,21 +13,19 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php"> Go Back </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php" class="linkBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<h3> 
-						<u>
-							<?php echo $_SESSION['Name']; ?>'s All Activity List
-						</u> 
-					</h3>
+					<div class="title">
+						<?php echo $_SESSION['Name']; ?>'s All Activity List
+					</div>
 					<?php 
 
 						$all_files = scandir('../../model/');

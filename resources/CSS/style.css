@@ -1,0 +1,29 @@
+.sticky
+{
+	position: sticky;
+	top: 0;
+	background-color: #c5fcf7;
+}
+
+.linkBtn
+{
+	text-decoration: none;
+}
+
+.submitBtn
+{
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #008080;
+	color: white;
+	padding: 3px 15px;
+}
+
+.title
+{
+	border-style: groove;
+	border-radius: 15px;
+	padding: 4px 500px;
+	font-family: cursive;
+}

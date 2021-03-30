@@ -27,10 +27,10 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php"> Go Back </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php" class="linkBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -49,7 +49,7 @@
 										<input type="text" name="message" style="height: 100px;">
 								</td>
 								<td>
-									&nbsp <input type="submit" name="send" value="Send">
+									&nbsp <input type="submit" name="send" value="Send" class="submitBtn">
 								</td>
 							</tr>
 					</table>

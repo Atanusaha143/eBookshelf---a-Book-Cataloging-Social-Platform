@@ -13,10 +13,10 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserBookList.php"> Go Back </a>
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserBookList.php" class="linkBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -45,7 +45,7 @@
 						<input type="checkbox" name="book[]" value="<?php echo $post_info[9]['bookName']; ?>"> <?php echo $post_info[9]['bookName']; ?>
 						<br>
 						<br>
-						<input type="submit" name="add" value="Add"/>
+						<input type="submit" name="add" value="Add" class="submitBtn" />
 					</form>
 				<br> 
 			</td>

@@ -13,10 +13,15 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
+<<<<<<< HEAD:view/ruser/UserProfile.php
 				<a href="UserHome.php"> <img src="../../resources/logo.png" align="left" width="100%" height="150"> </a>
 				<a href="UserHome.php"> Go Back </a>
+=======
+				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php" class="linkBtn"> Go Back </a>
+>>>>>>> regular_user_module:view/UserProfile.php
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout </a>
+				<a href="UserLogout.php" class="linkBtn"> Logout </a>
 				&nbsp
 			</td>
 		</tr>
@@ -91,7 +96,7 @@
 						<tr> <td colspan="4"> <hr> </td> </tr>
 						<tr>
 							<td> 
-								<center> <a href="UserEdit.php"> Edit Profile </a> </center>
+								<center> <a href="UserEdit.php" class="linkBtn"> Edit Profile </a> </center>
 							</td>
 						</tr>
 					</table>
