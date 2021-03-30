@@ -14,9 +14,9 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php"> Go Back </a>
+				<a href="UserHome.php" class="linkBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn"> Logout</a>
 				&nbsp
 			</td>
 		</tr>
@@ -86,7 +86,7 @@
 							</tr>
 						</table>
 						<center>
-							<input type="submit" name="post" value="Post" style="margin-left: 5em">
+							<input type="submit" name="post" value="Post" style="margin-left: 5em" class="submitBtn">
 						</center>
 					</fieldset>
 					</form>
