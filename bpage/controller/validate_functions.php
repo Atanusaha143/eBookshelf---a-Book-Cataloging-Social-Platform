@@ -1,6 +1,4 @@
 <?php
-    //Return false in case conditions are met. 
-    //Return true in case they are not met. 
     function nameValidation($fullname)
     {
         for($i = 0 ; $i<strlen($fullname) ; $i=$i+1)
