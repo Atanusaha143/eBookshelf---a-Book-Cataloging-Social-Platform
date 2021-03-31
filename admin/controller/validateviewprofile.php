@@ -4,7 +4,7 @@
         $userid = $_GET['userid'];
         if($userid[0] == 'a')
         {
-            $dataString = file_get_contents('../../model/admin.json');
+            $dataString = file_get_contents('../model/admin.json');
             $dataJSON = json_decode($dataString, true);
 
             foreach($dataJSON as $user)

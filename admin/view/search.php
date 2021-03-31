@@ -6,12 +6,12 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
+        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         return;
     }
     else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -23,11 +23,11 @@
     <title>Search for an Item</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-        <form method="GET" action="../../controller/admin/searchprocess.php">
+        <form method="GET" action="../controller/searchprocess.php">
             <select name='type'>
                 <option value='admin'>
                     Administrator
@@ -52,5 +52,6 @@
             <input type='submit' value='Search'>
         </form>
     </center>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

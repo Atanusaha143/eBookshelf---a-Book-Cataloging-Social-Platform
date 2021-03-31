@@ -1,7 +1,5 @@
 <?php
     session_start();
-    //echo $_COOKIE['flag'];
-    //print_r($_SESSION);
     if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         //continue

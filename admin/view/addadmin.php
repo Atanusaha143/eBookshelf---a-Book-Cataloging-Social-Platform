@@ -6,12 +6,12 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
+        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         return;
     }
     else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -24,9 +24,9 @@
     <title>Add User</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <div width='100px'>
-        <form action='../../controller/admin/addadmincheck.php' method="POST" enctype="multipart/form-data">
+        <form action='../controller/admin/addadmincheck.php' method="POST" enctype="multipart/form-data">
             <fieldset>
                 <legend>
                     <b>ADD ADMIN</b>
@@ -60,10 +60,6 @@
                         <td align="right">Confirm Password:</td>
                         <td><input type='password' name='confirmpassword'/></td>
                     </tr>
-                    <!-- <tr>
-                        <td align="right">Type of User:</td>
-                        <td><input type='password' name='confirmpassword'/></td>
-                    </tr> -->
                     <tr>
                         <td colspan="2">
                             Upload Profile Picture:
@@ -88,5 +84,6 @@
             </fieldset>
         </form>
     </div>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

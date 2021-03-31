@@ -24,7 +24,7 @@
     <title>Edit Profile</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
         <tr>
@@ -87,6 +87,6 @@
             </td>
         </tr>
     </table>
-    <?php include('../footer.php'); ?>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

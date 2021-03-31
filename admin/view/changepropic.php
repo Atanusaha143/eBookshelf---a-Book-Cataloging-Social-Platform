@@ -11,7 +11,7 @@
     }
     else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
     <title>Change Photograph</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
         <tr>
@@ -39,11 +39,11 @@
                 </ul>
             </td>
             <td>
-                <form action="../../controller/propicvalidate.php" method="POST" enctype="multipart/form-data">
+                <form action="../controller/propicvalidate.php" method="POST" enctype="multipart/form-data">
                     <table align="center" border="1px solid black">
                         <tr>
                             <td align="center">
-                                <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                                <img src= '<?php echo "../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
                             </td>
                         </tr>
                         <tr>
@@ -64,6 +64,6 @@
             </td>
         </tr>
     </table>
-    <?php include('../footer.php'); ?>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

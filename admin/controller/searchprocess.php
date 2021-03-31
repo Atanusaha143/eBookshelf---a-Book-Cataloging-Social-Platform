@@ -3,7 +3,7 @@
     {
         if($_GET['type'] == 'admin')
         {
-            $dataString = file_get_contents('../../model/admin.json');
+            $dataString = file_get_contents('../model/admin.json');
             $dataJSON = json_decode($dataString,true);
             
             if($_GET['searchopt'] == 'id')
@@ -22,7 +22,7 @@
                         $_GET['type'] = $user['type'];
                     }
                 }
-                //header('location: ../../view/admin/searchresult.php');
+                header("location: ../view/searchresult.php?fullname=".$user['fullname']);
             }
             else if($_GET['searchopt'] == 'name')
             {
@@ -40,7 +40,7 @@
                         $_GET['type'] = $user['type'];
                     }
                 }
-                //header('location: ../../view/admin/searchresult.php');
+                header('location: ../view/searchresult.php');
             }
             print_r($_GET);
         }

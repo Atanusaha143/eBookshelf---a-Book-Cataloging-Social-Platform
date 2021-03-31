@@ -7,12 +7,12 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
+        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         return;
     }
     else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 
@@ -26,12 +26,12 @@
     <title>Send a message</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
         <table border="1px solid black" width='80%'>
             <?php 
-                $dataString = file_get_contents('../../model/messages.json');
+                $dataString = file_get_contents('../model/messages.json');
                 $dataJSON = json_decode($dataString, true);
                 foreach($dataJSON as $message)
                 {
@@ -59,6 +59,6 @@
             <input type="submit" value='Send'>
         </form>
     </center>
-    <?php include('../footer.php') ?>
+    <?php include('./footer.php') ?>
 </body>
 </html>

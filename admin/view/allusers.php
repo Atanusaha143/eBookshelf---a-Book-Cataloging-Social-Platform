@@ -3,7 +3,7 @@
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        $dataString = file_get_contents('../../model/admin.json');
+        $dataString = file_get_contents('../model/admin.json');
         $dataJSON = json_decode($dataString, true);
     }
     else if(!(isset($_COOKIE['flag'])))
@@ -13,7 +13,7 @@
     }
     else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 
@@ -23,11 +23,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../../images/assets/icon.png'>
+    <link rel='icon' href='../images/assets/icon.png'>
     <title>Viewing All Users</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border='1px solid black' width='100%'>
         <tr>
