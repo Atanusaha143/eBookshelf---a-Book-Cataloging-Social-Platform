@@ -49,15 +49,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-<<<<<<< HEAD
-                            <img src= '<?php echo "../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
-=======
-<<<<<<< HEAD:admin/view/profile.php
-                            <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
-=======
                             <img src= '<?php echo "../images/profile/bpage/".$_SESSION['id'].".jpeg"; ?>' height="250">
->>>>>>> business_page_module:bpage/view/profile.php
->>>>>>> main
                         </td>
                     </tr>
                     <tr>
@@ -82,14 +74,6 @@
                         </td>
                         <td>
                             <?php echo $_SESSION['username']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Date of Birth:</b>
-                        </td>
-                        <td>
-                            <?php echo $_SESSION['dateOfBirth']; ?>
                         </td>
                     </tr>
                     <tr>

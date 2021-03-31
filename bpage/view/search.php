@@ -6,12 +6,12 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
         return;
     }
     else
     {
-        header('location: ./login.php');
+        header('location: ../login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -27,19 +27,8 @@
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-<<<<<<< HEAD
         <form method="GET" action="../controller/searchprocess.php">
-=======
-<<<<<<< HEAD:admin/view/search.php
-        <form method="GET" action="../../controller/admin/searchprocess.php">
-=======
-        <form method="GET" action="../controller/searchprocess.php">
->>>>>>> business_page_module:bpage/view/search.php
->>>>>>> main
             <select name='type'>
-                <option value='admin'>
-                    Administrator
-                </option>
                 <option value='ruser'>
                     Regular User
                 </option>
