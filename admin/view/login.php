@@ -13,24 +13,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='stylesheet' href="../../assets/style.css">
     <title>eBookShelf</title>
 </head>
 <body>
     <?php include('./header.php'); ?>
-    <div>
+    <div class='login'>
         <form action='../controller/logincheck.php' method="POST">
-            <fieldset>
-                <legend>
-                    <b>LOG IN</b>
-                </legend>
+            <center>
                 <br><br><br>
                 <table align="center">
                     <tr>
-                        <td align="right">Username:</td>
+                        <td align="right"><label>Username:</label></td>
                         <td><input type='text' name='username'/></td>
                     </tr>
                     <tr>
-                        <td align="right">Password:</td>
+                        <td align="right"><label>Password:</label></td>
                         <td><input type='password' name='password'/></td>
                     </tr>
                     <tr>
@@ -44,7 +42,7 @@
                     </tr>
                 </table>
                 <br><br><br>
-            </fieldset>
+            </center>
         </form>
     </div>
     <?php include('./footer.php'); ?>

@@ -4,15 +4,9 @@
         $userid = $_GET['userid'];
         if($userid[0] == 'a')
         {
-<<<<<<< HEAD
+
             $dataString = file_get_contents('../model/admin.json');
-=======
-<<<<<<< HEAD:admin/controller/validateviewprofile.php
-            $dataString = file_get_contents('../../model/admin.json');
-=======
-            $dataString = file_get_contents('../model/bpage.json');
->>>>>>> business_page_module:bpage/controller/validateviewprofile.php
->>>>>>> main
+
             $dataJSON = json_decode($dataString, true);
 
             foreach($dataJSON as $user)

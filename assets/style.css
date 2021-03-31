@@ -1,0 +1,44 @@
+body
+{
+    background-color: rgb(164, 248, 248);
+}
+
+.login input[type=text], input[type=password]
+{
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(216, 255, 157);
+    border-radius: 10px;
+}
+
+.login input[type=submit], input[type=button]
+{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(62, 159, 255);
+    color: aliceblue;
+}
+
+.login input[type=submit]:hover, input[type=button]:hover
+{
+    background-color: rgb(62, 255, 223);
+    color: rgb(5, 6, 80);
+}
+
+.login label
+{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(69, 5, 85);
+}
+
+.footer
+{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
