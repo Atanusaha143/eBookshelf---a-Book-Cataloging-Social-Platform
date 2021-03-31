@@ -7,15 +7,15 @@
     {
         if($_GET['type'] == 'admin')
         {
-            header('location: ../../view/admin/addadmin.php');
+            header('location: ../view/addadmin.php');
         }
         else if($_GET['type'] == 'ruser')
         {
-            header('location: ../../view/admin/addruser.php');
+            header('location: ../view/addruser.php');
         }
         else if($_GET['type'] == 'bpage')
         {
-            header('location: ../../view/admin/addbpage.php');
+            header('location: ../view/addbpage.php');
         }
     }
 ?>

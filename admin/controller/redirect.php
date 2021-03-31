@@ -19,7 +19,7 @@
                     $_SESSION['dateOfBirth'] = $user['dateOfBirth'];
                     $_SESSION['phone'] = $user['phone'];
                     $_SESSION['regdate'] = $user['regdate'];
-                    header('location: ../view/admin/dashboard.php');
+                    header('location: ../view/dashboard.php');
                 }
             }
         }

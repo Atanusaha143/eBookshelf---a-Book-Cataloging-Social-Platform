@@ -5,6 +5,4 @@
     $last = sizeof($dataJSON);
     print_r(intval(substr($dataJSON[$last-1]['id'], 2))+1);
     */
-
-    
 ?>

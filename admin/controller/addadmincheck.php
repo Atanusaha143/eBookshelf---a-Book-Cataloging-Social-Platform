@@ -99,7 +99,7 @@
             }
         
             echo "New Admin added successfully!<br>";
-            echo "<a href='../../view/admin/addadmin.php'>Go Back</a>";
+            echo "<a href='../../view/addadmin.php'>Go Back</a>";
 
         }
 
