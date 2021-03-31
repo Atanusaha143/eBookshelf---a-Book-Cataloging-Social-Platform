@@ -12,10 +12,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon'  type="image/png" href='../images/assets/icon.png'>
+    <link rel='icon' href='../images/assets/icon.png'>
     <title>eBookShelf</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <div>
         <form action='../controller/logincheck.php' method="POST">
@@ -41,9 +41,6 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="2"><a href="./forgot.php">Forgot Password?</a></td>
-                    </tr>
-                    <tr>
-                        <td align="center" colspan="2"><a href="./signup.php">Sign up</a></td>
                     </tr>
                 </table>
                 <br><br><br>
