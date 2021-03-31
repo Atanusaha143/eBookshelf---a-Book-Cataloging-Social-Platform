@@ -24,7 +24,7 @@
     <title>Edit Profile</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
         <tr>
@@ -35,12 +35,12 @@
                 <ul>
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
+                    <li><a href='./changepass'>Change Password</a></li>
                 </ul>
             </td>
             <td>
-                <form action="../../controller/editprofilevalidate.php" method="POST">
-                    <table align="center" border="1px solid black">
+                <form>
+                    <table align="center">
                         <tr>
                             <td align="right">
                                 Name:

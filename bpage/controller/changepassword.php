@@ -26,7 +26,7 @@
         else
         {
             echo "Password validated";
-            header('location: ../view/admin/passchanged.php');
+            header('location: ./redirect.php');
         }
     }
 ?>

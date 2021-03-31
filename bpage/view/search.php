@@ -23,19 +23,12 @@
     <title>Search for an Item</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-<<<<<<< HEAD:admin/view/search.php
-        <form method="GET" action="../../controller/admin/searchprocess.php">
-=======
         <form method="GET" action="../controller/searchprocess.php">
->>>>>>> business_page_module:bpage/view/search.php
             <select name='type'>
-                <option value='admin'>
-                    Administrator
-                </option>
                 <option value='ruser'>
                     Regular User
                 </option>
