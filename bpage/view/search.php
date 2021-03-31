@@ -27,7 +27,7 @@
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-        <form method="GET" action="../../controller/bpage/searchprocess.php">
+        <form method="GET" action="../controller/searchprocess.php">
             <select name='type'>
                 <option value='ruser'>
                     Regular User
@@ -49,5 +49,6 @@
             <input type='submit' value='Search'>
         </form>
     </center>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

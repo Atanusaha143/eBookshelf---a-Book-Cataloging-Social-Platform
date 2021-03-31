@@ -87,7 +87,7 @@
         }
         else if($_GET['type'] == 'bpage')
         {
-            $dataString = file_get_contents('../../model/bpage.json');
+            $dataString = file_get_contents('../model/bpage.json');
             $dataJSON = json_decode($dataString,true);
             
             if($_GET['searchopt'] == 'id')
@@ -123,9 +123,8 @@
                         $_GET['type'] = $user['type'];
                     }
                 }
-                header('location: ../../view/bpage/searchresult.php?id='.$_GET['id']."&fullname=".$_GET['fullname']);
+                header('location: ../view/searchresult.php?id='.$_GET['id']."&fullname=".$_GET['fullname']);
             }
-            //print_r($_GET);
         }
     }
     else
