@@ -25,7 +25,7 @@
 					<input type="submit" name="login" value="Login" class="submitBtn"> &nbsp &nbsp
 				</form>
 				</fieldset> 
-				<br> <a href="">Login as Business User </a> &nbsp &nbsp
+				<br> <a href="./bpage/">Login as Business User </a> &nbsp &nbsp
 				<br> <a href="view/UserForgotPassowrd.php" class="linkBtn">Forgot Password? </a> &nbsp &nbsp
 			</td>
 		</tr>
