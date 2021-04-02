@@ -56,6 +56,6 @@
         </div>
     </center>
     
-    <?php include('./footer.php'); ?>
+    <?php include('../../assets/footer.php'); ?>
 </body>
 </html>
