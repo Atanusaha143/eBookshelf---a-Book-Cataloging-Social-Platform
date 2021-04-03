@@ -24,8 +24,9 @@
     <link rel='stylesheet' href="../../assets/style.css">
     <title>Add User</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
+    <?php include('./navbar.php'); ?>
     <div width='100px'>
         <center>
             <form action="../controller/typeselectcheck.php" method='GET'>
