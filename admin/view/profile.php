@@ -21,7 +21,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href="../images/assets/icon.png">
+    <link rel='stylesheet' href="../../assets/style.css">
     <title><?php echo $_SESSION['fullname']; ?></title>
 </head>
 <body bgcolor="#c5fcf7">
@@ -49,15 +50,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-<<<<<<< HEAD
                             <img src= '<?php echo "../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
-=======
-<<<<<<< HEAD:admin/view/profile.php
-                            <img src= '<?php echo "../../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
-=======
-                            <img src= '<?php echo "../images/profile/bpage/".$_SESSION['id'].".jpeg"; ?>' height="250">
->>>>>>> business_page_module:bpage/view/profile.php
->>>>>>> main
                         </td>
                     </tr>
                     <tr>

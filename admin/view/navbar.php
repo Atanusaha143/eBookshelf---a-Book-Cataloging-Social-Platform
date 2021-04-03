@@ -1,4 +1,4 @@
-<fieldset>
+<div class='navbar'>
     <br>
         <nav>
             <a href="./dashboard.php">Dashboard</a> ||
@@ -9,4 +9,4 @@
             <a href="../controller/logout.php">Log Out</a>
         </nav>
     <br>
-</fieldset>
+</div>

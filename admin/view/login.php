@@ -21,7 +21,8 @@
     <div class='login'>
         <form action='../controller/logincheck.php' method="POST">
             <center>
-                <br><br><br>
+                <br>
+                <h2>Administrator Panel</h2>
                 <table align="center">
                     <tr>
                         <td align="right"><label>Username:</label></td>
@@ -38,13 +39,16 @@
                         <td align="center" colspan="2"><input type='submit' value="Log In"></td>
                     </tr>
                     <tr>
-                        <td align="center" colspan="2"><a href="./forgot.php">Forgot Password?</a></td>
+                        <td align='center' colspan="2"><input type='checkbox'>Remember Me</td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="2"><a href="./forgot.php"><br>Forgot Password?</a></td>
                     </tr>
                 </table>
                 <br><br><br>
             </center>
         </form>
     </div>
-    <?php include('../../assets/footer.php'); ?>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

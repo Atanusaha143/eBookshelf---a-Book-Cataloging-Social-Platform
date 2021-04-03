@@ -20,6 +20,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' href="../images/assets/icon.png">
+    <link rel='stylesheet' href="../../assets/style.css">
     <title>Search for an Item</title>
 </head>
 <body bgcolor="#c5fcf7">
@@ -27,15 +29,7 @@
     <?php include('./navbar.php'); ?>
     <center>
         <h3>What would you like to search for?</h3>
-<<<<<<< HEAD
         <form method="GET" action="../controller/searchprocess.php">
-=======
-<<<<<<< HEAD:admin/view/search.php
-        <form method="GET" action="../../controller/admin/searchprocess.php">
-=======
-        <form method="GET" action="../controller/searchprocess.php">
->>>>>>> business_page_module:bpage/view/search.php
->>>>>>> main
             <select name='type'>
                 <option value='admin'>
                     Administrator

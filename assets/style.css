@@ -1,6 +1,6 @@
 body
 {
-    background-color: rgb(164, 248, 248);
+    background-color: rgb(150, 223, 223);
 }
 
 .login input[type=text], input[type=password]
@@ -8,7 +8,7 @@ body
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     background-color: rgb(231, 255, 191);
-    border-radius: 10px;
+    border-radius: 15px;
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -42,14 +42,7 @@ body
     color: rgb(69, 5, 85);
 }
 
-.footer
-{
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-}
-
-a
+.login a
 {
     font-size: 17px;
     font-weight: bold;
@@ -57,7 +50,37 @@ a
     color: rgb(10, 107, 6);
 }
 
-a:hover
+.login a:hover
 {
     color: rgb(26, 30, 241);
+}
+
+.footer
+{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+}
+
+.navbar
+{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgb(70, 163, 206);
+}
+
+.navbar a
+{
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 2, 128);
+}
+
+.navbar a:hover
+{
+    color: deepskyblue;
 }
