@@ -65,11 +65,14 @@ body
 .navbar
 {
     position: sticky;
+    margin: auto;
     top: 0;
-    width: 100%;
+    width: 95%;
     background-color: rgb(70, 163, 206);
     box-shadow: 2px 2px 10px rgb(33, 33, 37);
     padding-top: 5px;
+    order: black;
+    border-style: solid;
 }
 
 .navbar a
@@ -81,7 +84,6 @@ body
     font-weight: bold;
     text-decoration: none;
     color: rgb(0, 2, 128);
-    border: black;
 }
 
 .navbar a:hover

@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../images/assets/icon.png">
     <link rel='stylesheet' href="../../assets/style.css">
-    <title><?php echo $_GET['fullname']; ?></title>
+    <title>Results</title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
