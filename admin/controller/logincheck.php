@@ -1,5 +1,6 @@
 <?php
     include('./validate_functions.php');
+    include('../model/adminModel.php');
     session_start();
     if(empty($_POST['username']) && empty($_POST['password']))
     {
@@ -10,9 +11,26 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $usernameFlag = usernameValidation($username);
-        $passwordFlag = passwordValidation($password);
+        //$usernameFlag = usernameValidation($username);
+        //$passwordFlag = passwordValidation($password);
 
+        $userFoundFlag = validateLogIn($username, $password);
+        
+        if($userFoundFlag == true)
+        {
+            //header('location: ../view/dashboard.php');
+            $_SESSION['flag'] = true;
+            $_SESSION['id'] = $user['id'];
+            $_SESSION['type'] = $user['type'];
+            setcookie('flag', true, time()+1200, '/');
+            header('location: ./redirect.php');
+        }
+        else
+        {
+            header('location: ../view/login.php');
+        }
+
+        /*
         $dataString = file_get_contents('../model/login.json');
         $dataJSON = json_decode($dataString, true);
         $userFoundFlag = false;
@@ -34,5 +52,6 @@
             echo "Invalid user!";
         }
         //print_r($_SESSION);
+        */
     }
 ?>

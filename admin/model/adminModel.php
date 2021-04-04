@@ -1,5 +1,5 @@
 <?php
-    include('./dbCon.php');
+    include('../model/dbCon.php');
     function validateLogIn($username, $password)
     {
         $connection = connect();
@@ -9,11 +9,11 @@
 
         if(mysqli_num_rows($result) > 0)
         {
-            echo "User logged in";
+            return true;
         }
         else 
         {
-            echo "Log in fail";
+            return false;
         }
     }
 ?>
