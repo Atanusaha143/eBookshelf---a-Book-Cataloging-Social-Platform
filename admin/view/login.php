@@ -1,9 +1,10 @@
 <?php
     session_start();
+    include('../model/dbCon.php');
     //print_r($_SESSION);
     if(isset($_SESSION['flag']))
     {
-
+        
     }
 ?>
 <!DOCTYPE html>
