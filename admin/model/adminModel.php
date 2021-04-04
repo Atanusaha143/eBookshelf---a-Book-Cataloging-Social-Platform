@@ -3,13 +3,14 @@
     function validateLogIn($username, $password)
     {
         $connection = connect();
-        $sql = "SELECT * FROM login WHERE username = '$username' and password = '$password'";
+        $sql = "SELECT * FROM adminlogin WHERE username = '$username' and password = '$password'";
 
         $result = mysqli_query($connection, $sql);
 
         if(mysqli_num_rows($result) > 0)
         {
-            return true;
+            $result = mysqli_fetch_assoc($result);
+            return $result['id'];
         }
         else 
         {

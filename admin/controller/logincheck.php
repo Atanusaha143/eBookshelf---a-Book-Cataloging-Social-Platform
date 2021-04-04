@@ -1,7 +1,7 @@
 <?php
+    session_start();
     include('./validate_functions.php');
     include('../model/adminModel.php');
-    session_start();
     if(empty($_POST['username']) && empty($_POST['password']))
     {
         echo "One or more of the fields are empty!";
@@ -16,12 +16,12 @@
 
         $userFoundFlag = validateLogIn($username, $password);
         
-        if($userFoundFlag == true)
+        if($userFoundFlag)
         {
             //header('location: ../view/dashboard.php');
             $_SESSION['flag'] = true;
-            $_SESSION['id'] = $user['id'];
-            $_SESSION['type'] = $user['type'];
+            $_SESSION['id'] = $userFoundFlag;
+            $_SESSION['type'] = 'admin';
             setcookie('flag', true, time()+1200, '/');
             header('location: ./redirect.php');
         }
