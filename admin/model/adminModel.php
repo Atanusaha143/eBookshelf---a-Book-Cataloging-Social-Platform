@@ -17,4 +17,9 @@
             return false;
         }
     }
+
+    function addAdmin()
+    {
+        
+    }
 ?>

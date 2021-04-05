@@ -22,11 +22,6 @@ session_start();
             {
                 $_SESSION['id'] = $result['id'];
                 $_SESSION['fullname'] = $result['fullname'];
-                $_SESSION['email'] = $result['email'];
-                $_SESSION['dateOfBirth'] = $result['dob'];
-                $_SESSION['phone'] = $result['phone'];
-                $_SESSION['regdate'] = $result['regdate'];
-                //print_r($_SESSION);
                 header('location: ../view/dashboard.php');
             }
 

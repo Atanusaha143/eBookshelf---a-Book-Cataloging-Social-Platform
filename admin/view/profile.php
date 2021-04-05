@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include('../model/adminModel.php');
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
@@ -13,6 +14,26 @@
     {
         header('location: ./login.php');
     }
+?>
+
+<?php
+
+    $connection = connect();
+    $sql = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
+
+    $result = mysqli_query($connection, $sql);
+    $result = mysqli_fetch_assoc($result);
+    $sql2 = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+
+    $result2 = mysqli_query($connection, $sql2);
+    $result2 = mysqli_fetch_assoc($result2);
+    $_SESSION['fullname'] = $result['fullname'];
+    $_SESSION['email'] = $result['email'];
+    $_SESSION['dateOfBirth'] = $result['dob'];
+    $_SESSION['username'] = $result2['username'];
+    $_SESSION['phone'] = $result['phone'];
+    $_SESSION['regdate'] = $result['regdate'];
+    //print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +71,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
+                            <img src= '<?php echo "../images/profile/admin/".$_SESSION['username'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>

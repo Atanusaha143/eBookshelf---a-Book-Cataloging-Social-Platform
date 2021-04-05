@@ -19,7 +19,7 @@
 </head>
 <body>
     <?php include('./header.php'); ?>
-    <div class='login'>
+    <div class='form'>
         <form action='../controller/logincheck.php' method="POST">
             <center>
                 <br>

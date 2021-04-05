@@ -14,7 +14,7 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
-    <div>
+    <div class='form'>
         <form action='../controller/passwordreset.php' method="POST">
             <fieldset>
                 <legend>
