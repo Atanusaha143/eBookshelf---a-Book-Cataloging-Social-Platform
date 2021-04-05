@@ -19,20 +19,23 @@
 <?php
 
     $connection = connect();
-    $sql = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
+    $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-    $result = mysqli_query($connection, $sql);
-    $result = mysqli_fetch_assoc($result);
-    $sql2 = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+    $admindetails = mysqli_query($connection, $sqladmin);
+    $admindetails = mysqli_fetch_assoc($admindetails);
+    $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
 
-    $result2 = mysqli_query($connection, $sql2);
-    $result2 = mysqli_fetch_assoc($result2);
-    $_SESSION['fullname'] = $result['fullname'];
-    $_SESSION['email'] = $result['email'];
-    $_SESSION['dateOfBirth'] = $result['dob'];
-    $_SESSION['username'] = $result2['username'];
-    $_SESSION['phone'] = $result['phone'];
-    $_SESSION['regdate'] = $result['regdate'];
+    $logindetails = mysqli_query($connection, $sqllogin);
+    $logindetails = mysqli_fetch_assoc($logindetails);
+
+    $results=[];
+
+    $results['fullname'] = $admindetails['fullname'];
+    $results['email'] = $admindetails['email'];
+    $results['dateOfBirth'] = $admindetails['dob'];
+    $results['username'] = $logindetails['username'];
+    $results['phone'] = $admindetails['phone'];
+    $results['regdate'] = $admindetails['regdate'];
     //print_r($_SESSION);
 ?>
 
@@ -44,7 +47,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../images/assets/icon.png">
     <link rel='stylesheet' href="../../assets/style.css">
-    <title><?php echo $_SESSION['fullname']; ?></title>
+    <title><?php echo $results['fullname']; ?></title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
@@ -71,7 +74,7 @@
                             <?php echo $_SESSION['type']; ?>
                         </td>
                         <td rowspan="6">
-                            <img src= '<?php echo "../images/profile/admin/".$_SESSION['username'].".jpeg"; ?>' height="250">
+                            <img src= '<?php echo "../images/profile/admin/".$results['username'].".jpeg"; ?>' height="250">
                         </td>
                     </tr>
                     <tr>
@@ -79,7 +82,7 @@
                             <b>Name:</b>
                         </td>
                         <td>
-                            <?php echo $_SESSION['fullname']; ?>
+                            <?php echo $results['fullname']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -87,7 +90,7 @@
                             <b>Email:</b>
                         </td>
                         <td>
-                            <?php echo $_SESSION['email']; ?>
+                            <?php echo $results['email']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -95,7 +98,7 @@
                             <b>Username:</b>
                         </td>
                         <td>
-                            <?php echo $_SESSION['username']; ?>
+                            <?php echo $results['username']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -103,7 +106,7 @@
                             <b>Date of Birth:</b>
                         </td>
                         <td>
-                            <?php echo $_SESSION['dateOfBirth']; ?>
+                            <?php echo $results['dateOfBirth']; ?>
                         </td>
                     </tr>
                     <tr>
@@ -111,7 +114,7 @@
                             <b>Registration Date:</b>
                         </td>
                         <td>
-                            <?php echo $_SESSION['regdate']; ?>
+                            <?php echo $results['regdate']; ?>
                         </td>
                     </tr>
                 </table>
@@ -120,5 +123,6 @@
         </tr>
     </table>
     <?php include('./footer.php'); ?>
+    <script src='../../assets/scripts.js'></script>
 </body>
 </html>

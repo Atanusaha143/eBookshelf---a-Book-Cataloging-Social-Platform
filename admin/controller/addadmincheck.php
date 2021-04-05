@@ -1,5 +1,5 @@
 <?php
-    include('../validate_functions.php');
+    include('./validate_functions.php');
     if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
     {
         echo "Please enter all fields, including your profile picture.";

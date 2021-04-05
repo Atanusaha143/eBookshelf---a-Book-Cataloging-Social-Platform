@@ -3,7 +3,7 @@ body
     background-color: rgb(150, 223, 223);
 }
 
-.form input[type=text], input[type=password], input[type=email]
+.form input[type=text], input[type=password], input[type=email], input[type=date], input[type=email], input[type=email] 
 {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
@@ -19,8 +19,8 @@ body
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 20px;
@@ -90,4 +90,7 @@ body
 .navbar a:hover
 {
     color: rgb(215, 233, 240);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: blue;
 }
