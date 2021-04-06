@@ -36,6 +36,7 @@
     $results['username'] = $logindetails['username'];
     $results['phone'] = $admindetails['phone'];
     $results['regdate'] = $admindetails['regdate'];
+    $results['photo'] = $admindetails['photo'];
     //print_r($_SESSION);
 ?>
 
@@ -74,7 +75,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <img src= '<?php echo "../images/profile/admin/".$results['username'].".jpeg"; ?>' height="250">
+                                <img src="<?php echo "data:image/jpeg;base64,".base64_encode( $results['photo'] );?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>
