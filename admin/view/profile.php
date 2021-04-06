@@ -53,11 +53,10 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table border="1px solid black" width='100%'>
-        <tr>
-            <td border="1px solid black">
+        <tr >
+            <td border="1px solid black" rowspan="2">
                 <label>Menu</label>
                 <br>
-                <hr>
                 <ul>
                     <li><a href='./editprofile.php'>Edit Profile</a></li>
                     <li><a href='./changepropic.php'>Change Profile Picture</a></li>
@@ -65,59 +64,61 @@
                 </ul>
             </td>
             <td>
-                <table align="center" border="1px solid black">
-                    <tr>
-                        <td align="right">
-                            <b>User Type:</b>
-                        </td>
-                        <td width='40%'>
-                            <?php echo $_SESSION['type']; ?>
-                        </td>
-                        <td rowspan="6">
-                            <img src= '<?php echo "../images/profile/admin/".$results['username'].".jpeg"; ?>' height="250">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Name:</b>
-                        </td>
-                        <td>
-                            <?php echo $results['fullname']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Email:</b>
-                        </td>
-                        <td>
-                            <?php echo $results['email']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Username:</b>
-                        </td>
-                        <td>
-                            <?php echo $results['username']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Date of Birth:</b>
-                        </td>
-                        <td>
-                            <?php echo $results['dateOfBirth']; ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td align="right">
-                            <b>Registration Date:</b>
-                        </td>
-                        <td>
-                            <?php echo $results['regdate']; ?>
-                        </td>
-                    </tr>
-                </table>
+                <div class='data'>
+                    <table align="center" border="1px solid black">
+                        <tr>
+                            <td align="right">
+                                <b>User Type:</b>
+                            </td>
+                            <td width='40%'>
+                                <?php echo $_SESSION['type']; ?>
+                            </td>
+                            <td rowspan="6">
+                                <img src= '<?php echo "../images/profile/admin/".$results['username'].".jpeg"; ?>' height="250">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Name:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['fullname']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Email:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['email']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Username:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['username']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Date of Birth:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['dateOfBirth']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Registration Date:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['regdate']; ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <br>
             </td>
         </tr>
