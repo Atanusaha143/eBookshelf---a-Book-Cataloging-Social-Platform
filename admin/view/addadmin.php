@@ -51,16 +51,16 @@
                     <td><input type='text' name='username'/></td>
                 </tr>
                 <tr>
-                    <td align="right">Password:</td>
+                    <td align="right"><label>Password:</label></td>
                     <td><input type='password' name='password'/></td>
                 </tr>
                 <tr>
-                    <td align="right">Confirm Password:</td>
+                    <td align="right"><label>Confirm Password:</label></td>
                     <td><input type='password' name='confirmpassword'/></td>
                 </tr>
                 <tr>
                     <td colspan="2">
-                        Upload Profile Picture:
+                        <label>Upload Profile Picture:</label>
                         <input type='file' name='propic'>
                     </td>
                 </tr>

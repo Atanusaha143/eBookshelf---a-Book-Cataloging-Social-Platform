@@ -27,7 +27,7 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div width='100px'>
+    <div width='100px' class='form'>
         <center>
             <form action="../controller/typeselectcheck.php" method='GET'>
                 <h2>What type of user would you like to add?</h2>
