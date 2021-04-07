@@ -14,12 +14,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
+        $profilePic = $_FILES['propic'];
 
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
+        $fileFlag = imageValidate($profilePic);
 
         if($fullnameFlag == true)
         {
@@ -100,7 +102,7 @@
             // }
         
             echo "New Admin added successfully!<br>";
-            echo "<a href='../view/addadmin.php'>Go Back</a>";
+            //echo "<a href='../view/addadmin.php'>Go Back</a>";
         }
     }
 ?>

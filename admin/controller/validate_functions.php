@@ -126,4 +126,11 @@
         }
         return false;
     }
+
+    function imageValidate($fileFlag)
+    {
+        $path = $fileFlag['name'];
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        print_r($ext);
+    }
 ?>
