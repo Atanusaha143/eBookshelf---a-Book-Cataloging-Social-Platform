@@ -1,6 +1,7 @@
 body
 {
     background-color: rgb(150, 223, 223);
+    border-right: 2px solid greenyellow;
 }
 
 .form input[type=text], input[type=password], input[type=email], input[type=date], input[type=email], input[type=email] 
@@ -60,6 +61,7 @@ body
     position: fixed;
     right: 10px;
     bottom: 10px;
+    font-size: 10px;
 }
 
 .navbar

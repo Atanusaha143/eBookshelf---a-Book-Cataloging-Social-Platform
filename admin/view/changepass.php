@@ -26,7 +26,7 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
-    <div width='100px'>
+    <div width='100px' class='form'>
         <center>
             <form action="../controller/changepassword.php" method='POST'>
                 <h2>Enter the following fields to change your password.</h2>

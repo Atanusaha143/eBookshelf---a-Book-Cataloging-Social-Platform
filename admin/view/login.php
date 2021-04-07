@@ -2,9 +2,18 @@
     session_start();
     include('../model/dbCon.php');
     //print_r($_SESSION);
-    if(isset($_SESSION['flag']))
+    if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-        
+        header('location: ./dashboard.php');
+    }
+    else if(!(isset($_COOKIE['flag'])))
+    {
+        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
+        return;
+    }
+    else
+    {
+        //header('location: ../login.php');
     }
 ?>
 <!DOCTYPE html>

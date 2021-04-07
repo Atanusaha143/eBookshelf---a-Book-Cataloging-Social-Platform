@@ -1,8 +1,5 @@
 <?php
-
-use function PHPSTORM_META\type;
-
-session_start();
+    session_start();
     include('../model/adminModel.php');
     //print_r($_SESSION);
     if($_SESSION['flag'] == true)
@@ -24,27 +21,6 @@ session_start();
                 $_SESSION['fullname'] = $result['fullname'];
                 header('location: ../view/dashboard.php');
             }
-
-            //print_r($result['id']);
-            
-            //print(gettype($result));
-            // foreach($result as $user)
-            // {
-            //     print_r($user);
-            //     print('.');
-            //     if($_SESSION['id'] == $user['id'])
-            //     {
-            //         $_SESSION['id'] = $user['id'];
-            //         $_SESSION['username'] = $user['username'];
-            //         $_SESSION['fullname'] = $user['fullname'];
-            //         $_SESSION['email'] = $user['email'];
-            //         $_SESSION['dateOfBirth'] = $user['dob'];
-            //         $_SESSION['phone'] = $user['phone'];
-            //         $_SESSION['regdate'] = $user['regdate'];
-            //         //print_r($_SESSION);
-            //         //header('location: ../view/dashboard.php');
-            //     }
-            // }
         }
         else if($_SESSION['type'] == 'ruser')
         {

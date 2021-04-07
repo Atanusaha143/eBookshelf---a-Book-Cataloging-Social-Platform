@@ -25,11 +25,11 @@
     <link rel='stylesheet' href="../../assets/style.css">
     <title>Dashboard</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     
-    <table border="1px solid black" width='100%'>
+    <table width='85%'>
         <tr>
             <th>
                 Messages

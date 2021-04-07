@@ -11,7 +11,7 @@
         }
         else if($_GET['type'] == 'ruser')
         {
-            header('location: ../view/addruser.php');
+            header('location: ../view/addregular.php');
         }
         else if($_GET['type'] == 'bpage')
         {
