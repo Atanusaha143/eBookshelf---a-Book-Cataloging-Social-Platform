@@ -19,15 +19,19 @@
 <?php
 
     $connection = connect();
+    //Load administrator information
     $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
     $admindetails = mysqli_query($connection, $sqladmin);
     $admindetails = mysqli_fetch_assoc($admindetails);
+
+    //Load log in information
     $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
 
     $logindetails = mysqli_query($connection, $sqllogin);
     $logindetails = mysqli_fetch_assoc($logindetails);
 
+    //Combine information into one array
     $results=[];
 
     $results['fullname'] = $admindetails['fullname'];
@@ -75,7 +79,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <img src="<?php echo "data:image/jpeg;base64,".base64_encode( $results['photo'] );?>" height="250" alt="image not available">
+                                <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>

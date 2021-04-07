@@ -13,8 +13,10 @@
     <title>Access Denied</title>
 </head>
 <body>
-    <a href="../view/login.php"><img src="../images/assets/logo.png" alt="Image not available" height="100"></a>
-    <p>Sorry! It seems like you do not have access to this directory!</p>
-    <a class = 'link' href = '../view/login.php'>Return to Log In</a>
+    <a href="../view/login.php"><img src="../../assets/images/logo.png" alt="Image not available" height="100"></a>
+    <center>
+        <p>Sorry! It seems like you do not have access to this directory!</p>
+        <a class = 'link' href = '../view/login.php'>Return to Log In</a>
+    </center>
 </body>
 </html>

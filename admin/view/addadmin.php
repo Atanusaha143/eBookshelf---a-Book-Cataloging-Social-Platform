@@ -24,7 +24,7 @@
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Add User</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class = 'form' width='100px'>
