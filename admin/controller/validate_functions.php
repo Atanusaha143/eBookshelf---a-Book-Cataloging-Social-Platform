@@ -127,10 +127,20 @@
         return false;
     }
 
-    function imageValidate($fileFlag)
+    function imageValidate($fileFlag, $username)
     {
-        $path = $fileFlag['name'];
-        $ext = pathinfo($path, PATHINFO_EXTENSION);
-        print_r($ext);
+        $file = $fileFlag['name'];
+        $extension = pathinfo($file, PATHINFO_EXTENSION);
+        //print($extension);
+        if($extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' )
+        {
+            //echo "Picture uploaded successfully!";
+            return false;
+        }
+        else
+        {
+            //echo "File is not an image. Please upload an image file!";
+            return true;
+        }
     }
 ?>

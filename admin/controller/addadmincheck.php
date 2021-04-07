@@ -21,7 +21,7 @@
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-        $fileFlag = imageValidate($profilePic);
+        $fileFlag = imageValidate($profilePic, $username);
 
         if($fullnameFlag == true)
         {
@@ -46,14 +46,21 @@
         if($password != $confirmpassword)
         {
             $passwordFlag=true;
-            echo "passwords do not match!<br>";
+            echo "Passwords do not match!<br>";
+        }
+
+        if($fileFlag == true)
+        {
+            $fileFlag=true;
+            echo "File is not an image. Please upload an image file!";
         }
 
         if($fullnameFlag == false &&
         $emailFlag == false &&
         $phoneFlag == false &&
         $usernameFlag == false &&
-        $passwordFlag == false)
+        $passwordFlag == false &&
+        $fileFlag == false)
         {
             // $dataStringAdmin = file_get_contents('../../model/admin.json');
             // $dataJSONAdmin = json_decode($dataStringAdmin, true);
@@ -102,7 +109,7 @@
             // }
         
             echo "New Admin added successfully!<br>";
-            //echo "<a href='../view/addadmin.php'>Go Back</a>";
+            echo "<a href='../view/addadmin.php'>Go Back</a>";
         }
     }
 ?>
