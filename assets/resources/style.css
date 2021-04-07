@@ -1,8 +1,14 @@
+html
+{
+    height: 100%;
+}
+
 body
 {
     background-color: rgb(150, 223, 223);
     border-right: 2px solid greenyellow;
     border-left: 2px solid greenyellow;
+    height: 100%;
 }
 
 .form input[type=text],

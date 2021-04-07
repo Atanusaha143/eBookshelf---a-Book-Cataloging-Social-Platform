@@ -59,15 +59,6 @@
     <?php include('./navbar.php'); ?>
     <table  width='85%' align="center">
         <tr >
-            <td border="1px solid black" rowspan="2">
-                <label>Menu</label>
-                <br>
-                <ul>
-                    <li><a href='./editprofile.php'>Edit Profile</a></li>
-                    <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
-                </ul>
-            </td>
             <td>
                 <div class='data'>
                     <table align="center" border="1px solid black">
@@ -125,6 +116,11 @@
                     </table>
                 </div>
                 <br>
+            </td>
+        </tr>
+        <tr>
+            <td border="1px solid black" align="center">
+                    <a class="link" href='./settings.php'>Settings</a>
             </td>
         </tr>
     </table>

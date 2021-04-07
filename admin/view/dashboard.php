@@ -56,6 +56,6 @@
         </tr>
     </table>
     <?php include('./footer.php');?>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br>
 </body>
 </html>
