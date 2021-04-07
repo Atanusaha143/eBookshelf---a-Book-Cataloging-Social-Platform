@@ -2,6 +2,7 @@ body
 {
     background-color: rgb(150, 223, 223);
     border-right: 2px solid greenyellow;
+    border-left: 2px solid greenyellow;
 }
 
 .form input[type=text],
@@ -20,7 +21,9 @@ body
     padding-bottom: 5px;
 }
 
-.form input[type=submit], input[type=button], input[type=reset]
+.form input[type=submit], 
+.form input[type=button], 
+.form input[type=reset]
 {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
@@ -34,7 +37,9 @@ body
     color: rgb(5, 6, 80);
 }
 
-.form input[type=submit]:hover, input[type=button]:hover, input[type=reset]:hover
+.form input[type=submit]:hover, 
+.form input[type=button]:hover, 
+.form input[type=reset]:hover
 {
     background-color: rgb(134, 176, 218);
     color: rgb(12, 99, 185);
@@ -101,22 +106,6 @@ body
     padding-bottom: 18px;
     background-color: rgb(75, 75, 236);
 }
- 
-/* .navbar a:active
-{
-    color: rgb(215, 233, 240);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: rgb(187, 154, 218);
-} */
-
-/* .navbar a:hover:not(:active)
-{
-    color: rgb(215, 233, 240);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: blue;
-} */
 
 .data table
 {
