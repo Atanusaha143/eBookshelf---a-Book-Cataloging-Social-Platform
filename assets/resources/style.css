@@ -80,6 +80,11 @@ body
     font-size: 10px;
 }
 
+.header
+{
+    margin-left: 25px;
+}
+
 .navbar
 {
     position: sticky;
@@ -136,5 +141,5 @@ body
 
 .link:hover
 {
-    color: rgb(11, 179, 245);
+    color: rgb(0, 177, 0);
 }
