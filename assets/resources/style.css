@@ -119,3 +119,16 @@ body
     font-size: 17px;
     padding-left: 10px;
 }
+
+.link
+{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(6, 46, 107);
+}
+
+.link:hover
+{
+    color: rgb(11, 179, 245);
+}
