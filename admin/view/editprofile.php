@@ -1,12 +1,17 @@
 <?php 
     session_start();
+    include('../model/dbCon.php');
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-        //continue
+        $connection = connect();
+        $sql = "SELECT * FROM admin WHERE id = ".$_SESSION['id'];
+
+        $result = mysqli_query($connection, $sql);
+        $result = mysqli_fetch_assoc($result);
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
+        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         return;
     }
     else
@@ -14,6 +19,7 @@
         header('location: ../login.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,50 +46,52 @@
                 </ul>
             </td>
             <td>
-                <form action="../../controller/editprofilevalidate.php" method="POST">
-                    <table align="center" border="1px solid black">
-                        <tr>
-                            <td align="right">
-                                Name:
-                            </td>
-                            <td width='50%' >
-                            
-                                <input size='30' type='text' value="<?php echo $_SESSION['fullname']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Email:
-                            </td>
-                            <td>
-                                <input size='30' type='email' value="<?php echo $_SESSION['email']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Phone:
-                            </td>
-                            <td>
-                                <input size='30' type='text' value="<?php echo $_SESSION['phone']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Date of Birth:
-                            </td>
-                            <td>
-                                <input size='30' type='date' value="<?php echo $_SESSION['dateOfBirth']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <center>
-                                    <input type='submit' value="Submit">
-                                </center>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
+                <div class='form'>
+                    <form action="../../controller/editprofilevalidate.php" method="POST">
+                        <table align="center" border="1px solid black">
+                            <tr>
+                                <td align="right">
+                                    Name:
+                                </td>
+                                <td width='50%' >
+                                
+                                    <input size='30' type='text' value="<?php echo $result['fullname']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    Email:
+                                </td>
+                                <td>
+                                    <input size='30' type='email' value="<?php echo $result['email']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    Phone:
+                                </td>
+                                <td>
+                                    <input size='30' type='text' value="<?php echo $result['phone']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    Date of Birth:
+                                </td>
+                                <td>
+                                    <input size='30' type='date' value="<?php echo $result['dob']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input type='submit' value="Submit">
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
                 <br>
             </td>
         </tr>

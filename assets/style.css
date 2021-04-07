@@ -4,7 +4,12 @@ body
     border-right: 2px solid greenyellow;
 }
 
-.form input[type=text], input[type=password], input[type=email], input[type=date], input[type=email], input[type=email] 
+.form input[type=text],
+.form input[type=password], 
+.form input[type=email], 
+.form input[type=date], 
+.form input[type=phone], 
+.form input[type=number] 
 {
     font-size: 15px;
     font-family: 'Times New Roman', Times, serif;
