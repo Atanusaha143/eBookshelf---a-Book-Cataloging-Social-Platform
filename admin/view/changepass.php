@@ -6,8 +6,9 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
     }
     else
     {
