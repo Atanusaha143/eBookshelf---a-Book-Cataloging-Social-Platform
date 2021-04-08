@@ -151,18 +151,36 @@ body
 
 .messageBar
 {
-    padding-left: 30px;
+    align-content: center;
+    text-align: center;
 }
 
 .messageBar table
 {
     border-collapse:collapse;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.messageBar .nametime
+.messageBar .name
 {
     background-color: rgb(0, 156, 184);
     color: rgb(0, 30, 36);
+    border-bottom: 3px solid rgb(1, 1, 73);
+    border-left: 3px solid rgb(1, 1, 73);
+    
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.messageBar .time
+{
+    background-color: rgb(0, 156, 184);
+    color: rgb(0, 30, 36);
+    border-top: 3px solid rgb(1, 1, 73);
+    border-left: 3px solid rgb(1, 1, 73);
+    padding-top: 10px;
 }
 
 .messageBar .message

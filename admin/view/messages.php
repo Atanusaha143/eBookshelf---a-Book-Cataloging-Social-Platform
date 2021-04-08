@@ -48,7 +48,7 @@
                 $fullname = mysqli_fetch_assoc($fullname);
 
                 echo "<tr>
-                <td class='nametime'>
+                <td class='time'>
                     ".$row['time']."
                 </td>
                 <td rowspan='2' class='message'>"
@@ -57,7 +57,7 @@
                 </td>
                 </tr>
                 <tr>
-                    <td class='nametime'>
+                    <td class='name'>
                         ".$fullname['fullname']."
                     </td>
                 </tr>
