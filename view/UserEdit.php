@@ -14,9 +14,15 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserProfile.php" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
@@ -24,7 +30,7 @@
 			<td colspan="2" align="center">
 				<br>
 					<form method="POST" action="../controller/UserUpdateCheck.php" enctype="multipart/form-data">
-						<fieldset style="width: 50%">
+						<fieldset style="width: 50%" class="fieldSetBorder">
 						<legend> <b> EDIT PROFILE </b> </legend>
 						<table>
 							<tr>
@@ -116,8 +122,8 @@
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
 							<tr>
-								<td align="center">
-									<input type="submit" name="update" value="Update" class="submitBtn">
+								<td align="center" colspan="2">
+									<input type="submit" name="update" value="Update" class="submitBtn" style="padding: 5px 20px">
 								</td>
 							</tr>
 						</table>

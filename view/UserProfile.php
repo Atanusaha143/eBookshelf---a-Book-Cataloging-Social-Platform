@@ -14,18 +14,24 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout </a>
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-				<fieldset style="width: 50%">
+				<fieldset style="width: 50%" class="fieldSetBorder">
 					<legend> <b> PROFILE </b> </legend>
-					<table>
+					<table border="0">
 						<tr>
 							<td>
 								<b>Name:</b>
@@ -90,8 +96,8 @@
 
 						<tr> <td colspan="4"> <hr> </td> </tr>
 						<tr>
-							<td> 
-								<center> <a href="UserEdit.php" class="linkBtn"> Edit Profile </a> </center>
+							<td colspan="2">  
+								<center> <a href="UserEdit.php" class="linkBtn submitBtn" style="padding: 5px 20px"> Edit Profile </a> </center>
 							</td>
 						</tr>
 					</table>

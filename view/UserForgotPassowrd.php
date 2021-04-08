@@ -37,7 +37,13 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="../"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="../" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="../" class="linkBtn gobackBtn"> Go Back </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
@@ -45,7 +51,7 @@
 			<td colspan="2" align="center">
 				<br>
 					<form method="POST" action="">
-						<fieldset style="width: 40%">
+						<fieldset style="width: 40%" class="fieldSetBorder">
 						<legend>
 							<b> Recover Password </b>
 						</legend>
@@ -60,7 +66,7 @@
 							</tr>
 						</table>
 						<center>
-							<input type="submit" name="send" value="Send" style="margin-left: 5em">
+							<input type="submit" name="send" value="Send" style="margin-left: 5em; padding: 5px 20px" class="submitBtn" >
 						</center>
 					</fieldset>
 					</form>

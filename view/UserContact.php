@@ -28,9 +28,15 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
@@ -38,7 +44,7 @@
 			<td colspan="2" align="center">
 				<br>
 				<form method="POST" action="">
-					<fieldset style="width: 50%">
+					<fieldset style="width: 50%" class="fieldSetBorder">
 					<legend> <b> Contact </b> </legend>
 					<table>
 							<tr>
@@ -49,7 +55,7 @@
 										<input type="text" name="message" style="height: 100px;">
 								</td>
 								<td>
-									&nbsp <input type="submit" name="send" value="Send" class="submitBtn">
+									&nbsp <input type="submit" name="send" value="Send" class="submitBtn" style="padding: 5px 20px">
 								</td>
 							</tr>
 					</table>
