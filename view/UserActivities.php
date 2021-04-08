@@ -14,9 +14,15 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>

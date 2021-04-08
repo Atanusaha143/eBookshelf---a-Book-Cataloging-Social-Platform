@@ -14,9 +14,15 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
-				<a href="UserHome.php" class="linkBtn"> Go Back </a>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<br>
+				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout</a>
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
 				&nbsp
 			</td>
 		</tr>
@@ -67,8 +73,9 @@
 					}
 				?>
 				<br>
-					<h4> <a href="UserBookshelf.php" class="linkBtn"> Add book </a> 
+					<h4> <a href="UserBookshelf.php" class="linkBtn submitBtn" style="padding: 5px 20px; background-color: #00b300"> Add book </a> 
 						<?php 
+							echo "&nbsp";
 							echo "&nbsp";
 							echo "&nbsp";
 							echo "&nbsp";
@@ -77,7 +84,7 @@
 							echo "&nbsp";
 							echo "&nbsp"; 
 						?> 
-						<a href="UserBookshelfClean.php" class="linkBtn"> Clean Bookshelf </a> 
+						<a href="UserBookshelfClean.php" class="linkBtn logoutBtn"> Clean Bookshelf </a> 
 					</h4>
 				<br> 
 			</td>

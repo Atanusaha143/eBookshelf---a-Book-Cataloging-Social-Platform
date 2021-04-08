@@ -10,7 +10,6 @@
 	$title = "Home";
 	include ('header.php');
 ?>
-
 <?php
 	if(isset($_POST['go']))
 	{
@@ -28,33 +27,53 @@
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left"  width="100%" height="150"> </a>
-				&nbsp | &nbsp
-				<a href="UserLogout.php" class="linkBtn"> Logout </a>
+<!-- 				&nbsp &nbsp
 				<br>
-				&nbsp
+				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
+				<br>
+				&nbsp -->
 			</td>
 		</tr>
-		<tr class="sticky">
+		<tr class="sticky navbar">
 			<td height="50px" colspan="2">
-				<fieldset>
-					<a href="UserProfile.php" style="margin-left: 15em" class="linkBtn"> Profile </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserBookList.php" class="linkBtn"> Bookshelf </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserPost.php" class="linkBtn"> Create Post </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserAddReview.php" class="linkBtn"> Add Review </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserAddRating.php" class="linkBtn"> Add Rating </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserSendMessage.php" class="linkBtn"> Send Message </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserActivities.php" class="linkBtn"> Check Activities </a> &nbsp &nbsp &nbsp |
-					&nbsp &nbsp &nbsp <a href="UserContact.php" class="linkBtn"> Contact </a> &nbsp &nbsp &nbsp 
-				</fieldset>
+				<ul>
+					 <li>
+					 	<a href="UserProfile.php" style="margin-left: 15em"> Profile </a>
+					 </li>
+					 <li>
+					 	<a href="UserBookList.php"> Bookshelf </a> 
+					 </li>
+					 <li>
+					 	<a href="UserPost.php"> Create Post </a> 
+					 </li>
+					 <li>
+					 	<a href="UserAddReview.php"> Add Review </a>
+					 </li> 
+					 <li>
+					 	<a href="UserAddRating.php"> Add Rating </a> 
+					 </li>
+					 <li>
+					 	<a href="UserSendMessage.php"> Send Message </a>
+					 </li> 
+					 <li>
+					 	<a href="UserActivities.php"> Check Activities </a>
+					 </li>
+					 <li>
+					 	<a href="UserContact.php"> Contact </a>
+					 </li>
+					 <li>
+					 	<a href="UserLogout.php" onMouseOver="this.style.background='#990000'" onmouseout="this.style.background='#003366'"> Logout </a>
+					 </li>
+				</ul> 
 			</td>
 		</tr>
 		<tr>
 			<td>
-				<br> <br>
+				<!-- <br> <br> -->
 				<form method="post" action="">
 					<label style="margin-left: 37em">  </label>
 					<input type="Search" name="search" style="width: 20%" placeholder=" Search here...">
-					<input type="submit" name="go" value="Go" class="submitBtn">
+					<input type="submit" name="go" value="Go" class="submitBtn" style="padding: 5px 20px">
 				</form>
 			</td>
 		</tr>
