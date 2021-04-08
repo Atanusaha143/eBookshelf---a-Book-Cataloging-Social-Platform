@@ -1,6 +1,8 @@
 <?php  
-    $dataString = file_get_contents('../../model/messages.json');
-    $dataJSON = json_decode($dataString, true);
+    session_start();
+    include('../model/dbCon.php');
+    
+    $connection = connect();
 ?>
 
 <!DOCTYPE html>
@@ -14,27 +16,8 @@
     <title>Document</title>
 </head>
 <body>
-    <center>
-        <table border="1px solid black" width='80%'>
-            <?php 
-                foreach($dataJSON as $message)
-                {
-                    echo
-                    "<tr>
-                        <td>
-                            ".$message['from']."
-                            <br>
-                            ".$message['time']."
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan='2'>
-                            ".$message['content']."
-                        </td>
-                    </tr>";
-                }
-            ?>
-        </table>
-    </center>
+    <?php include('./header.php');?>
+    <?php include('./navbar.php');?>
+    
 </body>
 </html>

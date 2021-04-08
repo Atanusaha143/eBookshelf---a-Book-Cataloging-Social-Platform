@@ -11,6 +11,11 @@ body
     height: 100%;
 }
 
+.form
+{
+    text-align: center;
+}
+
 .form input[type=text],
 .form input[type=password], 
 .form input[type=email], 
