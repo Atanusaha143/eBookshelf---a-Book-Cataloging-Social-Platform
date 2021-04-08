@@ -39,7 +39,7 @@
     <?php include('./header.php');?>
     <?php include('./navbar.php');?>
     <div class='messageBar'>
-        <table border="1">
+        <table>
             <?php 
             while($row = mysqli_fetch_assoc($result))
             {
@@ -48,16 +48,16 @@
                 $fullname = mysqli_fetch_assoc($fullname);
 
                 echo "<tr>
-                <td>
+                <td class='nametime'>
                     ".$row['time']."
                 </td>
-                <td rowspan='2'>"
+                <td rowspan='2' class='message'>"
                     .$row['content'].
                     "
                 </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class='nametime'>
                         ".$fullname['fullname']."
                     </td>
                 </tr>
