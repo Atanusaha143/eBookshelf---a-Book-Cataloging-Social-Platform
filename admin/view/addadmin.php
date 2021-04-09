@@ -60,8 +60,10 @@
                     <td><input type='text' name='confirmpassword'/></td>
                 </tr>
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <label>Upload Profile Picture:</label>
+                    </td>
+                    <td>
                         <input type='file' name='propic'>
                     </td>
                 </tr>
