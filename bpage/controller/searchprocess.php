@@ -1,7 +1,7 @@
 <?php
     if(!empty($_GET['type']) && !empty($_GET['search']) && !empty($_GET['searchopt']))
     {
-        if($_GET['type'] == 'admin')
+        /*if($_GET['type'] == 'admin')
         {
             $dataString = file_get_contents('../../model/admin.json');
             $dataJSON = json_decode($dataString,true);
@@ -44,7 +44,8 @@
             }
             //print_r($_GET);
         }
-        else if($_GET['type'] == 'ruser')
+        */
+        if($_GET['type'] == 'ruser')
         {
             $dataString = file_get_contents('../../model/ruser.json');
             $dataJSON = json_decode($dataString,true);
@@ -123,7 +124,7 @@
                         $_GET['type'] = $user['type'];
                     }
                 }
-                header('location: ../view/searchresult.php?id='.$_GET['id']."&fullname=".$_GET['fullname']);
+                header('location: ../view/searchresult.php?username='.$_GET['username']."&fullname=".$_GET['fullname']);
             }
         }
     }

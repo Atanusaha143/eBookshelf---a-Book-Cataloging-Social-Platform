@@ -22,15 +22,12 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
-    <div>
+    <div class='form'>
         <form action='../controller/regcheck.php' method="POST">
-            <fieldset>
-                <legend>
-                    <b>SIGN UP</b>
-                </legend>
+                <b>SIGN UP</b>
                 <table align="center">
                     <tr>
-                        <td align="right">Full Name:</td>
+                        <td align="right">Business Name:</td>
                         <td><input type='text' name='fullname'/></td>
                     </tr>
                     <tr>
@@ -40,10 +37,6 @@
                     <tr>
                         <td align="right">Phone:</td>
                         <td><input type='text' name='phone' value="+88"/></td>
-                    </tr>
-                    <tr>
-                        <td align="right">Date of Birth:</td>
-                        <td><input type='date' name='dateOfBirth'/></td>
                     </tr>
                     <tr>
                         <td align="right">Username:</td>
@@ -72,7 +65,6 @@
                         </td>
                     </tr>
                 </table>
-            </fieldset>
         </form>
     </div>
 </body>

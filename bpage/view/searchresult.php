@@ -35,7 +35,7 @@
         </h3>
         <h3>
             Results:
-            <?php echo $_GET['fullname'] ?>
+            <?php echo "<a href='./anotherpage.php?username=".$_GET['username']."'>".$_GET['fullname'] ?>
         </h3>
     </center>
     <?php include('./footer.php'); ?>
