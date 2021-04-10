@@ -7,7 +7,7 @@
         if($_SESSION['type'] == 'bpage')
         {
             $connection = connect();
-            $sql = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
+            $sql = "SELECT * FROM bpage WHERE id = '".$_SESSION['id']."'";
 
             $result = mysqli_query($connection, $sql);
             $result = mysqli_fetch_assoc($result);
