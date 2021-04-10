@@ -19,6 +19,8 @@
 <?php
     include('../model/adminModel.php');
     $messages = getMessages($_SESSION['id'], '2');
+    $userdata = getAdminInfoByUsername($_GET['username']);
+    $userdata = mysqli_fetch_assoc($userdata);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +36,7 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class="container">
-        <h3><?php echo $_GET['id']; ?></h3>
+        <h3><?php echo $userdata['fullname']; ?></h3>
     </div>
     <div class='chatbox'>
         <?php

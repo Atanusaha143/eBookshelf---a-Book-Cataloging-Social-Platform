@@ -32,4 +32,12 @@
 
         return $result;
     }
+
+    function getAdminInfoByUsername($username)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM admin, adminlogin WHERE adminlogin.username = '".$username."' AND adminlogin.id = admin.id";
+        $result = mysqli_query($connection, $sql);
+        return $result;
+    }
 ?>
