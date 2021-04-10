@@ -46,4 +46,20 @@
         $result = mysqli_query($connection, $sql);
         return $result;
     }
+
+    function sendMessage($message, $senderID, $receiverID)
+    {
+        $connection = connect();
+        $time = date("Y-m-d H:i:s");//2021-04-08 05:33:24
+        $sql = "INSERT INTO adminmessages (content, to_user, from_user, time) VALUES('$message', $receiverID, $senderID, '$time')";
+        $insert = mysqli_query($connection, $sql);
+        if($insert)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>

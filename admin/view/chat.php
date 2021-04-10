@@ -56,7 +56,7 @@
         ?>
     </div>
     <div class="form">
-        <form>
+        <form action='../controller/validateMessage.php?username=<?php echo $_GET['username'];?>' method="POST">
             <textarea class='textWindow' placeholder="Write your message here" name='message'></textarea><br>
             <input type="submit" value='Send'>
         </form>
