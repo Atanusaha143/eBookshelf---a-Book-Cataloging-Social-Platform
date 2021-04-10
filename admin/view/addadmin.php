@@ -63,7 +63,7 @@
                     <td>
                         <label>Upload Profile Picture:</label>
                     </td>
-                    <td>
+                    <td align="center">
                         <input type='file' name='propic'>
                     </td>
                 </tr>

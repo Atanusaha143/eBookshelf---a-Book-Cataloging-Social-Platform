@@ -11,10 +11,10 @@ body
     height: 100%;
 }
 
-.form
+/* .form
 {
-    text-align: center;
-}
+    
+} */
 
 .form input[type=text],
 .form input[type=password], 
@@ -27,15 +27,16 @@ body
     font-family: 'Times New Roman', Times, serif;
     background-color: rgb(200, 252, 117);
     border-radius: 15px;
-    padding-left: 10px;
+    margin-left: 10px;
+    padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 180px;
+    width: 170px;
 }
 
 .form input[type=file]
 {
-    
+    padding-left: 10px;
 }
 
 .form input[type=submit], 
