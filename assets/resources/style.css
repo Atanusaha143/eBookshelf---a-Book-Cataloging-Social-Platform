@@ -229,6 +229,8 @@ body
     background-color: rgb(3, 16, 54);
     padding-top: 10px;
     padding-bottom: 5px;
+    height: 250px;
+    overflow-y: scroll;
 }
 
 .chatbox .sender
