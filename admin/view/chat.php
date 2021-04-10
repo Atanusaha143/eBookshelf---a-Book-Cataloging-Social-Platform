@@ -18,9 +18,9 @@
 
 <?php
     include('../model/adminModel.php');
-    $messages = getMessages($_SESSION['id'], '2');
     $userdata = getAdminInfoByUsername($_GET['username']);
     $userdata = mysqli_fetch_assoc($userdata);
+    $messages = getMessages($_SESSION['id'], $userdata['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +56,7 @@
     </div>
     <div class="form">
         <form>
-            <textarea placeholder="Write your message here" name='message'></textarea><br>
+            <textarea class='textWindow' placeholder="Write your message here" name='message'></textarea><br>
             <input type="submit" value='Send'>
         </form>
     </div>

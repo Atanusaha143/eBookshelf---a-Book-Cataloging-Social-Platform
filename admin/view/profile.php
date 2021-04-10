@@ -71,7 +71,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <!-- <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available"> -->
+                                <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>
@@ -124,6 +124,6 @@
         <a class="link" href='./settings.php'>Settings</a>
     </div>
     <?php include('./footer.php'); ?>
-    <script src='../../assets/scripts.js'></script>
+    <script src='../../assets/resources/scripts.js'></script>
 </body>
 </html>
