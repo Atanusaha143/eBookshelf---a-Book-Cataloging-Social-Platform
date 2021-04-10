@@ -275,3 +275,38 @@ body
     max-width: 95%;
     resize: none;
 }
+
+.menu
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(6, 46, 107);
+}
+
+.menu table
+{
+    border-collapse: collapse;
+}
+
+.menu a
+{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 2, 128);
+    white-space: nowrap;
+}
+
+.menu a:hover
+{
+    color: rgb(215, 233, 240);;
+    background-color: rgb(75, 75, 236);
+}

@@ -33,7 +33,6 @@
     <center>
         <form method='POST' action='../controller/checkchat.php' class="form">
             <h3>Send a message to <input type='text' name='username' class='messageUsername'></h3>
-            <textarea placeholder="Write your message here" name='message'></textarea><br>
             <input type="submit" value='Send'>
         </form>
     </center>

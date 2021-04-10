@@ -20,7 +20,8 @@
     include('../model/adminModel.php');
     $userdata = getAdminInfoByUsername($_GET['username']);
     $userdata = mysqli_fetch_assoc($userdata);
-    $messages = getMessages($_SESSION['id'], $userdata['id']);
+    $messages = getMessagesForChat($_SESSION['id'], $userdata['id']);
+    //print_r($messages);
 ?>
 <!DOCTYPE html>
 <html lang="en">

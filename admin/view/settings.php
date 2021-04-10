@@ -58,19 +58,10 @@
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table  width='85%' align="center">
-        <tr >
-            <td border="1px solid black" rowspan="2">
-                <label>Menu</label>
-                <br>
-                <ul>
-                    <li><a href='./editprofile.php'>Edit Profile</a></li>
-                    <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
-                </ul>
-            </td>
-        </tr>
-    </table>
+    <?php include('./menu.php'); ?>
+    <div class="menu">
+        <a href="./profile.php">Go Back</a>
+    </div>
     <?php include('./footer.php'); ?>
     <script src='../../assets/scripts.js'></script>
 </body>

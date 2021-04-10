@@ -23,13 +23,11 @@
         
     }
 
-    function getMessages($receiverID, $senderID)
+    function getMessagesForChat($receiverID, $senderID)
     {
         $connection = connect();
-        $sql = "SELECT * FROM messages WHERE (to_user = '$receiverID' AND from_user = '$senderID') OR (to_user = '$senderID' AND from_user = '$receiverID')";
-
+        $sql = "SELECT * FROM adminmessages WHERE (to_user = $receiverID AND from_user = $senderID) OR (to_user = $senderID AND from_user = $receiverID)";
         $result = mysqli_query($connection, $sql);
-
         return $result;
     }
 

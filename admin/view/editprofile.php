@@ -37,63 +37,53 @@
     <table border="1px solid black" width='100%'>
         <tr>
             <td>
-                <label>Menu</label>
-                <br>
-                <hr>
-                <ul>
-                    <li><a href='./editprofile.php'>Edit Profile</a></li>
-                    <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
-                </ul>
+                <?php include('./menu.php'); ?>
             </td>
             <td>
                 <div class='form'>
-                    <form action="../../controller/editprofilevalidate.php" method="POST">
-                        <table align="center" border="1px solid black">
+                    <form action="../controller/editprofilevalidate.php" method="POST">
+                        <table align="center">
                             <tr>
                                 <td align="right">
-                                    Name:
+                                    <label>Name:</label>
                                 </td>
                                 <td width='50%' >
                                 
-                                    <input size='30' type='text' value="<?php echo $result['fullname']; ?>"/>
+                                    <input type='text' value="<?php echo $result['fullname']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
-                                    Email:
+                                    <label>Email:</label>
                                 </td>
                                 <td>
-                                    <input size='30' type='email' value="<?php echo $result['email']; ?>"/>
+                                    <input type='email' value="<?php echo $result['email']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
-                                    Phone:
+                                    <label>Phone:</label>
                                 </td>
                                 <td>
-                                    <input size='30' type='text' value="<?php echo $result['phone']; ?>"/>
+                                    <input type='text' value="<?php echo $result['phone']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
-                                    Date of Birth:
+                                    <label>Date of Birth:</label>
                                 </td>
                                 <td>
-                                    <input size='30' type='date' value="<?php echo $result['dob']; ?>"/>
+                                    <input type='date' value="<?php echo $result['dob']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    <center>
-                                        <input type='submit' value="Submit">
-                                    </center>
+                                    <input type='submit' value="Submit">
                                 </td>
                             </tr>
                         </table>
                     </form>
                 </div>
-                <br>
             </td>
         </tr>
     </table>
