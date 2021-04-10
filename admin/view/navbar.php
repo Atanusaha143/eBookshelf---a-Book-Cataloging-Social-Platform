@@ -1,13 +1,3 @@
-<?php 
-    if(isset($_SESSION['fullname']))
-    {
-        
-    }
-    else
-    {
-        $_SESSION['fullname'] = 'Invalid User';
-    }
-?>
 <div class='navbar'>
     <br>
         <nav>
