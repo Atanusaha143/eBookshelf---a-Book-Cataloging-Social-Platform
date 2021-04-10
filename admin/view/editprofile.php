@@ -1,12 +1,9 @@
 <?php 
     session_start();
-    include('../model/dbCon.php');
+    include('../model/adminModel.php');
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-        $connection = connect();
-        $sql = "SELECT * FROM admin WHERE id = ".$_SESSION['id'];
-
-        $result = mysqli_query($connection, $sql);
+        $result = getAdminInfoByID($_SESSION['id']);
         $result = mysqli_fetch_assoc($result);
     }
     else if(!(isset($_COOKIE['flag'])))
@@ -48,8 +45,7 @@
                                     <label>Name:</label>
                                 </td>
                                 <td width='50%' >
-                                
-                                    <input type='text' value="<?php echo $result['fullname']; ?>"/>
+                                    <input type='text' name='fullname' value="<?php echo $result['fullname']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -57,7 +53,7 @@
                                     <label>Email:</label>
                                 </td>
                                 <td>
-                                    <input type='email' value="<?php echo $result['email']; ?>"/>
+                                    <input type='email' name='email' value="<?php echo $result['email']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -65,7 +61,7 @@
                                     <label>Phone:</label>
                                 </td>
                                 <td>
-                                    <input type='text' value="<?php echo $result['phone']; ?>"/>
+                                    <input type='text' name="phone" value="<?php echo $result['phone']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -73,7 +69,7 @@
                                     <label>Date of Birth:</label>
                                 </td>
                                 <td>
-                                    <input type='date' value="<?php echo $result['dob']; ?>"/>
+                                    <input type='date' name="dob" value="<?php echo $result['dob']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
