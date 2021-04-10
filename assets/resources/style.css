@@ -220,3 +220,47 @@ body
     padding-left: 20px;
     border-radius: 0px 10px 10px 0px;
 }
+
+.chatbox
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(3, 16, 54);
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.chatbox .sender
+{
+    background-color: cornsilk;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 170px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-radius: 10px;
+}
+
+.chatbox .receiver
+{
+    background-color: rgb(8, 182, 182);
+    text-align: left;
+    margin-right: 170px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-radius: 10px;
+}
+
+.chatbox .date
+{
+    font-size: 10px;
+    right: 10px;
+}

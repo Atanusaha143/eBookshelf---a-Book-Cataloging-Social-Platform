@@ -33,20 +33,30 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
+    <div class="container">
+        <h3><?php echo $_GET['id']; ?></h3>
+    </div>
     <div class='chatbox'>
         <?php
             while($row = mysqli_fetch_assoc($messages))
             {
                 if($row['to_user'] == $_SESSION['id'])
                 {
-                    echo $row['content'].'<br>';
+                    echo "<div class='receiver'>"."<label class='date'>".$row['time']."</label><br>".$row['content']."</div>";
                 }
                 else
                 {
-                    echo $row['content'].'<hr>';
+                    echo "<div class='sender'>"."<label class='date'>".$row['time']."</label><br>".$row['content']."</div>";
                 }
             }
+            //substr($row['time'], -8)
         ?>
+    </div>
+    <div class="form">
+        <form>
+            <textarea placeholder="Write your message here" name='message'></textarea><br>
+            <input type="submit" value='Send'>
+        </form>
     </div>
     <?php include('./footer.php'); ?>
 </body>
