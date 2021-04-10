@@ -23,28 +23,33 @@
 
         if($fullnameFlag == true)
         {
-            echo "Name must be alphabetical!<br>";
+            return;
+            //echo "Name must be alphabetical!<br>";
         }
 
         if($emailFlag == true)
         {
-            echo "Email must have '@' symbol!<br>";
+            return;
+            //echo "Email must have '@' symbol!<br>";
         }        
 
         if($phoneFlag == true)
         {
-            echo "Phone number can only have a '+' or numeric values!<br>";
+            return;
+            // echo "Phone number can only have a '+' or numeric values!<br>";
         }
 
         if($usernameFlag == true)
         {
-            echo "Username must be alphanumeric!<br>";
+            return;
+            //echo "Username must be alphanumeric!<br>";
         }
 
         if($password != $confirmpassword)
         {
             $passwordFlag=true;
             echo "passwords do not match!<br>";
+            return;
         }
 
         if($fullnameFlag == false &&
