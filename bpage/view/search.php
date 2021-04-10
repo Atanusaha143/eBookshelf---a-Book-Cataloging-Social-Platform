@@ -1,15 +1,16 @@
-<?php 
+<?php
     session_start();
-    if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
+    if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         //continue
     }
-    else if(!(isset($_COOKIE['flag'])))
+    else if(!isset($_COOKIE['flag']))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
     }
-    else
+    else 
     {
         header('location: ../login.php');
     }

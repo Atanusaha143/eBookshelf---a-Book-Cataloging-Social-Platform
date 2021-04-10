@@ -1,3 +1,21 @@
+<?php
+    session_start();
+    if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
+    {
+        //continue
+    }
+    else if(!isset($_COOKIE['flag']))
+    {
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
+    }
+    else 
+    {
+        header('location: ../login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +27,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <?php include('./header.php'); ?>
+    <?php include('./navbar.php'); ?>
 </body>
 </html>
