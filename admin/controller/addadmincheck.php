@@ -14,14 +14,12 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
-        $profilePic = $_FILES['propic'];
 
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-        $fileFlag = imageValidate($profilePic, $username);
 
         if($fullnameFlag == true)
         {
@@ -46,22 +44,18 @@
         if($password != $confirmpassword)
         {
             $passwordFlag=true;
-            echo "Passwords do not match!<br>";
-        }
-
-        if($fileFlag == true)
-        {
-            $fileFlag=true;
-            echo "File is not an image. Please upload an image file!";
+            echo "passwords do not match!<br>";
         }
 
         if($fullnameFlag == false &&
         $emailFlag == false &&
         $phoneFlag == false &&
         $usernameFlag == false &&
-        $passwordFlag == false &&
-        $fileFlag == false)
+        $passwordFlag == false)
         {
+            include('../model/adminModel.php');
+            $connection = connect();
+            
             // $dataStringAdmin = file_get_contents('../../model/admin.json');
             // $dataJSONAdmin = json_decode($dataStringAdmin, true);
             // $last = sizeof($dataJSONAdmin);

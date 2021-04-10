@@ -41,13 +41,13 @@
                     <td colspan="2"><hr></td>
                 </tr>
                 <tr>
-                    <td align="center" colspan="2"><input type='submit' value="Log In"></td>
+                    <td colspan="2"><input type='submit' value="Log In"></td>
                 </tr>
                 <tr>
-                    <td align='center' colspan="2"><input type='checkbox'>Remember Me</td>
+                    <td colspan="2"><input type='checkbox'>Remember Me</td>
                 </tr>
                 <tr>
-                    <td align="center" colspan="2"><a href="./forgot.php"><br>Forgot Password?</a></td>
+                    <td colspan="2"><a href="./forgot.php"><br>Forgot Password?</a></td>
                 </tr>
             </table>
             <br><br><br>

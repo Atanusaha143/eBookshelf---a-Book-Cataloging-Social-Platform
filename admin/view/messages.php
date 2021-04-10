@@ -39,6 +39,9 @@
 <body>
     <?php include('./header.php');?>
     <?php include('./navbar.php');?>
+    <div class='container'>
+        <a class='link' href="./sendmessage.php">Send Message to a New User</a>
+    </div>
     <div class='messageBar'>
         <table>
             <?php 

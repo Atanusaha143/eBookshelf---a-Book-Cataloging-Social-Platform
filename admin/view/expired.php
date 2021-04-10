@@ -10,8 +10,7 @@
 </head>
 <body>
     <?php include('./header.php'); ?>
-    <!-- <?php include('./navbar.php'); ?> -->
-    <h3>It seems your session has expired, please <a class="link" href="./login.php">Log In</a> again!</h3>
+    <h3>It seems your session has expired, please <a href="./login.php">Log In</a> again!</h3>
     <?php include('./footer.php'); ?>
 </body>
 </html>

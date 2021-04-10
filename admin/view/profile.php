@@ -71,7 +71,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available">
+                                <!-- <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available"> -->
                             </td>
                         </tr>
                         <tr>
@@ -119,12 +119,10 @@
                 <br>
             </td>
         </tr>
-        <tr>
-            <td border="1px solid black" align="center">
-                    <a class="link" href='./settings.php'>Settings</a>
-            </td>
-        </tr>
     </table>
+    <div class='container'>
+        <a class="link" href='./settings.php'>Settings</a>
+    </div>
     <?php include('./footer.php'); ?>
     <script src='../../assets/scripts.js'></script>
 </body>
