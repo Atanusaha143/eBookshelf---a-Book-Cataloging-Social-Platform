@@ -15,6 +15,11 @@
         header('location: ./login.php');
     }
 ?>
+
+<?php
+    include('../model/adminModel.php');
+    $messages = getMessages($_SESSION['id'], '2');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,13 +28,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
-    <title>Add User</title>
+    <title>Chat</title>
 </head>
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div width='100px' class='form'>
-        
+    <div class='chatbox'>
+        <?php
+            while($row = mysqli_fetch_assoc($messages))
+            {
+                if($row['to_user'] == $_SESSION['id'])
+                {
+                    echo $row['content'].'<br>';
+                }
+                else
+                {
+                    echo $row['content'].'<hr>';
+                }
+            }
+        ?>
     </div>
     <?php include('./footer.php'); ?>
 </body>
