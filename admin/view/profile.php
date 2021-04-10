@@ -18,19 +18,20 @@
 ?>
 
 <?php
-
-    $connection = connect();
-    //Load administrator information
-    $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
-
-    $admindetails = mysqli_query($connection, $sqladmin);
+    $admindetails = getAdminInfoByID($_SESSION['id']);
     $admindetails = mysqli_fetch_assoc($admindetails);
+    // $connection = connect();
+    // //Load administrator information
+    // $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-    //Load log in information
-    $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+    // $admindetails = mysqli_query($connection, $sqladmin);
+    // $admindetails = mysqli_fetch_assoc($admindetails);
 
-    $logindetails = mysqli_query($connection, $sqllogin);
-    $logindetails = mysqli_fetch_assoc($logindetails);
+    // //Load log in information
+    // $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+
+    // $logindetails = mysqli_query($connection, $sqllogin);
+    // $logindetails = mysqli_fetch_assoc($logindetails);
 
     //Combine information into one array
     $results=[];
@@ -38,7 +39,7 @@
     $results['fullname'] = $admindetails['fullname'];
     $results['email'] = $admindetails['email'];
     $results['dateOfBirth'] = $admindetails['dob'];
-    $results['username'] = $logindetails['username'];
+    $results['username'] = $admindetails['username'];
     $results['phone'] = $admindetails['phone'];
     $results['regdate'] = $admindetails['regdate'];
     $results['photo'] = $admindetails['photo'];
@@ -71,7 +72,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <img src="../../assets/profile/<?php echo $results['photo'];?>" height="250" alt="image not available">
+                                <img src="../../assets/profile/admin/<?php echo $results['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>

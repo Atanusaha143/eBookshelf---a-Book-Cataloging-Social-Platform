@@ -40,4 +40,12 @@
         $result = mysqli_query($connection, $sql);
         return $result;
     }
+
+    function getAdminInfoByID($id)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM admin, adminlogin WHERE adminlogin.id = ".$id." AND adminlogin.id = admin.id";
+        $result = mysqli_query($connection, $sql);
+        return $result;
+    }
 ?>
