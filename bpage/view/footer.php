@@ -1,10 +1,7 @@
-<br><br>
-<fieldset>
-    <center>
-        <b>
-            <label>
-                Authorized under copyright © 2021
-            </label>
-        </b>
-    </center>
-</fieldset>
+<div class="footer">
+    <b>
+        <label>
+            Authorized under copyright © 2021
+        </label>
+    </b>
+</div>
