@@ -139,7 +139,7 @@
         }
         else
         {
-            //echo "File is not an image. Please upload an image file!";
+            echo "File is not an image. Please upload an image file!";
             return true;
         }
     }

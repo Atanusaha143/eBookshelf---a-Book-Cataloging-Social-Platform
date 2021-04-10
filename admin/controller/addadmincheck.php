@@ -14,12 +14,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
+        $file = $_FILES['propic'];
 
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
+        $imageFlag = imageValidate($file, $usernameFlag);
 
         if($fullnameFlag == true)
         {
@@ -43,6 +45,11 @@
         {
             return;
             //echo "Username must be alphanumeric!<br>";
+        }
+
+        if($imageFlag == true)
+        {
+            return;
         }
 
         if($password != $confirmpassword)

@@ -18,12 +18,9 @@
 ?>
 
 <?php  
-    //include('../model/dbCon.php');
-    
     $connection = connect();
-    $sql = "select * from messages where id in (select max(id) from messages where to_user = ".$_SESSION['id']." GROUP by from_user)";
+    $sql = "SELECT * FROM adminmessages WHERE id IN (SELECT max(id) FROM adminmessages WHERE to_user = ".$_SESSION['id']." GROUP BY from_user)";
     $result = mysqli_query($connection, $sql);
-    //$result = mysqli_fetch_assoc($result);
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +31,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
-    <title>Document</title>
+    <title>Messages</title>
 </head>
 <body>
     <?php include('./header.php');?>
@@ -47,7 +44,7 @@
             <?php 
             while($row = mysqli_fetch_assoc($result))
             {
-                $sqlfullname = "select DISTINCT admin.fullname from admin, messages where admin.id = ".$row['from_user'];
+                $sqlfullname = "select DISTINCT admin.fullname from admin, adminmessages where admin.id = ".$row['from_user'];
                 $fullname = mysqli_query($connection, $sqlfullname);
                 $fullname = mysqli_fetch_assoc($fullname);
 
