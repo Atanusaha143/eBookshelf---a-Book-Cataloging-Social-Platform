@@ -94,6 +94,14 @@
                         </tr>
                         <tr>
                             <td align="right">
+                                <b>phone:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['phone']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
                                 <b>Username:</b>
                             </td>
                             <td>
