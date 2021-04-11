@@ -47,6 +47,14 @@
         return $result;
     }
 
+    function getBpageInfoByID($id)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM bpage, bpagelogin WHERE bpagelogin.id = ".$id." AND bpagelogin.id = bpage.id";
+        $result = mysqli_query($connection, $sql);
+        return $result;
+    }
+
     function insertMessage($message, $senderID, $receiverID)
     {
         $connection = connect();
