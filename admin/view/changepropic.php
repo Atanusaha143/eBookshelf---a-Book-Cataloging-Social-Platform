@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    include('../model/adminModel.php');
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
@@ -14,6 +15,11 @@
     {
         header('location: ./login.php');
     }
+?>
+
+<?php
+    $results = getAdminInfoByID($_SESSION['id']);
+    $results = mysqli_fetch_assoc($results);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,37 +37,32 @@
     <table border="1px solid black" width='100%'>
         <tr>
             <td>
-                <label>Menu</label>
-                <br>
-                <hr>
-                <ul>
-                    <li><a href='./editprofile.php'>Edit Profile</a></li>
-                    <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
-                </ul>
+                <?php include('./menu.php'); ?>
             </td>
             <td>
-                <form action="../controller/propicvalidate.php" method="POST" enctype="multipart/form-data">
-                    <table align="center" border="1px solid black">
-                        <tr>
-                            <td align="center">
-                                <img src= '<?php echo "../images/profile/admin/".$_SESSION['id'].".jpeg"; ?>' height="250">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type='file' name='propic'/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <center>
-                                    <input type='submit' value="Submit">
-                                </center>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
+                <div class="form">
+                    <form action="../controller/propicvalidate.php" method="POST" enctype="multipart/form-data">
+                        <table align="center" border="1px solid black">
+                            <tr>
+                                <td align="center">
+                                    <img src= '<?php echo "../../assets/profile/admin/".$results['photo']; ?>' height="250">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type='file' name='propic'/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <center>
+                                        <input type='submit' value="Submit">
+                                    </center>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
                 <br>
             </td>
         </tr>

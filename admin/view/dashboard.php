@@ -33,24 +33,11 @@
     <table width='85%'>
         <tr>
             <th>
-                Messages
-            </th>
-            <th>
                 Posts
-            </th>
-            <th>
-                Notifications
             </th>
         </tr>
         <tr>
-            <td width='17%'>
-                
-            </td>
-            <td>
-                <br><br><br><br><br><br>
-                <?php echo "BOOKS"; ?>
-            </td>
-            <td>
+            <td align="center">
                 <br><br><br><br><br><br>
                 <?php echo "BOOKS"; ?>
             </td>

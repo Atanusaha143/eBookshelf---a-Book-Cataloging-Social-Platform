@@ -27,13 +27,13 @@
     <title>Password Changed!</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('../header.php'); ?>
+    <?php include('./header.php'); ?>
     <div width='100px'>
         <center>
             <h3>Profile pic changed successfully!</h3>
             <a href="./dashboard.php">Go Back</a>
         </center>
     </div>
-    <?php include('../footer.php'); ?>
+    <?php include('./footer.php'); ?>
 </body>
 </html>
