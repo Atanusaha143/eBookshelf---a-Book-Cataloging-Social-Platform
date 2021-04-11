@@ -126,4 +126,37 @@
         }
         return false;
     }
+
+    function dateValidation($date)
+    {
+        $year = substr($date, 0, 4);
+        if($year < 1900)
+        {
+            echo "The year in your date of birth is invalid!";
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function imageValidate($fileFlag, $username)
+    {
+        $file = $fileFlag['name'];
+        $extension = pathinfo($file, PATHINFO_EXTENSION);
+        //print($extension);
+        if($extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || 
+           $extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') 
+        {
+            //echo "Picture uploaded successfully!";
+            return false;
+        }
+        else
+        {
+            echo "File is not an image. Please upload an image file!";
+            print_r($extension);
+            return true;
+        }
+    }
 ?>
