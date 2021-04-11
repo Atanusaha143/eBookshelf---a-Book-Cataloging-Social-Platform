@@ -1,9 +1,11 @@
 <?php
     session_start();
+    include('../model/adminModel.php');
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        include('../controller/validateviewprofile.php');
+        //include('../controller/validateviewprofile.php');
+        $adminDetails = getAdminInfoByID($_GET['id']);
     }
     else if(!(isset($_COOKIE['flag'])))
     {

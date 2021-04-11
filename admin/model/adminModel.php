@@ -131,4 +131,13 @@
             echo "Failed to add admin<br>";
         }
     }
+
+    function getAllAdmins($id)
+    {
+        $sql = "SELECT * FROM admin WHERE id != $id";
+        $connection = connect();
+
+        $allAdmins = mysqli_query($connection, $sql);
+        return $allAdmins;
+    }
 ?>

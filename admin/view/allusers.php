@@ -1,10 +1,11 @@
 <?php 
     session_start();
+    include('../model/adminModel.php');
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        $dataString = file_get_contents('../model/admin.json');
-        $dataJSON = json_decode($dataString, true);
+        $allAdmins = getAllAdmins($_SESSION['id']);
+        //$allAdmins = mysqli_fetch_assoc($allAdmins);
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -47,23 +48,37 @@
             <td>
                 <table align="center">
                     <?php
-                        foreach($dataJSON as $values)
-                        {
-                            if($_SESSION['id'] != $values['id'])
-                            {   
-                                echo 
+                            foreach($allAdmins as $admin)
+                            {
+                                echo
                                 "<tr>
-                                    <td align='center'>"
-                                        .$values['id'].
-                                    "</td>
-                                    <td align='center'>
-                                        <a href='anotheruser.php?userid=".$values['id']."'>"
-                                            .$values['fullname'].
-                                        "</a>
-                                    </td>
+                                <td align='center'>"
+                                    .$admin['id'].
+                                "</td>
+                                <td align='center'>
+                                    <a href='anotheruser.php?userid=".$admin['id']."'>"
+                                        .$admin['fullname'].
+                                    "</a>
+                                </td>
                                 </tr>";
                             }
-                        }
+                        // foreach($dataJSON as $values)
+                        // {
+                        //     if($_SESSION['id'] != $values['id'])
+                        //     {   
+                        //         echo 
+                        //         "<tr>
+                        //             <td align='center'>"
+                        //                 .$values['id'].
+                        //             "</td>
+                        //             <td align='center'>
+                        //                 <a href='anotheruser.php?userid=".$values['id']."'>"
+                        //                     .$values['fullname'].
+                        //                 "</a>
+                        //             </td>
+                        //         </tr>";
+                        //     }
+                        // }
                     ?>
                     <!-- <?php 
                         foreach($dataJSON as $values)
