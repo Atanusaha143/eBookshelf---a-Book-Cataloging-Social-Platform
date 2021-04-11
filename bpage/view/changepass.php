@@ -1,18 +1,18 @@
-<?php
+<?php 
     session_start();
-    if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
+    if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
     }
-    else if(!isset($_COOKIE['flag']))
+    else if(!(isset($_COOKIE['flag'])))
     {
         header('location: ./expired.php');
         // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         // return;
     }
-    else 
+    else
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 <!DOCTYPE html>
@@ -21,15 +21,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../../assets/images/icon.png'>
-    <link rel='stylesheet' href='../../assets/resources/style.css'>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Add User</title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
-    <div width='100px'>
+    <div width='100px' class='form'>
         <center>
-            <form action="../../controller/changepassword.php" method='POST'>
+            <form action="../controller/changepassword.php" method='POST'>
                 <h2>Enter the following fields to change your password.</h2>
                 <table>
                     <tr>

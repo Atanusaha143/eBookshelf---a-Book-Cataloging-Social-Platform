@@ -1,6 +1,7 @@
 <?php
-    include('./validate_functions.php');
     session_start();
+    include('./validate_functions.php');
+    include('../model/bpageModel.php');
     if(empty($_POST['currentpass']) || empty($_POST['newpass']) || empty($_POST['confirmpass']))
     {
         echo "Please enter all three fields.";
