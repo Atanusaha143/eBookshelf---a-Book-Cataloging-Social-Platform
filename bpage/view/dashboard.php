@@ -3,7 +3,7 @@
     if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         //continue
-        print_r($_SESSION);
+        //print_r($_SESSION);
     }
     else if(!isset($_COOKIE['flag']))
     {
