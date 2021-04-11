@@ -27,7 +27,7 @@
     <title>Password Changed!</title>
 </head>
 <body bgcolor="#c5fcf7">
-    <?php include('./adminheader.php'); ?>
+    <?php include('./header.php'); ?>
     <div width='100px'>
         <center>
             <h3>Password changed successfully!</h3>

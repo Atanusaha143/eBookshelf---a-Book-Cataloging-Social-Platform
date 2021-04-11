@@ -78,4 +78,20 @@
             return false;
         }
     }
+
+    function updatePassword($id, $password)
+    {
+        $connection = connect();
+        $sql = "UPDATE adminlogin SET password = '".$password."' WHERE id = $id";
+        $updateResult = mysqli_query($connection, $sql);
+
+        if($updateResult)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>
