@@ -33,10 +33,11 @@
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div class='data'>
+    
         <table width='100%'>
             <tr>
                 <td>
+                <div class='data'>
                     <table align="center" border="1px solid black">
                         <tr>
                             <td align="right">
@@ -91,7 +92,7 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="center">
-                                <a href="./sendmessage.php?userid=<?php echo $adminDetails['id']; ?>">Send a message</a>
+                                <a href="./chat.php?username=<?php echo $adminDetails['username']; ?>">Send a message</a>
                             </td>
                         </tr>
                         <tr>
@@ -100,11 +101,11 @@
                             </td>
                         </tr>
                     </table>
+                    </div>
                     <br>
                 </td>
             </tr>
         </table>
-    </div>
     <?php include('./footer.php'); ?>
 </body>
 </html>

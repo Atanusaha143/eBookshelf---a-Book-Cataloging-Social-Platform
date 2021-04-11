@@ -58,7 +58,7 @@
                     </tr>
                 </table>
                 <input type='submit'><br><br>
-                <a href="./dashboard.php">Go Back</a>
+                <a href="./settings.php">Go Back</a>
             </form>
         </center>
     </div>
