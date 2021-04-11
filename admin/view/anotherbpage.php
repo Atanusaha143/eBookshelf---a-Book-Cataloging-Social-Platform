@@ -92,7 +92,7 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="center">
-                                <a href="./chat.php?username=<?php echo $bpageDetails['username']; ?>">Send a message</a>
+                                <a href="../controller/restrictbpage.php?username=<?php echo $bpageDetails['username']; ?>">Restrict User</a>
                             </td>
                         </tr>
                         <tr>
