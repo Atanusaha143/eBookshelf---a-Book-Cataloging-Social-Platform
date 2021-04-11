@@ -15,13 +15,14 @@
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
         $file = $_FILES['propic'];
+        $fileSaveName = $username.".".pathinfo($file['name'], PATHINFO_EXTENSION);
 
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-        $imageFlag = imageValidate($file, $usernameFlag);
+        $imageFlag = imageValidate($file, $username);
 
         if($fullnameFlag == true)
         {
@@ -63,11 +64,27 @@
         $emailFlag == false &&
         $phoneFlag == false &&
         $usernameFlag == false &&
-        $passwordFlag == false)
+        $passwordFlag == false &&
+        $imageFlag == false)
         {
             include('../model/adminModel.php');
-            $connection = connect();
-            
+            $addAdminStatus = insertNewAdmin($fullname, $email, $phone, $dateOfBirth, $username, $password, $fileSaveName);
+            print_r($addAdminStatus);
+            $picture = $_FILES['propic'];
+            //$imageFlag = imageValidate($picture, $adminDetails['username']);
+            $path = '../../assets/profile/admin/'.$fileSaveName;
+
+            if(move_uploaded_file($picture['tmp_name'], $path))
+            {
+                echo "Photo uploaded!<br>";
+                //header('location: ../view/picchangesuccess.php');
+            }
+            else
+            {
+                echo "Photo upload failed!<br>";
+            }
+            //print_r($file);
+
             // $dataStringAdmin = file_get_contents('../../model/admin.json');
             // $dataJSONAdmin = json_decode($dataStringAdmin, true);
             // $last = sizeof($dataJSONAdmin);
@@ -113,6 +130,8 @@
             // {
             //     echo "Photo upload failed!<br>";
             // }
+
+
         
             echo "New Admin added successfully!<br>";
             echo "<a href='../view/addadmin.php'>Go Back</a>";

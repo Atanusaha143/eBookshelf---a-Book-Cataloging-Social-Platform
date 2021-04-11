@@ -94,4 +94,41 @@
             return false;
         }
     }
+
+    function insertNewAdmin($fullname, $email, $phone, $dob, $username, $password, $photo)
+    {
+        $regdate = date("Y-m-d");
+
+        $connection = connect();
+        $sqlAdmin = "INSERT INTO admin(fullname, email, phone, dob, regdate, photo) VALUES('$fullname', 
+        '$email', 
+        '$phone', 
+        '$dob', 
+        '$regdate',
+        '$photo')";
+
+        $adminUpdateResult = mysqli_query($connection, $sqlAdmin);
+
+        //$lastID = mysqli_insert_id($connection);
+        $sqlLastID = "SELECT MAX(ID) FROM admin";
+
+        $lastID = mysqli_query($connection, $sqlLastID);
+        $lastID = mysqli_fetch_assoc($lastID);
+
+        $sqlLogIn = "INSERT INTO adminlogin(id, username, password, type) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'admin')";
+        $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
+
+        if($adminUpdateResult)
+        {
+            echo "Admin added<br>";
+        }
+        if($loginUpdateResult)
+        {
+            echo "Admin's login added<br>";
+        }
+        if($adminUpdateResult == false && $loginUpdateResult == false)
+        {
+            echo "Failed to add admin<br>";
+        }
+    }
 ?>
