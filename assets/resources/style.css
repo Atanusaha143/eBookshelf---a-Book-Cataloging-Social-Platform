@@ -31,7 +31,7 @@ body
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    width: 170px;
+    width: 200px;
 }
 
 .form input[type=file]
@@ -229,6 +229,8 @@ body
     background-color: rgb(3, 16, 54);
     padding-top: 10px;
     padding-bottom: 5px;
+    height: 250px;
+    overflow-y: scroll;
 }
 
 .chatbox .sender
@@ -243,6 +245,7 @@ body
     padding-left: 15px;
     padding-right: 25px;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px antiquewhite;
 }
 
 .chatbox .receiver
@@ -257,10 +260,55 @@ body
     padding-left: 15px;
     padding-right: 25px;
     border-radius: 10px;
+    box-shadow: 2px 2px 10px antiquewhite;
 }
 
 .chatbox .date
 {
     font-size: 10px;
     right: 10px;
+}
+
+.form .textWindow
+{
+    text-align: center;
+    width: 49%;
+    height: 50px;
+    max-width: 95%;
+    resize: none;
+}
+
+.menu
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(6, 46, 107);
+}
+
+.menu table
+{
+    border-collapse: collapse;
+}
+
+.menu a
+{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 2, 128);
+    white-space: nowrap;
+}
+
+.menu a:hover
+{
+    color: rgb(215, 233, 240);;
+    background-color: rgb(75, 75, 236);
 }
