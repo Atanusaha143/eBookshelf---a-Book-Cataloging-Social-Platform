@@ -3,7 +3,7 @@
     include('../model/bpageModel.php');
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-        $result = getAdminInfoByID($_SESSION['id']);
+        $result = getBpageInfoByID($_SESSION['id']);
         $result = mysqli_fetch_assoc($result);
     }
     else if(!(isset($_COOKIE['flag'])))
@@ -45,7 +45,7 @@
                                     <label>Name:</label>
                                 </td>
                                 <td width='50%' >
-                                    <input type='text' name='fullname' value="<?php echo $result['fullname']; ?>"/>
+                                    <input type='text' name='fullname' value="<?php echo $result['name']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -62,14 +62,6 @@
                                 </td>
                                 <td>
                                     <input type='text' name="phone" value="<?php echo $result['phone']; ?>"/>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right">
-                                    <label>Date of Birth:</label>
-                                </td>
-                                <td>
-                                    <input type='date' name="dob" value="<?php echo $result['dob']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
