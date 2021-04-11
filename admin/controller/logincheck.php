@@ -11,27 +11,29 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $usernameFlag = usernameValidation($username);
-        $passwordFlag = passwordValidation($password);
+        //$usernameFlag = usernameValidation($username);
+        //$passwordFlag = passwordValidation($password);
 
         $userFoundFlag = validateLogIn($username, $password);
-        
-        if($usernameFlag == false && $passwordFlag == false)
+
+        if($userFoundFlag)
         {
-            if($userFoundFlag)
-            {
-                //header('location: ../view/dashboard.php');
-                $_SESSION['flag'] = true;
-                $_SESSION['id'] = $userFoundFlag;
-                $_SESSION['type'] = 'admin';
-                setcookie('flag', true, time()+1200, '/');
-                header('location: ./redirect.php');
-            }
-            else
-            {
-                header('location: ../view/login.php');
-            }
+            //header('location: ../view/dashboard.php');
+            $_SESSION['flag'] = true;
+            $_SESSION['id'] = $userFoundFlag;
+            $_SESSION['type'] = 'admin';
+            setcookie('flag', true, time()+1200, '/');
+            header('location: ./redirect.php');
         }
+        else
+        {
+            header('location: ../view/login.php');
+        }
+        
+        // if($usernameFlag == false && $passwordFlag == false)
+        // {
+            
+        // }
 
         /*
         $dataString = file_get_contents('../model/login.json');

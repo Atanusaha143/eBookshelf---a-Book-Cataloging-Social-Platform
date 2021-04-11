@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('../model/dbCon.php');
+    //include('../model/admCon.php');
     //print_r($_SESSION);
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
