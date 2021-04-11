@@ -1,46 +1,48 @@
 <?php
+    include('../model/adminModel.php');
     if(!empty($_GET['type']) && !empty($_GET['search']) && !empty($_GET['searchopt']))
     {
         if($_GET['type'] == 'admin')
-        {
-            $dataString = file_get_contents('../model/admin.json');
-            $dataJSON = json_decode($dataString,true);
-            
+        {   
             if($_GET['searchopt'] == 'id')
             {
-                foreach($dataJSON as $user)
-                {
-                    if($user['id'] == $_GET['search'])
-                    {
-                        $_GET['id'] = $user['id'];
-                        $_GET['fullname'] = $user['fullname'];
-                        $_GET['email'] = $user['email'];
-                        $_GET['phone'] = $user['phone'];
-                        $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                        $_GET['username'] = $user['username'];
-                        $_GET['regdate'] = $user['regdate'];
-                        $_GET['type'] = $user['type'];
-                    }
-                }
-                header("location: ../view/searchresult.php?fullname=".$user['fullname']);
+                $adminDetails = getAdminInfoByID($_GET['search']);
+                $adminDetails = mysqli_fetch_assoc($adminDetails);
+                // foreach($dataJSON as $user)
+                // {
+                //     if($user['id'] == $_GET['search'])
+                //     {
+                //         $_GET['id'] = $user['id'];
+                //         $_GET['fullname'] = $user['fullname'];
+                //         $_GET['email'] = $user['email'];
+                //         $_GET['phone'] = $user['phone'];
+                //         $_GET['dateOfBirth'] = $user['dateOfBirth'];
+                //         $_GET['username'] = $user['username'];
+                //         $_GET['regdate'] = $user['regdate'];
+                //         $_GET['type'] = $user['type'];
+                //     }
+                // }
+                header("location: ../view/searchresult.php?id=".$adminDetails['id']);
             }
             else if($_GET['searchopt'] == 'name')
             {
-                foreach($dataJSON as $user)
-                {
-                    if($user['fullname'] == $_GET['search'])
-                    {
-                        $_GET['id'] = $user['id'];
-                        $_GET['fullname'] = $user['fullname'];
-                        $_GET['email'] = $user['email'];
-                        $_GET['phone'] = $user['phone'];
-                        $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                        $_GET['username'] = $user['username'];
-                        $_GET['regdate'] = $user['regdate'];
-                        $_GET['type'] = $user['type'];
-                    }
-                }
-                header('location: ../view/searchresult.php');
+                $adminDetails = getAdminInfoByID($_GET['search']);
+                $adminDetails = mysqli_fetch_assoc($adminDetails);
+                // foreach($dataJSON as $user)
+                // {
+                //     if($user['fullname'] == $_GET['search'])
+                //     {
+                //         $_GET['id'] = $user['id'];
+                //         $_GET['fullname'] = $user['fullname'];
+                //         $_GET['email'] = $user['email'];
+                //         $_GET['phone'] = $user['phone'];
+                //         $_GET['dateOfBirth'] = $user['dateOfBirth'];
+                //         $_GET['username'] = $user['username'];
+                //         $_GET['regdate'] = $user['regdate'];
+                //         $_GET['type'] = $user['type'];
+                //     }
+                // }
+                header("location: ../view/searchresult.php?id=".$adminDetails['name']);
             }
             print_r($_GET);
         }

@@ -4,6 +4,10 @@
     {
         //continue
         include('../controller/validateviewprofile.php');
+        include('../model/adminModel.php');
+        $userid = $_GET['id'];
+        $adminDetails = getAdminInfoByID($userid);
+        $adminDetails = mysqli_fetch_assoc($adminDetails);
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -36,6 +40,7 @@
         </h3>
         <h3>
             Results:
+            <?php echo $adminDetails['fullname']; ?>
         </h3>
     </center>
     <?php include('./footer.php'); ?>
