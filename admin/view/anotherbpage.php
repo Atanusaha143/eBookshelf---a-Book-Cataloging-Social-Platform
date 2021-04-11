@@ -97,6 +97,11 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="center">
+                                <a href="./updatebpage.php?id=<?php echo $bpageDetails['id']; ?>">Update User Info</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
                                 <a href="./allusers.php">Go Back</a>
                             </td>
                         </tr>

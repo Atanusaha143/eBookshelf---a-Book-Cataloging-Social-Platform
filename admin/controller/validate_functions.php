@@ -15,17 +15,24 @@
 
     function emailValidation($email)
     {
-        $count = 0;
+        $countAt = 0;
+        $countDotCom = 0;
         for($i = 0 ; $i<strlen($email) ; $i=$i+1)
         {
             if($email[$i] == '@')
             {
-                $count = $count + 1;
+                $countAt = $countAt + 1;
             }
         }
-        if($count==0)
+
+        $last4Chars = substr($email, -4);
+        if($last4Chars == '.com' || $last4Chars == '.edu')
         {
-            echo "Email must have '@' symbol!<br>";
+            $countDotCom = 1;
+        }
+        if($countAt==0 || $countDotCom == 0)
+        {
+            echo "Email must have '@' symbol, followed by a valid mail domain (such as '.com')!<br>";
             return true;
         }
         else
