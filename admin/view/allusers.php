@@ -6,6 +6,7 @@
         //continue
         $allAdmins = getAllAdmins($_SESSION['id']);
         //$allAdmins = mysqli_fetch_assoc($allAdmins);
+        $allBpages = getAllBpages();
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -56,7 +57,7 @@
                                     .$admin['id'].
                                 "</td>
                                 <td align='center'>
-                                    <a href='anotheruser.php?userid=".$admin['id']."'>"
+                                    <a href='anotheradmin.php?id=".$admin['id']."'>"
                                         .$admin['fullname'].
                                     "</a>
                                 </td>
@@ -80,27 +81,30 @@
                         //     }
                         // }
                     ?>
-                    <!-- <?php 
-                        foreach($dataJSON as $values)
-                        {
-                            if($_SESSION['id'] != $values['id'])
-                            {
-                                print_r($values['id']);
-                                echo "||";
-                                echo "<a href='anotheruser.php?userid=".$values['id']."'>";
-                                    print_r($values['fullname']);
-                                echo "</a>";
-                                echo "<br>";
-                            }
-                        }
-                    ?> -->
                 </table>
             </td>
             <td>
             
             </td>
             <td>
-            
+                <table align="center">
+                    <?php
+                            foreach($allBpages as $bpage)
+                            {
+                                echo
+                                "<tr>
+                                <td align='center'>"
+                                    .$bpage['id'].
+                                "</td>
+                                <td align='center'>
+                                    <a href='anotherbpage.php?id=".$bpage['id']."'>"
+                                        .$bpage['name'].
+                                    "</a>
+                                </td>
+                                </tr>";
+                            }
+                    ?>
+                </table>
             </td>
         </tr>
     </table>

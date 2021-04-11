@@ -5,7 +5,7 @@
     {
         //continue
         //include('../controller/validateviewprofile.php');
-        $adminDetails = getAdminInfoByID($_GET['userid']);
+        $adminDetails = getAdminInfoByID($_GET['id']);
         $adminDetails = mysqli_fetch_assoc($adminDetails);
     }
     else if(!(isset($_COOKIE['flag'])))

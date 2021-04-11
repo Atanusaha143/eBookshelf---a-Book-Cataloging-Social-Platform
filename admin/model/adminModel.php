@@ -140,4 +140,13 @@
         $allAdmins = mysqli_query($connection, $sql);
         return $allAdmins;
     }
+
+    function getAllBpages()
+    {
+        $sql = "SELECT * FROM bpage";
+        $connection =connect();
+        $allBpages = mysqli_query($connection, $sql);
+
+        return $allBpages;
+    }
 ?>
