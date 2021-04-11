@@ -61,10 +61,10 @@
         }
     }
 
-    function updateBpageByID($id, $fullname, $email, $phone)
+    function updateBpageByID($id, $name, $email, $phone)
     {
         $connection = connect();
-        $sql = "UPDATE bpage SET fullname = '$fullname', email = '$email', phone = '$phone' WHERE id = $id";
+        $sql = "UPDATE bpage SET name = '$name', email = '$email', phone = '$phone' WHERE id = $id";
         $updateResult = mysqli_query($connection, $sql);
 
         if($updateResult)
