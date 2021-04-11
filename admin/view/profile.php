@@ -71,7 +71,7 @@
                             <td width='40%'>
                                 <?php echo $_SESSION['type']; ?>
                             </td>
-                            <td rowspan="6">
+                            <td rowspan="7">
                                 <img src="../../assets/profile/admin/<?php echo $results['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
@@ -89,6 +89,14 @@
                             </td>
                             <td>
                                 <?php echo $results['email']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Phone:</b>
+                            </td>
+                            <td>
+                                <?php echo $results['phone']; ?>
                             </td>
                         </tr>
                         <tr>

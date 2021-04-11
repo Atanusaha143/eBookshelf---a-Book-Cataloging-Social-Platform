@@ -47,13 +47,29 @@
         return $result;
     }
 
-    function sendMessage($message, $senderID, $receiverID)
+    function insertMessage($message, $senderID, $receiverID)
     {
         $connection = connect();
         $time = date("Y-m-d H:i:s");//2021-04-08 05:33:24
         $sql = "INSERT INTO adminmessages (content, to_user, from_user, time) VALUES('$message', $receiverID, $senderID, '$time')";
         $insert = mysqli_query($connection, $sql);
         if($insert)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function updateAdminByID($id, $fullname, $email, $phone, $dob)
+    {
+        $connection = connect();
+        $sql = "UPDATE admin SET fullname = '$fullname', email = '$email', phone = '$phone', dob = '$dob' WHERE id = $id";
+        $updateResult = mysqli_query($connection, $sql);
+
+        if($updateResult)
         {
             return true;
         }

@@ -127,6 +127,20 @@
         return false;
     }
 
+    function dateValidation($date)
+    {
+        $year = substr($date, 0, 4);
+        if($year < 1900)
+        {
+            echo "The year in your date of birth is invalid!";
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     function imageValidate($fileFlag, $username)
     {
         $file = $fileFlag['name'];

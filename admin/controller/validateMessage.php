@@ -7,7 +7,7 @@
         $receiverInfo = getAdminInfoByUsername($_GET['username']);
         $receiverInfo = mysqli_fetch_assoc($receiverInfo);
 
-        $messageStatus = sendMessage($message, $_SESSION['id'], $receiverInfo['id']);
+        $messageStatus = insertMessage($message, $_SESSION['id'], $receiverInfo['id']);
         if($messageStatus == true)
         {
             echo "Message sent successfully!";

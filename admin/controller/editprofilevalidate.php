@@ -1,7 +1,7 @@
 <?php
     session_start();
     include('./validate_functions.php');
-    if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
+    if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['dob']))
     {
         echo "Please enter all fields, including your profile picture.";
     }
@@ -10,18 +10,12 @@
         $fullname = $_POST['fullname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $dateOfBirth = $_POST['dateOfBirth'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $confirmpassword = $_POST['confirmpassword'];
-        $file = $_FILES['propic'];
+        $dob = $_POST['dob'];
 
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
-        $passwordFlag = passwordValidation($password);
-        $usernameFlag = usernameValidation($username);
-        $imageFlag = imageValidate($file, $usernameFlag);
+        $dateFlag = dateValidation($dob);
 
         if($fullnameFlag == true)
         {
@@ -41,32 +35,18 @@
             // echo "Phone number can only have a '+' or numeric values!<br>";
         }
 
-        if($usernameFlag == true)
+        if($dateFlag == true)
         {
-            return;
-            //echo "Username must be alphanumeric!<br>";
-        }
-
-        if($imageFlag == true)
-        {
-            return;
-        }
-
-        if($password != $confirmpassword)
-        {
-            $passwordFlag=true;
-            echo "passwords do not match!<br>";
             return;
         }
 
         if($fullnameFlag == false &&
         $emailFlag == false &&
         $phoneFlag == false &&
-        $usernameFlag == false &&
-        $passwordFlag == false)
+        $dateFlag == false)
         {
             include('../model/adminModel.php');
-            $connection = connect();
+            $updateResult = updateAdminByID($_SESSION['id'], $fullname, $email, $phone, $dob);
             
             // $dataStringAdmin = file_get_contents('../../model/admin.json');
             // $dataJSONAdmin = json_decode($dataStringAdmin, true);
@@ -114,8 +94,8 @@
             //     echo "Photo upload failed!<br>";
             // }
         
-            echo "New Admin added successfully!<br>";
-            echo "<a href='../view/addadmin.php'>Go Back</a>";
+            echo "Profile Information updated successfully! <br>";
+            echo "<a href='../view/profile.php'>Go Back</a>";
         }
     }
 ?>
