@@ -23,7 +23,7 @@
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <div class='form'>
-        <form action='../controller/regcheck.php' method="POST">
+        <form action='../controller/regcheck.php' method="POST" enctype="multipart/form-data">
                 <b>SIGN UP</b>
                 <table align="center">
                     <tr>
@@ -49,6 +49,10 @@
                     <tr>
                         <td align="right">Confirm Password:</td>
                         <td><input type='text' name='confirmpassword'/></td>
+                    </tr>
+                    <tr>
+                        <td align="right">Photo:</td>
+                        <td><input type='file' name='propic'/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>

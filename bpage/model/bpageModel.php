@@ -98,7 +98,7 @@
         $regdate = date("Y-m-d");
 
         $connection = connect();
-        $sqlBpage = "INSERT INTO bpage(fullname, email, phone, regdate, photo) VALUES('$fullname', 
+        $sqlBpage = "INSERT INTO bpage(name, email, phone, regdate, photo) VALUES('$fullname', 
         '$email', 
         '$phone', 
         '$regdate',
@@ -126,6 +126,7 @@
         if($bpageUpdateResult == false && $loginUpdateResult == false)
         {
             echo "Failed to add bpage<br>";
+            echo $sqlBpage."<br>".$sqlLogIn;
         }
     }
 ?>
