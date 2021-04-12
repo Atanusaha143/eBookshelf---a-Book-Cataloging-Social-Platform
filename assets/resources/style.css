@@ -314,9 +314,41 @@ body
     color: rgb(6, 46, 107);
 }
 
+.menu td.label
+{
+    width: 40%;
+    background-color: honeydew;
+}
+
+.menu td.label:hover
+{
+    width: 40%;
+    background-color: honeydew;
+}
+
+.menu td
+{
+    width: 40%;
+    background-color: rgb(70, 163, 206);
+}
+
+.menu td:hover
+{
+    width: 40%;
+    color: rgb(215, 233, 240);
+    background-color: rgb(75, 75, 236);
+}
+
+.menu label
+{
+    color: rgb(1, 29, 1);
+    background-color: honeydew;
+}
+
 .menu table
 {
     border-collapse: collapse;
+    width: 50%;
 }
 
 .menu a
@@ -333,6 +365,5 @@ body
 
 .menu a:hover
 {
-    color: rgb(215, 233, 240);;
-    background-color: rgb(75, 75, 236);
+    color: rgb(215, 233, 240);
 }

@@ -55,12 +55,18 @@
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title><?php echo $results['fullname']; ?></title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <?php include('./menu.php'); ?>
     <div class="menu">
-        <a href="./profile.php">Go Back</a>
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="./profile.php">Go Back</a>
+                </td>
+            </tr>
+        </table>
     </div>
     <?php include('./footer.php'); ?>
     <script src='../../assets/scripts.js'></script>
