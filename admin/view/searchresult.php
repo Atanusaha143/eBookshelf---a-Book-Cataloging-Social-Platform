@@ -5,9 +5,18 @@
         //continue
         include('../controller/validateviewprofile.php');
         include('../model/adminModel.php');
-        $userid = $_GET['id'];
-        $adminDetails = getAdminInfoByID($userid);
-        $adminDetails = mysqli_fetch_assoc($adminDetails);
+        if(isset($_GET['id']))
+        {
+            $userid = $_GET['id'];
+            $adminDetails = getAdminInfoByID($userid);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+        }
+        else if(isset($_GET['username']))
+        {
+            $username = $_GET['username'];
+            $adminDetails = getAdminInfoByUsername($username);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+        }
     }
     else if(!(isset($_COOKIE['flag'])))
     {

@@ -8,43 +8,33 @@
             {
                 $adminDetails = getAdminInfoByID($_GET['search']);
                 $adminDetails = mysqli_fetch_assoc($adminDetails);
-                // foreach($dataJSON as $user)
-                // {
-                //     if($user['id'] == $_GET['search'])
-                //     {
-                //         $_GET['id'] = $user['id'];
-                //         $_GET['fullname'] = $user['fullname'];
-                //         $_GET['email'] = $user['email'];
-                //         $_GET['phone'] = $user['phone'];
-                //         $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                //         $_GET['username'] = $user['username'];
-                //         $_GET['regdate'] = $user['regdate'];
-                //         $_GET['type'] = $user['type'];
-                //     }
-                // }
-                header("location: ../view/searchresult.php?id=".$adminDetails['id']);
+                
+                if($adminDetails)
+                {
+                    header("location: ../view/searchresult.php?id=".$adminDetails['id']);
+                }
+                else
+                {
+                    echo "User does not exist";
+                }
+                
             }
-            else if($_GET['searchopt'] == 'name')
+            else if($_GET['searchopt'] == 'username')
             {
-                $adminDetails = getAdminInfoByID($_GET['search']);
+                $adminDetails = getAdminInfoByUsername($_GET['search']);
                 $adminDetails = mysqli_fetch_assoc($adminDetails);
-                // foreach($dataJSON as $user)
-                // {
-                //     if($user['fullname'] == $_GET['search'])
-                //     {
-                //         $_GET['id'] = $user['id'];
-                //         $_GET['fullname'] = $user['fullname'];
-                //         $_GET['email'] = $user['email'];
-                //         $_GET['phone'] = $user['phone'];
-                //         $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                //         $_GET['username'] = $user['username'];
-                //         $_GET['regdate'] = $user['regdate'];
-                //         $_GET['type'] = $user['type'];
-                //     }
-                // }
-                header("location: ../view/searchresult.php?id=".$adminDetails['name']);
+                
+                if($adminDetails)
+                {
+                    header("location: ../view/searchresult.php?username=".$adminDetails['username']);
+                }
+                else
+                {
+                    echo "User does not exist";
+                }
+                
             }
-            print_r($_GET);
+            //print_r($_GET);
         }
         else if($_GET['type'] == 'ruser')
         {
