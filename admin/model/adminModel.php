@@ -200,4 +200,30 @@
 
         return $allBpages;
     }
+
+    function deleteAdminByID($id)
+    {
+        $connection = connect();
+        $sqlLogin = "DELETE FROM adminlogin WHERE id = $id AND status = 'terminated'";
+        $deleteLoginStatus = mysqli_query($connection, $sqlLogin);
+
+        if($deleteLoginStatus)
+        {
+            $sqlAdmin = "DELETE FROM admin WHERE id = $id";
+            $deleteAdminStatus = mysqli_query($connection, $sqlAdmin);
+
+            if($deleteAdminStatus)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>

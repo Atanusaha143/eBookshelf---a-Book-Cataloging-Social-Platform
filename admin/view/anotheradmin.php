@@ -46,7 +46,7 @@
                             <td width='40%'>
                                 <?php echo $_SESSION['type']; ?>
                             </td>
-                            <td rowspan="6">
+                            <td rowspan="7">
                                 <img src= '<?php echo "../../assets/profile/admin/".$adminDetails['photo']; ?>' height="250">
                             </td>
                         </tr>
@@ -91,8 +91,21 @@
                             </td>
                         </tr>
                         <tr>
+                            <td align="right">
+                                <b>Status:</b>
+                            </td>
+                            <td>
+                                <?php echo $adminDetails['status']; ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <td colspan="3" align="center">
                                 <a href="./chat.php?username=<?php echo $adminDetails['username']; ?>">Send a message</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <a href="../controller/deleteadmin.php?id=<?php echo $_GET['id'];?>">Delete Admin</a>
                             </td>
                         </tr>
                         <tr>
