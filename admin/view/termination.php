@@ -1,21 +1,26 @@
-<?php 
+<?php
     session_start();
-    include('../model/adminModel.php');
-    if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
+    if($_SESSION['terminated'])
     {
-        header('./dashboard.php');
+        //header('location: ./termination.php');
     }
-    else if(!(isset($_COOKIE['flag'])))
+    else if(!isset($_COOKIE['flag']))
     {
         header('location: ./expired.php');
         // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         // return;
     }
-    else
+    else if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
+    {
+        header('location: ./dashboard');
+    }
+    else 
     {
         header('location: ./login.php');
     }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +36,7 @@
     <div class="container">
         <h3>Dear admin, you have been terminated. Please contact a fellow admin for re-registration.</h3>
         <h3>Proceed to <a href="./contact.php" class="link">here</a> to see who you can contact.</h3>
+        <h3>Proceed to <a href="./login.php" class="link">here</a> to admin home.</h3>
     </div>
     <?php include('./footer.php'); ?>
 </body>

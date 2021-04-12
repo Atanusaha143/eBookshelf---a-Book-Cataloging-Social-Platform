@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td>
-                <a href='../controller/terminate.php'>Terminate Account</a>
+                <a href='../controller/terminatecheck.php'>Terminate Account</a>
             </td>
         </tr>
     </table>

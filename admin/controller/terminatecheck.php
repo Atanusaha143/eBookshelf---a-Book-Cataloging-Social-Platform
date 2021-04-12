@@ -4,10 +4,10 @@
     $terminateStatus = terminateAdmin($_SESSION['id']);
     if($terminateStatus == true)
     {
-        session_destroy();
-        echo "<h3>Your account has been terminated, please proceed ";
-        echo "<a href='../view/login.php'>here</a>";
-        echo " to home page";
+        //session_destroy();
+        unset($_SESSION['flag']);
+        $_SESSION['terminated'] = true;
+        header('location: ../view/termination.php');
     }
     else
     {
