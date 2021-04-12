@@ -20,22 +20,6 @@
 <?php
     $admindetails = getAdminInfoByID($_SESSION['id']);
     $admindetails = mysqli_fetch_assoc($admindetails);
-    // $connection = connect();
-    // //Load administrator information
-    // $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
-
-    // $admindetails = mysqli_query($connection, $sqladmin);
-    // $admindetails = mysqli_fetch_assoc($admindetails);
-
-    // //Load log in information
-    // $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
-
-    // $logindetails = mysqli_query($connection, $sqllogin);
-    // $logindetails = mysqli_fetch_assoc($logindetails);
-
-    //Combine information into one array
-    
-    //print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
