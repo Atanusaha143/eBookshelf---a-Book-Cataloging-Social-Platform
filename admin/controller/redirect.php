@@ -9,17 +9,26 @@
             /*$dataString = file_get_contents('../model/admin.json');
             $dataJSON = json_decode($dataString, true);
             print_r($dataJSON);*/
-            $connection = connect();
-            $sql = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
+            // $connection = connect();
+            // $sql = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-            $result = mysqli_query($connection, $sql);
-            $result = mysqli_fetch_assoc($result);
+            // $result = mysqli_query($connection, $sql);
+            // $result = mysqli_fetch_assoc($result);
+            $adminDetails = getAdminInfoByID($_SESSION['id']);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
 
-            if($_SESSION['id'] == $result['id'])
+            if($_SESSION['id'] == $adminDetails['id'])
             {
-                $_SESSION['id'] = $result['id'];
-                $_SESSION['fullname'] = $result['fullname'];
-                header('location: ../view/dashboard.php');
+                if($adminDetails['status'] == 'terminated')
+                {
+                    header('location: ../view/termination.php');
+                }
+                else
+                {
+                    $_SESSION['id'] = $adminDetails['id'];
+                    $_SESSION['fullname'] = $adminDetails['fullname'];
+                    header('location: ../view/dashboard.php');
+                }
             }
         }
         else if($_SESSION['type'] == 'ruser')
