@@ -21,6 +21,8 @@
             {
                 if($adminDetails['status'] == 'terminated')
                 {
+                    unset($_SESSION['flag']);
+                    $_SESSION['terminated'] = true;
                     header('location: ../view/termination.php');
                 }
                 else

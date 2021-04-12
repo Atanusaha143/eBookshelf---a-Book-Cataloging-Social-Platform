@@ -10,9 +10,13 @@
         // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
         // return;
     }
+    else if($_SESSION['terminated'])
+    {
+        header('location: ./termination.php');
+    }
     else 
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 
