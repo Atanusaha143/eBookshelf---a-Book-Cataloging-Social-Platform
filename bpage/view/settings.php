@@ -8,8 +8,6 @@
     else if(!(isset($_COOKIE['flag'])))
     {
         header('location: ./expired.php');
-        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
-        // return;
     }
     else
     {
@@ -18,29 +16,30 @@
 ?>
 
 <?php
-    // $connection = connect();
-    // //Load administrator information
-    // $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-    // $admindetails = mysqli_query($connection, $sqladmin);
-    // $admindetails = mysqli_fetch_assoc($admindetails);
+    $connection = connect();
+    //Load administrator information
+    $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-    // //Load log in information
-    // $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+    $admindetails = mysqli_query($connection, $sqladmin);
+    $admindetails = mysqli_fetch_assoc($admindetails);
 
-    // $logindetails = mysqli_query($connection, $sqllogin);
-    // $logindetails = mysqli_fetch_assoc($logindetails);
+    //Load log in information
+    $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
 
-    // //Combine information into one array
-    // $results=[];
+    $logindetails = mysqli_query($connection, $sqllogin);
+    $logindetails = mysqli_fetch_assoc($logindetails);
 
-    // $results['fullname'] = $admindetails['fullname'];
-    // $results['email'] = $admindetails['email'];
-    // $results['dateOfBirth'] = $admindetails['dob'];
-    // $results['username'] = $logindetails['username'];
-    // $results['phone'] = $admindetails['phone'];
-    // $results['regdate'] = $admindetails['regdate'];
-    // $results['photo'] = $admindetails['photo'];
+    //Combine information into one array
+    $results=[];
+
+    $results['fullname'] = $admindetails['fullname'];
+    $results['email'] = $admindetails['email'];
+    $results['dateOfBirth'] = $admindetails['dob'];
+    $results['username'] = $logindetails['username'];
+    $results['phone'] = $admindetails['phone'];
+    $results['regdate'] = $admindetails['regdate'];
+    $results['photo'] = $admindetails['photo'];
     //print_r($_SESSION);
 ?>
 
@@ -54,12 +53,18 @@
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title><?php echo $results['fullname']; ?></title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <?php include('./menu.php'); ?>
     <div class="menu">
-        <a href="./profile.php">Go Back</a>
+        <table align="center">
+            <tr>
+                <td>
+                    <a href="./profile.php">Go Back</a>
+                </td>
+            </tr>
+        </table>
     </div>
     <?php include('./footer.php'); ?>
     <script src='../../assets/scripts.js'></script>

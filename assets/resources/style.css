@@ -81,6 +81,7 @@ body
 {
     background-color: brown;
 }
+
 .form input[type=radio]:checked
 {
     background-color: brown;
