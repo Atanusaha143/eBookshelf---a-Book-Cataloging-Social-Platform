@@ -1,11 +1,17 @@
 <?php
     session_start();
+    //include('../model/admCon.php');
     //print_r($_SESSION);
-    if(isset($_SESSION['flag']))
+    if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-
+        header('location: ./dashboard.php');
+    }
+    else
+    {
+        //header('location: ../login.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
