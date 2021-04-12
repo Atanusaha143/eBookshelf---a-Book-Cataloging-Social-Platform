@@ -118,20 +118,20 @@
         $lastID = mysqli_query($connection, $sqlLastID);
         $lastID = mysqli_fetch_assoc($lastID);
 
-        $sqlLogIn = "INSERT INTO adminlogin(id, username, password, type) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'admin')";
+        $sqlLogIn = "INSERT INTO adminlogin(id, username, password, type, status) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'admin', 'active')";
         $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
 
         if($adminUpdateResult)
         {
-            echo "Admin added<br>";
+            return true;
         }
         if($loginUpdateResult)
         {
-            echo "Admin's login added<br>";
+            return true;
         }
         if($adminUpdateResult == false && $loginUpdateResult == false)
         {
-            echo "Failed to add admin<br>";
+            return false;
         }
     }
 
@@ -164,6 +164,22 @@
         if($bpageUpdateResult == false && $loginUpdateResult == false)
         {
             echo "Failed to add bpage<br>";
+        }
+    }
+
+    function terminateAdmin($id)
+    {
+        $connection = connect();
+        $sql = "UPDATE adminlogin SET status = 'terminated' WHERE id = $id";
+        $result = mysqli_query($connection, $sql);
+
+        if($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

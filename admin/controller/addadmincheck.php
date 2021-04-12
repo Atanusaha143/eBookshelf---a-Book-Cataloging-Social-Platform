@@ -69,72 +69,24 @@
         {
             include('../model/adminModel.php');
             $addAdminStatus = insertNewAdmin($fullname, $email, $phone, $dateOfBirth, $username, $password, $fileSaveName);
-            print_r($addAdminStatus);
+            //print_r($addAdminStatus);
             $picture = $_FILES['propic'];
             //$imageFlag = imageValidate($picture, $adminDetails['username']);
             $path = '../../assets/profile/admin/'.$fileSaveName;
 
             if(move_uploaded_file($picture['tmp_name'], $path))
             {
-                echo "Photo uploaded!<br>";
+                echo "New Admin added successfully!<br>";
+                echo "<a href='../view/allusers.php'>Go Back</a>";
                 //header('location: ../view/picchangesuccess.php');
             }
             else
             {
-                echo "Photo upload failed!<br>";
+                echo "Admin addition failed!<br>";
             }
-            //print_r($file);
-
-            // $dataStringAdmin = file_get_contents('../../model/admin.json');
-            // $dataJSONAdmin = json_decode($dataStringAdmin, true);
-            // $last = sizeof($dataJSONAdmin);
-            // $id = "a-".strval((intval(substr($dataJSONAdmin[$last-1]['id'], 2))+1));
-
-            // $inputAdminArray = [
-            //     "id" => $id,
-            //     "fullname" => $fullname,
-            //     "email"=>$email,
-            //     "phone"=>$phone,
-            //     "dateOfBirth"=>$dateOfBirth,
-            //     "username"=>$username,
-            //     "password"=>$password,
-            //     "regdate"=>date("Y-m-d"),
-            //     "type"=>"admin"
-            // ];
-
-            // array_push($dataJSONAdmin, $inputAdminArray);
-            // $dataJSONAdmin = json_encode($dataJSONAdmin);
-            // file_put_contents('../../model/admin.json', $dataJSONAdmin);
-
-            // $inputLogInArray = [
-            //     "id"=>$id,
-            //     "username"=>$username,
-            //     "password"=>$password,
-            //     "type"=>"admin"
-            // ];
-
-            // $dataStringLogIn = file_get_contents('../../model/login.json');
-            // $dataJSONLogIn = json_decode($dataStringLogIn, true);
-            // array_push($dataJSONLogIn, $inputLogInArray);
-            // $dataJSONLogIn = json_encode($dataJSONLogIn);
-            // file_put_contents('../../model/login.json', $dataJSONLogIn);
-
-            // $picture = $_FILES['propic'];
-            // $path = '../../images/profile/admin/'.$id.'.jpeg';
-
-            // if(move_uploaded_file($picture['tmp_name'], $path))
-            // {
-            //     echo "Photo uploaded!<br>";
-            // }
-            // else
-            // {
-            //     echo "Photo upload failed!<br>";
-            // }
-
-
-        
-            echo "New Admin added successfully!<br>";
-            echo "<a href='../view/addadmin.php'>Go Back</a>";
+            
+            // echo "New Admin added successfully!<br>";
+            // echo "<a href='../view/addadmin.php'>Go Back</a>";
         }
     }
 ?>

@@ -34,15 +34,7 @@
     // $logindetails = mysqli_fetch_assoc($logindetails);
 
     //Combine information into one array
-    $results=[];
-
-    $results['fullname'] = $admindetails['fullname'];
-    $results['email'] = $admindetails['email'];
-    $results['dateOfBirth'] = $admindetails['dob'];
-    $results['username'] = $admindetails['username'];
-    $results['phone'] = $admindetails['phone'];
-    $results['regdate'] = $admindetails['regdate'];
-    $results['photo'] = $admindetails['photo'];
+    
     //print_r($_SESSION);
 ?>
 
@@ -54,7 +46,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
-    <title><?php echo $results['fullname']; ?></title>
+    <title><?php echo $admindetails['fullname']; ?></title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
@@ -71,8 +63,8 @@
                             <td width='40%'>
                                 <?php echo $_SESSION['type']; ?>
                             </td>
-                            <td rowspan="7">
-                                <img src="../../assets/profile/admin/<?php echo $results['photo'];?>" height="250" alt="image not available">
+                            <td rowspan="8">
+                                <img src="../../assets/profile/admin/<?php echo $admindetails['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>
@@ -80,7 +72,7 @@
                                 <b>Name:</b>
                             </td>
                             <td>
-                                <?php echo $results['fullname']; ?>
+                                <?php echo $admindetails['fullname']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -88,7 +80,7 @@
                                 <b>Email:</b>
                             </td>
                             <td>
-                                <?php echo $results['email']; ?>
+                                <?php echo $admindetails['email']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -96,7 +88,7 @@
                                 <b>Phone:</b>
                             </td>
                             <td>
-                                <?php echo $results['phone']; ?>
+                                <?php echo $admindetails['phone']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -104,7 +96,7 @@
                                 <b>Username:</b>
                             </td>
                             <td>
-                                <?php echo $results['username']; ?>
+                                <?php echo $admindetails['username']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -112,7 +104,7 @@
                                 <b>Date of Birth:</b>
                             </td>
                             <td>
-                                <?php echo $results['dateOfBirth']; ?>
+                                <?php echo $admindetails['dob']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -120,7 +112,15 @@
                                 <b>Registration Date:</b>
                             </td>
                             <td>
-                                <?php echo $results['regdate']; ?>
+                                <?php echo $admindetails['regdate']; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                <b>Status:</b>
+                            </td>
+                            <td>
+                                <?php echo $admindetails['status']; ?>
                             </td>
                         </tr>
                     </table>

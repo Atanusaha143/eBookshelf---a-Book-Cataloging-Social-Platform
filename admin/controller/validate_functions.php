@@ -44,18 +44,12 @@
     function phoneValidation($phone)
     {
         $count = 0;
-        $lastchar = substr($phone, -1);
         for($i = 0 ; $i<strlen($phone) ; $i=$i+1)
         {
-            if((ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57) || $phone[$i] == '+' || $phone[$i] == '-')
+            if((ord($phone[$i]) >= 48 && ord($phone[$i]) <= 57) || $phone[$i] == '+')
             {
                 $count = $count + 1;
             }
-        }
-        if($lastchar != '1')
-        {
-            echo "Phone must have last character as 1";
-            return true;
         }
         if($count!=strlen($phone))
         {
