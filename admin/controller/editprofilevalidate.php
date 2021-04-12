@@ -47,52 +47,6 @@
         {
             include('../model/adminModel.php');
             $updateResult = updateAdminByID($_SESSION['id'], $fullname, $email, $phone, $dob);
-            
-            // $dataStringAdmin = file_get_contents('../../model/admin.json');
-            // $dataJSONAdmin = json_decode($dataStringAdmin, true);
-            // $last = sizeof($dataJSONAdmin);
-            // $id = "a-".strval((intval(substr($dataJSONAdmin[$last-1]['id'], 2))+1));
-
-            // $inputAdminArray = [
-            //     "id" => $id,
-            //     "fullname" => $fullname,
-            //     "email"=>$email,
-            //     "phone"=>$phone,
-            //     "dateOfBirth"=>$dateOfBirth,
-            //     "username"=>$username,
-            //     "password"=>$password,
-            //     "regdate"=>date("Y-m-d"),
-            //     "type"=>"admin"
-            // ];
-
-            // array_push($dataJSONAdmin, $inputAdminArray);
-            // $dataJSONAdmin = json_encode($dataJSONAdmin);
-            // file_put_contents('../../model/admin.json', $dataJSONAdmin);
-
-            // $inputLogInArray = [
-            //     "id"=>$id,
-            //     "username"=>$username,
-            //     "password"=>$password,
-            //     "type"=>"admin"
-            // ];
-
-            // $dataStringLogIn = file_get_contents('../../model/login.json');
-            // $dataJSONLogIn = json_decode($dataStringLogIn, true);
-            // array_push($dataJSONLogIn, $inputLogInArray);
-            // $dataJSONLogIn = json_encode($dataJSONLogIn);
-            // file_put_contents('../../model/login.json', $dataJSONLogIn);
-
-            // $picture = $_FILES['propic'];
-            // $path = '../../images/profile/admin/'.$id.'.jpeg';
-
-            // if(move_uploaded_file($picture['tmp_name'], $path))
-            // {
-            //     echo "Photo uploaded!<br>";
-            // }
-            // else
-            // {
-            //     echo "Photo upload failed!<br>";
-            // }
         
             echo "Profile Information updated successfully! <br>";
             echo "<a href='../view/profile.php'>Go Back</a>";

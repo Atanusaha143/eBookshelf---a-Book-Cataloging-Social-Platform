@@ -18,19 +18,7 @@
         $fileSaveName = $adminDetails['username'].".".pathinfo($file['name'], PATHINFO_EXTENSION);
 
         $picture = $_FILES['propic'];
-        //$imageFlag = imageValidate($picture, $adminDetails['username']);
         $path = '../../assets/profile/admin/'.$fileSaveName;
-
-        // if(move_uploaded_file($picture['tmp_name'], $path))
-        // {
-        //     echo "New Admin added successfully!<br>";
-        //     echo "<a href='../view/allusers.php'>Go Back</a>";
-        //     //header('location: ../view/picchangesuccess.php');
-        // }
-        // else
-        // {
-        //     echo "Admin addition failed!<br>";
-        // }
 
         if(move_uploaded_file($picture['tmp_name'], $path))
         {

@@ -63,23 +63,6 @@
                                 </td>
                                 </tr>";
                             }
-                        // foreach($dataJSON as $values)
-                        // {
-                        //     if($_SESSION['id'] != $values['id'])
-                        //     {   
-                        //         echo 
-                        //         "<tr>
-                        //             <td align='center'>"
-                        //                 .$values['id'].
-                        //             "</td>
-                        //             <td align='center'>
-                        //                 <a href='anotheruser.php?userid=".$values['id']."'>"
-                        //                     .$values['fullname'].
-                        //                 "</a>
-                        //             </td>
-                        //         </tr>";
-                        //     }
-                        // }
                     ?>
                 </table>
             </td>

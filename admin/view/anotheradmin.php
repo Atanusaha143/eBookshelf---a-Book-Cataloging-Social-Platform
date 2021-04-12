@@ -4,15 +4,12 @@
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        //include('../controller/validateviewprofile.php');
         $adminDetails = getAdminInfoByID($_GET['id']);
         $adminDetails = mysqli_fetch_assoc($adminDetails);
     }
     else if(!(isset($_COOKIE['flag'])))
     {
         header('location: ./expired.php');
-        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
-        // return;
     }
     else
     {

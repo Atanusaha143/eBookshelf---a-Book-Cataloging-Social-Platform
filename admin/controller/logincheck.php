@@ -11,9 +11,6 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        //$usernameFlag = usernameValidation($username);
-        //$passwordFlag = passwordValidation($password);
-
         $userFoundFlag = validateLogIn($username, $password);
 
         if($userFoundFlag)
