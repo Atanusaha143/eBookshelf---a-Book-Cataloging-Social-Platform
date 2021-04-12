@@ -28,13 +28,28 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div width='100px' class='form'>
+    <div class='form'>
         <form action="../controller/typeselectcheck.php" method='GET'>
             <h2>What type of user would you like to add?</h2>
-            <input type='radio' name='type' value='admin'><b>Add Administrator</b><br><br>
-            <input type='radio' name='type' value='ruser'><b>Add Regular User</b><br><br>
-            <input type='radio' name='type' value='bpage'><b>Add Business Page</b><br><br>
-            <input type='submit' value='Select'><br><br>
+            <table>
+                <tr>
+                    <td><input type='radio' name='type' value='admin'></td>
+                    <td><label>Add Administrator</label></td>
+                </tr>
+                <tr>
+                    <td><input type='radio' name='type' value='ruser'></td>
+                    <td><label>Add Regular User</label></td>
+                </tr>
+                <tr>
+                    <td><input type='radio' name='type' value='bpage'></td>
+                    <td><label>Add Business Page</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type='submit' value='Select'>
+                    </td>
+                </tr>
+            </table>
             <a href="./dashboard.php">Go Back</a>
         </form>
     </div>

@@ -26,9 +26,9 @@
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div class = 'form' width='100px'>
-        <form action='../controller/addadmincheck.php' method="POST" enctype="multipart/form-data">
-            <table align="center">
+    <div class = 'form'>
+        <form action='../controller/addregularcheck.php' method="POST" enctype="multipart/form-data">
+            <table>
                 <tr>
                     <td align="right"><label>Full Name:</label></td>
                     <td><input type='text' name='fullname'/></td>

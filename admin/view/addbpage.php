@@ -26,35 +26,40 @@
     <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title>Sign Up</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
+    <?php include('./navbar.php'); ?>
     <div class='form'>
-        <form action='../controller/regcheck.php' method="POST">
+        <form action='../controller/addbpagecheck.php' method="POST">
                 <b>SIGN UP</b>
-                <table align="center">
+                <table>
                     <tr>
-                        <td align="right">Business Name:</td>
+                        <td align="right"><label>Business Name:</label></td>
                         <td><input type='text' name='fullname'/></td>
                     </tr>
                     <tr>
-                        <td align="right">Email:</td>
+                        <td align="right"><label>Email:</label></td>
                         <td><input type='email' name='email'/></td>
                     </tr>
                     <tr>
-                        <td align="right">Phone:</td>
+                        <td align="right"><label>Phone</label></td>
                         <td><input type='text' name='phone' value="+88"/></td>
                     </tr>
                     <tr>
-                        <td align="right">Username:</td>
+                        <td align="right"><label>Username:</label></td>
                         <td><input type='text' name='username'/></td>
                     </tr>
                     <tr>
-                        <td align="right">Password:</td>
+                        <td align="right"><label>Password:</label></td>
                         <td><input type='text' name='password'/></td>
                     </tr>
                     <tr>
-                        <td align="right">Confirm Password:</td>
+                        <td align="right"><label>Confirm Password:</label></td>
                         <td><input type='text' name='confirmpassword'/></td>
+                    </tr>
+                    <tr>
+                        <td><label>Upload Profile Picture:</label></td>
+                        <td align="center"><input type='file' name='propic'></td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>
@@ -67,7 +72,7 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="2">
-                            <a href='./login.php'>Go Back</a>
+                            <a href='./addtype.php'>Go Back</a>
                         </td>
                     </tr>
                 </table>

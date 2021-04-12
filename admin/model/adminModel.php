@@ -108,12 +108,7 @@
         $regdate = date("Y-m-d");
 
         $connection = connect();
-        $sqlAdmin = "INSERT INTO admin(fullname, email, phone, dob, regdate, photo) VALUES('$fullname', 
-        '$email', 
-        '$phone', 
-        '$dob', 
-        '$regdate',
-        '$photo')";
+        $sqlAdmin = "INSERT INTO admin(fullname, email, phone, dob, regdate, photo) VALUES('$fullname', '$email', '$phone', '$dob', '$regdate', '$photo')";
 
         $adminUpdateResult = mysqli_query($connection, $sqlAdmin);
 
@@ -140,6 +135,38 @@
         }
     }
 
+    function insertNewBpage($name, $email, $phone, $photo, $username, $password)
+    {
+        $regdate = date("Y-m-d");
+
+        $connection = connect();
+        $sqlAdmin = "INSERT INTO admin(name, email, phone, regdate, photo, status) VALUES('$name', '$email', '$phone', '$regdate', '$photo')";
+
+        $bpageUpdateResult = mysqli_query($connection, $sqlAdmin);
+
+        //$lastID = mysqli_insert_id($connection);
+        $sqlLastID = "SELECT MAX(ID) FROM bpage";
+
+        $lastID = mysqli_query($connection, $sqlLastID);
+        $lastID = mysqli_fetch_assoc($lastID);
+
+        $sqlLogIn = "INSERT INTO bpagelogin(id, username, password, type) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'bpage')";
+        $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
+
+        if($bpageUpdateResult)
+        {
+            echo "Bpage added<br>";
+        }
+        if($loginUpdateResult)
+        {
+            echo "Admin's login added<br>";
+        }
+        if($bpageUpdateResult == false && $loginUpdateResult == false)
+        {
+            echo "Failed to add bpage<br>";
+        }
+    }
+
     function getAllAdmins($id)
     {
         $sql = "SELECT * FROM admin WHERE id != $id";
@@ -152,7 +179,7 @@
     function getAllBpages()
     {
         $sql = "SELECT * FROM bpage";
-        $connection =connect();
+        $connection = connect();
         $allBpages = mysqli_query($connection, $sql);
 
         return $allBpages;

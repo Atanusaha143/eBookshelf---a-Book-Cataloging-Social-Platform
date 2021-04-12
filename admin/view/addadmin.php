@@ -28,9 +28,9 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div class = 'form' width='100px'>
+    <div class = 'form'>
         <form action='../controller/addadmincheck.php' method="POST" enctype="multipart/form-data">
-            <table align="center">
+            <table>
                 <tr>
                     <td align="right"><label>Full Name:</label></td>
                     <td><input type='text' name='fullname'/></td>

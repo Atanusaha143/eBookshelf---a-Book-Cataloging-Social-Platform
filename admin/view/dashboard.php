@@ -29,17 +29,61 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    
+    <br><br>
     <table width='85%'>
         <tr>
-            <th>
-                Posts
-            </th>
+            <td align='center'>
+                Username
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
+            <td align="center">
+                This is where the post content will appear
+            </td>
         </tr>
         <tr>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                Username2
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
             <td align="center">
-                <br><br><br><br><br><br>
-                <?php echo "BOOKS"; ?>
+                This will be a book review
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                Username3
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
+            <td align="center">
+                This is another post made by a user
             </td>
         </tr>
     </table>
