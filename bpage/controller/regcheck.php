@@ -27,25 +27,21 @@
         if($fullnameFlag == true)
         {
             return;
-            //echo "Name must be alphabetical!<br>";
         }
 
         if($emailFlag == true)
         {
             return;
-            //echo "Email must have '@' symbol!<br>";
         }        
 
         if($phoneFlag == true)
         {
             return;
-            // echo "Phone number can only have a '+' or numeric values!<br>";
         }
 
         if($usernameFlag == true)
         {
             return;
-            //echo "Username must be alphanumeric!<br>";
         }
 
         if($imageFlag == true)
@@ -64,12 +60,22 @@
         $emailFlag == false &&
         $phoneFlag == false &&
         $usernameFlag == false &&
-        $passwordFlag == false)
+        $passwordFlag == false &&
+        $imageFlag == false)
         {
             $addBpageStatus = insertNewBpage($fullname, $email, $phone, $username, $password, $fileSaveName);
-            if($addBpageStatus)
+            $picture = $_FILES['propic'];
+            $path = '../../assets/profile/bpage/'.$fileSaveName;
+
+            if(move_uploaded_file($picture['tmp_name'], $path))
             {
-                echo "validated!<br>";
+                echo "You have been added successfully!<br>";
+                echo "<a href='../view/login.php'>Go Back</a>";
+                //header('location: ../view/picchangesuccess.php');
+            }
+            else
+            {
+                echo "Admin addition failed!<br>";
             }
         }
     }
