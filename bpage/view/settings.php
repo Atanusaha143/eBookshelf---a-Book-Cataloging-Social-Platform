@@ -18,30 +18,29 @@
 ?>
 
 <?php
+    // $connection = connect();
+    // //Load administrator information
+    // $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
 
-    $connection = connect();
-    //Load administrator information
-    $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
+    // $admindetails = mysqli_query($connection, $sqladmin);
+    // $admindetails = mysqli_fetch_assoc($admindetails);
 
-    $admindetails = mysqli_query($connection, $sqladmin);
-    $admindetails = mysqli_fetch_assoc($admindetails);
+    // //Load log in information
+    // $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
 
-    //Load log in information
-    $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
+    // $logindetails = mysqli_query($connection, $sqllogin);
+    // $logindetails = mysqli_fetch_assoc($logindetails);
 
-    $logindetails = mysqli_query($connection, $sqllogin);
-    $logindetails = mysqli_fetch_assoc($logindetails);
+    // //Combine information into one array
+    // $results=[];
 
-    //Combine information into one array
-    $results=[];
-
-    $results['fullname'] = $admindetails['fullname'];
-    $results['email'] = $admindetails['email'];
-    $results['dateOfBirth'] = $admindetails['dob'];
-    $results['username'] = $logindetails['username'];
-    $results['phone'] = $admindetails['phone'];
-    $results['regdate'] = $admindetails['regdate'];
-    $results['photo'] = $admindetails['photo'];
+    // $results['fullname'] = $admindetails['fullname'];
+    // $results['email'] = $admindetails['email'];
+    // $results['dateOfBirth'] = $admindetails['dob'];
+    // $results['username'] = $logindetails['username'];
+    // $results['phone'] = $admindetails['phone'];
+    // $results['regdate'] = $admindetails['regdate'];
+    // $results['photo'] = $admindetails['photo'];
     //print_r($_SESSION);
 ?>
 

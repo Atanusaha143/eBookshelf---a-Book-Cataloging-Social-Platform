@@ -1,7 +1,7 @@
 <div class="menu">
-    <table  width='85%' align="center">
+    <table align="center">
         <tr >
-            <td class="none">
+            <td class="label">
                 <label>Menu</label>
             </td>
         </tr>
@@ -18,6 +18,11 @@
         <tr>
             <td>
                 <a href='./changepass.php'>Change Password</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href='../controller/deactivate.php'>Deactivate Account</a>
             </td>
         </tr>
     </table>
