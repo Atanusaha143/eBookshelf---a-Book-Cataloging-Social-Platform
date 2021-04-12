@@ -24,7 +24,6 @@
         $sql = "SELECT * FROM bpagemessages WHERE (to_user = '$receiverID' AND from_user = '$senderID') OR (to_user = '$senderID' AND from_user = '$receiverID')";
 
         $result = mysqli_query($connection, $sql);
-
         return $result;
     }
 
