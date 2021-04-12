@@ -69,11 +69,8 @@
             $addBpageStatus = insertNewBpage($fullname, $email, $phone, $username, $password, $fileSaveName);
             if($addBpageStatus)
             {
-                
+                echo "validated!<br>";
             }
-            echo "validated!<br>";
-            //header('location: ../view/login.php');
         }
-        //echo "fullname: ".$fullnameFlag."<br>"."email: ".$emailFlag."<br>"."phone: ".$phoneFlag."<br>"."username: ".$usernameFlag."<br>"."password: ".$passwordFlag;
     }
 ?>

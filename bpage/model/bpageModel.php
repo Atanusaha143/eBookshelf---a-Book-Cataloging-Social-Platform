@@ -114,18 +114,13 @@
         $sqlLogIn = "INSERT INTO bpagelogin(id, username, password, type) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'bpage')";
         $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
 
-        if($bpageUpdateResult)
+        if($bpageUpdateResult == true && $loginUpdateResult == true)
         {
-            echo "Bpage added<br>";
-        }
-        if($loginUpdateResult)
-        {
-            echo "Bpage's login added<br>";
+            return true;
         }
         if($bpageUpdateResult == false && $loginUpdateResult == false)
         {
-            echo "Failed to add bpage<br>";
-            echo $sqlBpage."<br>".$sqlLogIn;
+            return false;
         }
     }
 ?>

@@ -24,7 +24,7 @@
     <?php include('./header.php'); ?>
     <div class='form'>
         <form action='../controller/regcheck.php' method="POST" enctype="multipart/form-data">
-                <b>SIGN UP</b>
+                <h2>Become a Seller today!</h2>
                 <table align="center">
                     <tr>
                         <td align="right">Business Name:</td>
