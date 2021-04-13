@@ -141,4 +141,19 @@
             return false;
         }
     }
+
+    function getMyPostsByID($id)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM bpageposts WHERE ID = $id";
+        $bpagePosts = mysqli_query($connection, $sql);
+        if(mysqli_num_rows($bpagePosts)>0)
+        {
+            return $bpagePosts;
+        }
+        else
+        {
+            return false;
+        }
+    }
 ?>
