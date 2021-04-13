@@ -33,7 +33,7 @@
                 $changePasswordStatus = updatePassword($_SESSION['id'], $newPassword);
                 if($changePasswordStatus == true)
                 {
-                    header('location: ../view/passchanged.php');
+                    echo "Password has been changed successfully, click <a href='../view/dashboard.php'>here</a> to go to dashboard";
                 }
                 else
                 {

@@ -76,6 +76,22 @@
         }
     }
 
+    function checkPassword($id, $password)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM bpagelogin WHERE id = $id AND password = '$password'";
+
+        $currentPassword = mysqli_query($connection, $sql);
+        if(mysqli_num_rows($currentPassword)>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     function updatePassword($id, $password)
     {
         $connection = connect();
