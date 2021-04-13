@@ -25,7 +25,7 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <div class="data">
+    <div class="bookproduct">
             <?php
                 foreach($bpagePosts as $books)
                 {

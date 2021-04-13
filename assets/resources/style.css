@@ -154,6 +154,19 @@ body
     background-color: rgb(75, 75, 236);
 }
 
+.bookproduct
+{
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.bookproduct table
+{
+    text-align: center;
+    border-collapse: collapse;
+}
+
 .data
 {
     text-align: center;
