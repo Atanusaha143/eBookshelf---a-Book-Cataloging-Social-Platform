@@ -26,18 +26,24 @@
         }
         else
         {
-            $bpageUpdate = getBpageInfoByID($_SESSION['id']);
-
-            $changePasswordStatus = updatePassword($_SESSION['id'], $newPassword);
-            if($changePasswordStatus == true)
+            $currentPasswordStatus = checkPassword($_SESSION['id'], $currentPassword);
+            
+            if($currentPasswordStatus)
             {
-                header('location: ../view/passchanged.php');
+                $changePasswordStatus = updatePassword($_SESSION['id'], $newPassword);
+                if($changePasswordStatus == true)
+                {
+                    header('location: ../view/passchanged.php');
+                }
+                else
+                {
+                    echo "Seems there was an issue trying to update your password.";
+                }
             }
             else
             {
-                echo "Seems there was an issue trying to update your password.";
+                echo "Please enter the correct existing password!<br>";
             }
-            header('location: ./redirect.php');
         }
     }
 ?>
