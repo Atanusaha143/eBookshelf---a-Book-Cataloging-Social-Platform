@@ -25,7 +25,7 @@
     <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title>Search for an Item</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>

@@ -8,7 +8,7 @@
     <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title>eBookShelf</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <div width='100px'>
         <form>
             <fieldset>
