@@ -145,7 +145,7 @@
     function getMyPostsByID($id)
     {
         $connection = connect();
-        $sql = "SELECT * FROM bpageposts WHERE ID = $id";
+        $sql = "SELECT * FROM bpageposts WHERE from_bpage = $id";
         $bpagePosts = mysqli_query($connection, $sql);
         if(mysqli_num_rows($bpagePosts)>0)
         {
