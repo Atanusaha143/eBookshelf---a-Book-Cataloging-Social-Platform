@@ -154,9 +154,17 @@ body
     background-color: rgb(75, 75, 236);
 }
 
+.data
+{
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
 .data table
 {
     border-collapse: collapse;;
+    text-align: center;
 }
 
 .data td

@@ -26,11 +26,11 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class="data">
-        <table align="center">
+        <table border="1">
             <tr>
                 <td>Title:</td>
                 <td>ABCD</td>
-                <td rowspan="3"><img src="../../assets/books/aot123.jpg" height="200"></td>
+                <td rowspan="3"><img src="../../assets/books/aot123.jpg" height="250"></td>
             </tr>
             <tr>
                 <td>Author:</td>
