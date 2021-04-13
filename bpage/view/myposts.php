@@ -26,27 +26,34 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class="data">
-        <table border="1">
-            <tr>
-                <td>Title:</td>
-                <td>ABCD</td>
-                <td rowspan="3"><img src="../../assets/books/aot123.jpg" height="250"></td>
-            </tr>
-            <tr>
-                <td>Author:</td>
-                <td>1234</td>
-            </tr>
-            <tr>
-                <td>Price:</td>
-                <td>1234</td>
-            </tr>
-            <tr>
-                <td colspan="3">Description:</td>
-            </tr>
-            <tr>
-                <td colspan="3">lorem ipsum</td>
-            </tr>
-        </table>
+            <?php
+                foreach($bpagePosts as $books)
+                {
+                    echo 
+                        "<table border='1'>  
+                            <tr>
+                                <td>Title:</td>
+                                <td>".$books['title']."</td>
+                                <td rowspan='3'><img src='../../assets/books/".$books['photo']."' height='250'></td>
+                            </tr>
+                            <tr>
+                                <td>Author:</td>
+                                <td>".$books['author']."</td>
+                            </tr>
+                            <tr>
+                                <td>Price:</td>
+                                <td>".$books['price']."</td>
+                            </tr>
+                            <tr>
+                                <td colspan='3'>Description:</td>
+                            </tr>
+                            <tr>
+                                <td colspan='3'>".$books['post_text']."</td>
+                            </tr>
+                        </table><br>";
+                }
+            ?>
+        
     </div>
     <?php include('./footer.php'); ?>
 </body>
