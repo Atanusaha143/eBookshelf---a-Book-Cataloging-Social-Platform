@@ -26,11 +26,9 @@
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
-    <div width='100px'>
-        <center>
-            <h3>Password changed successfully!</h3>
-            <a href="./dashboard.php">Go Back</a>
-        </center>
+    <div class="container">
+        <h3>Password changed successfully!</h3>
+        <a href="./dashboard.php" class="link">Go Back</a>
     </div>
     <?php include('./footer.php'); ?>
 </body>
