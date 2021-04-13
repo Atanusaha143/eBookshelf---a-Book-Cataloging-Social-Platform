@@ -22,6 +22,11 @@
         </tr>
         <tr>
             <td>
+                <a href='./checksales.php'>Check Sales</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <a href='../controller/deactivate.php'>Deactivate Account</a>
             </td>
         </tr>
