@@ -40,7 +40,9 @@
         $connection = connect();
         $sql = "SELECT * FROM bpage, bpagelogin WHERE bpagelogin.id = ".$id." AND bpagelogin.id = bpage.id";
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
+        
     }
 
     

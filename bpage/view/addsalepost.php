@@ -24,7 +24,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href='../../assets/images/icon.png'>
     <link rel='stylesheet' href='../../assets/resources/style.css'>
-    <title>Document</title>
+    <title>Make Sale</title>
 </head>
 <body>
     <?php include('./header.php'); ?>

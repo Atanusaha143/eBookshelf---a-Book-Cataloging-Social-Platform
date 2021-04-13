@@ -22,28 +22,6 @@
     $bpagedetails = getBpageInfoByID($_SESSION['id']);
     //print_r($bpagedetails);
     $bpagedetails = mysqli_fetch_assoc($bpagedetails);
-    // $connection = connect();
-    // //Load administrator information
-    // $sqladmin = "SELECT * FROM admin WHERE id = '".$_SESSION['id']."'";
-
-    // $admindetails = mysqli_query($connection, $sqladmin);
-    // $admindetails = mysqli_fetch_assoc($admindetails);
-
-    // //Load log in information
-    // $sqllogin = "SELECT * FROM adminlogin WHERE id = '".$_SESSION['id']."'";
-
-    // $logindetails = mysqli_query($connection, $sqllogin);
-    // $logindetails = mysqli_fetch_assoc($logindetails);
-
-    //Combine information into one array
-    $results=[];
-
-    $results['name'] = $bpagedetails['name'];
-    $results['email'] = $bpagedetails['email'];
-    $results['username'] = $bpagedetails['username'];
-    $results['phone'] = $bpagedetails['phone'];
-    $results['regdate'] = $bpagedetails['regdate'];
-    $results['photo'] = $bpagedetails['photo'];
     //print_r($_SESSION);
 ?>
 
@@ -55,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
-    <title><?php echo $results['name']; ?></title>
+    <title><?php echo $bpagedetails['name']; ?></title>
 </head>
 <body>
     <?php include('./header.php'); ?>
@@ -73,7 +51,7 @@
                                 <?php echo $_SESSION['type']; ?>
                             </td>
                             <td rowspan="6">
-                                <img src="../../assets/profile/bpage/<?php echo $results['photo'];?>" height="250" alt="image not available">
+                                <img src="../../assets/profile/bpage/<?php echo $bpagedetails['photo'];?>" height="250" alt="image not available">
                             </td>
                         </tr>
                         <tr>
@@ -81,7 +59,7 @@
                                 <b>Name:</b>
                             </td>
                             <td>
-                                <?php echo $results['name']; ?>
+                                <?php echo $bpagedetails['name']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -89,7 +67,7 @@
                                 <b>Email:</b>
                             </td>
                             <td>
-                                <?php echo $results['email']; ?>
+                                <?php echo $bpagedetails['email']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -97,7 +75,7 @@
                                 <b>phone:</b>
                             </td>
                             <td>
-                                <?php echo $results['phone']; ?>
+                                <?php echo $bpagedetails['phone']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -105,7 +83,7 @@
                                 <b>Username:</b>
                             </td>
                             <td>
-                                <?php echo $results['username']; ?>
+                                <?php echo $bpagedetails['username']; ?>
                             </td>
                         </tr>
                         <tr>
@@ -113,7 +91,7 @@
                                 <b>Registration Date:</b>
                             </td>
                             <td>
-                                <?php echo $results['regdate']; ?>
+                                <?php echo $bpagedetails['regdate']; ?>
                             </td>
                         </tr>
                     </table>

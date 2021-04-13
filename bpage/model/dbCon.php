@@ -18,7 +18,8 @@
     }
 
     function disconnect($connection)
-    {
-
+    {   
+        $thread_id = mysqli_thread_id($connection);
+        mysqli_kill($connection, $thread_id);
     }
 ?>
