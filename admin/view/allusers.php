@@ -39,10 +39,10 @@
                 <a href="./alladmins.php" class="link">ADMINS</a>
             </th>
             <th>
-                REGULAR USERS
+                <a href="./allrusers.php" class="link">REGULAR USERS</a>
             </th>
             <th>
-                BUSINESS USERS
+                <a href="./allbpages.php" class="link">BUSINESS USERS</a>
             </th>
         </tr>
         <tr>
@@ -72,24 +72,26 @@
             
             </td>
             <td>
-                <table align="center">
-                    <?php
-                            foreach($allBpages as $bpage)
-                            {
-                                echo
-                                "<tr>
-                                <td align='center'>"
-                                    .$bpage['id'].
-                                "</td>
-                                <td align='center'>
-                                    <a href='anotherbpage.php?id=".$bpage['id']."'>"
-                                        .$bpage['name'].
-                                    "</a>
-                                </td>
-                                </tr>";
-                            }
-                    ?>
-                </table>
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allBpages as $bpage)
+                                {
+                                    echo
+                                    "<tr>
+                                    <td align='center'>"
+                                        .$bpage['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotherbpage.php?id=".$bpage['id']."'>"
+                                            .$bpage['name'].
+                                        "</a>
+                                    </td>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
         </tr>
     </table>
