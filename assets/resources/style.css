@@ -162,7 +162,13 @@ body
 
 .data table
 {
-    border-collapse: collapse;;
+    text-align: center;
+}
+
+.data table
+{
+    border-collapse: collapse;
+    text-align: center;
 }
 
 .data td
