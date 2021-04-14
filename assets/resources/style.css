@@ -9,6 +9,10 @@ body
     border-right: 2px solid greenyellow;
     border-left: 2px solid greenyellow;
     height: 100%;
+    /* background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: luminosity; */
 }
 
 .form
@@ -36,9 +40,11 @@ body
     border-radius: 15px;
     margin-left: 10px;
     padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 3px;
     width: 200px;
+    color: rgb(25, 25, 165);
+    border: 3px solid rgb(74, 84, 228);
 }
 
 .form input[type=file]
