@@ -30,14 +30,14 @@
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title><?php echo $admindetails['fullname']; ?></title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <table  width='85%' align="center">
         <tr >
             <td>
                 <div class='data'>
-                    <table align="center" border="1px solid black">
+                    <table align="center">
                         <tr>
                             <td align="right">
                                 <b>User Type:</b>

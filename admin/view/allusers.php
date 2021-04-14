@@ -33,10 +33,10 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table border='1px solid black' width='100%'>
+    <table width='100%'>
         <tr>
             <th>
-                ADMINS
+                <a href="./alladmins.php" class="link">ADMINS</a>
             </th>
             <th>
                 REGULAR USERS
@@ -47,24 +47,26 @@
         </tr>
         <tr>
             <td>
-                <table align="center">
-                    <?php
-                            foreach($allAdmins as $admin)
-                            {
-                                echo
-                                "<tr>
-                                <td align='center'>"
-                                    .$admin['id'].
-                                "</td>
-                                <td align='center'>
-                                    <a href='anotheradmin.php?id=".$admin['id']."'>"
-                                        .$admin['fullname'].
-                                    "</a>
-                                </td>
-                                </tr>";
-                            }
-                    ?>
-                </table>
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allAdmins as $admin)
+                                {
+                                    echo
+                                    "<tr>
+                                    <td align='center'>"
+                                        .$admin['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotheradmin.php?id=".$admin['id']."'>"
+                                            .$admin['fullname'].
+                                        "</a>
+                                    </td>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
             <td>
             

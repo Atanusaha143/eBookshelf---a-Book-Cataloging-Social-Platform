@@ -163,6 +163,7 @@ body
 .data table
 {
     text-align: center;
+    border: 1px solid rgb(16, 21, 94);
 }
 
 .data table
@@ -177,6 +178,10 @@ body
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
     padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid rgb(16, 21, 94);
 }
 
 .data a
