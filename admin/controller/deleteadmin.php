@@ -10,6 +10,6 @@
     else
     {
         echo "<h3>It seems the admin was not in terminated status.</h3>";
-        echo "<h3>Click <a href='../view/profile.php?id=".$_GET['id']."'>here</a> to go back to the profile</h3>";
+        echo "<h3>Click <a href='../view/anotheradmin.php?id=".$_GET['id']."'>here</a> to go back to the profile</h3>";
     }
 ?>

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +10,9 @@
 </head>
 <body>
     <a href="../view/login.php"><img src="../../assets/images/logo.png" alt="Image not available" height="100"></a>
-    <center>
+    <div class="container">
         <p>Sorry! It seems like you do not have access to this directory!</p>
         <a class = 'link' href = '../view/login.php'>Return to Log In</a>
-    </center>
+    </div>
 </body>
 </html>
