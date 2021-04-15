@@ -24,7 +24,7 @@
 	  background-size: 100%;
 	}
 </style>
-	<table border="1" width="100%" cellspacing="0">
+	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="left">
 				
@@ -51,8 +51,8 @@
 			</td>
 			<td align="center" colspan="2">
 				<br>
-					<form action="controller/UserRegCheck.php" method="POST" style="margin-left: 200px">
-						<fieldset style="width:40%" class="fieldSetBorder" >
+					<form action="controller/UserRegCheck.php" method="POST" style="margin-left: 200px" onsubmit="return registrationValidation()">
+						<fieldset style="width:50%" class="fieldSetBorder" >
 							<center>
 								<legend style=" padding-top: 3px; padding-bottom: 3px; font-family: cursive;"> <b> Registration </b> </legend>
 								<hr width="50%">
@@ -65,13 +65,19 @@
 									<td>
 										<input type="text" id="name" name="Name" style="width: 90%">
 									</td>
+									<td>
+										<b id="regName" style="color: red"></b>
+									</td>
 								</tr>
 								<tr>
 									<td> Email </td>
 								</tr>
 								<tr>
 									<td>
-										<input type="email" name="Email" style="width: 90%">
+										<input type="email" id="email" name="Email" style="width: 90%">
+									</td>
+									<td>
+										<b id="regEmail" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
@@ -79,7 +85,10 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="text" name="UserName" style="width: 90%">
+										<input type="text" id="regusername" name="UserName" style="width: 90%">
+									</td>
+									<td>
+										<b id="regUsername" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
@@ -87,7 +96,10 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="password" name="Password" style="width: 90%">
+										<input type="password" id="regpassword" name="Password" style="width: 90%">
+									</td>
+									<td>
+										<b id="regPassword" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
@@ -95,7 +107,10 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="password" name="rPassword" style="width: 90%">
+										<input type="password" id="rpassword" name="rPassword" style="width: 90%">
+									</td>
+									<td>
+										<b id="regRPassword" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
@@ -103,7 +118,10 @@
 								</tr>
 								<tr>
 									<td>
-										<input type="text" name="PhoneNumber" style="width: 90%">
+										<input type="text" id="phone" name="PhoneNumber" style="width: 90%">
+									</td>
+									<td>
+										<b id="regPhone" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
@@ -111,11 +129,14 @@
 								</tr>
 								<tr>
 									<td>
-										<select name = "Gender" style="width: 50%">
+										<select name = "Gender" id="gender" style="width: 50%">
 											<option value="Male"> Male </option> Male
 											<option value="Female"> Female </option> Female
 											<option value="Others"> Other </option> Other
 										</select>
+									</td>
+									<td>
+										<b id="regGender" style="color: red"></b>
 									</td>
 								</tr>
 								<tr>
