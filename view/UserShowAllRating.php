@@ -11,7 +11,7 @@
 	$title = "Home";
 	include ('header.php');
 ?>
-
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -40,9 +40,9 @@
 		<tr>
 			<td>
 				<br>
-				<form method="post" action="">
+				<form method="post" action="" onsubmit="return addReviewSearch()">
 					<label style="margin-left: 37em">  </label>
-					<input type="Search" name="search" style="width: 20%" placeholder=" Enter a book name...">
+					<input type="Search" id="s" name="search" style="width: 20%" placeholder=" Enter a book name...">
 					<input type="submit" name="go" value="Go" class="submitBtn" style="padding: 5px 20px">
 				</form>
 				<br>
