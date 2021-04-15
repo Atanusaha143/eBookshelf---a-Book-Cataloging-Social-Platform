@@ -14,6 +14,11 @@
     }
 ?>
 
+<?php
+    $bpageDetails = getBpageInfoByID($_GET['id']);
+    $bpageDetails = mysqli_fetch_assoc($bpageDetails);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,7 +37,7 @@
                 <table align="center">
                     <tr>
                         <td align="right">Business Name:</td>
-                        <td><input type='text' name='fullname'/></td>
+                        <td><input type='text' name='name'/></td>
                     </tr>
                     <tr>
                         <td align="right">Email:</td>

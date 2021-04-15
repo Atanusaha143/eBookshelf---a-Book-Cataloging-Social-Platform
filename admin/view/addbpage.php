@@ -33,7 +33,7 @@
                 <table>
                     <tr>
                         <td align="right"><label>Business Name:</label></td>
-                        <td><input type='text' name='fullname'/></td>
+                        <td><input type='text' name='name'/></td>
                     </tr>
                     <tr>
                         <td align="right"><label>Email:</label></td>
