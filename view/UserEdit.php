@@ -10,6 +10,7 @@
 	$title = "Edit Profile";
 	include ('header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -35,7 +36,7 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<form method="POST" action="../controller/UserUpdateCheck.php" enctype="multipart/form-data">
+					<form method="POST" action="../controller/UserUpdateCheck.php" enctype="multipart/form-data" onsubmit="return checkCurrentPassword()">
 						<fieldset style="width: 50%" class="fieldSetBorder">
 						<legend> <b> EDIT PROFILE </b> </legend>
 						<table>
@@ -75,7 +76,12 @@
 									<b>Current Password:</b>
 								</td>
 								<td>
-									<input type="text" name="currPass" size="50%" placeholder="To update this field is necessary">
+									<input type="text" id="cPass" name="currPass" size="50%" placeholder="To update this field is necessary">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" align="center">
+									<b id="print" style="color: red"></b>	
 								</td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
