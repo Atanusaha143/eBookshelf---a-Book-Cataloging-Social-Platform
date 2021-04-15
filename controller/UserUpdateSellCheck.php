@@ -3,6 +3,7 @@
 	$bookname = $_POST['bookname'];
 	$authorname = $_POST['authorname'];
 	$category = $_POST['Category'];
+	if(isset($_POST['condition']))
 	$condition = $_POST['condition'];
 	$price = $_POST['price'];
 
