@@ -17,6 +17,7 @@
 		echo "Your message has been sent to the administration!";
 	}
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -36,19 +37,24 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-				<form method="POST" action="../controller/UserContactCheck.php">
+				<form method="POST" action="../controller/UserContactCheck.php" onsubmit="return contactValiadtion()">
 					<fieldset style="width: 50%" class="fieldSetBorder">
 					<legend> <b> Contact </b> </legend>
-					<table>
+					<table border="0">
 							<tr>
 								<td>
 									Message
 								</td>
 								<td>
-										<input type="text" name="message" style="height: 100px;">
+										<input type="text" id="Message" name="message" style="height: 100px;">
 								</td>
 								<td>
 									&nbsp <input type="submit" name="send" value="Send" class="submitBtn" style="padding: 5px 20px">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="3" align="center">
+									<b id='print' style="color: red"></b>
 								</td>
 							</tr>
 					</table>
