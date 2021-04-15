@@ -10,6 +10,7 @@
 	$title = "Create Post";
 	include ('header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -31,24 +32,30 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<form method="POST" action="../controller/UserPostCheck.php">
+					<form method="POST" action="../controller/UserPostCheck.php" onsubmit="return userPostValidity()">
 						<fieldset style="width: 40%">
 						<legend>
 							<b> Create Post </b>
 						</legend>
-						<table>
+						<table border="0">
 							<tr>
 								<td>
 									Book Name
 								</td>
-								<td>
-									<input type="text" name="bookName" style="width: 150%"> 
+								<td style="width: 200px">
+									<input type="text" id="bookname" name="bookName" style="width: 200px"> 
+								</td>
+								<td colspan="3" align="center">
+									<b id="print1" style="color: red"></b>	
 								</td>
 							</tr>
 							<tr>
 								<td> Author Name </td>
-								<td>
-									<input type="text" name="bookAuthor" style="width: 150%">
+								<td style="width: 200px">
+									<input type="text" id="authorname" name="bookAuthor" style="width: 200px">
+								</td>
+								<td colspan="3" align="center">
+									<b id="print2" style="color: red"></b>
 								</td>
 							</tr>
 							<tr>
@@ -88,9 +95,11 @@
 						</tr>
 							<tr>
 								<td> Post Content </td>
-								<td>
-									<input type="text" name="postContent" style="height: 75px">
+								<td style="width: 200px">
+									<input type="text" id="post" name="postContent" style="height: 75px">
 								</td>
+								<td colspan="3" align="center">
+									<b id="print3" style="color: red"></b></td>
 							</tr>
 						</table>
 						<center>
