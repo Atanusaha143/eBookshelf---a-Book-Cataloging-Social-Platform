@@ -11,6 +11,7 @@
 	$title = "Profile";
 	include ('header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -40,7 +41,7 @@
 					if($userSell)
 					{
 							echo "
-								<form action='../controller/UserBuyCheck.php' method='POST'>
+								<form action='../controller/UserBuyCheck.php' method='POST' onsubmit='return confirmBuyingOrderValidation()'>
 								<tr height = '200px'>
 									<td colspan='2' align='center'>
 										<br>
@@ -137,8 +138,11 @@
 														<b>Trx ID:</b>
 													</td>
 													<td>";
-														echo "<input type='text' name='trx'/>";
-													echo "</td>
+														echo "<input type='text' id='TRX' name='trx'/>";
+													echo "<td>
+															<b id='print1' style='color: red'></b>
+														</td>
+													</td>
 												</tr>
 												<tr> <td colspan='2'> <hr> </td> </tr>
 												<tr>
@@ -146,8 +150,12 @@
 														<b>Buyer Address:</b>
 													</td>
 													<td>";
-														echo "<textarea rows='3' cols='20' name='address'></textarea>";
-													echo "</td>
+														echo "<textarea id='add' rows='3' cols='20' name='address'></textarea>";
+													echo "
+													<td>
+															<b id='print2' style='color: red'></b>
+														</td>
+													</td>
 												</tr>
 											</table>
 										</fieldset>
