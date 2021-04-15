@@ -150,17 +150,12 @@
         $sqlLogIn = "INSERT INTO adminlogin(id, username, password, type, status) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'admin', 'active')";
         $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
 
-        if($adminUpdateResult)
+        if($adminUpdateResult == true && $loginUpdateResult == true)
         {
             disconnect($connection);
             return true;
         }
-        if($loginUpdateResult)
-        {
-            disconnect($connection);
-            return true;
-        }
-        if($adminUpdateResult == false && $loginUpdateResult == false)
+        if($adminUpdateResult == false || $loginUpdateResult == false)
         {
             disconnect($connection);
             return false;
@@ -172,7 +167,7 @@
         $regdate = date("Y-m-d");
 
         $connection = connect();
-        $sqlAdmin = "INSERT INTO admin(name, email, phone, regdate, photo, status) VALUES('$name', '$email', '$phone', '$regdate', '$photo')";
+        $sqlAdmin = "INSERT INTO bpage(name, email, phone, regdate, photo) VALUES('$name', '$email', '$phone', '$regdate', '$photo')";
 
         $bpageUpdateResult = mysqli_query($connection, $sqlAdmin);
 
@@ -182,20 +177,18 @@
         $lastID = mysqli_query($connection, $sqlLastID);
         $lastID = mysqli_fetch_assoc($lastID);
 
-        $sqlLogIn = "INSERT INTO bpagelogin(id, username, password, type) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'bpage')";
+        $sqlLogIn = "INSERT INTO bpagelogin(id, username, password, type, status) VALUES(".$lastID['MAX(ID)'].", '$username', '$password', 'bpage', 'active')";
         $loginUpdateResult = mysqli_query($connection, $sqlLogIn);
 
-        if($bpageUpdateResult)
+        if($bpageUpdateResult == true && $loginUpdateResult == true)
         {
-            echo "Bpage added<br>";
+            disconnect($connection);
+            return true;
         }
-        if($loginUpdateResult)
+        if($bpageUpdateResult == false || $loginUpdateResult == false)
         {
-            echo "Admin's login added<br>";
-        }
-        if($bpageUpdateResult == false && $loginUpdateResult == false)
-        {
-            echo "Failed to add bpage<br>";
+            disconnect($connection);
+            return false;
         }
     }
 

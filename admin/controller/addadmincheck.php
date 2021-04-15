@@ -22,7 +22,7 @@
         $phoneFlag = phoneValidation($phone);
         $passwordFlag = passwordValidation($password);
         $usernameFlag = usernameValidation($username);
-        $imageFlag = imageValidate($file, $username);
+        $imageFlag = imageValidate($file);
 
         if($fullnameFlag == true)
         {
@@ -46,6 +46,11 @@
         {
             return;
             //echo "Username must be alphanumeric!<br>";
+        }
+
+        if($passwordFlag == true)
+        {
+            return;
         }
 
         if($imageFlag == true)

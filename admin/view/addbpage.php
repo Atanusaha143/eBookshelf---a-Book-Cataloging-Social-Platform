@@ -28,7 +28,7 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class='form'>
-        <form action='../controller/addbpagecheck.php' method="POST">
+        <form action='../controller/addbpagecheck.php' method="POST" enctype="multipart/form-data">
                 <b>SIGN UP</b>
                 <table>
                     <tr>

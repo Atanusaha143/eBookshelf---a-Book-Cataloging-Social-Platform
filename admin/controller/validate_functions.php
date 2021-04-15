@@ -148,7 +148,7 @@
         }
     }
 
-    function imageValidate($fileFlag, $username)
+    function imageValidate($fileFlag)
     {
         $file = $fileFlag['name'];
         $extension = pathinfo($file, PATHINFO_EXTENSION);
