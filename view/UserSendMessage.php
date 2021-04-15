@@ -10,7 +10,7 @@
 	$title = "Contact";
 	include ('header.php');
 ?>
-
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -34,21 +34,27 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-				<form method="POST" action="../controller/UserSendMessageCheck.php">
+				<form method="POST" action="../controller/UserSendMessageCheck.php" onsubmit="return sendMessageValidation()">
 					<fieldset style="width: 50%" class="fieldSetBorder">
 					<legend> <b> Send Message </b> </legend>
 					<table border="0" width="60%">
 						<tr>
 							<td>
-								<input type="search" style="width: 55%; margin-left:7em" name="searchBox" placeholder="Type a name...">
+								<input type="search" id = "s" style="width: 55%; margin-left:7em" name="searchBox" placeholder="Type a name...">
 							</td>
+							<td>
+	<b id="print1" style="color: red"></b></td>
 						</tr>
 						<tr>
 							<td align="center">
 								<br>
-									Message: <input type="text" name="message" style="height: 100px;">
+									Message: <input type="text" id="t" name="message" style="height: 100px;">
 								&nbsp <input type="submit" name="send" value="Send" class="submitBtn" style="padding: 5px 20px">
 							</td>
+						</tr>
+						<tr>
+							<td align="center">
+	<b id="print2" style="color: red"></b></td>
 						</tr>
 					</table>
 					</fieldset>
