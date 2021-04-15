@@ -10,6 +10,7 @@
 	$title = "Home";
 	include ('header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -42,9 +43,9 @@
 		<tr>
 			<td>
 				<br>
-				<form method="post" action="">
+				<form method="post" action="" onsubmit=" return addReviewSearch()">
 					<label style="margin-left: 37em">  </label>
-					<input type="Search" name="search" style="width: 20%" placeholder=" Enter a book name...">
+					<input type="Search" id="s" name="search" style="width: 20%" placeholder=" Enter a book name...">
 					<input type="submit" name="go" value="Go" class="submitBtn" style="padding: 5px 20px">
 				</form>
 				<br>
@@ -80,8 +81,11 @@
 									<tr>
 										<td><b>Rating:</b></td>
 										<td>
-											<input type='radio' name='rating1'> <input type='radio' name='rating2'> <input type='radio' name='rating3'> <input type='radio' name='rating4'> <input type='radio' name='rating5'>
+											<input type='radio' id='1' name='rating1'> <input type='radio' id='2' name='rating2'> <input type='radio' id='3' name='rating3'> <input type='radio' id='4' name='rating4'> <input type='radio' id='5' name='rating5'>
 										</td>
+										<td>
+											<b id='print' style='color: red'></b>
+											</td>
 									</tr>
 									<tr>
 										<td colspan='2' align='center'>
@@ -124,8 +128,11 @@
 									<tr>
 										<td><b>Rating:</b></td>
 										<td>
-											<input type='radio' name='rating1'> <input type='radio' name='rating2'> <input type='radio' name='rating3'> <input type='radio' name='rating4'> <input type='radio' name='rating5'>
+											<input type='radio' id='rate1' name='rating1'> <input type='radio' id='rate2' name='rating2'> <input type='radio' id='rate3' name='rating3'> <input type='radio' id='rate4' name='rating4'> <input type='radio' id='rate5' name='rating5'>
 										</td>
+										<td>
+											<b id='print' style='color: red'></b>
+											</td>
 									</tr>
 									<tr>
 										<td colspan='2' align='center'>
