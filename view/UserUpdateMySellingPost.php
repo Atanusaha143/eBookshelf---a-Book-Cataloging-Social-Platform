@@ -10,6 +10,7 @@
 	$title = "Edit Profile";
 	include ('../view/header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -36,7 +37,7 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<form method="POST" action="../controller/UserUpdateSellCheck.php" enctype="multipart/form-data">
+					<form method="POST" action="../controller/UserUpdateSellCheck.php" enctype="multipart/form-data" onsubmit="return mySellPostValidation()">
 						<fieldset style="width: 50%" class="fieldSetBorder">
 						<table>
 							<tr>
@@ -44,8 +45,9 @@
 									<b>Book Name:</b>
 								</td>
 								<td colspan="2">
-									<input type="text" name="bookname" value="<?php echo $sellInfo['bookname']; ?>">
+									<input type="text" id="bookname" name="bookname" value="<?php echo $sellInfo['bookname']; ?>">
 								</td>
+								<td><b id="print1" style="color: red"></b></td>
 								<td rowspan="5">
 
 									&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <b> Upload Photo</b>
@@ -55,8 +57,9 @@
 										echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
 									 ?>
 									<br> <br>
-									&nbsp &nbsp &nbsp &nbsp &nbsp <input type="file" name="profilePic">
+									&nbsp &nbsp &nbsp &nbsp &nbsp <input type="file" id="image" name="profilePic">
 								</td>
+								<td><b id="print2" style="color: red"></b></td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
 
@@ -65,8 +68,9 @@
 									<b>Author Name:</b>
 								</td>
 								<td>
-									<input type="text" name="authorname" size="50%" value="<?php echo $sellInfo['authorname']; ?>" >
+									<input type="text" id="authorname" name="authorname" size="50%" value="<?php echo $sellInfo['authorname']; ?>" >
 								</td>
+								<td><b id="print3" style="color: red"></b></td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
 
@@ -114,11 +118,12 @@
 									<b>Book Condition:</b>
 								</td>
 								<td>
-									<input type="radio" id="new" name="condition" value="New" <?php if(isset($_POST["condition"]) && $_POST["condition"] ==="New") { echo "checked"; } ?>>
+									<input type="radio" id="new" name="condition">
 									<label for="new">New</label>
-									<input type="radio" id="old" name="condition" value="Old" <?php if(isset($_POST["condition"]) && $_POST["condition"] === "Old") { echo "checked"; } ?>>
+									<input type="radio" id="old" name="condition">
 									<label for="old">Old</label><br>
 								</td>
+								<td><b id="print4" style="color: red"></b></td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
 
@@ -127,8 +132,9 @@
 									<b>Price:</b>
 								</td>
 								<td>
-									<input type="text" name="price" size="50%" value="<?php echo $sellInfo['price']; ?>" >
+									<input type="text" id="Price" name="price" size="50%" value="<?php echo $sellInfo['price']; ?>" >
 								</td>
+								<td><b id="print5" style="color: red"></b></td>
 							</tr>
 							<tr> <td colspan="2"> <hr> </td> </tr>
 													<tr>
