@@ -10,10 +10,12 @@
         if(mysqli_num_rows($result) > 0)
         {
             $result = mysqli_fetch_assoc($result);
+            disconnect($connection);
             return $result['id'];
         }
         else 
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -36,6 +38,7 @@
         $connection = connect();
         $sql = "SELECT * FROM admin, adminlogin WHERE adminlogin.username = '".$username."' AND adminlogin.id = admin.id";
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
     }
 
@@ -44,6 +47,7 @@
         $connection = connect();
         $sql = "SELECT * FROM admin, adminlogin WHERE adminlogin.id = ".$id." AND adminlogin.id = admin.id";
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
     }
 
@@ -52,6 +56,7 @@
         $connection = connect();
         $sql = "SELECT * FROM bpage, bpagelogin WHERE bpagelogin.id = ".$id." AND bpagelogin.id = bpage.id";
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
     }
 
@@ -63,10 +68,12 @@
         $insert = mysqli_query($connection, $sql);
         if($insert)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -79,10 +86,12 @@
 
         if($updateResult)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -95,10 +104,12 @@
         $currentPassword = mysqli_query($connection, $sql);
         if(mysqli_num_rows($currentPassword)>0)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -111,10 +122,12 @@
 
         if($updateResult)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -139,14 +152,17 @@
 
         if($adminUpdateResult)
         {
+            disconnect($connection);
             return true;
         }
         if($loginUpdateResult)
         {
+            disconnect($connection);
             return true;
         }
         if($adminUpdateResult == false && $loginUpdateResult == false)
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -191,10 +207,12 @@
 
         if($result)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -205,6 +223,7 @@
         $connection = connect();
 
         $allAdmins = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $allAdmins;
     }
 
@@ -213,7 +232,7 @@
         $sql = "SELECT * FROM bpage";
         $connection = connect();
         $allBpages = mysqli_query($connection, $sql);
-
+        disconnect($connection);
         return $allBpages;
     }
 
@@ -230,15 +249,18 @@
 
             if($deleteAdminStatus)
             {
+                disconnect($connection);
                 return true;
             }
             else
             {
+                disconnect($connection);
                 return false;
             }
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
