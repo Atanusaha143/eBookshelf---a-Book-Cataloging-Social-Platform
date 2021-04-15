@@ -12,19 +12,6 @@
 	include ('header.php');
 ?>
 
-<?php
-	for ($i=1; $i<=10 ; $i++)
-	{ 
-		if(isset($_POST['reviewBtn'.$i]))
-		{
-			if($_POST['reviewBox'.$i] == "")
-			{
-				echo "Please write sometime!";
-			}
-			else echo "Review Added!";
-		}
-	}
-?>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
