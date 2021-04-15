@@ -10,6 +10,7 @@
 	$title = "Create Post";
 	include ('header.php');
 ?>
+<script src="../resources/JS/script.js"></script>
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
@@ -31,7 +32,7 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<form method="POST" action="../controller/UserSellCheck.php" enctype="multipart/form-data">
+					<form method="POST" action="../controller/UserSellCheck.php" enctype="multipart/form-data" onsubmit="return sellPostvalidation()">
 						<fieldset style="width: 40%">
 						<legend>
 							<b> Create Selling Post </b>
@@ -41,15 +42,17 @@
 								<td>
 									Book Name
 								</td>
-								<td>
-									<input type="text" name="bookName" style="width: 150%"> 
+								<td style="width: 200px">
+									<input type="text" id="bookname" name="bookName" style="width: 200px"> 
 								</td>
+								<td><b id="print1" style="color: red"></b></td>
 							</tr>
 							<tr>
 								<td> Author Name </td>
-								<td>
-									<input type="text" name="bookAuthor" style="width: 150%">
+								<td style="width: 200px">
+									<input type="text" id="authorname" name="bookAuthor" style="width: 200px">
 								</td>
+								<td><b id="print2" style="color: red"></b></td>
 							</tr>
 							<tr>
 							<td> Category </td>
@@ -88,24 +91,27 @@
 							<tr>
 								<td> Condition </td>
 								<td>
-									<input type="radio" id="new" name="condition" value="New">
+									<input type="radio" id="new" name="condition" value="">
 									<label for="new">New</label>
-									<input type="radio" id="old" name="condition" value="Old">
+									<input type="radio" id="old" name="condition" value="">
 									<label for="old">Old</label><br>
 								</td>
+								<td><b id="print3" style="color: red"></b></td>
 							</tr>
 						</tr>
 							<tr>
 								<td> Price </td>
-								<td>
-									<input type="number" name="price">
+								<td >
+									<input type="number" id="Price" name="price">
 								</td>
+								<td><b id="print4" style="color: red"></b></td>
 							</tr>
 							<tr>
 								<td>Upload Photo:</td>
 								<td>
-									<input type="file" name="profilePic">
+									<input type="file" id="image" name="profilePic">
 								</td>
+								<td><b id="print5" style="color: red"></b></td>
 							</tr>
 						</table>
 						<center>
