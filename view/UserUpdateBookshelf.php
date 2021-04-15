@@ -30,9 +30,9 @@
 		<tr height = "200px">
 			<td colspan="3" align="center">
 				<br>
-				<div class="title">
+				<b class="titleBox">
 					<?php echo $_SESSION['Name']; ?>'s Bookshelf
-				</div>
+				</b>
 				<br>
 				<?php
 					
