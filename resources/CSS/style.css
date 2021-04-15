@@ -48,6 +48,22 @@
 	color: white;
 }
 
+.updateBtn
+{
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #003399;
+	color: white;
+	padding: 5px 15px;
+}
+.updateBtn:hover
+{
+	background-color: black;
+	color: white;
+}
+
 .gobackBtn
 {
 	margin: 10px;
@@ -65,11 +81,11 @@
 	color: white;
 }
 
-.title
+.titleBox
 {
 	border-style: groove;
 	border-radius: 15px;
-	padding: 4px 500px;
+	padding: 5px 10px;
 	font-family: cursive;
 }
 
