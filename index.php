@@ -4,11 +4,18 @@
 ?>
 
 <?php
+	session_start();
 	if(isset($_POST['rememberMe']) || isset($_COOKIE['checkLogin']))
 	{
 		header('location: controller/UserLogCookieCheck.php');
 	}
+	if(isset($_SESSION['flag']))
+	{
+		header('location: view/UserHome.php');
+	}
 ?>
+
+<script src="resources/JS/script.js"></script>
 <link rel="stylesheet" type="text/css" href="resources/CSS/style.css">
 <style>
 	body
@@ -17,7 +24,7 @@
 	  background-size: 100%;
 	}
 </style>
-	<table border="0" width="100%" cellspacing="0">
+	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="left">
 				
@@ -25,21 +32,20 @@
 			<td align="right" colspan="2">
 				<br>
 				<fieldset style="width: 70%" class="fieldSetBorder">
-					<form method="POST" action="controller/UserLogCheck.php">
-					Username &nbsp <input type="text" name="UserName" align="right"> &nbsp &nbsp &nbsp &nbsp
-					Password &nbsp <input type="password" name="Password" align="right"> &nbsp &nbsp 
+					<form method="POST" action="controller/UserLogCheck.php" onsubmit="return loginValidation()">
+					Username &nbsp <input type="text" name="UserName" align="right" id="username"> &nbsp &nbsp &nbsp &nbsp
+					Password &nbsp <input type="password" name="Password" align="right" id="password"> &nbsp &nbsp 
 					<input type="checkbox" name="rememberMe"> Remember Me &nbsp | &nbsp
 					<input type="submit" name="login" value="Login" class="submitBtn"> &nbsp &nbsp
 				</form>
-				<br> <a href="" class="linkBtn" style="margin-bottom: 2px">Login as Business User </a> &nbsp &nbsp
+				<br> <a href="./bpage/" class="linkBtn" style="margin-bottom: 2px">Business Page </a> &nbsp &nbsp
 				</fieldset> 
-				<br> <a href="./bpage/">Login as Business User </a> &nbsp &nbsp
 				<br> <a href="view/UserForgotPassowrd.php" class="linkBtn">Forgot Password? </a> &nbsp &nbsp
 			</td>
 		</tr>
 		<tr height = "200px">
 			<td>
-				<a href="index.php"> <img src="resources/logo.png" width="150%" height="100" style="margin-left: 20%"> </a>
+				<a href="index.php"> <img src="resources/banner.png" width="150%" height="100" style="margin-left: 20%"> </a>
 				<h3 style="margin-left: 50%"> &nbsp Welcome to eBookShelf </h3>
 				<p style="margin-left: 50%"> &nbsp Connect with book reader </p>
 			</td>
@@ -123,12 +129,13 @@
 				<br>
 			</td>
 		</tr>
-		<tr height = "50px">
-			<td colspan="2">
+		<tr height = "50px" style="background-color: #333; color: white;">
+			<td colspan="3" style="padding: 25px;">
 				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
+
 <?php
 	include ('view/footer.php');
 ?>
