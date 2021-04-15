@@ -13,12 +13,14 @@
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
-				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+				<a href="UserHome.php"> <img src="../resources/banner.png" align="left" width="100%" height="150"> </a>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">
 				<br>
+				<a href="UserShowMyPost.php" class="linkBtn updateBtn"> My Posts </a>
+				&nbsp | &nbsp
 				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
@@ -99,8 +101,8 @@
 				<br> 
 			</td>
 		</tr>
-		<tr height = "50px">
-			<td colspan="3">
+		<tr height = "50px" style="background-color: #333; color: white;">
+			<td colspan="3" style="padding: 25px;">
 				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
