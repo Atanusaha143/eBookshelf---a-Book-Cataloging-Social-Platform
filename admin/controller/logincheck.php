@@ -20,40 +20,26 @@
             $_SESSION['id'] = $userFoundFlag;
             $_SESSION['type'] = 'admin';
             setcookie('flag', true, time()+1200, '/');
-            header('location: ./redirect.php');
+
+            $adminDetails = getAdminInfoByID($_SESSION['id']);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+
+            if($adminDetails['status'] == 'terminated')
+            {
+                unset($_SESSION['flag']);
+                $_SESSION['terminated'] = true;
+                echo "Terminated";
+            }
+            else
+            {
+                $_SESSION['id'] = $adminDetails['id'];
+                $_SESSION['fullname'] = $adminDetails['fullname'];
+                header('location: ../view/dashboard.php');
+            }
         }
         else
         {
-            header('location: ../view/login.php');
+            echo "False";
         }
-        
-        // if($usernameFlag == false && $passwordFlag == false)
-        // {
-            
-        // }
-
-        /*
-        $dataString = file_get_contents('../model/login.json');
-        $dataJSON = json_decode($dataString, true);
-        $userFoundFlag = false;
-
-        foreach($dataJSON as $user)
-        {
-            if($user['username'] == $username && $user['password'] == $password)
-            {
-                $_SESSION['flag'] = true;
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['type'] = $user['type'];
-                $userFoundFlag = true;
-                setcookie('flag', true, time()+1200, '/');
-                header('location: ./redirect.php');
-            }
-        }
-        if($userFoundFlag == false)
-        {
-            echo "Invalid user!";
-        }
-        //print_r($_SESSION);
-        */
     }
 ?>
