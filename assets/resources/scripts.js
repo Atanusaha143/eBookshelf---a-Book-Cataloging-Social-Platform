@@ -37,7 +37,6 @@ function adminLoginCheck()
                 {
                     document.getElementById('loginhint').innerHTML='User does not exist';
                     console.log('User does not exist');
-                    //return false;
                 }
                 else if(this.responseText == 'Terminated')
                 {
