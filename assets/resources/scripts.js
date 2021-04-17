@@ -8,31 +8,41 @@
 
 // }
 
+let i = 0;
+
 function nameValidation(fullname)
 {
-    let i = 0;
     for(i = 0 ; i < fullname.length ; i=i+1)
     {
         if(!((fullname.charCodeAt(i) >= 97 && fullname.charCodeAt(i) <= 122)) 
         && !((fullname.charCodeAt(i) >= 65 && fullname.charCodeAt(i) <= 90))&& 
         !(fullname.charCodeAt(i) == 32) && !(fullname.charCodeAt(i) == 45))
         {
-            //echo "Name can be alphabetical, and can only contain spaces or '-' in between.<br>";
             console.log('Name can be alphabetical, and can only contain spaces or '-' in between.')
             return true;
         }
-        //console.log(fullname.charCodeAt(i));
     }
     console.log('Name is valid.');
     return false;
 }
 
-nameValidation('-')
-
 function usernameValidation(username)
 {
-    
+    for(i = 0 ; i < username.length ; i=i+1)
+    {
+        if(!((username.charCodeAt(i) >= 97 && username.charCodeAt(i) <= 122)) 
+        && !((username.charCodeAt(i) >= 65 && username.charCodeAt(i) <= 90)) 
+        && !(username.charCodeAt(i) >= 48 && username.charCodeAt(i) <= 57))
+        {
+            console.log("Username can only be alphanumeric!");
+            return true;
+        }
+    }
+    console.log('Username is valid.');
+    return false;
 }
+
+usernameValidation('snigdho611')
 
 function adminLoginCheck()
 {
