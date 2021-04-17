@@ -42,6 +42,61 @@ function usernameValidation(username)
     return false;
 }
 
+function passwordValidation(password, confirmpassword)
+{
+    specialCharCount = 0;
+    capitalLetterCount = 0;
+    smallLetterCount = 0;
+
+    if(password == confirmpassword)
+    {
+        if(password.length < 8)
+        {
+            console.log('Password must be at least 8 characters long.');
+        }
+        else
+        {
+            for(i=0 ; i<password.length ; i++)
+            {
+                if((password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122))
+                {
+                    smallLetterCount = smallLetterCount+1;
+                }
+
+                if((password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90))
+                {
+                    capitalLetterCount = capitalLetterCount+1;
+                }
+
+                if((password[i] == '@' || password[i] == '#' || password[i] == '!' || password[i] == '$'))
+                {
+                    specialCharCount = specialCharCount+1;
+                }
+            }
+
+            if(capitalLetterCount == 0)
+            {
+                console.log("Password must contain atleast one capital letter!");
+                return true;
+            }
+            else if(smallLetterCount == 0)
+            {
+                console.log("Password must contain atleast one small letter!");
+                return true;
+            }
+            else if(specialCharCount == 0 && capitalLetterCount > 0)
+            {
+                console.log("Password must contain atleast one special character ('@', '#', '!' or '$')!");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
+}
+
 usernameValidation('snigdho611')
 
 function adminLoginCheck()
