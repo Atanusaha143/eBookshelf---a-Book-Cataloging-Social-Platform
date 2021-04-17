@@ -138,37 +138,82 @@ function addAdminCheck()
     let confirmpassword = document.getElementById('confirmpassword').value;
     let propic = document.getElementById('propic').files;
 
+    //Name
     if(name == "")
     {
         document.getElementById('namehint').innerHTML = 'Please enter the name.';
     }
+    else if(name != "")
+    {
+        document.getElementById('namehint').innerHTML = '';
+    }
+
+    //Email
     if(email == "")
     {
         document.getElementById('emailhint').innerHTML = 'Please enter the email';
     }
+    else if(email != "")
+    {
+        document.getElementById('emailhint').innerHTML = '';
+    }
+
+    //Phone Number
     if(phone == "+88")
     {
         document.getElementById('phonehint').innerHTML = 'Please enter the phone number';
     }
+    else if(phone != "+88")
+    {
+        document.getElementById('phonehint').innerHTML = '';
+    }
+
+    //Date of Birth
     if(dob == "")
     {
         document.getElementById('dobhint').innerHTML = 'Please enter the date of birth';
     }
+    else if(dob != "")
+    {
+        document.getElementById('dobhint').innerHTML = '';
+    }
+
+    //Username
     if(username == "")
     {
         document.getElementById('usernamehint').innerHTML = 'Please enter the username';
     }
+    else if(username != "")
+    {
+        document.getElementById('usernamehint').innerHTML = '';
+    }
+
+    //Password
     if(password == "")
     {
         document.getElementById('passwordhint').innerHTML = 'Please enter the password';
+    }
+    else if(password != "")
+    {
+        document.getElementById('passwordhint').innerHTML = '';
     }
     if(confirmpassword == "")
     {
         document.getElementById('confirmpasswordhint').innerHTML = 'Please enter the password again';
     }
+    else if(confirmpassword != "")
+    {
+        document.getElementById('confirmpasswordhint').innerHTML = '';
+    }
+
+    //Profile Picture
     if(propic.length == 0)
     {
         document.getElementById('propichint').innerHTML = 'Please attach a valid photograph';
+    }
+    else if(propic.length != 0)
+    {
+        document.getElementById('propichint').innerHTML = '';
     }
     
     if(name!="" && email!="" && phone!="+880" && dob != "" && username != "" && password!="" && confirmpassword!="" && propic.length>0)
