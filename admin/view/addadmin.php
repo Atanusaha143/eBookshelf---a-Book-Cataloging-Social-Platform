@@ -22,6 +22,7 @@
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Add User</title>
+    <script src="../../assets/resources/scripts.js"></script>
 </head>
 <body>
     <?php include('./header.php'); ?>
@@ -31,38 +32,38 @@
             <table>
                 <tr>
                     <td align="right"><label>Full Name:</label></td>
-                    <td><input type='text' name='fullname'/></td>
+                    <td><input type='text' name='fullname' id='fullname'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Email:</label></td>
-                    <td><input type='email' name='email'/></td>
+                    <td><input type='email' name='email' id='email'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Phone:</label></td>
-                    <td><input type='text' name='phone' value="+88"/></td>
+                    <td><input type='text' name='phone' value="+88" id='phone'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Date of Birth:</label></td>
-                    <td><input type='date' name='dateOfBirth'/></td>
+                    <td><input type='date' name='dateOfBirth' id='dob'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Username:</label></td>
-                    <td><input type='text' name='username'/></td>
+                    <td><input type='text' name='username' id='username'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Password:</label></td>
-                    <td><input type='password' name='password'/></td>
+                    <td><input type='password' name='password' id='password'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Confirm Password:</label></td>
-                    <td><input type='password' name='confirmpassword'/></td>
+                    <td><input type='password' name='confirmpassword' id='confirmpassword'/></td>
                 </tr>
                 <tr>
                     <td>
                         <label>Upload Profile Picture:</label>
                     </td>
                     <td align="center">
-                        <input type='file' name='propic'>
+                        <input type='file' name='propic' id='propic'>
                     </td>
                 </tr>
                 <tr>

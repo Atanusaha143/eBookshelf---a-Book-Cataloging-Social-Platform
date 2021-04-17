@@ -8,6 +8,32 @@
 
 // }
 
+function nameValidation(fullname)
+{
+    let i = 0;
+    for(i = 0 ; i < fullname.length ; i=i+1)
+    {
+        if(!((fullname.charCodeAt(i) >= 97 && fullname.charCodeAt(i) <= 122)) 
+        && !((fullname.charCodeAt(i) >= 65 && fullname.charCodeAt(i) <= 90))&& 
+        !(fullname.charCodeAt(i) == 32) && !(fullname.charCodeAt(i) == 45))
+        {
+            //echo "Name can be alphabetical, and can only contain spaces or '-' in between.<br>";
+            console.log('Name can be alphabetical, and can only contain spaces or '-' in between.')
+            return true;
+        }
+        //console.log(fullname.charCodeAt(i));
+    }
+    console.log('Name is valid.');
+    return false;
+}
+
+nameValidation('-')
+
+function usernameValidation(username)
+{
+    
+}
+
 function adminLoginCheck()
 {
     let username = document.getElementById('username').value;
