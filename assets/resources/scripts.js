@@ -55,6 +55,52 @@ function emailValidation(email)
     }
 }
 
+function dobValidation(dob)
+{
+    dateObject = new Date(dob);
+    let year = dateObject.getFullYear();
+    //console.log(typeof(year));
+    if(year < 1900)
+    {
+        document.getElementById('dobhint').innerHTML = "The minimum year for date of birth must is 1900";
+        return true;
+    }
+}
+
+function phoneValidation(phone)
+{
+    let count = 0;
+    for(i = 1 ; i<phone.length ; i=i+1)
+    {
+        if(!(phone.charCodeAt(i) >= 48 && phone.charCodeAt(i) <= 57))
+        {
+            count = count + 1;
+        }
+    }
+
+    let phonePrefix = phone.substr(0, 3);
+    if(phonePrefix != '+88')
+    {
+        console.log(phonePrefix);
+        document.getElementById('phonehint').innerHTML = 'Phone must start with country code (+88)';
+        return true;
+    }
+    else if(count != 0)
+    {
+        document.getElementById('phonehint').innerHTML = 'Phone number can only contain numeric values';
+        return true;
+    }
+    else if(phone.length < 14)
+    {
+        document.getElementById('phonehint').innerHTML = 'Phone number must have at least 11 digits after country code';
+        return true;
+    }
+    else if(phonePrefix == '+88' && count == 0 && phone.length == 14)
+    {
+        return false;
+    }
+}
+
 function usernameValidation(username)
 {
     for(i = 0 ; i < username.length ; i=i+1)
@@ -145,7 +191,15 @@ function addAdminCheck()
     }
     else if(name != "")
     {
-        document.getElementById('namehint').innerHTML = '';
+        let nameFlag = nameValidation(name);
+        if(nameFlag == true)
+        {
+            console.log('not ok');
+        }
+        else
+        {
+            document.getElementById('namehint').innerHTML = 'Valid name';
+        }
     }
 
     //Email
@@ -154,8 +208,8 @@ function addAdminCheck()
         document.getElementById('emailhint').innerHTML = 'Please enter the email';
     }
     else if(email != "")
-    {
-        document.getElementById('emailhint').innerHTML = '';
+    {   
+        document.getElementById('emailhint').innerHTML = 'Valid email';
     }
 
     //Phone Number
@@ -165,7 +219,15 @@ function addAdminCheck()
     }
     else if(phone != "+88")
     {
-        document.getElementById('phonehint').innerHTML = '';
+        let phoneFlag = phoneValidation(phone);
+        if(phoneFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('phonehint').innerHTML = 'Valid phone number';
+        }
     }
 
     //Date of Birth
@@ -175,7 +237,15 @@ function addAdminCheck()
     }
     else if(dob != "")
     {
-        document.getElementById('dobhint').innerHTML = '';
+        dobFlag = dobValidation(dob);
+        if(dobFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('dobhint').innerHTML = 'Valid date of birth';
+        }
     }
 
     //Username
@@ -185,7 +255,7 @@ function addAdminCheck()
     }
     else if(username != "")
     {
-        document.getElementById('usernamehint').innerHTML = '';
+        document.getElementById('usernamehint').innerHTML = 'Valid username';
     }
 
     //Password
@@ -218,7 +288,7 @@ function addAdminCheck()
     
     if(name!="" && email!="" && phone!="+880" && dob != "" && username != "" && password!="" && confirmpassword!="" && propic.length>0)
     {
-        // let nameFlag = nameValidation(name);
+        
         // let emailFlag = emailValidation(email);
         // let usernameFlag = usernameValidation(username);
         // let passwordFlag = passwordValidation(password, confirmpassword);
@@ -232,7 +302,6 @@ function addAdminCheck()
         // {
         //     console.log('ok');
         // }
-        console.log('ok')
     }
     //document.getElementById('namehint').innerHTML = 'You must dash dash dash dash dash';
     return false;
