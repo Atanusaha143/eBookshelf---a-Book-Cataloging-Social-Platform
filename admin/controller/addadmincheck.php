@@ -20,7 +20,7 @@
         $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
-        $passwordFlag = passwordValidation($password);
+        $passwordFlag = passwordValidation($password, $confirmpassword);
         $usernameFlag = usernameValidation($username);
         $imageFlag = imageValidate($file);
 
@@ -55,13 +55,6 @@
 
         if($imageFlag == true)
         {
-            return;
-        }
-
-        if($password != $confirmpassword)
-        {
-            $passwordFlag=true;
-            echo "passwords do not match!<br>";
             return;
         }
 
