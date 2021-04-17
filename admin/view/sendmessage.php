@@ -24,16 +24,18 @@
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Send a message</title>
+    <script src="../../assets/resources/scripts.js"></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <center>
-        <form method='POST' action='../controller/checkchat.php' class="form">
-            <h3>Send a message to <input type='text' name='username' class='messageUsername'></h3>
-            <input type="submit" value='Send'>
-        </form>
-    </center>
+    <form method='POST' action='../controller/checkchat.php' class="form" onsubmit="return sendMessage()">
+        <h3>Send a message to 
+            <input type='text' name='username' class='messageUsername' id='messageUsername' placeholder="Enter username here">
+        </h3>
+        <input type="submit" value='Send'>
+    </form>
+    <div class="container" id="messagehint"></div>
     <?php include('./footer.php') ?>
 </body>
 </html>

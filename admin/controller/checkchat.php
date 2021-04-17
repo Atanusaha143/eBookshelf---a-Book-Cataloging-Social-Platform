@@ -10,17 +10,17 @@
         $selfDetails = mysqli_fetch_assoc($selfDetails);
         if($receiverDetails == false)
         {
-            echo "It seems the user you are looking for does not exist!";
+            echo "Nonexistent";
         }
         else if($selfDetails['id'] == $receiverDetails['id'])
         {
-            echo "You cannot send a message to yourself!";
+            echo "Self";
         }
         else
         {
-            $link = 'location: ../view/chat.php?username='.$_POST['username'];
-            header($link);
-            //print_r($adminDetails);
+            $link = '../view/chat.php?username='.$_POST['username'];
+            echo $link;
+            //header($link);
         }
     }
 ?>
