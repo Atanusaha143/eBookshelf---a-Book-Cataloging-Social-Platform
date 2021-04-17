@@ -66,21 +66,27 @@
         $imageFlag == false)
         {
             include('../model/adminModel.php');
-            $addAdminStatus = insertNewAdmin($fullname, $email, $phone, $dateOfBirth, $username, $password, $fileSaveName);
-            //print_r($addAdminStatus);
-            $picture = $_FILES['propic'];
-            //$imageFlag = imageValidate($picture, $adminDetails['username']);
-            $path = '../../assets/profile/admin/'.$fileSaveName;
-
-            if(move_uploaded_file($picture['tmp_name'], $path))
+            $usernameCheckFlag = uniqueUsernameCheck($username);
+            if($usernameCheckFlag == false)
             {
-                echo "New Admin added successfully!<br>";
-                echo "<a href='../view/allusers.php'>Go Back</a>";
-                //header('location: ../view/picchangesuccess.php');
+                $addAdminStatus = insertNewAdmin($fullname, $email, $phone, $dateOfBirth, $username, $password, $fileSaveName);
+                $picture = $_FILES['propic'];
+                $path = '../../assets/profile/admin/'.$fileSaveName;
+
+                if(move_uploaded_file($picture['tmp_name'], $path))
+                {
+                    echo "New Admin added successfully!<br>";
+                    echo "<a href='../view/allusers.php'>Go Back</a>";
+                    //header('location: ../view/picchangesuccess.php');
+                }
+                else
+                {
+                    echo "Admin addition failed!<br>";
+                }
             }
             else
             {
-                echo "Admin addition failed!<br>";
+                echo "Username already exists";
             }
         }
     }

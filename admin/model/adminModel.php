@@ -132,8 +132,31 @@
         }
     }
 
+    function uniqueUsernameCheck($username)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM adminlogin WHERE username = '$username'";
+
+        $result = mysqli_query($connection, $sql);
+
+        if(mysqli_num_rows($result) > 0)
+        {
+            $result = mysqli_fetch_assoc($result);
+            disconnect($connection);
+            return true;
+        }
+        else 
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
     function insertNewAdmin($fullname, $email, $phone, $dob, $username, $password, $photo)
     {
+        $connection = connect();
+        
+        
         $regdate = date("Y-m-d");
 
         $connection = connect();
