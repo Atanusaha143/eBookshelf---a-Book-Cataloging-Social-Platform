@@ -18,12 +18,41 @@ function nameValidation(fullname)
         && !((fullname.charCodeAt(i) >= 65 && fullname.charCodeAt(i) <= 90))&& 
         !(fullname.charCodeAt(i) == 32) && !(fullname.charCodeAt(i) == 45))
         {
-            console.log('Name can be alphabetical, and can only contain spaces or '-' in between.')
+            //console.log('Name can be alphabetical, and can only contain spaces or '-' in between.')
+            document.getElementById('namehint').innerHTML = "Name can be alphabetical, and can only contain spaces or '-' in between.";
             return true;
         }
     }
     console.log('Name is valid.');
     return false;
+}
+
+function emailValidation(email)
+{
+    let countAt = 0;
+    let countDotCom = 0;
+    for(i = 0 ; i<email.length ; i=i+1)
+    {
+        if(email[i] == '@')
+        {
+            countAt = countAt + 1;
+        }
+    }
+
+    let last4Chars = email.slice(-4);
+    if(last4Chars == '.com' || last4Chars == '.edu')
+    {
+        countDotCom = 1;
+    }
+    if(countAt == 0 || countDotCom == 0)
+    {
+        document.getElementById('emailhint').innerHTML = "Email must have '@' symbol, followed by a valid mail domain (such as '.com')";
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 function usernameValidation(username)
@@ -34,7 +63,8 @@ function usernameValidation(username)
         && !((username.charCodeAt(i) >= 65 && username.charCodeAt(i) <= 90)) 
         && !(username.charCodeAt(i) >= 48 && username.charCodeAt(i) <= 57))
         {
-            console.log("Username can only be alphanumeric!");
+            //console.log("Username can only be alphanumeric!");
+            document.getElementById('usernamehint').innerHTML = "Username can only be alphanumeric!";
             return true;
         }
     }
@@ -97,7 +127,71 @@ function passwordValidation(password, confirmpassword)
     }
 }
 
-usernameValidation('snigdho611')
+function addAdminCheck()
+{
+    let name = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let dob = document.getElementById('dob').value;
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let confirmpassword = document.getElementById('confirmpassword').value;
+    let propic = document.getElementById('propic').files;
+
+    if(name == "")
+    {
+        document.getElementById('namehint').innerHTML = 'Please enter the name.';
+    }
+    if(email == "")
+    {
+        document.getElementById('emailhint').innerHTML = 'Please enter the email';
+    }
+    if(phone == "+88")
+    {
+        document.getElementById('phonehint').innerHTML = 'Please enter the phone number';
+    }
+    if(dob == "")
+    {
+        document.getElementById('dobhint').innerHTML = 'Please enter the date of birth';
+    }
+    if(username == "")
+    {
+        document.getElementById('usernamehint').innerHTML = 'Please enter the username';
+    }
+    if(password == "")
+    {
+        document.getElementById('passwordhint').innerHTML = 'Please enter the password';
+    }
+    if(confirmpassword == "")
+    {
+        document.getElementById('confirmpasswordhint').innerHTML = 'Please enter the password again';
+    }
+    if(propic.length == 0)
+    {
+        document.getElementById('propichint').innerHTML = 'Please attach a valid photograph';
+    }
+    
+    if(name!="" && email!="" && phone!="+880" && dob != "" && username != "" && password!="" && confirmpassword!="" && propic.length>0)
+    {
+        // let nameFlag = nameValidation(name);
+        // let emailFlag = emailValidation(email);
+        // let usernameFlag = usernameValidation(username);
+        // let passwordFlag = passwordValidation(password, confirmpassword);
+
+
+        // if(usernameFlag == true || nameFlag == true || emailFlag == true)
+        // {
+        //     return false;
+        // }
+        // else
+        // {
+        //     console.log('ok');
+        // }
+        console.log('ok')
+    }
+    //document.getElementById('namehint').innerHTML = 'You must dash dash dash dash dash';
+    return false;
+}
 
 function adminLoginCheck()
 {

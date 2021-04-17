@@ -28,35 +28,43 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class = 'form'>
-        <form action='../controller/addadmincheck.php' method="POST" enctype="multipart/form-data">
+    <!-- ../controller/addadmincheck.php -->
+        <form action='../controller/addadmincheck.php' method="POST" enctype="multipart/form-data" onsubmit="return addAdminCheck()">
             <table>
                 <tr>
                     <td align="right"><label>Full Name:</label></td>
                     <td><input type='text' name='fullname' id='fullname'/></td>
+                    <td id='namehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Email:</label></td>
                     <td><input type='email' name='email' id='email'/></td>
+                    <td id='emailhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Phone:</label></td>
                     <td><input type='text' name='phone' value="+88" id='phone'/></td>
+                    <td id='phonehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Date of Birth:</label></td>
                     <td><input type='date' name='dateOfBirth' id='dob'/></td>
+                    <td id='dobhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Username:</label></td>
                     <td><input type='text' name='username' id='username'/></td>
+                    <td id='usernamehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Password:</label></td>
                     <td><input type='password' name='password' id='password'/></td>
+                    <td id='passwordhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Confirm Password:</label></td>
                     <td><input type='password' name='confirmpassword' id='confirmpassword'/></td>
+                    <td id='confirmpasswordhint'></td>
                 </tr>
                 <tr>
                     <td>
@@ -65,6 +73,7 @@
                     <td align="center">
                         <input type='file' name='propic' id='propic'>
                     </td>
+                    <td id='propichint'></td>
                 </tr>
                 <tr>
                     <td colspan="2"><hr></td>

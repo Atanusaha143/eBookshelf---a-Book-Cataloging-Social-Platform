@@ -81,7 +81,7 @@
                 }
                 else
                 {
-                    echo "Admin addition failed!<br>";
+                    echo "Admin addition failed!";
                 }
             }
             else
