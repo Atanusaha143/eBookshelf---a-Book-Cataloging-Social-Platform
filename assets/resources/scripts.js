@@ -403,6 +403,59 @@ function adminLoginCheck()
     }
 }
 
+function searchValidate()
+{
+    let optionlist = document.getElementById('type');
+    let option = optionlist.value;
+    let radioid = document.getElementById('id');
+    let radiousername = document.getElementById('username');
+    let searchText = document.getElementById('searchText').value;
+
+    let option1 = false, option2 = false, username = false;
+    //console.log(option);
+    if(option == 'disabled')
+    {
+        document.getElementById('searchhint1').innerHTML = 'Please select a type of user';
+    }
+    else if(option =='admin' || option == 'ruser' || option == 'bpage')
+    {
+        option1 = true
+        document.getElementById('searchhint1').innerHTML = '';
+    }
+    //console.log(radioid.checked+", "+radiousername);
+    if(radioid.checked == true || radiousername.checked == true)
+    {
+        //console.log('ID or Username is selected');
+        option2 = true;
+        document.getElementById('searchhint2').innerHTML = '';
+    }
+    else
+    {
+        
+        document.getElementById('searchhint2').innerHTML = 'Please select an option (ID or Username)';
+    }
+    
+    if(searchText == "")
+    {
+        document.getElementById('searchhint3').innerHTML = 'Please enter a valid username to search';
+        //console.log(searchText);
+    }
+    else
+    {
+        usernameFlag = true;
+        document.getElementById('searchhint3').innerHTML = '';
+        //console.log(searchText);
+    }
+
+    if(option1 == true && option2 == true && usernameFlag == true)
+    {
+        //console.log('ok');
+        return true;
+    }
+    // console.log(option.value);
+    return false;
+}
+
 function sendMessage()
 {
     let username = document.getElementById('messageUsername').value;
@@ -414,31 +467,31 @@ function sendMessage()
     }
 
     var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                if(this.responseText == 'Nonexistent')
-                {
-                    document.getElementById('messagehint').innerHTML='User does not exist.';
-                    //console.log('User does not exist');
-                }
-                else if(this.responseText == 'Self')
-                {
-                    document.getElementById('messagehint').innerHTML='You cannot send a message to yourself!';
-                    //window.location.href = '../../admin/view/termination.php';
-                }
-                else
-                {
-                    window.location.href = this.responseText;
-                }
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(this.responseText == 'Nonexistent')
+            {
+                document.getElementById('messagehint').innerHTML='User does not exist.';
+                //console.log('User does not exist');
+            }
+            else if(this.responseText == 'Self')
+            {
+                document.getElementById('messagehint').innerHTML='You cannot send a message to yourself!';
+                //window.location.href = '../../admin/view/termination.php';
             }
             else
             {
-
+                window.location.href = this.responseText;
             }
-        };
-        xhttp.open("POST", "../../admin/controller/checkchat.php", true);
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send("username="+username);
-        
-        return false;
+        }
+        else
+        {
+
+        }
+    };
+    xhttp.open("POST", "../../admin/controller/checkchat.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("username="+username);
+    
+    return false;
 }
