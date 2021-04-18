@@ -65,6 +65,10 @@ function dobValidation(dob)
         document.getElementById('dobhint').innerHTML = "The minimum year for date of birth must is 1900";
         return true;
     }
+    else
+    {
+        return false;
+    }
 }
 
 function phoneValidation(phone)
@@ -123,12 +127,15 @@ function passwordValidation(password, confirmpassword)
     specialCharCount = 0;
     capitalLetterCount = 0;
     smallLetterCount = 0;
+    numericCount = 0;
 
     if(password == confirmpassword)
     {
         if(password.length < 8)
         {
             console.log('Password must be at least 8 characters long.');
+            document.getElementById('passwordhint').innerHTML = "Password must be at least 8 characters long.";
+            return true;
         }
         else
         {
@@ -148,21 +155,35 @@ function passwordValidation(password, confirmpassword)
                 {
                     specialCharCount = specialCharCount+1;
                 }
+
+                if((password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57))
+                {
+                    numericCount = numericCount + 1
+                }
             }
 
             if(capitalLetterCount == 0)
             {
                 console.log("Password must contain atleast one capital letter!");
+                document.getElementById('passwordhint').innerHTML = "Password must contain atleast one capital letter!";
                 return true;
             }
             else if(smallLetterCount == 0)
             {
                 console.log("Password must contain atleast one small letter!");
+                document.getElementById('passwordhint').innerHTML = "Password must contain atleast one small letter!";
                 return true;
             }
             else if(specialCharCount == 0 && capitalLetterCount > 0)
             {
                 console.log("Password must contain atleast one special character ('@', '#', '!' or '$')!");
+                document.getElementById('passwordhint').innerHTML = "Password must contain atleast one special character ('@', '#', '!' or '$')!";
+                return true;
+            }
+            else if(numericCount == 0)
+            {
+                console.log("Password must contain at least one number.");
+                document.getElementById('passwordhint').innerHTML = "Password must contain at least one number.";
                 return true;
             }
             else
@@ -170,6 +191,10 @@ function passwordValidation(password, confirmpassword)
                 return false;
             }
         }
+    }
+    else
+    {
+        console.log('Passwords do not match!');
     }
 }
 
@@ -184,6 +209,8 @@ function addAdminCheck()
     let confirmpassword = document.getElementById('confirmpassword').value;
     let propic = document.getElementById('propic').files;
 
+    let nameFlag, emailFlag, phoneFlag, dobFlag, usernameFlag,passwordFlag;
+
     //Name
     if(name == "")
     {
@@ -191,7 +218,7 @@ function addAdminCheck()
     }
     else if(name != "")
     {
-        let nameFlag = nameValidation(name);
+        nameFlag = nameValidation(name);
         if(nameFlag == true)
         {
             console.log('not ok');
@@ -208,8 +235,15 @@ function addAdminCheck()
         document.getElementById('emailhint').innerHTML = 'Please enter the email';
     }
     else if(email != "")
-    {   
-        document.getElementById('emailhint').innerHTML = 'Valid email';
+    {   emailFlag = emailValidation(email);
+        if(emailFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('emailhint').innerHTML = 'Valid email';
+        }
     }
 
     //Phone Number
@@ -219,7 +253,7 @@ function addAdminCheck()
     }
     else if(phone != "+88")
     {
-        let phoneFlag = phoneValidation(phone);
+        phoneFlag = phoneValidation(phone);
         if(phoneFlag == true)
         {
 
@@ -255,7 +289,15 @@ function addAdminCheck()
     }
     else if(username != "")
     {
-        document.getElementById('usernamehint').innerHTML = 'Valid username';
+        usernameFlag = usernameValidation(username);
+        if(usernameFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('usernamehint').innerHTML = 'Valid username';
+        }
     }
 
     //Password
@@ -265,7 +307,16 @@ function addAdminCheck()
     }
     else if(password != "")
     {
-        document.getElementById('passwordhint').innerHTML = '';
+        passwordFlag = passwordValidation(password, confirmpassword);
+        if(passwordFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('passwordhint').innerHTML = 'Valid password';
+            document.getElementById('passwordhint').innerHTML = 'Password matched';
+        }
     }
     if(confirmpassword == "")
     {
@@ -285,25 +336,18 @@ function addAdminCheck()
     {
         document.getElementById('propichint').innerHTML = '';
     }
+
+    console.log("name Flag: "+nameFlag);
+    console.log("email Flag: "+emailFlag);
+    console.log("phone Flag: "+phoneFlag);
+    console.log("dob Flag: "+dobFlag);
+    console.log("username Flag: "+usernameFlag);
+    console.log("password Flag: "+passwordFlag);
     
-    if(name!="" && email!="" && phone!="+880" && dob != "" && username != "" && password!="" && confirmpassword!="" && propic.length>0)
+    if(nameFlag == false && emailFlag == false && phoneFlag == false && dobFlag == false && usernameFlag == false && passwordFlag == false)
     {
-        
-        // let emailFlag = emailValidation(email);
-        // let usernameFlag = usernameValidation(username);
-        // let passwordFlag = passwordValidation(password, confirmpassword);
-
-
-        // if(usernameFlag == true || nameFlag == true || emailFlag == true)
-        // {
-        //     return false;
-        // }
-        // else
-        // {
-        //     console.log('ok');
-        // }
+        return true;
     }
-    //document.getElementById('namehint').innerHTML = 'You must dash dash dash dash dash';
     return false;
 }
 
