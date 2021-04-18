@@ -25,25 +25,26 @@
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Edit Profile</title>
+    <script src="../../assets/resources/scripts.js"></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table border="1px solid black" width='100%'>
+    <table width='100%'>
         <tr>
             <td>
                 <?php include('./menu.php'); ?>
             </td>
             <td>
                 <div class='form'>
-                    <form action="../controller/editprofilevalidate.php" method="POST">
+                    <form action="../controller/editprofilevalidate.php" method="POST" onsubmit="return adminUpdateInfo()">
                         <table align="center">
                             <tr>
                                 <td align="right">
                                     <label>Name:</label>
                                 </td>
                                 <td width='50%' >
-                                    <input type='text' name='fullname' value="<?php echo $result['fullname']; ?>"/>
+                                    <input type='text' name='fullname' id='fullname' value="<?php echo $result['fullname']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -51,7 +52,7 @@
                                     <label>Email:</label>
                                 </td>
                                 <td>
-                                    <input type='email' name='email' value="<?php echo $result['email']; ?>"/>
+                                    <input type='email' name='email' id='email' value="<?php echo $result['email']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -59,7 +60,7 @@
                                     <label>Phone:</label>
                                 </td>
                                 <td>
-                                    <input type='text' name="phone" value="<?php echo $result['phone']; ?>"/>
+                                    <input type='text' name="phone" id='phone' value="<?php echo $result['phone']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
@@ -67,12 +68,20 @@
                                     <label>Date of Birth:</label>
                                 </td>
                                 <td>
-                                    <input type='date' name="dob" value="<?php echo $result['dob']; ?>"/>
+                                    <input type='date' name="dob" id='dob' value="<?php echo $result['dob']; ?>"/>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="2">
                                     <input type='submit' value="Submit">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div id='namehint'></div>
+                                    <div id='emailhint'></div>
+                                    <div id='phonehint'></div>
+                                    <div id='dobhint'></div>
                                 </td>
                             </tr>
                         </table>

@@ -351,6 +351,88 @@ function addAdminCheck()
     return false;
 }
 
+function adminUpdateInfo()
+{
+    let name = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let dob = document.getElementById('dob').value;
+
+    let nameFlag, emailFlag, phoneFlag, dobFlag;
+
+    if(name == "")
+    {
+        document.getElementById('namehint').innerHTML = 'Please enter a valid name';
+    }
+    else
+    {
+        nameFlag = nameValidation(name);
+        if(nameFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('namehint').innerHTML = 'Valid name';
+        }
+    }
+    if(email == "")
+    {
+        document.getElementById('emailhint').innerHTML = 'Please enter a valid email';
+    }
+    else
+    {
+        emailFlag = emailValidation(email);
+        if(emailFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('emailhint').innerHTML = 'Valid email';
+        }
+    }
+    if(phone == "")
+    {
+        document.getElementById('phonehint').innerHTML = 'Please enter a valid phone number';
+    }
+    else
+    {
+        phoneFlag = phoneValidation(phone);
+        if(phoneFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('phonehint').innerHTML = 'Valid phone number';
+        }
+    }
+    if(dob == "")
+    {
+        document.getElementById('dob').innerHTML = 'Please enter a valid date of birth';
+    }
+    else
+    {
+        dobFlag = dobValidation(dob);
+        if(dobFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('dobhint').innerHTML = 'Valid name';
+        }
+    }
+
+    if(nameFlag == false && emailFlag == false && phoneFlag == false && dobFlag == false)
+    {
+        return true;
+    }
+    //console.log(name+" "+email+" "+phone+" "+dob);
+    return false;
+}
+
 function adminLoginCheck()
 {
     let username = document.getElementById('username').value;
