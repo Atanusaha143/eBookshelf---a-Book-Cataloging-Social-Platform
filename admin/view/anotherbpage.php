@@ -41,7 +41,7 @@
                                 <b>User Type:</b>
                             </td>
                             <td width='40%'>
-                                <?php echo $_SESSION['type']; ?>
+                                Business Page
                             </td>
                             <td rowspan="6">
                                 <img src= '<?php echo "../../assets/profile/bpage/".$bpageDetails['photo']; ?>' height="250">
