@@ -531,7 +531,29 @@ function searchValidate()
 
     if(option1 == true && option2 == true && usernameFlag == true)
     {
-        //console.log('ok');
+        // var xhttp = new XMLHttpRequest();
+        // xhttp.onreadystatechange = function() {
+        //     if (this.readyState == 4 && this.status == 200) {
+        //         if(this.responseText == 'Nonexistent')
+        //         {
+        //             document.getElementById('messagehint').innerHTML='User does not exist.';
+        //             //console.log('User does not exist');
+        //             console.log(this.responseText);
+        //         }
+        //         else
+        //         {
+        //             //window.location.href = this.responseText;
+        //             console.log(this.responseText);
+        //         }
+        //     }
+        //     else
+        //     {
+
+        //     }
+        // };
+        // xhttp.open("GET", "../../admin/controller/searchprocess.php", true);
+        // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        // xhttp.send("type="+username);
         return true;
     }
     // console.log(option.value);

@@ -26,11 +26,13 @@
                 
                 if($adminDetails)
                 {
-                    header("location: ../view/searchresult.php?username=".$adminDetails['username']);
+                    $link = "../view/anotherbpage.php?id=".$adminDetails['id'];
+                    echo $link;
+                    //header("location: ../view/searchresult.php?username=".$adminDetails['username']);
                 }
                 else
                 {
-                    echo "User does not exist";
+                    echo "Nonexistent";
                 }
                 
             }
