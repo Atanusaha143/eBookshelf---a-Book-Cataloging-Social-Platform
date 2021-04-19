@@ -261,6 +261,7 @@ function addAdminCheck()
         else
         {
             document.getElementById('phonehint').innerHTML = '';
+            phoneEncode = encodeURIComponent(phone);
         }
     }
 

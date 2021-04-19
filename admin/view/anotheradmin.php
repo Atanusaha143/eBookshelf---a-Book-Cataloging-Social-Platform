@@ -65,18 +65,18 @@
                         </tr>
                         <tr>
                             <td align="right">
-                                <b>Username:</b>
+                                <b>Phone:</b>
                             </td>
                             <td>
-                                <?php echo $adminDetails['username']; ?>
+                                <?php echo $adminDetails['phone']; ?>
                             </td>
                         </tr>
                         <tr>
                             <td align="right">
-                                <b>Date of Birth:</b>
+                                <b>Username:</b>
                             </td>
                             <td>
-                                <?php echo $adminDetails['dob']; ?>
+                                <?php echo $adminDetails['username']; ?>
                             </td>
                         </tr>
                         <tr>
