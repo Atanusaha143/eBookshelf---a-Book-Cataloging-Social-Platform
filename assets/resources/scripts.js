@@ -391,7 +391,9 @@ function adminUpdateInfo()
     let dob = document.getElementById('dob').value;
 
     let nameFlag, emailFlag, phoneFlag, dobFlag;
+    var phoneEncode;
 
+    
     if(name == "")
     {
         document.getElementById('namehint').innerHTML = 'Please enter a valid name';
@@ -405,7 +407,7 @@ function adminUpdateInfo()
         }
         else
         {
-            document.getElementById('namehint').innerHTML = 'Valid name';
+            document.getElementById('namehint').innerHTML = '';
         }
     }
     if(email == "")
@@ -421,7 +423,7 @@ function adminUpdateInfo()
         }
         else
         {
-            document.getElementById('emailhint').innerHTML = 'Valid email';
+            document.getElementById('emailhint').innerHTML = '';
         }
     }
     if(phone == "")
@@ -437,7 +439,8 @@ function adminUpdateInfo()
         }
         else
         {
-            document.getElementById('phonehint').innerHTML = 'Valid phone number';
+            document.getElementById('phonehint').innerHTML = '';
+            phoneEncode = encodeURIComponent(phone);
         }
     }
     if(dob == "")
@@ -453,13 +456,38 @@ function adminUpdateInfo()
         }
         else
         {
-            document.getElementById('dobhint').innerHTML = 'Valid name';
+            document.getElementById('dobhint').innerHTML = '';
         }
     }
+    //alert(phone);
 
     if(nameFlag == false && emailFlag == false && phoneFlag == false && dobFlag == false)
     {
-        return true;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText == 'Updated')
+                {
+                    document.getElementById('updatehint').innerHTML='Updated information successfully';
+                    //console.log('User does not exist');
+                }
+                else if(this.responseText == 'Terminated')
+                {
+                    //window.location.href = '../../admin/view/termination.php';
+                }
+                else
+                {
+                    alert(this.responseText);
+                }
+            }
+            else
+            {
+
+            }
+        };
+        xhttp.open("POST", "../../admin/controller/editprofilevalidate.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("fullname="+name+"&email="+email+"&phone="+phoneEncode+"&dob="+dob);
     }
     //console.log(name+" "+email+" "+phone+" "+dob);
     return false;

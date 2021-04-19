@@ -52,6 +52,7 @@
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title><?php echo $results['fullname']; ?></title>
+    <script src='../../assets/resources/scripts.js'></script>
 </head>
 <body>
     <?php include('./header.php'); ?>
@@ -67,6 +68,5 @@
         </table>
     </div>
     <?php include('./footer.php'); ?>
-    <script src='../../assets/scripts.js'></script>
 </body>
 </html>

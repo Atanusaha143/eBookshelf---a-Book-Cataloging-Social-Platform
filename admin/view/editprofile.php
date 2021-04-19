@@ -82,6 +82,7 @@
                                     <div id='emailhint'></div>
                                     <div id='phonehint'></div>
                                     <div id='dobhint'></div>
+                                    <div id='updatehint'></div>
                                 </td>
                             </tr>
                         </table>

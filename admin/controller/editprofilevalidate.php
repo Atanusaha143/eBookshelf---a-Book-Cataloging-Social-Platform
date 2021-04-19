@@ -1,9 +1,14 @@
 <?php
     session_start();
     include('./validate_functions.php');
+    // echo $_POST['phone'];
+    // echo $_POST['fullname'];
+    // echo $_POST['email'];
+    // echo $_POST['dob'];
     if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['dob']))
     {
         echo "Please enter all fields, including your profile picture.";
+        //echo $_POST['phone'];
     }
     else
     {
@@ -47,9 +52,8 @@
         {
             include('../model/adminModel.php');
             $updateResult = updateAdminByID($_SESSION['id'], $fullname, $email, $phone, $dob);
-        
-            echo "Profile Information updated successfully! <br>";
-            echo "<a href='../view/profile.php'>Go Back</a>";
+            echo "Updated";
+            //echo "<a href='../view/profile.php'>Go Back</a>";
         }
     }
 ?>
