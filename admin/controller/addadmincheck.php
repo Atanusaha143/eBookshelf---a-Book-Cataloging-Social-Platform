@@ -4,6 +4,9 @@
     if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['dateOfBirth']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
     {
         echo "Please enter all fields, including a profile picture.";
+
+        echo $_FILES['propic']['name'];
+        echo $_POST['dateOfBirth'];
     }
     else
     {
@@ -75,8 +78,8 @@
 
                 if(move_uploaded_file($picture['tmp_name'], $path))
                 {
-                    echo "New Admin added successfully!<br>";
-                    echo "<a href='../view/allusers.php'>Go Back</a>";
+                    echo "New Admin added successfully!";
+                    //echo "<a href='../view/allusers.php'>Go Back</a>";
                     //header('location: ../view/picchangesuccess.php');
                 }
                 else

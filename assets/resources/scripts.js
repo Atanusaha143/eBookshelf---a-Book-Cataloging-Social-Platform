@@ -207,7 +207,7 @@ function addAdminCheck()
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
     let confirmpassword = document.getElementById('confirmpassword').value;
-    let propic = document.getElementById('propic').files;
+    var propic = document.getElementById('propic');
 
     let nameFlag, emailFlag, phoneFlag, dobFlag, usernameFlag,passwordFlag;
 
@@ -336,17 +336,35 @@ function addAdminCheck()
     {
         document.getElementById('propichint').innerHTML = '';
     }
-
-    console.log("name Flag: "+nameFlag);
-    console.log("email Flag: "+emailFlag);
-    console.log("phone Flag: "+phoneFlag);
-    console.log("dob Flag: "+dobFlag);
-    console.log("username Flag: "+usernameFlag);
-    console.log("password Flag: "+passwordFlag);
     
     if(nameFlag == false && emailFlag == false && phoneFlag == false && dobFlag == false && usernameFlag == false && passwordFlag == false)
     {
-        return true;
+        var formData = new FormData();
+
+        var files = propic.files;
+        var propicFile = files[0];
+
+        formData.append('propic', propicFile, propicFile.name);
+
+        formData.append('fullname', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('dateOfBirth', dob);
+        formData.append('username', username);
+        formData.append('password', password);
+        formData.append('confirmpassword', confirmpassword);
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../../admin/controller/addadmincheck.php", true);
+        xhttp.onreadystatechange = function()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                alert(this.responseText);
+            }
+        };
+        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(formData);
     }
     return false;
 }
