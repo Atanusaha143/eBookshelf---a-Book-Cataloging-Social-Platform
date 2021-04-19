@@ -1,17 +1,17 @@
 <?php 
     session_start();
-    // if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
-    // {
-    //     //continue
-    // }
-    // else if(!(isset($_COOKIE['flag'])))
-    // {
-    //     header('location: ./expired.php');
-    // }
-    // else
-    // {
-    //     header('location: ./login.php');
-    // }
+    if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
+    {
+        //continue
+    }
+    else if(!(isset($_COOKIE['flag'])))
+    {
+        header('location: ./expired.php');
+    }
+    else
+    {
+        header('location: ./login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,37 +33,37 @@
             <table>
                 <tr>
                     <td align="right"><label>Full Name:</label></td>
-                    <td><input type='text' name='fullname' value='abc jack' id='fullname'/></td>
+                    <td><input type='text' name='fullname' id='fullname'/></td>
                     <td id='namehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Email:</label></td>
-                    <td><input type='email' name='email' value='default@gmail.com' id='email'/></td>
+                    <td><input type='email' name='email' id='email'/></td>
                     <td id='emailhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Phone:</label></td>
-                    <td><input type='text' name='phone' value='+8801775641902' value="+88" id='phone'/></td>
+                    <td><input type='text' name='phone' id='phone'/></td>
                     <td id='phonehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Date of Birth:</label></td>
-                    <td><input type='date' name='dateOfBirth' value='2020-02-03' id='dob'/></td>
+                    <td><input type='date' name='dateOfBirth' id='dob'/></td>
                     <td id='dobhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Username:</label></td>
-                    <td><input type='text' name='username' value="123abcAB" id='username'/></td>
+                    <td><input type='text' name='username' id='username'/></td>
                     <td id='usernamehint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Password:</label></td>
-                    <td><input type='password' name='password' value="123abc@A" id='password'/></td>
+                    <td><input type='password' name='password' id='password'/></td>
                     <td id='passwordhint'></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Confirm Password:</label></td>
-                    <td><input type='password' name='confirmpassword' value="123abc@A" id='confirmpassword'/></td>
+                    <td><input type='password' name='confirmpassword' id='confirmpassword'/></td>
                     <td id='confirmpasswordhint'></td>
                 </tr>
                 <tr>

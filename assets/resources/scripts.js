@@ -225,7 +225,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('namehint').innerHTML = 'Valid name';
+            document.getElementById('namehint').innerHTML = '';
         }
     }
 
@@ -242,7 +242,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('emailhint').innerHTML = 'Valid email';
+            document.getElementById('emailhint').innerHTML = '';
         }
     }
 
@@ -260,7 +260,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('phonehint').innerHTML = 'Valid phone number';
+            document.getElementById('phonehint').innerHTML = '';
         }
     }
 
@@ -278,7 +278,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('dobhint').innerHTML = 'Valid date of birth';
+            document.getElementById('dobhint').innerHTML = '';
         }
     }
 
@@ -296,7 +296,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('usernamehint').innerHTML = 'Valid username';
+            document.getElementById('usernamehint').innerHTML = '';
         }
     }
 
@@ -314,7 +314,7 @@ function addAdminCheck()
         }
         else
         {
-            document.getElementById('passwordhint').innerHTML = 'Valid password';
+            document.getElementById('passwordhint').innerHTML = '';
             document.getElementById('passwordhint').innerHTML = 'Password matched';
         }
     }
@@ -345,7 +345,6 @@ function addAdminCheck()
         var propicFile = files[0];
 
         formData.append('propic', propicFile, propicFile.name);
-
         formData.append('fullname', name);
         formData.append('email', email);
         formData.append('phone', phone);
@@ -360,7 +359,22 @@ function addAdminCheck()
         {
             if(this.readyState == 4 && this.status == 200)
             {
-                alert(this.responseText);
+                if(this.responseText == "New Admin added successfully!")
+                {
+                    document.getElementById('addadminhint').innerHTML = "Admin added successfully!";
+                }
+                else if(this.responseText == "Admin addition failed!")
+                {
+                    document.getElementById('addadminhint').innerHTML = "Failed to add admin!"
+                }
+                else if(this.responseText == "Username already exists")
+                {
+                    document.getElementById('addadminhint').innerHTML = "Username is already taken";
+                }
+                else
+                {
+                    document.getElementById('addadminhint').innerHTML = "Error occured, failed to add admin.";
+                }
             }
         };
         //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");

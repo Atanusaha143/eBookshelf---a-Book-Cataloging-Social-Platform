@@ -79,8 +79,6 @@
                 if(move_uploaded_file($picture['tmp_name'], $path))
                 {
                     echo "New Admin added successfully!";
-                    //echo "<a href='../view/allusers.php'>Go Back</a>";
-                    //header('location: ../view/picchangesuccess.php');
                 }
                 else
                 {
