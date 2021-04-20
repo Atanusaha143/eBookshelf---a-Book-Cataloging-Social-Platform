@@ -660,3 +660,17 @@ function sendMessage()
     
     return false;
 }
+
+function passwordChangeCheck()
+{
+    currentpassword = document.getElementById('currentpass').value;
+    newpassword = document.getElementById('newpass').value;
+    confirmpassword = document.getElementById('confirmpass').value;
+
+    if(currentpassword == "" || newpassword == "" || confirmpassword == "")
+    {
+        document.getElementById('changepasshint').innerHTML = 'One or more of the fields is empty.';
+    }
+
+    return false;
+}

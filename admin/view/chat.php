@@ -60,7 +60,7 @@
         </form>
     </div>
     <div class="container">
-        <a href="./dashboard.php" class="link">Go Back</a>
+        <a href="./sendmessage.php" class="link">Go Back</a>
     </div>
     <?php include('./footer.php'); ?>
 </body>

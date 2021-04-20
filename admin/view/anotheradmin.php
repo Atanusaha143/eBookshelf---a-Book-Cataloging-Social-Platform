@@ -27,7 +27,7 @@
     <link rel='stylesheet' href="../../assets/resources/style.css">
     <title><?php echo $adminDetails['fullname']; ?></title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     
