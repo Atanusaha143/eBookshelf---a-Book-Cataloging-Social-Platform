@@ -177,7 +177,8 @@ body
 .data table
 {
     border-collapse: collapse;;
-    text-align: zcenter;
+    width: 80%;
+    text-align: center;
 }
 
 .data td
