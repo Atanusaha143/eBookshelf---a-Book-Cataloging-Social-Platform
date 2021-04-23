@@ -50,6 +50,10 @@
                             <tr>
                                 <td colspan='3'>".$books['post_text']."</td>
                             </tr>
+                            <tr>
+                                <td>Posted on:</td>
+                                <td colspan='2'>".$books['date']."</td>
+                            </tr>
                         </table><br>";
                 }
             ?>

@@ -170,8 +170,8 @@ body
 .data
 {
     text-align: center;
-    margin-left: 40%;
-    margin-right: 40%;
+    /* margin-left: 40%;
+    margin-right: 40%; */
 }
 
 .data table
