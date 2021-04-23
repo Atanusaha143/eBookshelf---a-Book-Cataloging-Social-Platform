@@ -9,10 +9,6 @@ body
     border-right: 2px solid greenyellow;
     border-left: 2px solid greenyellow;
     height: 100%;
-    /* background-image: url('../images/background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-blend-mode: luminosity; */
 }
 
 .form
@@ -40,11 +36,9 @@ body
     border-radius: 15px;
     margin-left: 10px;
     padding-left: 15px;
-    padding-top: 2px;
-    padding-bottom: 3px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     width: 200px;
-    color: rgb(25, 25, 165);
-    border: 3px solid rgb(74, 84, 228);
 }
 
 .form input[type=file]
@@ -119,7 +113,7 @@ body
     position: fixed;
     right: 10px;
     bottom: 10px;
-    font-size: 13px;
+    font-size: 10px;
 }
 
 .header
@@ -160,16 +154,30 @@ body
     background-color: rgb(75, 75, 236);
 }
 
-.data table
+.bookproduct
 {
     text-align: center;
-    border: 1px solid rgb(16, 21, 94);
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.bookproduct table
+{
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.data
+{
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
 }
 
 .data table
 {
-    border-collapse: collapse;
-    text-align: center;
+    border-collapse: collapse;;
+    text-align: zcenter;
 }
 
 .data td
@@ -178,10 +186,6 @@ body
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
     padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border: 1px solid rgb(16, 21, 94);
 }
 
 .data a
@@ -383,4 +387,32 @@ body
 .menu a:hover
 {
     color: rgb(215, 233, 240);
+}
+
+
+
+
+
+.bookproduct
+{
+    /* width: 60%; */
+    margin-right: 350px;
+    margin-left: 350px;
+    border-radius: 15px;
+}
+
+.bookproduct td.title, .bookproduct td.author, .bookproduct td.price, .bookproduct td.description
+{
+    background-color: rgb(70, 163, 206);
+}
+
+.bookproduct table
+{
+    border-radius: 2px 5px 10px 15px;
+}
+
+.bookproduct td
+{
+    background-color: rgb(255, 247, 247);
+    border: 2px solid blue;
 }

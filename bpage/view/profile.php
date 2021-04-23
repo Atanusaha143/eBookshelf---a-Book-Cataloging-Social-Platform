@@ -102,10 +102,8 @@
     </table>
     <div class='container'>
         <a class="link" href='./settings.php'>Settings</a>
-        <br><br>
-        <a class="link" href="./myposts.php">My Posts</a>
     </div>
     <?php include('./footer.php'); ?>
-    <script src='../../assets/scripts.js'></script>
+    <script src='../../assets/resources/scripts.js'></script>
 </body>
 </html>

@@ -32,20 +32,20 @@
                     echo 
                         "<table border='1'>  
                             <tr>
-                                <td>Title:</td>
+                                <td class='title'>Title:</td>
                                 <td>".$books['title']."</td>
-                                <td rowspan='3'><img src='../../assets/books/".$books['photo']."' height='250'></td>
+                                <td rowspan='3'><img src='../../assets/books/".$books['photo']."' height='200'></td>
                             </tr>
                             <tr>
-                                <td>Author:</td>
+                                <td class='author'>Author:</td>
                                 <td>".$books['author']."</td>
                             </tr>
                             <tr>
-                                <td>Price:</td>
+                                <td class='price'>Price:</td>
                                 <td>".$books['price']."</td>
                             </tr>
                             <tr>
-                                <td colspan='3'>Description:</td>
+                                <td class='description' colspan='3'>Description:</td>
                             </tr>
                             <tr>
                                 <td colspan='3'>".$books['post_text']."</td>
