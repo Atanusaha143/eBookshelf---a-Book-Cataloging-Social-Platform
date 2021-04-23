@@ -9,6 +9,10 @@ body
     border-right: 2px solid greenyellow;
     border-left: 2px solid greenyellow;
     height: 100%;
+    /* background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: luminosity; */
 }
 
 .form
@@ -36,9 +40,11 @@ body
     border-radius: 15px;
     margin-left: 10px;
     padding-left: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 2px;
+    padding-bottom: 3px;
     width: 200px;
+    color: rgb(25, 25, 165);
+    border: 3px solid rgb(74, 84, 228);
 }
 
 .form input[type=file]
@@ -113,7 +119,7 @@ body
     position: fixed;
     right: 10px;
     bottom: 10px;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .header
@@ -154,29 +160,15 @@ body
     background-color: rgb(75, 75, 236);
 }
 
-.bookproduct
+.data table
 {
     text-align: center;
-    margin-left: 30%;
-    margin-right: 30%;
-}
-
-.bookproduct table
-{
-    text-align: center;
-    border-collapse: collapse;
-}
-
-.data
-{
-    text-align: center;
-    margin-left: 40%;
-    margin-right: 40%;
+    border: 1px solid rgb(16, 21, 94);
 }
 
 .data table
 {
-    border-collapse: collapse;;
+    border-collapse: collapse;
     text-align: center;
 }
 
@@ -186,6 +178,10 @@ body
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
     padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid rgb(16, 21, 94);
 }
 
 .data a
