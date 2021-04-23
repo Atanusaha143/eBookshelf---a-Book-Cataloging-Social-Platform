@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td align="right"><label>Phone:</label></td>
-                    <td><input type='text' name='phone' id='phone'/></td>
+                    <td><input type='text' name='phone' id='phone' value='+88'/></td>
                     <td id='phonehint'></td>
                 </tr>
                 <tr>

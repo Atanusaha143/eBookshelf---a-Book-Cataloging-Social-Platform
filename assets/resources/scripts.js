@@ -62,7 +62,12 @@ function dobValidation(dob)
     //console.log(typeof(year));
     if(year < 1900)
     {
-        document.getElementById('dobhint').innerHTML = "The minimum year for date of birth must is 1900";
+        document.getElementById('dobhint').innerHTML = "The minimum year for date of birth is 1900";
+        return true;
+    }
+    else if(year > 2001)
+    {
+        document.getElementById('dobhint').innerHTML = "The maximum year for date of birth is 2001";
         return true;
     }
     else
@@ -194,6 +199,7 @@ function passwordValidation(password, confirmpassword)
     }
     else
     {
+        return false;
         console.log('Passwords do not match!');
     }
 }
@@ -308,16 +314,7 @@ function addAdminCheck()
     }
     else if(password != "")
     {
-        passwordFlag = passwordValidation(password, confirmpassword);
-        if(passwordFlag == true)
-        {
-
-        }
-        else
-        {
-            document.getElementById('passwordhint').innerHTML = '';
-            document.getElementById('passwordhint').innerHTML = 'Password matched';
-        }
+        document.getElementById('passwordhint').innerHTML = '';
     }
     if(confirmpassword == "")
     {
@@ -327,16 +324,39 @@ function addAdminCheck()
     {
         document.getElementById('confirmpasswordhint').innerHTML = '';
     }
+    if(password == confirmpassword)
+    {
+        passwordFlag = passwordValidation(password, confirmpassword);
+        if(passwordFlag == true)
+        {
+            document.getElementById('passwordhint').innerHTML = '';
+        }
+        else
+        {
+            //document.getElementById('passwordhint').innerHTML = '';
+            document.getElementById('passwordhint').innerHTML = 'Password matched';
+        }
+    }
+    else
+    {
+        document.getElementById('passwordhint').innerHTML = 'Password does not match!';
+    }
 
     //Profile Picture
-    if(propic.length == 0)
+    if(propic.value == "")
     {
         document.getElementById('propichint').innerHTML = 'Please attach a valid photograph';
     }
-    else if(propic.length != 0)
+    else if(propic.value != "")
     {
-        document.getElementById('propichint').innerHTML = '';
+        if(propic.files[0].size > 0)
+        {
+            document.getElementById('propichint').innerHTML = '';
+        }
     }
+
+    //alert(propic.value);
+    //alert(propic.files[0].size)
     
     if(nameFlag == false && emailFlag == false && phoneFlag == false && dobFlag == false && usernameFlag == false && passwordFlag == false)
     {
