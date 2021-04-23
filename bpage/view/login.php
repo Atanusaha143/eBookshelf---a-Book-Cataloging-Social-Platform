@@ -51,6 +51,9 @@
                     <tr>
                         <td align="center" colspan="2"><a href="./signup.php">Sign up</a></td>
                     </tr>
+                    <tr>
+                        <td colspan="2"><div id='loginhint'></div></td>
+                </tr>
                 </table>
                 <br><br><br>
             </form>

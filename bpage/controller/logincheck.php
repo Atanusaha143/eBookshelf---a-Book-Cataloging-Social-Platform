@@ -10,9 +10,6 @@
     {
         $username = $_POST['username'];
         $password = $_POST['password'];
-
-        $usernameFlag = usernameValidation($username);
-        $passwordFlag = passwordValidation($password);
         
         $userFoundFlag = validateLogIn($username, $password);
         
@@ -23,11 +20,27 @@
             $_SESSION['id'] = $userFoundFlag;
             $_SESSION['type'] = 'bpage';
             setcookie('flag', true, time()+1200, '/');
-            header('location: ./redirect.php');
+            //header('location: ./redirect.php');
+
+            $bpageDetails = getBpageInfoByID($_SESSION['id']);
+            $bpageDetails = mysqli_fetch_assoc($bpageDetails);
+
+            if($bpageDetails['status'] == 'deactivated')
+            {
+                unset($_SESSION['flag']);
+                $_SESSION['deactivated'] == true;
+                echo "Deactivated";
+            }
+            else
+            {
+                $_SESSION['id'] = $bpageDetails['id'];
+                $_SESSION['name'] = $bpageDetails['name'];
+                header('location: ../view/dashboard.php');
+            }
         }
         else
         {
-            header('location: ../view/login.php');
+            echo "False";
         }
 
         /*
