@@ -163,6 +163,7 @@ body
 .data table
 {
     text-align: center;
+    width: 80%;
     border: 1px solid rgb(16, 21, 94);
 }
 
