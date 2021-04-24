@@ -10,10 +10,12 @@
         if(mysqli_num_rows($result) > 0)
         {
             $result = mysqli_fetch_assoc($result);
+            disconnect($connection);
             return $result['id'];
         }
         else 
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -22,8 +24,8 @@
     {
         $connection = connect();
         $sql = "SELECT * FROM bpagemessages WHERE (to_user = '$receiverID' AND from_user = '$senderID') OR (to_user = '$senderID' AND from_user = '$receiverID')";
-
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
     }
 
@@ -32,6 +34,7 @@
         $connection = connect();
         $sql = "SELECT * FROM bpage, bpagelogin WHERE bpagelogin.username = '".$username."' AND bpagelogin.id = bpage.id";
         $result = mysqli_query($connection, $sql);
+        disconnect($connection);
         return $result;
     }
 
@@ -52,12 +55,15 @@
         $time = date("Y-m-d H:i:s");//2021-04-08 05:33:24
         $sql = "INSERT INTO bpagemessages (content, to_user, from_user, time) VALUES('$message', $receiverID, $senderID, '$time')";
         $insert = mysqli_query($connection, $sql);
+        
         if($insert)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -70,10 +76,12 @@
 
         if($updateResult)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -86,10 +94,12 @@
         $currentPassword = mysqli_query($connection, $sql);
         if(mysqli_num_rows($currentPassword)>0)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -102,10 +112,12 @@
 
         if($updateResult)
         {
+            disconnect($connection);
             return true;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -134,10 +146,12 @@
 
         if($bpageUpdateResult == true && $loginUpdateResult == true)
         {
+            disconnect($connection);
             return true;
         }
         if($bpageUpdateResult == false && $loginUpdateResult == false)
         {
+            disconnect($connection);
             return false;
         }
     }
@@ -149,10 +163,12 @@
         $bpagePosts = mysqli_query($connection, $sql);
         if(mysqli_num_rows($bpagePosts)>0)
         {
+            disconnect($connection);
             return $bpagePosts;
         }
         else
         {
+            disconnect($connection);
             return false;
         }
     }
