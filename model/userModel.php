@@ -696,4 +696,34 @@
 
 		return $allReceiveMsg;
 	}
+
+	function ajaxHomeSearch($bName)
+	{
+		$conn = getConnection();
+		$sql = "select * from regular_post where bookname like '%{$bName}%' ";
+		$result = mysqli_query($conn, $sql);
+		$allMatchedBooks =[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($allMatchedBooks, $row); 
+		}
+
+		return $allMatchedBooks;
+	}
+
+	function ajaxAddReviewSearch($bName)
+	{
+		$conn = getConnection();
+		$sql = "select * from regular_allbooks where bookname like '%{$bName}%' ";
+		$result = mysqli_query($conn, $sql);
+		$allMatchedBooks =[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($allMatchedBooks, $row); 
+		}
+
+		return $allMatchedBooks;
+	}
 ?>
