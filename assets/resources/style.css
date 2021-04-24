@@ -1,0 +1,387 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    background-color: rgb(150, 223, 223);
+    border-right: 2px solid greenyellow;
+    border-left: 2px solid greenyellow;
+    height: 100%;
+    /* background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: luminosity; */
+}
+
+.form
+{
+    text-align: center;
+    width:100%;
+    /* height:100%; */
+}
+
+.form table
+{
+    margin: 0 auto;
+}
+
+.form input[type=text],
+.form input[type=password], 
+.form input[type=email], 
+.form input[type=date], 
+.form input[type=phone], 
+.form input[type=number]
+{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgb(200, 252, 117);
+    border-radius: 15px;
+    margin-left: 10px;
+    padding-left: 15px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    width: 200px;
+    color: rgb(25, 25, 165);
+    border: 3px solid rgb(74, 84, 228);
+}
+
+.form input[type=file]
+{
+    padding-left: 10px;
+}
+
+.form input[type=submit], 
+.form input[type=button], 
+.form input[type=reset]
+{
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    background-color: rgb(0, 156, 184);
+    color: rgb(5, 6, 80);
+}
+
+.form input[type=submit]:hover, 
+.form input[type=button]:hover, 
+.form input[type=reset]:hover
+{
+    background-color: rgb(134, 176, 218);
+    color: rgb(12, 99, 185);
+}
+
+.form input[type=radio]
+{
+    height: 20px;
+    width: 20px;
+    /* background-color: chartreuse; */
+}
+
+/* .form input[type=radio]:hover
+{
+    background-color: brown;
+}
+
+.form input[type=radio]:checked
+{
+    background-color: brown;
+} */
+
+.form label
+{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(69, 5, 85);
+}
+
+.form a
+{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(6, 46, 107);
+}
+
+.form a:hover
+{
+    color: rgb(11, 179, 245);
+}
+
+.footer
+{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    font-size: 13px;
+}
+
+.header
+{
+    margin-left: 25px;
+}
+
+.navbar
+{
+    position: sticky;
+    margin: auto;
+    margin-bottom: 10px;
+    top: 0;
+    width: 95%;
+    background-color: rgb(70, 163, 206);
+    box-shadow: 2px 2px 10px rgb(33, 33, 37);
+    padding-top: 5px;
+    border: rgb(182, 255, 194);
+    border-style: solid;
+}
+
+.navbar a
+{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 2, 128);
+}
+
+.navbar a:hover
+{
+    color: rgb(215, 233, 240);
+    padding-top: 22px;
+    padding-bottom: 18px;
+    background-color: rgb(75, 75, 236);
+}
+
+.data table
+{
+    text-align: center;
+    width: 80%;
+    border: 1px solid rgb(16, 21, 94);
+}
+
+.data table
+{
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.data td
+{
+    background-color: rgb(182, 255, 194);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border: 1px solid rgb(16, 21, 94);
+}
+
+.data a
+{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(6, 46, 107);
+}
+
+.data a:hover
+{
+    color: rgb(0, 177, 0);
+}
+
+.container
+{
+    width: 100%;
+    text-align: center;
+}
+
+.link
+{
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(6, 46, 107);
+}
+
+.link:hover
+{
+    color: rgb(0, 177, 0);
+}
+
+.messageBar
+{
+    align-content: center;
+    text-align: center;
+}
+
+.messageBar table
+{
+    /* border-collapse:collapse; */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.messageBar .name
+{
+    background-color: rgb(0, 156, 184);
+    color: rgb(0, 30, 36);
+    border-bottom: 3px solid rgb(1, 1, 73);
+    border-left: 3px solid rgb(1, 1, 73);
+    border-radius: 0px 0px 0px 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.messageBar .time
+{
+    background-color: rgb(0, 156, 184);
+    color: rgb(0, 30, 36);
+    border-top: 3px solid rgb(1, 1, 73);
+    border-left: 3px solid rgb(1, 1, 73);
+    padding-top: 10px;
+    border-radius: 10px 0px 0px 0px;
+}
+
+.messageBar .message
+{
+    background-color: cornsilk;
+    border: 3px solid rgb(1, 1, 73);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.chatbox
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(3, 16, 54);
+    padding-top: 10px;
+    padding-bottom: 5px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.chatbox .sender
+{
+    background-color: cornsilk;
+    text-align: right;
+    margin-right: 10px;
+    margin-left: 170px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px antiquewhite;
+}
+
+.chatbox .receiver
+{
+    background-color: rgb(8, 182, 182);
+    text-align: left;
+    margin-right: 170px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 25px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px antiquewhite;
+}
+
+.chatbox .date
+{
+    font-size: 10px;
+    right: 10px;
+}
+
+.form .textWindow
+{
+    text-align: center;
+    width: 49%;
+    height: 50px;
+    max-width: 95%;
+    resize: none;
+}
+
+.menu
+{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(6, 46, 107);
+}
+
+.menu td.label
+{
+    width: 40%;
+    background-color: honeydew;
+}
+
+.menu td.label:hover
+{
+    width: 40%;
+    background-color: honeydew;
+}
+
+.menu td
+{
+    width: 40%;
+    background-color: rgb(70, 163, 206);
+}
+
+.menu td:hover
+{
+    width: 40%;
+    color: rgb(215, 233, 240);
+    background-color: rgb(75, 75, 236);
+}
+
+.menu label
+{
+    color: rgb(1, 29, 1);
+    background-color: honeydew;
+}
+
+.menu table
+{
+    border-collapse: collapse;
+    width: 50%;
+}
+
+.menu a
+{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 2, 128);
+    white-space: nowrap;
+}
+
+.menu a:hover
+{
+    color: rgb(215, 233, 240);
+}

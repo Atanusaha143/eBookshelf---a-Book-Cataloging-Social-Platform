@@ -1,89 +1,93 @@
 <?php 
     session_start();
+    include('../model/adminModel.php');
     if(isset($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
-        //continue
+        $result = getAdminInfoByID($_SESSION['id']);
+        $result = mysqli_fetch_assoc($result);
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
     }
     else
     {
         header('location: ../login.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../../images/assets/icon.png'>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Edit Profile</title>
+    <script src="../../assets/resources/scripts.js"></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table border="1px solid black" width='100%'>
+    <table width='100%'>
         <tr>
             <td>
-                <label>Menu</label>
-                <br>
-                <hr>
-                <ul>
-                    <li><a href='./editprofile.php'>Edit Profile</a></li>
-                    <li><a href='./changepropic.php'>Change Profile Picture</a></li>
-                    <li><a href='./changepass.php'>Change Password</a></li>
-                </ul>
+                <?php include('./menu.php'); ?>
             </td>
             <td>
-                <form action="../../controller/editprofilevalidate.php" method="POST">
-                    <table align="center" border="1px solid black">
-                        <tr>
-                            <td align="right">
-                                Name:
-                            </td>
-                            <td width='50%' >
-                            
-                                <input size='30' type='text' value="<?php echo $_SESSION['fullname']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Email:
-                            </td>
-                            <td>
-                                <input size='30' type='email' value="<?php echo $_SESSION['email']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Phone:
-                            </td>
-                            <td>
-                                <input size='30' type='text' value="<?php echo $_SESSION['phone']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                Date of Birth:
-                            </td>
-                            <td>
-                                <input size='30' type='date' value="<?php echo $_SESSION['dateOfBirth']; ?>"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <center>
+                <div class='form'>
+                    <form action="../controller/editprofilevalidate.php" method="POST" onsubmit="return adminUpdateInfo()">
+                        <table align="center">
+                            <tr>
+                                <td align="right">
+                                    <label>Name:</label>
+                                </td>
+                                <td width='50%' >
+                                    <input type='text' name='fullname' id='fullname' value="<?php echo $result['fullname']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>Email:</label>
+                                </td>
+                                <td>
+                                    <input type='email' name='email' id='email' value="<?php echo $result['email']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>Phone:</label>
+                                </td>
+                                <td>
+                                    <input type='text' name="phone" id='phone' value="<?php echo $result['phone']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <label>Date of Birth:</label>
+                                </td>
+                                <td>
+                                    <input type='date' name="dob" id='dob' value="<?php echo $result['dob']; ?>"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
                                     <input type='submit' value="Submit">
-                                </center>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-                <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <div id='namehint'></div>
+                                    <div id='emailhint'></div>
+                                    <div id='phonehint'></div>
+                                    <div id='dobhint'></div>
+                                    <div id='updatehint'></div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
             </td>
         </tr>
     </table>

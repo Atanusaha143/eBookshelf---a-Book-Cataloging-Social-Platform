@@ -1,48 +1,42 @@
 <?php
+    include('../model/adminModel.php');
     if(!empty($_GET['type']) && !empty($_GET['search']) && !empty($_GET['searchopt']))
     {
         if($_GET['type'] == 'admin')
-        {
-            $dataString = file_get_contents('../model/admin.json');
-            $dataJSON = json_decode($dataString,true);
-            
+        {   
             if($_GET['searchopt'] == 'id')
             {
-                foreach($dataJSON as $user)
+                $adminDetails = getAdminInfoByID($_GET['search']);
+                $adminDetails = mysqli_fetch_assoc($adminDetails);
+                
+                if($adminDetails)
                 {
-                    if($user['id'] == $_GET['search'])
-                    {
-                        $_GET['id'] = $user['id'];
-                        $_GET['fullname'] = $user['fullname'];
-                        $_GET['email'] = $user['email'];
-                        $_GET['phone'] = $user['phone'];
-                        $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                        $_GET['username'] = $user['username'];
-                        $_GET['regdate'] = $user['regdate'];
-                        $_GET['type'] = $user['type'];
-                    }
+                    header("location: ../view/searchresult.php?id=".$adminDetails['id']);
                 }
-                header("location: ../view/searchresult.php?fullname=".$user['fullname']);
+                else
+                {
+                    echo "User does not exist";
+                }
+                
             }
-            else if($_GET['searchopt'] == 'name')
+            else if($_GET['searchopt'] == 'username')
             {
-                foreach($dataJSON as $user)
+                $adminDetails = getAdminInfoByUsername($_GET['search']);
+                $adminDetails = mysqli_fetch_assoc($adminDetails);
+                
+                if($adminDetails)
                 {
-                    if($user['fullname'] == $_GET['search'])
-                    {
-                        $_GET['id'] = $user['id'];
-                        $_GET['fullname'] = $user['fullname'];
-                        $_GET['email'] = $user['email'];
-                        $_GET['phone'] = $user['phone'];
-                        $_GET['dateOfBirth'] = $user['dateOfBirth'];
-                        $_GET['username'] = $user['username'];
-                        $_GET['regdate'] = $user['regdate'];
-                        $_GET['type'] = $user['type'];
-                    }
+                    $link = "../view/anotherbpage.php?id=".$adminDetails['id'];
+                    echo $link;
+                    //header("location: ../view/searchresult.php?username=".$adminDetails['username']);
                 }
-                header('location: ../view/searchresult.php');
+                else
+                {
+                    echo "Nonexistent";
+                }
+                
             }
-            print_r($_GET);
+            //print_r($_GET);
         }
         else if($_GET['type'] == 'ruser')
         {

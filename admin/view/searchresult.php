@@ -4,11 +4,25 @@
     {
         //continue
         include('../controller/validateviewprofile.php');
+        include('../model/adminModel.php');
+        if(isset($_GET['id']))
+        {
+            $userid = $_GET['id'];
+            $adminDetails = getAdminInfoByID($userid);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+        }
+        else if(isset($_GET['username']))
+        {
+            $username = $_GET['username'];
+            $adminDetails = getAdminInfoByUsername($username);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+        }
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
     }
     else
     {
@@ -22,8 +36,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
-    <title><?php echo $_GET['fullname']; ?></title>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
+    <title>Results</title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
@@ -34,6 +49,7 @@
         </h3>
         <h3>
             Results:
+            <?php echo $adminDetails['fullname']; ?>
         </h3>
     </center>
     <?php include('./footer.php'); ?>

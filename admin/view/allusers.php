@@ -1,15 +1,19 @@
 <?php 
     session_start();
+    include('../model/adminModel.php');
     if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
     {
         //continue
-        $dataString = file_get_contents('../model/admin.json');
-        $dataJSON = json_decode($dataString, true);
+        $allAdmins = getAllAdmins($_SESSION['id']);
+        //$allAdmins = mysqli_fetch_assoc($allAdmins);
+        $allBpages = getAllBpages();
+        $allRegular = getAllRegular();
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
     }
     else
     {
@@ -23,69 +27,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Viewing All Users</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <table border='1px solid black' width='100%'>
+    <table width='100%'>
         <tr>
             <th>
-                ADMINS
+                <a href="./alladmins.php" class="link">ADMINS</a>
             </th>
             <th>
-                REGULAR USERS
+                <a href="./allrusers.php" class="link">REGULAR USERS</a>
             </th>
             <th>
-                BUSINESS USERS
+                <a href="./allbpages.php" class="link">BUSINESS USERS</a>
             </th>
         </tr>
         <tr>
             <td>
-                <table align="center">
-                    <?php
-                        foreach($dataJSON as $values)
-                        {
-                            if($_SESSION['id'] != $values['id'])
-                            {   
-                                echo 
-                                "<tr>
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allAdmins as $admin)
+                                {
+                                    echo
+                                    "<tr>
                                     <td align='center'>"
-                                        .$values['id'].
+                                        .$admin['id'].
                                     "</td>
                                     <td align='center'>
-                                        <a href='anotheruser.php?userid=".$values['id']."'>"
-                                            .$values['fullname'].
+                                        <a href='anotheradmin.php?id=".$admin['id']."'>"
+                                            .$admin['fullname'].
                                         "</a>
                                     </td>
-                                </tr>";
-                            }
-                        }
-                    ?>
-                    <!-- <?php 
-                        foreach($dataJSON as $values)
-                        {
-                            if($_SESSION['id'] != $values['id'])
-                            {
-                                print_r($values['id']);
-                                echo "||";
-                                echo "<a href='anotheruser.php?userid=".$values['id']."'>";
-                                    print_r($values['fullname']);
-                                echo "</a>";
-                                echo "<br>";
-                            }
-                        }
-                    ?> -->
-                </table>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
             <td>
-            
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allRegular as $regular)
+                                {
+                                    echo
+                                    "<tr>
+                                    <td align='center'>"
+                                        .$regular['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotherregular.php?id=".$regular['id']."'>"
+                                            .$regular['name'].
+                                        "</a>
+                                    </td>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
             <td>
-            
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allBpages as $bpage)
+                                {
+                                    echo
+                                    "<tr>
+                                    <td align='center'>"
+                                        .$bpage['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotherbpage.php?id=".$bpage['id']."'>"
+                                            .$bpage['name'].
+                                        "</a>
+                                    </td>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
         </tr>
     </table>
+    <?php include('./footer.php'); ?>
 </body>
 </html>

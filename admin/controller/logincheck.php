@@ -1,6 +1,7 @@
 <?php
-    include('./validate_functions.php');
     session_start();
+    include('./validate_functions.php');
+    include('../model/adminModel.php');
     if(empty($_POST['username']) && empty($_POST['password']))
     {
         echo "One or more of the fields are empty!";
@@ -10,29 +11,35 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $usernameFlag = usernameValidation($username);
-        $passwordFlag = passwordValidation($password);
+        $userFoundFlag = validateLogIn($username, $password);
 
-        $dataString = file_get_contents('../model/login.json');
-        $dataJSON = json_decode($dataString, true);
-        $userFoundFlag = false;
-
-        foreach($dataJSON as $user)
+        if($userFoundFlag)
         {
-            if($user['username'] == $username && $user['password'] == $password)
+            //header('location: ../view/dashboard.php');
+            $_SESSION['flag'] = true;
+            $_SESSION['id'] = $userFoundFlag;
+            $_SESSION['type'] = 'admin';
+            setcookie('flag', true, time()+1200, '/');
+
+            $adminDetails = getAdminInfoByID($_SESSION['id']);
+            $adminDetails = mysqli_fetch_assoc($adminDetails);
+
+            if($adminDetails['status'] == 'terminated')
             {
-                $_SESSION['flag'] = true;
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['type'] = $user['type'];
-                $userFoundFlag = true;
-                setcookie('flag', true, time()+1200, '/');
-                header('location: ./redirect.php');
+                unset($_SESSION['flag']);
+                $_SESSION['terminated'] = true;
+                echo "Terminated";
+            }
+            else
+            {
+                $_SESSION['id'] = $adminDetails['id'];
+                $_SESSION['fullname'] = $adminDetails['fullname'];
+                header('location: ../view/dashboard.php');
             }
         }
-        if($userFoundFlag == false)
+        else
         {
-            echo "Invalid user!";
+            echo "False";
         }
-        //print_r($_SESSION);
     }
 ?>

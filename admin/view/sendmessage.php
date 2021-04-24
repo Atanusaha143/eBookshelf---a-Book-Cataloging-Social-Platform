@@ -7,8 +7,7 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
     }
     else
     {
@@ -22,43 +21,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href="../../images/assets/icon.png">
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Send a message</title>
+    <script src="../../assets/resources/scripts.js"></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <center>
-        <table border="1px solid black" width='80%'>
-            <?php 
-                $dataString = file_get_contents('../model/messages.json');
-                $dataJSON = json_decode($dataString, true);
-                foreach($dataJSON as $message)
-                {
-                    echo
-                    "<tr>
-                        <td>
-                            ".$message['from']."
-                            <br>
-                            ".$message['time']."
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan='2'>
-                            ".$message['content']."
-                        </td>
-                    </tr>";
-                }
-            ?>
-        </table>
-    </center>
-    <center>
-        <h3>Send a message to </h3>
-        <form method='POST' action='#'>
-            <textarea name='message'>Write your message here</textarea><br>
-            <input type="submit" value='Send'>
-        </form>
-    </center>
+    <form method='POST' action='../controller/checkchat.php' class="form" onsubmit="return sendMessage()">
+        <h3>Send a message to 
+            <input type='text' name='username' class='messageUsername' id='messageUsername' placeholder="Enter username here">
+        </h3>
+        <input type="submit" value='Send'>
+    </form>
+    <div class="container" id="messagehint"></div>
     <?php include('./footer.php') ?>
 </body>
 </html>

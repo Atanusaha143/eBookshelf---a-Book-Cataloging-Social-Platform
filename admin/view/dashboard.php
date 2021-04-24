@@ -6,12 +6,15 @@
     }
     else if(!isset($_COOKIE['flag']))
     {
-        echo "Session expired, please <a href='./login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+    }
+    else if($_SESSION['terminated'])
+    {
+        header('location: ./termination.php');
     }
     else 
     {
-        header('location: ../login.php');
+        header('location: ./login.php');
     }
 ?>
 
@@ -21,39 +24,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Dashboard</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    
-    <table border="1px solid black" width='100%'>
+    <br><br>
+    <table width='85%'>
         <tr>
-            <th>
-                Messages
-            </th>
-            <th>
-                Posts
-            </th>
-            <th>
-                Notifications
-            </th>
+            <td align='center'>
+                Username
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
+            <td align="center">
+                This is where the post content will appear
+            </td>
         </tr>
         <tr>
-            <td width='17%'>
-                
+            <td>
+                <br>
             </td>
             <td>
-                <br><br><br><br><br><br>
-                <?php echo "BOOKS"; ?>
+                <br>
             </td>
             <td>
-                <br><br><br><br><br><br>
-                <?php echo "BOOKS"; ?>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                Username2
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
+            <td align="center">
+                This will be a book review
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+            <td>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td align='center'>
+                Username3
+            </td>
+            <td align='center'>
+                Posted At: Time/Date
+            </td>
+            <td align="center">
+                This is another post made by a user
             </td>
         </tr>
     </table>
     <?php include('./footer.php');?>
+    <br>
 </body>
 </html>

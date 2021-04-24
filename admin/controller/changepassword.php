@@ -1,5 +1,6 @@
 <?php
     include('./validate_functions.php');
+    include('../model/adminModel.php');
     session_start();
     if(empty($_POST['currentpass']) || empty($_POST['newpass']) || empty($_POST['confirmpass']))
     {
@@ -25,8 +26,26 @@
         }
         else
         {
-            echo "Password validated";
-            header('location: ../view/passchanged.php');
+            //$adminDetails = getAdminInfoByID($_SESSION['id']);
+            $currentPasswordStatus = checkPassword($_SESSION['id'], $currentPassword);
+            
+            if($currentPasswordStatus)
+            {
+                $changePasswordStatus = updatePassword($_SESSION['id'], $newPassword);
+                if($changePasswordStatus == true)
+                {
+                    header('location: ../view/passchanged.php');
+                }
+                else
+                {
+                    echo "Seems there was an issue trying to update your password.";
+                }
+            }
+            else
+            {
+                echo "Please enter the correct existing password!<br>";
+            }
+            
         }
     }
 ?>

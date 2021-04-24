@@ -15,17 +15,24 @@
 
     function emailValidation($email)
     {
-        $count = 0;
+        $countAt = 0;
+        $countDotCom = 0;
         for($i = 0 ; $i<strlen($email) ; $i=$i+1)
         {
             if($email[$i] == '@')
             {
-                $count = $count + 1;
+                $countAt = $countAt + 1;
             }
         }
-        if($count==0)
+
+        $last4Chars = substr($email, -4);
+        if($last4Chars == '.com' || $last4Chars == '.edu')
         {
-            echo "Email must have '@' symbol!<br>";
+            $countDotCom = 1;
+        }
+        if($countAt==0 || $countDotCom == 0)
+        {
+            echo "Email must have '@' symbol, followed by a valid mail domain (such as '.com')!<br>";
             return true;
         }
         else
@@ -55,59 +62,64 @@
         }
     }
 
-    function passwordValidation($password)
+    function passwordValidation($password, $confirmpassword)
     {
         $specialCharCount = 0;
         $capitalLetterCount = 0;
         $smallLetterCount = 0;
-        if(strlen($password) < 8)
+
+        if($password == $confirmpassword)
         {
-            echo "Password must be atleast 8 characters long!<br>";
-            return true;
+            if(strlen($password) < 8)
+            {
+                echo "Password must be atleast 8 characters long!<br>";
+                return true;
+            }
+            else if(strlen($password) >= 8)
+            {
+                for($i = 0 ; $i<strlen($password) ; $i=$i+1)
+                {
+                    if((ord($password[$i]) >= 97 && ord($password[$i]) <= 122))
+                    {
+                        $smallLetterCount = $smallLetterCount+1;
+                    }
+
+                    if((ord($password[$i]) >= 65 && ord($password[$i]) <= 90))
+                    {
+                        $capitalLetterCount = $capitalLetterCount+1;
+                    }
+
+                    if(($password[$i] == '@' || $password[$i] == '#' || $password[$i] == '!' || $password[$i] == '$'))
+                    {
+                        $specialCharCount = $specialCharCount+1;
+                    }
+                }
+
+                if($capitalLetterCount == 0)
+                {
+                    echo "Password must contain atleast one capital letter!<br>";
+                    return true;
+                }
+                else if($smallLetterCount == 0)
+                {
+                    echo "Password must contain atleast one small letter!<br>";
+                    return true;
+                }
+                else if($specialCharCount == 0 && $capitalLetterCount > 0)
+                {
+                    echo "Password must contain atleast one special character ('@', '#', '!' or '$')!<br>";
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
-        else if(strlen($password) >= 8)
+        else
         {
-            for($i = 0 ; $i<strlen($password) ; $i=$i+1)
-            {
-                if((ord($password[$i]) >= 97 && ord($password[$i]) <= 122))
-                {
-                    $smallLetterCount = $smallLetterCount+1;
-                }
-
-                if((ord($password[$i]) >= 65 && ord($password[$i]) <= 90))
-                {
-                    $capitalLetterCount = $capitalLetterCount+1;
-                }
-
-                if(($password[$i] == '@' || $password[$i] == '#' || $password[$i] == '!' || $password[$i] == '$'))
-                {
-                    $specialCharCount = $specialCharCount+1;
-                }
-            }
-
-            if($capitalLetterCount == 0)
-            {
-                echo "Password must contain atleast one capital letter!<br>";
-                return true;
-            }
-            else if($smallLetterCount == 0)
-            {
-                echo "Password must contain atleast one small letter!<br>";
-                return true;
-            }
-            else if($specialCharCount == 0 && $capitalLetterCount > 0)
-            {
-                echo "Password must contain atleast one special character ('@', '#', '!' or '$')!<br>";
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            // if($passwordFlag == false)
-            // {
-            //     echo "password must contain '@', '#', '!' or '$'!<br>";
-            // }
+            echo "Passwords do not match!";
+            return true;
         }
     }
 
@@ -125,5 +137,38 @@
             }
         }
         return false;
+    }
+
+    function dateValidation($date)
+    {
+        $year = substr($date, 0, 4);
+        if($year < 1900)
+        {
+            echo "The year in your date of birth is invalid!";
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    function imageValidate($fileFlag)
+    {
+        $file = $fileFlag['name'];
+        $extension = pathinfo($file, PATHINFO_EXTENSION);
+        //print($extension);
+        if($extension == 'JPG' || $extension == 'JPEG' || $extension == 'PNG' || 
+           $extension == 'jpg' || $extension == 'jpeg' || $extension == 'png') 
+        {
+            //echo "Picture uploaded successfully!";
+            return false;
+        }
+        else
+        {
+            echo "File is not an image. Please upload an image file!";
+            print_r($extension);
+            return true;
+        }
     }
 ?>

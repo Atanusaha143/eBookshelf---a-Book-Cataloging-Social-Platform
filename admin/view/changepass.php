@@ -6,8 +6,7 @@
     }
     else if(!(isset($_COOKIE['flag'])))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
     }
     else
     {
@@ -20,14 +19,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href="../../assets/images/icon.png">
+    <link rel='stylesheet' href="../../assets/resources/style.css">
     <title>Add User</title>
+    <script src='../../assets/resources/scripts.js'></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
-    <div width='100px'>
-        <center>
-            <form action="../controller/changepassword.php" method='POST'>
+    <div width='100px' class='form'>
+            <form action="../controller/changepassword.php" method='POST' onsubmit="return passwordChangeCheck()">
                 <h2>Enter the following fields to change your password.</h2>
                 <table>
                     <tr>
@@ -35,7 +35,7 @@
                             <b>Current Password:</b>
                         </td>
                         <td>
-                            <input type='password' name='currentpass'>
+                            <input type='password' name='currentpass' id='currentpass'>
                         </td>
                     </tr>
                     <tr>
@@ -43,7 +43,7 @@
                             <b>New Password:</b>
                         </td>
                         <td>
-                            <input type='password' name='newpass'>
+                            <input type='password' name='newpass' id='newpass'>
                         </td>
                     </tr>
                     <tr>
@@ -51,14 +51,14 @@
                             <b>Confirm Password:</b>
                         </td>
                         <td>
-                            <input type='password' name='confirmpass'>
+                            <input type='password' name='confirmpass' id='confirmpass'>
                         </td>
                     </tr>
                 </table>
                 <input type='submit'><br><br>
-                <a href="./dashboard.php">Go Back</a>
+                <a href="./settings.php">Go Back</a>
+                <div id='changepasshint'></div>
             </form>
-        </center>
     </div>
     <?php include('./footer.php'); ?>
 </body>
