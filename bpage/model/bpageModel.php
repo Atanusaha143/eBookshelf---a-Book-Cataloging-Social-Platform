@@ -172,4 +172,9 @@
             return false;
         }
     }
+
+    function insertPost($post_by_id, )
+    {
+
+    }
 ?>

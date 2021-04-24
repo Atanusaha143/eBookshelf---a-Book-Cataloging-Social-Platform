@@ -157,8 +157,7 @@ body
 .bookproduct
 {
     text-align: center;
-    margin-left: 30%;
-    margin-right: 30%;
+    align-items: center;
 }
 
 .bookproduct table
