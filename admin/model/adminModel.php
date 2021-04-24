@@ -105,6 +105,24 @@
         }
     }
 
+    function updateRegularByID($id, $fullname, $email, $phone, $username, $status)
+    {
+        $connection = connect();
+        $sql = "UPDATE regular_userlist SET name = '$fullname', email = '$email', phone_number = '$phone', username = '$username', status = '$status' WHERE id = $id";
+        $updateResult = mysqli_query($connection, $sql);
+
+        if($updateResult)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
     function checkPassword($id, $password)
     {
         $connection = connect();

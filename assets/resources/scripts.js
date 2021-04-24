@@ -1,13 +1,3 @@
-// function profileHighlight()
-// {
-//     document.getElementById('profile').style.backgroundColor = blue;
-// }
-
-// function clickProfile()
-// {
-
-// }
-
 let i = 0;
 
 function nameValidation(fullname)
