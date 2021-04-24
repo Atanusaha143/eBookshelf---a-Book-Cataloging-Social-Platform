@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 10:34 AM
+-- Generation Time: Apr 24, 2021 at 06:18 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.1
 
@@ -359,18 +359,20 @@ CREATE TABLE `regular_userlist` (
   `password` varchar(50) NOT NULL,
   `phone_number` varchar(50) NOT NULL,
   `gender` varchar(6) NOT NULL,
-  `profile_photo` varchar(60) NOT NULL
+  `profile_photo` varchar(60) NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `regular_userlist`
 --
 
-INSERT INTO `regular_userlist` (`id`, `name`, `email`, `username`, `password`, `phone_number`, `gender`, `profile_photo`) VALUES
-(4, 'Atanu Saha', 'atanu.saha415@gmail.com', 'atanu', '12345678@', '01828675754', 'Male', 'SAHA, ATANU.JPG'),
-(6, 'Snigdho Dip Howlader', 'snigdho@gmail.com', 'snigdho', '12345678@', '01777777777', 'Male', 'user.png'),
-(9, 'abc', 'abc@gmail.com', 'abc123', '12345678@', '01999999999', 'Male', ''),
-(10, 'asdadsas', 'asdad@asdas.com', 'atanuu', '12345678@', '01234567890', 'Male', '');
+INSERT INTO `regular_userlist` (`id`, `name`, `email`, `username`, `password`, `phone_number`, `gender`, `profile_photo`, `status`) VALUES
+(4, 'Atanu Saha', 'atanu.saha415@gmail.com', 'atanu', '12345678@', '01828675754', 'Male', 'SAHA, ATANU.JPG', 'active'),
+(6, 'Snigdho Dip Howlader', 'snigdho@gmail.com', 'snigdho', '12345678@', '01777777777', 'Male', 'user.png', 'active'),
+(9, 'abc', 'abc@gmail.com', 'abc123', '12345678@', '01999999999', 'Male', '', 'active'),
+(10, 'asdadsas', 'asdad@asdas.com', 'atanuu', '12345678@', '01234567890', 'Male', '', 'active'),
+(11, 'asdas', 'asda@asdas.com', 'asdasda', '123456789', '01987654321', 'Male', '', 'active');
 
 --
 -- Indexes for dumped tables
@@ -522,7 +524,7 @@ ALTER TABLE `regular_sentmessage`
 -- AUTO_INCREMENT for table `regular_userlist`
 --
 ALTER TABLE `regular_userlist`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
