@@ -168,13 +168,8 @@
 				?>
 			</td>
 		</tr>
-<<<<<<< HEAD
-		<tr height = "50px">
-			<td colspan="3">
-=======
 		<tr height = "50px" style="background-color: #333; color: white;">
 			<td colspan="3" style="padding: 25px;">
->>>>>>> regular_user_module_final
 				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
