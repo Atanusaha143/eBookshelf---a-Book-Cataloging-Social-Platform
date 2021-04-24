@@ -185,6 +185,7 @@
 ?>
 
 <script src="resources/JS/script.js"></script>
+<link rel = "shortcut icon" href = "resources/icon.png" type = "image/x-icon">
 <link rel="stylesheet" type="text/css" href="resources/CSS/style.css">
 <style>
 	body
