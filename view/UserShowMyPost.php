@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Home";
+	$title = "My Post";
 	include ('header.php');
 ?>
 
