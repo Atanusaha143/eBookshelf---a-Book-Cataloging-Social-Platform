@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include('../model/adminModel.php');
     if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         //continue
@@ -31,63 +32,53 @@
 <body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
-    <br><br>
-    <table width='85%'>
-        <tr>
-            <td align='center'>
-                Username
-            </td>
-            <td align='center'>
-                Posted At: Time/Date
-            </td>
-            <td align="center">
-                This is where the post content will appear
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
-        <tr>
-            <td align='center'>
-                Username2
-            </td>
-            <td align='center'>
-                Posted At: Time/Date
-            </td>
-            <td align="center">
-                This will be a book review
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-            <td>
-                <br>
-            </td>
-        </tr>
-        <tr>
-            <td align='center'>
-                Username3
-            </td>
-            <td align='center'>
-                Posted At: Time/Date
-            </td>
-            <td align="center">
-                This is another post made by a user
-            </td>
-        </tr>
+    <br>
+    <table align='center' width='85%'>
+        <tr height = "200px">
+			<td>
+				<?php
+					echo "<br>";
+					echo "<center>";
+					echo " <b class = 'titleBox'> Public Posts </b>";
+					echo "</center>";
+					echo "<br>";
+						$allPosts = getAllPosts();
+						foreach($allPosts as $posts) 
+						{
+							 echo "<fieldset>";
+							 echo "<br>";
+							 echo "<table>";
+						     echo "<tr>";
+						     echo "<td style='width: 6%;'>Book Name:</td>";
+						     echo "<td>".$posts['bookname']."</td>";
+						     echo "</tr>";
+						     echo "<tr><td><hr></td></tr>";
+						     echo "<tr>";
+						     echo "<td>Category:</td>";
+						     echo "<td>".$posts['category']."</td>";
+						     echo "</tr>";
+						     echo "<tr><td><hr></td></tr>";
+						     echo "<tr>";
+						     echo "<td>Author:</td>";
+						     echo "<td>".$posts['authorname']."</td>";
+						     echo "</tr>";
+						     echo "<tr><td><hr></td></tr>";
+						     echo "<tr>";
+						     echo "<td>Post:</td>";
+						     echo "<td>".$posts['post_content']."</td>";
+						     echo "</tr>";
+						     echo "<tr><td><hr></td></tr>";
+						     echo "<tr>";
+						     echo "<td>Post By:</td>";
+						     echo "<td>".$posts['username']."</td>";
+						     echo "</tr>";
+						     echo "</table>";
+						     echo "<br>";
+						     echo "</fieldset>";
+						}
+				?>
+			</td>
+		</tr>
     </table>
     <?php include('./footer.php');?>
     <br>

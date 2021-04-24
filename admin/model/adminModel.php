@@ -105,6 +105,24 @@
         }
     }
 
+    function updateRegularByID($id, $fullname, $email, $phone, $username, $status)
+    {
+        $connection = connect();
+        $sql = "UPDATE regular_userlist SET name = '$fullname', email = '$email', phone_number = '$phone', username = '$username', status = '$status' WHERE id = $id";
+        $updateResult = mysqli_query($connection, $sql);
+
+        if($updateResult)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
     function checkPassword($id, $password)
     {
         $connection = connect();
@@ -141,10 +159,50 @@
         }
     }
 
-    function uniqueUsernameCheck($username)
+    function uniqueUsernameCheckAdmin($username)
     {
         $connection = connect();
         $sql = "SELECT * FROM adminlogin WHERE username = '$username'";
+
+        $result = mysqli_query($connection, $sql);
+
+        if(mysqli_num_rows($result) > 0)
+        {
+            $result = mysqli_fetch_assoc($result);
+            disconnect($connection);
+            return true;
+        }
+        else 
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
+    function uniqueUsernameCheckRegular($username)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM regular_userlist WHERE username = '$username'";
+
+        $result = mysqli_query($connection, $sql);
+
+        if(mysqli_num_rows($result) > 0)
+        {
+            $result = mysqli_fetch_assoc($result);
+            disconnect($connection);
+            return true;
+        }
+        else 
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
+    function uniqueUsernameCheckBpage($username)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM bpagelogin WHERE username = '$username'";
 
         $result = mysqli_query($connection, $sql);
 
@@ -188,6 +246,28 @@
             return true;
         }
         if($adminUpdateResult == false || $loginUpdateResult == false)
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
+    function insertNewRegular($fullname, $email, $phone, $username, $gender, $password, $photo)
+    {
+        $connection = connect();
+        $regdate = date("Y-m-d");
+
+        $connection = connect();
+        $sqlAdmin = "INSERT INTO regular_userlist(name, email, username, password, phone_number, gender, profile_photo, status) VALUES('$fullname', '$email', '$username', '$password', '$phone', '$gender', '$photo', 'active')";
+
+        $adminUpdateResult = mysqli_query($connection, $sqlAdmin);
+
+        if($adminUpdateResult == true)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else if($adminUpdateResult == false)
         {
             disconnect($connection);
             return false;
@@ -259,6 +339,15 @@
         $allBpages = mysqli_query($connection, $sql);
         disconnect($connection);
         return $allBpages;
+    }
+
+    function getAllPosts()
+    {
+        $sql = "SELECT * FROM regular_post";
+        $connection = connect();
+        $allPosts = mysqli_query($connection, $sql);
+        disconnect($connection);
+        return $allPosts;
     }
 
     function getAllRegular()

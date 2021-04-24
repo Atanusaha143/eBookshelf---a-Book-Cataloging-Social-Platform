@@ -1,29 +1,35 @@
 <?php
+    
+?>
+<?php
     session_start();
     include('./validate_functions.php');
-    if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['username']) || empty($_POST['password']) || empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
+    if(empty($_POST['fullname']) || empty($_POST['email']) || empty($_POST['username']) || empty($_POST['phone']) || empty($_POST['password'])|| empty($_POST['confirmpassword']) || $_FILES['propic']['size'] == 0)
     {
-        echo "One or more of the fields is empty.";
+        echo "Please enter all fields, including a profile picture.";
+
+        // echo $_FILES['propic']['name'];
     }
     else
     {
-        $name = $_POST['name'];
+        $fullname = $_POST['fullname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
+        $gender = $_POST['gender'];
         $username = $_POST['username'];
         $password = $_POST['password'];
         $confirmpassword = $_POST['confirmpassword'];
         $file = $_FILES['propic'];
         $fileSaveName = $username.".".pathinfo($file['name'], PATHINFO_EXTENSION);
 
-        $nameFlag = nameValidation($name);
+        $fullnameFlag = nameValidation($fullname);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
-        $usernameFlag = usernameValidation($username);
         $passwordFlag = passwordValidation($password, $confirmpassword);
+        $usernameFlag = usernameValidation($username);
         $imageFlag = imageValidate($file);
 
-        if($nameFlag == true)
+        if($fullnameFlag == true)
         {
             return;
             //echo "Name must be alphabetical!<br>";
@@ -57,14 +63,7 @@
             return;
         }
 
-        if($password != $confirmpassword)
-        {
-            $passwordFlag=true;
-            echo "The passwords do not match!<br>";
-            return;
-        }
-
-        if($nameFlag == false &&
+        if($fullnameFlag == false &&
         $emailFlag == false &&
         $phoneFlag == false &&
         $usernameFlag == false &&
@@ -72,23 +71,28 @@
         $imageFlag == false)
         {
             include('../model/adminModel.php');
-            $usernameCheckFlag = uniqueUsernameCheckBpage($username);
-            include('../model/adminModel.php');
-            $addAdminStatus = insertNewBpage($name, $email, $phone, $fileSaveName, $username, $password); 
-            //print_r($addAdminStatus);
-            $picture = $_FILES['propic'];
-            //$imageFlag = imageValidate($picture, $adminDetails['username']);
-            $path = '../../assets/profile/bpage/'.$fileSaveName;
-
-            if(move_uploaded_file($picture['tmp_name'], $path))
+            $usernameCheckFlag = uniqueUsernameCheckRegular($username);
+            if($usernameCheckFlag == false)
             {
-                echo "New Business Page added successfully!<br>";
-                echo "<a href='../view/allusers.php'>Go Back</a>";
-                //header('location: ../view/picchangesuccess.php');
+                $addRegularStatus = insertNewRegular($fullname, $email, $phone, $username, $gender, $password, $fileSaveName);
+                if($addRegularStatus == true)
+                {
+                    $picture = $_FILES['propic'];
+                    $path = '../../assets/profile/admin/'.$fileSaveName;
+
+                    if(move_uploaded_file($picture['tmp_name'], $path))
+                    {
+                        echo "Added Regular User";
+                    }
+                }
+                else
+                {
+                    echo "Regular User addition failed!";
+                }
             }
             else
             {
-                echo "Business Page addition failed!<br>";
+                echo "Username already exists";
             }
         }
     }

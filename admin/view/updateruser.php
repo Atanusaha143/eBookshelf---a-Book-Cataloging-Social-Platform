@@ -33,28 +33,28 @@
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
     <div class='form'>
-        <form action='../controller/updaterusercheck.php' method="POST">
+        <form action='../controller/updaterusercheck.php?id=<?php echo $_GET['id']; ?>' method="POST">
                 <b>Update Information:Regular User</b>
                 <table align="center">
                     <tr>
                         <td align="right">Business Name:</td>
-                        <td><input type='text' name='name' value="<?php echo $regularDetails['name']; ?>"/></td>
+                        <td><input type='text' name='fullname' id='fullname' value="<?php echo $regularDetails['name']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Email:</td>
-                        <td><input type='email' name='email' value="<?php echo $regularDetails['email']; ?>"/></td>
+                        <td><input type='email' name='email' id='email' value="<?php echo $regularDetails['email']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Phone:</td>
-                        <td><input type='text' name='phone' value="<?php echo $regularDetails['phone_number']; ?>"/></td>
+                        <td><input type='text' name='phone' id='phone' value="<?php echo $regularDetails['phone_number']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Username:</td>
-                        <td><input type='text' name='username' value="<?php echo $regularDetails['username']; ?>"/></td>
+                        <td><input type='text' name='username' id='username' value="<?php echo $regularDetails['username']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Status:</td>
-                        <td><input type='text' name='username' value="<?php echo $regularDetails['status']; ?>"/></td>
+                        <td><input type='text' name='status' id='status' value="<?php echo $regularDetails['status']; ?>"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>

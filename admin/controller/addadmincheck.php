@@ -69,16 +69,19 @@
         $imageFlag == false)
         {
             include('../model/adminModel.php');
-            $usernameCheckFlag = uniqueUsernameCheck($username);
+            $usernameCheckFlag = uniqueUsernameCheckAdmin($username);
             if($usernameCheckFlag == false)
             {
                 $addAdminStatus = insertNewAdmin($fullname, $email, $phone, $dateOfBirth, $username, $password, $fileSaveName);
-                $picture = $_FILES['propic'];
-                $path = '../../assets/profile/admin/'.$fileSaveName;
-
-                if(move_uploaded_file($picture['tmp_name'], $path))
+                if($addAdminStatus == true)
                 {
-                    echo "New Admin added successfully!";
+                    $picture = $_FILES['propic'];
+                    $path = '../../assets/profile/admin/'.$fileSaveName;
+
+                    if(move_uploaded_file($picture['tmp_name'], $path))
+                    {
+                        echo "New Admin added successfully!";
+                    }
                 }
                 else
                 {
