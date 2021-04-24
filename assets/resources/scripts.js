@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // function profileHighlight()
 // {
 //     document.getElementById('profile').style.backgroundColor = blue;
@@ -10,6 +11,8 @@
 
 let i = 0;
 
+=======
+>>>>>>> business_page_module
 function nameValidation(fullname)
 {
     for(i = 0 ; i < fullname.length ; i=i+1)
@@ -693,4 +696,56 @@ function passwordChangeCheck()
     }
 
     return false;
+<<<<<<< HEAD
+=======
+}
+
+//Business Page Scripts
+function bpageLoginCheck()
+{
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+
+    if(username=="" && password =="")
+    {
+        document.getElementById('loginhint').innerHTML='Please enter a username<br>Please enter a password';
+        return false;
+    }
+    else if(username=="")
+    {
+        document.getElementById('loginhint').innerHTML='Please enter a username';
+        return false;
+    }
+    else if(password=="")
+    {
+        document.getElementById('loginhint').innerHTML='Please enter a password';
+        return false;
+    }
+    else if(username!="" || password!="")
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText == 'False')
+                {
+                    document.getElementById('loginhint').innerHTML='User does not exist';
+                    console.log('User does not exist');
+                }
+                else
+                {
+                    window.location.reload();
+                }
+            }
+            else
+            {
+
+            }
+        };
+        xhttp.open("POST", "../../bpage/controller/logincheck.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("username="+username+"&password="+password);
+        
+        return false;
+    }
+>>>>>>> business_page_module
 }

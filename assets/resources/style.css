@@ -9,10 +9,13 @@ body
     border-right: 2px solid greenyellow;
     border-left: 2px solid greenyellow;
     height: 100%;
+<<<<<<< HEAD
     /* background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-blend-mode: luminosity; */
+=======
+>>>>>>> business_page_module
 }
 
 .form
@@ -40,11 +43,17 @@ body
     border-radius: 15px;
     margin-left: 10px;
     padding-left: 15px;
+<<<<<<< HEAD
     padding-top: 2px;
     padding-bottom: 3px;
     width: 200px;
     color: rgb(25, 25, 165);
     border: 3px solid rgb(74, 84, 228);
+=======
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+>>>>>>> business_page_module
 }
 
 .form input[type=file]
@@ -119,7 +128,11 @@ body
     position: fixed;
     right: 10px;
     bottom: 10px;
+<<<<<<< HEAD
     font-size: 13px;
+=======
+    font-size: 10px;
+>>>>>>> business_page_module
 }
 
 .header
@@ -160,6 +173,7 @@ body
     background-color: rgb(75, 75, 236);
 }
 
+<<<<<<< HEAD
 .data table
 {
     text-align: center;
@@ -170,6 +184,31 @@ body
 .data table
 {
     border-collapse: collapse;
+=======
+.bookproduct
+{
+    text-align: center;
+    align-items: center;
+}
+
+.bookproduct table
+{
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.data
+{
+    text-align: center;
+    /* margin-left: 40%;
+    margin-right: 40%; */
+}
+
+.data table
+{
+    border-collapse: collapse;;
+    width: 80%;
+>>>>>>> business_page_module
     text-align: center;
 }
 
@@ -179,10 +218,13 @@ body
     font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
     padding-left: 10px;
+<<<<<<< HEAD
     padding-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
     border: 1px solid rgb(16, 21, 94);
+=======
+>>>>>>> business_page_module
 }
 
 .data a
@@ -385,3 +427,34 @@ body
 {
     color: rgb(215, 233, 240);
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+
+.bookproduct
+{
+    /* width: 60%; */
+    margin-right: 350px;
+    margin-left: 350px;
+    border-radius: 15px;
+}
+
+.bookproduct td.title, .bookproduct td.author, .bookproduct td.price, .bookproduct td.description
+{
+    background-color: rgb(70, 163, 206);
+}
+
+.bookproduct table
+{
+    border-radius: 2px 5px 10px 15px;
+}
+
+.bookproduct td
+{
+    background-color: rgb(255, 247, 247);
+    border: 2px solid blue;
+}
+>>>>>>> business_page_module

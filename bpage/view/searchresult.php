@@ -1,16 +1,16 @@
 <?php
     session_start();
-    if(!empty($_SESSION['flag']) && isset($_COOKIE['flag']))
+    if($_SESSION['flag'] == true && isset($_COOKIE['flag']))
     {
         //continue
-        include('../controller/validateviewprofile.php');
     }
-    else if(!(isset($_COOKIE['flag'])))
+    else if(!isset($_COOKIE['flag']))
     {
-        echo "Session expired, please <a href='../login.php'>Log In</a> again!";
-        return;
+        header('location: ./expired.php');
+        // echo "Session expired, please <a href='./login.php'>Log In</a> again!";
+        // return;
     }
-    else
+    else 
     {
         header('location: ../login.php');
     }
@@ -22,10 +22,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='icon' href='../images/assets/icon.png'>
+    <link rel='icon' href='../../assets/images/icon.png'>
+    <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title><?php echo $_GET['fullname']; ?></title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <center>
@@ -34,7 +35,7 @@
         </h3>
         <h3>
             Results:
-            <?php echo $_GET['fullname'] ?>
+            <?php echo "<a href='./anotherpage.php?username=".$_GET['username']."'>".$_GET['fullname'] ?>
         </h3>
     </center>
     <?php include('./footer.php'); ?>

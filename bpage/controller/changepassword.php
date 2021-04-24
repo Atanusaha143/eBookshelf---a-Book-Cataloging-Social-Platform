@@ -1,6 +1,7 @@
 <?php
-    include('./validate_functions.php');
     session_start();
+    include('./validate_functions.php');
+    include('../model/bpageModel.php');
     if(empty($_POST['currentpass']) || empty($_POST['newpass']) || empty($_POST['confirmpass']))
     {
         echo "Please enter all three fields.";
@@ -25,8 +26,24 @@
         }
         else
         {
-            echo "Password validated";
-            header('location: ./redirect.php');
+            $currentPasswordStatus = checkPassword($_SESSION['id'], $currentPassword);
+            
+            if($currentPasswordStatus)
+            {
+                $changePasswordStatus = updatePassword($_SESSION['id'], $newPassword);
+                if($changePasswordStatus == true)
+                {
+                    echo "Password has been changed successfully, click <a href='../view/dashboard.php'>here</a> to go to dashboard";
+                }
+                else
+                {
+                    echo "Seems there was an issue trying to update your password.";
+                }
+            }
+            else
+            {
+                echo "Please enter the correct existing password!<br>";
+            }
         }
     }
 ?>
