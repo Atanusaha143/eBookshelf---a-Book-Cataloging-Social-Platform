@@ -404,6 +404,188 @@ function addAdminCheck()
     return false;
 }
 
+function addRegularCheck()
+{
+    let name = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let dob = document.getElementById('gender').value;
+    let username = document.getElementById('username').value;
+    let password = document.getElementById('password').value;
+    let confirmpassword = document.getElementById('confirmpassword').value;
+    var propic = document.getElementById('propic');
+
+    let nameFlag, emailFlag, phoneFlag, usernameFlag,passwordFlag;
+
+    //Name
+    if(name == "")
+    {
+        document.getElementById('namehint').innerHTML = 'Please enter the name.';
+    }
+    else if(name != "")
+    {
+        nameFlag = nameValidation(name);
+        if(nameFlag == true)
+        {
+            console.log('not ok');
+        }
+        else
+        {
+            document.getElementById('namehint').innerHTML = '';
+        }
+    }
+
+    //Email
+    if(email == "")
+    {
+        document.getElementById('emailhint').innerHTML = 'Please enter the email';
+    }
+    else if(email != "")
+    {   emailFlag = emailValidation(email);
+        if(emailFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('emailhint').innerHTML = '';
+        }
+    }
+
+    //Phone Number
+    if(phone == "+88")
+    {
+        document.getElementById('phonehint').innerHTML = 'Please enter the phone number';
+    }
+    else if(phone != "+88")
+    {
+        phoneFlag = phoneValidation(phone);
+        if(phoneFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('phonehint').innerHTML = '';
+            phoneEncode = encodeURIComponent(phone);
+        }
+    }
+
+    //Username
+    if(username == "")
+    {
+        document.getElementById('usernamehint').innerHTML = 'Please enter the username';
+    }
+    else if(username != "")
+    {
+        usernameFlag = usernameValidation(username);
+        if(usernameFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('usernamehint').innerHTML = '';
+        }
+    }
+
+    //Password
+    if(password == "")
+    {
+        document.getElementById('passwordhint').innerHTML = 'Please enter the password';
+    }
+    else if(password != "")
+    {
+        document.getElementById('passwordhint').innerHTML = '';
+    }
+    if(confirmpassword == "")
+    {
+        document.getElementById('confirmpasswordhint').innerHTML = 'Please enter the password again';
+    }
+    else if(confirmpassword != "")
+    {
+        document.getElementById('confirmpasswordhint').innerHTML = '';
+    }
+    if(password == confirmpassword)
+    {
+        passwordFlag = passwordValidation(password, confirmpassword);
+        if(passwordFlag == true)
+        {
+            document.getElementById('passwordhint').innerHTML = '';
+        }
+        else
+        {
+            //document.getElementById('passwordhint').innerHTML = '';
+            document.getElementById('passwordhint').innerHTML = 'Password matched';
+        }
+    }
+    else
+    {
+        document.getElementById('passwordhint').innerHTML = 'Password does not match!';
+    }
+
+    //Profile Picture
+    if(propic.value == "")
+    {
+        document.getElementById('propichint').innerHTML = 'Please attach a valid photograph';
+    }
+    else if(propic.value != "")
+    {
+        if(propic.files[0].size > 0)
+        {
+            document.getElementById('propichint').innerHTML = '';
+        }
+    }
+
+    //alert(propic.value);
+    //alert(propic.files[0].size)
+    
+    if(nameFlag == false && emailFlag == false && phoneFlag == false && usernameFlag == false && passwordFlag == false)
+    {
+        var formData = new FormData();
+
+        var files = propic.files;
+        var propicFile = files[0];
+
+        formData.append('propic', propicFile, propicFile.name);
+        formData.append('fullname', name);
+        formData.append('email', email);
+        formData.append('phone', phone);
+        formData.append('gender', gender);
+        formData.append('username', username);
+        formData.append('password', password);
+        formData.append('confirmpassword', confirmpassword);
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "../../admin/controller/addregularcheck.php", true);
+        xhttp.onreadystatechange = function()
+        {
+            if(this.readyState == 4 && this.status == 200)
+            {
+                if(this.responseText == "Added Regular User")
+                {
+                    document.getElementById('addregularhint').innerHTML = "Regular User added successfully!";
+                }
+                else if(this.responseText == "Admin addition failed!")
+                {
+                    document.getElementById('addregularhint').innerHTML = "Failed to add Regular User!"
+                }
+                else if(this.responseText == "Username already exists")
+                {
+                    document.getElementById('addregularhint').innerHTML = "Username is already taken";
+                }
+                else
+                {
+                    document.getElementById('addadminhint').innerHTML = "Error occured, failed to add admin.";
+                }
+            }
+        };
+        //xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send(formData);
+    }
+    return false;
+}
+
 function adminUpdateInfo()
 {
     let name = document.getElementById('fullname').value;
