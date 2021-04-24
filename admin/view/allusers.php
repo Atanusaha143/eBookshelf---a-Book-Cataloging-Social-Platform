@@ -7,6 +7,7 @@
         $allAdmins = getAllAdmins($_SESSION['id']);
         //$allAdmins = mysqli_fetch_assoc($allAdmins);
         $allBpages = getAllBpages();
+        $allRegular = getAllRegular();
     }
     else if(!(isset($_COOKIE['flag'])))
     {
@@ -69,7 +70,26 @@
                 </div>
             </td>
             <td>
-            
+                <div class="data">
+                    <table align="center" class="data">
+                        <?php
+                                foreach($allRegular as $regular)
+                                {
+                                    echo
+                                    "<tr>
+                                    <td align='center'>"
+                                        .$regular['id'].
+                                    "</td>
+                                    <td align='center'>
+                                        <a href='anotherbpage.php?id=".$regular['id']."'>"
+                                            .$regular['name'].
+                                        "</a>
+                                    </td>
+                                    </tr>";
+                                }
+                        ?>
+                    </table>
+                </div>
             </td>
             <td>
                 <div class="data">

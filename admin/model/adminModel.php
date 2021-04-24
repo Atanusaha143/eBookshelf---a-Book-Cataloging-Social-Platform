@@ -252,6 +252,15 @@
         return $allBpages;
     }
 
+    function getAllRegular()
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM regular_userlist";
+        $allRegular = mysqli_query($connection, $sql);
+        disconnect($connection);
+        return $allRegular;
+    }
+
     function deleteAdminByID($id)
     {
         $connection = connect();
@@ -280,4 +289,6 @@
             return false;
         }
     }
+
+    
 ?>
