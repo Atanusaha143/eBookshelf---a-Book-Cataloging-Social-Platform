@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 <?php
 	session_start();
+=======
+<!-- using Json -->
+<!-- <?php
+	/*session_start();
+>>>>>>> regular_user_module_final
 	if(isset($_POST['login']) && filesize('../model/AllUserDetails.json')>0)
 	{
 		if($_POST['UserName'] == "" || $_POST['Password'] == "")
@@ -27,8 +33,65 @@
 					$_SESSION['PhoneNumber'] = $userInfo['phoneNumber'];
 					if(isset($_POST['rememberMe']))
 					{
+<<<<<<< HEAD
 						setcookie('checkLogin', true, time()+86400, "/");
 						setcookie('username', $userInfo['user'], time()+86400, "/");
+=======
+						setcookie('checkLogin', true, time()+15, "/");
+						setcookie('username', $userInfo['user'], time()+15, "/");
+					}
+					header('location: ../view/UserHome.php');
+				}
+			}
+			if($flag == false)
+			{
+				echo "Invalid Username and Password!";
+			}
+		}
+	}
+	else
+	{
+		echo "Please register first!";
+	}*/
+?> -->
+
+
+
+<!-- using DB -->
+<?php
+	require_once('../model/dbConnection.php');
+	require_once('../model/userModel.php');
+	session_start();
+	if(isset($_POST['login']))
+	{
+		if($_POST['UserName'] == "" || $_POST['Password'] == "") //field checking
+		{
+			echo "Please enter Username and Passwordd";
+		}
+		else
+		{
+			// checking with DB
+			$userList = getAllUser();
+			$flag = false;
+			for($i=0; $i<count($userList); $i++) 
+			{
+				$usernameDB = $userList[$i]['username'];
+				$passwordDB = $userList[$i]['password'];
+				if($usernameDB == $_POST['UserName'] && $passwordDB == $_POST['Password'])
+				{
+					$flag = true;
+					$_SESSION['flag'] = true;
+					$_SESSION['Name'] = $userList[$i]['name'];
+					$_SESSION['UserName'] = $userList[$i]['username'];
+					$_SESSION['Password'] = $userList[$i]['password'];
+					$_SESSION['Email'] = $userList[$i]['email'];
+					$_SESSION['Gender'] = $userList[$i]['gender'];
+					$_SESSION['PhoneNumber'] = $userList[$i]['phone_number'];
+					if(isset($_POST['rememberMe']))
+					{
+						setcookie('checkLogin', true, time()+86400, "/");
+						setcookie('username', $userList[$i]['username'], time()+86400, "/");
+>>>>>>> regular_user_module_final
 					}
 					header('location: ../view/UserHome.php');
 				}

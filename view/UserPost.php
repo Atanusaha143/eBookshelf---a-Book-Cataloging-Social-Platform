@@ -10,15 +10,28 @@
 	$title = "Create Post";
 	include ('header.php');
 ?>
+<<<<<<< HEAD
 	<table border="1" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/logo.png" align="left" width="100%" height="150"> </a>
+=======
+<script src="../resources/JS/script.js"></script>
+	<table border="1" width="100%" cellspacing="0">
+		<tr>
+			<td align="right" colspan="3">
+				<a href="UserHome.php"> <img src="../resources/banner.png" align="left" width="100%" height="150"> </a>
+>>>>>>> regular_user_module_final
 			</td>
 		</tr>
 		<tr>
 			<td align="right">
 				<br>
+<<<<<<< HEAD
+=======
+				<a href="UserShowMyPost.php" class="linkBtn updateBtn"> My Posts </a>
+				&nbsp | &nbsp
+>>>>>>> regular_user_module_final
 				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
@@ -29,24 +42,48 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
+<<<<<<< HEAD
 					<form method="POST" action="../controller/UserPostCheck.php">
+=======
+					<form method="POST" action="../controller/UserPostCheck.php" onsubmit="return userPostValidity()">
+>>>>>>> regular_user_module_final
 						<fieldset style="width: 40%">
 						<legend>
 							<b> Create Post </b>
 						</legend>
+<<<<<<< HEAD
 						<table>
+=======
+						<table border="0">
+>>>>>>> regular_user_module_final
 							<tr>
 								<td>
 									Book Name
 								</td>
+<<<<<<< HEAD
 								<td>
 									<input type="text" name="bookName" style="width: 150%"> 
+=======
+								<td style="width: 200px">
+									<input type="text" id="bookname" name="bookName" style="width: 200px"> 
+								</td>
+								<td colspan="3" align="center">
+									<b id="print1" style="color: red"></b>	
+>>>>>>> regular_user_module_final
 								</td>
 							</tr>
 							<tr>
 								<td> Author Name </td>
+<<<<<<< HEAD
 								<td>
 									<input type="text" name="bookAuthor" style="width: 150%">
+=======
+								<td style="width: 200px">
+									<input type="text" id="authorname" name="bookAuthor" style="width: 200px">
+								</td>
+								<td colspan="3" align="center">
+									<b id="print2" style="color: red"></b>
+>>>>>>> regular_user_module_final
 								</td>
 							</tr>
 							<tr>
@@ -86,9 +123,17 @@
 						</tr>
 							<tr>
 								<td> Post Content </td>
+<<<<<<< HEAD
 								<td>
 									<input type="text" name="postContent" style="height: 75px">
 								</td>
+=======
+								<td style="width: 200px">
+									<input type="text" id="post" name="postContent" style="height: 75px">
+								</td>
+								<td colspan="3" align="center">
+									<b id="print3" style="color: red"></b></td>
+>>>>>>> regular_user_module_final
 							</tr>
 						</table>
 						<center>
@@ -99,8 +144,13 @@
 				<br> 
 			</td>
 		</tr>
+<<<<<<< HEAD
 		<tr height = "50px">
 			<td colspan="3">
+=======
+		<tr height = "50px" style="background-color: #333; color: white;">
+			<td colspan="3" style="padding: 25px;">
+>>>>>>> regular_user_module_final
 				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>

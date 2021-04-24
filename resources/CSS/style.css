@@ -48,6 +48,25 @@
 	color: white;
 }
 
+<<<<<<< HEAD
+=======
+.updateBtn
+{
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 4px;
+	background-color: #003399;
+	color: white;
+	padding: 5px 15px;
+}
+.updateBtn:hover
+{
+	background-color: black;
+	color: white;
+}
+
+>>>>>>> regular_user_module_final
 .gobackBtn
 {
 	margin: 10px;
@@ -65,11 +84,19 @@
 	color: white;
 }
 
+<<<<<<< HEAD
 .title
 {
 	border-style: groove;
 	border-radius: 15px;
 	padding: 4px 500px;
+=======
+.titleBox
+{
+	border-style: groove;
+	border-radius: 15px;
+	padding: 5px 10px;
+>>>>>>> regular_user_module_final
 	font-family: cursive;
 }
 
