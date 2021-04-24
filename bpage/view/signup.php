@@ -20,7 +20,7 @@
     <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title>Sign Up</title>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <div class='form'>
         <form action='../controller/regcheck.php' method="POST" enctype="multipart/form-data">

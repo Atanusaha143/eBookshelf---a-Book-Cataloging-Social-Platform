@@ -30,7 +30,7 @@
     <?php include('./header.php'); ?>
     <?php include('./navbar.php'); ?>
     <div class='form'>
-        <form action='../controller/regcheck.php' method="POST" enctype="multipart/form-data">
+        <form action='../controller/addsalecheck.php' method="POST" enctype="multipart/form-data">
                 <h3>Let the world know about your next sale!</h3>
                 <table align="center">
                     <tr>
