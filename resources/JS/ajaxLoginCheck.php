@@ -14,22 +14,31 @@
 	{
 		$usernameDB = $userList[$i]['username'];
 		$passwordDB = $userList[$i]['password'];
+		$statusDB = $userList[$i]['status'];
 		if($usernameDB == $user && $passwordDB == $pass)
 		{
-			$flag = true;
-			$_SESSION['flag'] = true;
-			$_SESSION['Name'] = $userList[$i]['name'];
-			$_SESSION['UserName'] = $userList[$i]['username'];
-			$_SESSION['Password'] = $userList[$i]['password'];
-			$_SESSION['Email'] = $userList[$i]['email'];
-			$_SESSION['Gender'] = $userList[$i]['gender'];
-			$_SESSION['PhoneNumber'] = $userList[$i]['phone_number'];
-			if($remem == "true")
+			if($statusDB == "active")
 			{
-				setcookie('checkLogin', true, time()+86400, "/");
-				setcookie('username', $userList[$i]['username'], time()+86400, "/");
+				$flag = true;
+				$_SESSION['flag'] = true;
+				$_SESSION['Name'] = $userList[$i]['name'];
+				$_SESSION['UserName'] = $userList[$i]['username'];
+				$_SESSION['Password'] = $userList[$i]['password'];
+				$_SESSION['Email'] = $userList[$i]['email'];
+				$_SESSION['Gender'] = $userList[$i]['gender'];
+				$_SESSION['PhoneNumber'] = $userList[$i]['phone_number'];
+				if($remem == "true")
+				{
+					setcookie('checkLogin', true, time()+86400, "/");
+					setcookie('username', $userList[$i]['username'], time()+86400, "/");
+				}
+				echo "Success";
 			}
-			echo "Success";
+			else
+			{
+				$flag = true;
+				echo "terminated";
+			}
 		}
 	}
 	if($flag == false)
