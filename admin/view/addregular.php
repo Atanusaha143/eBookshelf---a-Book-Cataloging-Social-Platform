@@ -42,8 +42,8 @@
                     <td><input type='text' name='phone' value="+88"/></td>
                 </tr>
                 <tr>
-                    <td align="right"><label>Date of Birth:</label></td>
-                    <td><input type='date' name='dateOfBirth'/></td>
+                    <td align="right"><label>Gender:</label></td>
+                    <td><input type='text' name='gender'/></td>
                 </tr>
                 <tr>
                     <td align="right"><label>Username:</label></td>
