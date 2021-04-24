@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Book List";
+	$title = "Add Book";
 	include ('header.php');
 ?>
 <script src="../resources/JS/script.js"></script>
