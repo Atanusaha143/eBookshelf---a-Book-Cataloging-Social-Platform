@@ -7,7 +7,7 @@
 ?>
 
 <?php
-	$title = "Contact";
+	$title = "Messages";
 	include ('header.php');
 ?>
 <script src="../resources/JS/script.js"></script>

@@ -45,7 +45,7 @@
 		<tr height = "200px">
 			<td colspan="2" align="center">
 				<br>
-					<form method="POST" action=""  onsubmit=" return forgetPasswordValidation()">
+					<form method="POST" action="">
 						<fieldset style="width: 40%" class="fieldSetBorder">
 						<legend>
 							<b> Recover Password </b>
@@ -64,7 +64,7 @@
 							</tr>
 						</table>
 						<center>
-							<input type="submit" name="send" value="Send" style="margin-left: 5em; padding: 5px 20px" class="submitBtn" >
+							<input type="button" name="send" value="Send" style="margin-left: 5em; padding: 5px 20px" class="submitBtn" onclick="ajaxForgotPasswordCheck()">
 						</center>
 					</fieldset>
 					</form>

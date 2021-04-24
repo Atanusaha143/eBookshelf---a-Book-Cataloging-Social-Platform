@@ -1,5 +1,5 @@
 <?php
-	$title = "Book List";
+	$title = "Buy Book";
 	include ('header.php');
 ?>
 	<script type="text/javascript" src="../resources/JS/script.js"></script>
@@ -55,7 +55,7 @@
 														echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
 									 echo "</td>
 									 <td align='center'>
-									 	<a href='UserConfirmBuyingOrder.php?id={$books[$i]['id']}' class='submitBtn linkBtn' style='padding: 10px' id='add' onclick='changeLinkName()'>Buy</a>
+									 	<a href='UserConfirmBuyingOrder.php?id={$books[$i]['id']}' class='submitBtn linkBtn' style='padding: 10px' id='add'>Buy</a>
 									 </td>
 								</tr>";
 						}

@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Activities";
+	$title = "Sent Messages";
 	include ('header.php');
 ?>
 	<table border="1" width="100%" cellspacing="0">

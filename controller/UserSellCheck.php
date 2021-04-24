@@ -28,7 +28,7 @@
 			$activityDetails = array("type" => "Created Sell Post", "time" => $date_time, "details" => $bookname, "username" => $_SESSION['UserName']);
 			$addActivity = insertActivity($activityDetails);
 
-	 		header('location: ../view/UserShowMySell.php');
+	 		header('location: ../view/UserShowMySellingPost.php');
 		}
 	}
 ?>

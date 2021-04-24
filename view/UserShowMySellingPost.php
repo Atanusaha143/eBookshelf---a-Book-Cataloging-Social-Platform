@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Profile";
+	$title = "My Selling Post";
 	include ('header.php');
 ?>
 	<table border="1" width="100%" cellspacing="0">

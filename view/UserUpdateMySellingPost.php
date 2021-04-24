@@ -7,7 +7,7 @@
 ?>
 
 <?php
-	$title = "Edit Profile";
+	$title = "Update Sell Post";
 	include ('../view/header.php');
 ?>
 <script src="../resources/JS/script.js"></script>
@@ -20,7 +20,7 @@
 		<tr>
 			<td align="right">
 				<br>
-				<a href="UserProfile.php" class="linkBtn gobackBtn"> Go Back </a>
+				<a href="UserShowMySellingPost.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
 				<br>
@@ -57,7 +57,7 @@
 										echo '&nbsp &nbsp &nbsp &nbsp <img src="'.$path .'" alt="No Profile Picture" height="200px" />';
 									 ?>
 									<br> <br>
-									&nbsp &nbsp &nbsp &nbsp &nbsp <input type="file" id="image" name="profilePic">
+									&nbsp &nbsp &nbsp &nbsp &nbsp <input type="file" id="image" name="profilePic" value="<?php echo $sellInfo['photo']; ?>">
 								</td>
 								<td><b id="print2" style="color: red"></b></td>
 							</tr>
@@ -118,9 +118,9 @@
 									<b>Book Condition:</b>
 								</td>
 								<td>
-									<input type="radio" id="new" name="condition">
+									<input type="radio" id="new" name="condition" value="">
 									<label for="new">New</label>
-									<input type="radio" id="old" name="condition">
+									<input type="radio" id="old" name="condition" value="Old">
 									<label for="old">Old</label><br>
 								</td>
 								<td><b id="print4" style="color: red"></b></td>

@@ -171,7 +171,7 @@
 			else if($flag == false && strlen($username)<3)  { echo "Username must contain at least 3 charecters"; $flag = true; }
 			else if($flag == false && strlen($password) <8) { echo "Password must contain at least 8 charecters"; $flag = true; }
 			else if($flag == false && $password !== $repass) { echo "Password and Confirm Password mismtach"; $flag = true; }
-			elseif($flag == false && strlen($phoneNumber)<11)
+			else if($flag == false && strlen($phoneNumber)<11)
 			{
 				echo "Phone number must contain 11 digits";
 				$flag = true;

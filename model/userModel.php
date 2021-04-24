@@ -3,7 +3,7 @@
 	function insertUser($userDetails)
 	{
 		$conn = getConnection();
-		$sql = "insert into regular_userlist values('', '{$userDetails['name']}', '{$userDetails['email']}', '{$userDetails['username']}', '{$userDetails['password']}','{$userDetails['phone_number']}','{$userDetails['gender']}','')";
+		$sql = "insert into regular_userlist values('', '{$userDetails['name']}', '{$userDetails['email']}', '{$userDetails['username']}', '{$userDetails['password']}','{$userDetails['phone_number']}','{$userDetails['gender']}','','active')";
 		
 		if(mysqli_query($conn, $sql))
 		{
@@ -695,5 +695,35 @@
 		}
 
 		return $allReceiveMsg;
+	}
+
+	function ajaxHomeSearch($bName)
+	{
+		$conn = getConnection();
+		$sql = "select * from regular_post where bookname like '%{$bName}%' ";
+		$result = mysqli_query($conn, $sql);
+		$allMatchedBooks =[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($allMatchedBooks, $row); 
+		}
+
+		return $allMatchedBooks;
+	}
+
+	function ajaxAddReviewSearch($bName)
+	{
+		$conn = getConnection();
+		$sql = "select * from regular_allbooks where bookname like '%{$bName}%' ";
+		$result = mysqli_query($conn, $sql);
+		$allMatchedBooks =[];
+
+		while($row = mysqli_fetch_assoc($result))
+		{
+			array_push($allMatchedBooks, $row); 
+		}
+
+		return $allMatchedBooks;
 	}
 ?>

@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Activities";
+	$title = "Received Messages";
 	include ('header.php');
 ?>
 	<table border="1" width="100%" cellspacing="0">
@@ -20,7 +20,7 @@
 		<tr>
 			<td align="right">
 				<br>
-				<a href="UserHome.php" class="linkBtn gobackBtn"> Go Back </a>
+				<a href="UserSendMessage.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
 				<br>

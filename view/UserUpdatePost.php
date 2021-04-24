@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Home";
+	$title = "Update Post";
 	include ('header.php');
 ?>
 
@@ -34,7 +34,7 @@
 		<tr>
 			<td align="right">
 				<br>
-				<a href="UserPost.php" class="linkBtn gobackBtn"> Go Back </a>
+				<a href="UserShowMyPost.php" class="linkBtn gobackBtn"> Go Back </a>
 				&nbsp | &nbsp
 				<a href="UserLogout.php" class="linkBtn logoutBtn"> Logout </a>
 				<br>

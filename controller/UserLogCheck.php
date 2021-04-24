@@ -68,6 +68,7 @@
 			{
 				$usernameDB = $userList[$i]['username'];
 				$passwordDB = $userList[$i]['password'];
+				$statusDB = $userList[$i]['status'];
 				if($usernameDB == $_POST['UserName'] && $passwordDB == $_POST['Password'])
 				{
 					$flag = true;

@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Book List";
+	$title = "Update Bookshelf";
 	include ('header.php');
 ?>
 	<table border="1" width="100%" cellspacing="0">
