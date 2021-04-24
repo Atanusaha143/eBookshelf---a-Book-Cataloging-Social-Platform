@@ -141,7 +141,29 @@
         }
     }
 
-    function imageValidate($fileFlag, $username)
+    function priceValidate($price)
+    {
+        $count = 0;
+        for($i=0 ; $i<strlen($price) ; $i=$i+1)
+        {
+            if((ord($price[$i]) >= 48 && ord($price[$i]) <= 57) || $price[$i] == '$')
+            {
+                $count = $count + 1;
+            }
+            
+        }
+        if($count > 0)
+        {
+            return true;
+        }
+        else if($count == 0)
+        {
+            echo "Price must contain '$' or numbers only!";
+            return false;
+        }
+    }
+
+    function imageValidate($fileFlag)
     {
         $file = $fileFlag['name'];
         $extension = pathinfo($file, PATHINFO_EXTENSION);

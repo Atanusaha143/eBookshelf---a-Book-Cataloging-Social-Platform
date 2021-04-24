@@ -35,7 +35,7 @@
                 <table align="center">
                     <tr>
                         <td align="right"><label>Book Title:</label></td>
-                        <td><input type='text' name='name'/></td>
+                        <td><input type='text' name='title'/></td>
                     </tr>
                     <tr>
                         <td align="right"><label>Author:</label></td>

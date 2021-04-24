@@ -68,6 +68,11 @@
         }
     }
 
+    function insertSalePost($id, $title, $author, $post_content, $price, $photo)
+    {
+
+    }
+
     function updateBpageByID($id, $name, $email, $phone)
     {
         $connection = connect();
@@ -127,11 +132,7 @@
         $regdate = date("Y-m-d");
 
         $connection = connect();
-        $sqlBpage = "INSERT INTO bpage(name, email, phone, regdate, photo) VALUES('$fullname', 
-        '$email', 
-        '$phone', 
-        '$regdate',
-        '$photo')";
+        $sqlBpage = "INSERT INTO bpage(name, email, phone, regdate, photo) VALUES('$fullname', '$email', '$phone', '$regdate', '$photo')";
 
         $bpageUpdateResult = mysqli_query($connection, $sqlBpage);
 
