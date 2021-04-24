@@ -7,7 +7,7 @@
 ?>
 
 <?php
-	$title = "Create Post";
+	$title = "Sell";
 	include ('header.php');
 ?>
 <script src="../resources/JS/script.js"></script>
@@ -33,7 +33,7 @@
 			<td colspan="2" align="center">
 				<br>
 					<form method="POST" action="../controller/UserSellCheck.php" enctype="multipart/form-data" onsubmit="return sellPostvalidation()">
-						<fieldset style="width: 40%">
+						<fieldset style="width: 40%" class="fieldSetBorder">
 						<legend>
 							<b> Create Selling Post </b>
 						</legend>
@@ -91,9 +91,9 @@
 							<tr>
 								<td> Condition </td>
 								<td>
-									<input type="radio" id="new" name="condition" value="">
+									<input type="radio" id="new" name="condition" value="New">
 									<label for="new">New</label>
-									<input type="radio" id="old" name="condition" value="">
+									<input type="radio" id="old" name="condition" value="Old">
 									<label for="old">Old</label><br>
 								</td>
 								<td><b id="print3" style="color: red"></b></td>
