@@ -1,5 +1,7 @@
 <?php
     session_start();
+    include('../model/bpageModel.php');
+    include('./validate_functions.php');
     if(empty($_POST['title']) || empty($_POST['author']) || empty($_POST['post_content']) || empty($_POST['price']) || $_FILES['bookphoto']['size'] == 0)
     {
         echo "Done";
@@ -40,7 +42,16 @@
         }
         else
         {
-            
+
+        }
+
+        if ($priceFlag == false && $authorFlag == false && $imageFlag == false)
+        {
+
+        }
+        else
+        {
+            echo "Failed to add sale post!";
         }
     }
 ?>
