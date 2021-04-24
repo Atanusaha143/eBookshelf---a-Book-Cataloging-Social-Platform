@@ -7,11 +7,11 @@
 ?>
 
 <?php
-	$title = "Home";
+	$title = "Add Ratings";
 	include ('header.php');
 ?>
 <script src="../resources/JS/script.js"></script>
-	<table border="1" width="100%" cellspacing="0">
+	<table border="0" width="100%" cellspacing="0">
 		<tr>
 			<td align="right" colspan="3">
 				<a href="UserHome.php"> <img src="../resources/banner.png" align="left"  width="100%" height="150"> </a>
