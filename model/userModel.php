@@ -3,7 +3,7 @@
 	function insertUser($userDetails)
 	{
 		$conn = getConnection();
-		$sql = "insert into regular_userlist values('', '{$userDetails['name']}', '{$userDetails['email']}', '{$userDetails['username']}', '{$userDetails['password']}','{$userDetails['phone_number']}','{$userDetails['gender']}','')";
+		$sql = "insert into regular_userlist values('', '{$userDetails['name']}', '{$userDetails['email']}', '{$userDetails['username']}', '{$userDetails['password']}','{$userDetails['phone_number']}','{$userDetails['gender']}','','active')";
 		
 		if(mysqli_query($conn, $sql))
 		{
