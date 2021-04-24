@@ -8,7 +8,7 @@
 ?>
 
 <?php
-	$title = "Book List";
+	$title = "Readers";
 	include ('header.php');
 ?>
 
