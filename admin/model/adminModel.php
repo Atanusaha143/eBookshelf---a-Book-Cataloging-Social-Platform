@@ -341,6 +341,15 @@
         return $allBpages;
     }
 
+    function getAllPosts()
+    {
+        $sql = "SELECT * FROM regular_post";
+        $connection = connect();
+        $allPosts = mysqli_query($connection, $sql);
+        disconnect($connection);
+        return $allPosts;
+    }
+
     function getAllRegular()
     {
         $connection = connect();
