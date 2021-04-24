@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start();
-=======
 <!-- Using Json -->
 <!-- <?php
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(isset($_POST['post']))
 	{
 		if($_POST['bookName'] == "") echo "Please write book name";
@@ -36,8 +31,6 @@
 
 			header('location: ../view/UserHome.php');
 		}
-<<<<<<< HEAD
-=======
 	}*/
 ?> -->
 
@@ -75,6 +68,5 @@
 
 			header('location: ../view/UserHome.php');
 		}
->>>>>>> regular_user_module_final
 	}
 ?>

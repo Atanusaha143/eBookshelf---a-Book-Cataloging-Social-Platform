@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start();
-=======
 <!-- Using Json -->
 <?php
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(!isset($_SESSION['flag']))
 	{
 		header('location: ../');

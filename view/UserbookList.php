@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start();
-=======
 <!-- Using Json -->
 <!-- <?php
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(!isset($_SESSION['flag']))
 	{
 		header('location: ../');
@@ -102,8 +97,6 @@
 		</tr>
 	</table>
 <?php
-<<<<<<< HEAD
-=======
 	include ('footer.php');*/
 ?> -->
 
@@ -211,6 +204,5 @@
 		</tr>
 	</table>
 <?php
->>>>>>> regular_user_module_final
 	include ('footer.php');
 ?>

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start(); 
-=======
 <!-- using Json -->
 <!-- <?php
 	/*session_start(); 
->>>>>>> regular_user_module_final
 	if(isset($_POST['update']))
 	{
 		if($_POST['currPass'] == $_SESSION['Password'])
@@ -44,8 +39,6 @@
 		{
 			echo "Wrong current password";
 		}
-<<<<<<< HEAD
-=======
 	}*/
 ?> -->
 
@@ -150,6 +143,5 @@
 		{
 			echo "Wrong current password";
 		}
->>>>>>> regular_user_module_final
 	}
 ?>

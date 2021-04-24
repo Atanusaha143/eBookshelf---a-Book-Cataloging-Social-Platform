@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start();
-=======
  <!-- using Json -->
 <!-- <?php
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(isset($_POST['registration']))
 	{
 
@@ -71,11 +66,7 @@
 			{
 
 				$userInfo = array(
-<<<<<<< HEAD
-							 	'name' => $name,
-=======
 							 	 'name' => $name,
->>>>>>> regular_user_module_final
 								 'user' => $username,
 								 'pass' => $password,
 								 'email' => $email,
@@ -99,9 +90,6 @@
 				header('location: ../view/UserHome.php');
 			}
 		}
-<<<<<<< HEAD
-
-=======
 	}*/
 ?> -->
 
@@ -219,6 +207,5 @@
 				header('location: ../view/UserHome.php');
 			}
 		}
->>>>>>> regular_user_module_final
 	}
 ?>

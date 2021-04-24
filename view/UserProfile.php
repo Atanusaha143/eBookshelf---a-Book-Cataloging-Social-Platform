@@ -1,9 +1,5 @@
 <?php
-<<<<<<< HEAD
-	session_start();
-=======
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(!isset($_SESSION['flag']))
 	{
 		header('location: ../');
@@ -109,10 +105,6 @@
 				<br> 
 			</td>
 		</tr>
-<<<<<<< HEAD
-		<tr height = "50px">
-			<td colspan="3">
-=======
 		<tr height = "50px" style="background-color: #333; color: white;">
 			<td colspan="3" style="padding: 25px;">
 				<center> eBookshelf &copy 2021 </center>
@@ -238,15 +230,10 @@
 		</tr>
 		<tr height = "50px" style="background-color: #333; color: white;">
 			<td colspan="3" style="padding: 25px;">
->>>>>>> regular_user_module_final
 				<center> eBookshelf &copy 2021 </center>
 			</td>
 		</tr>
 	</table>
 <?php
 	include ('footer.php');
-<<<<<<< HEAD
 ?>
-=======
-?>
->>>>>>> regular_user_module_final

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-<?php
-	session_start();
-=======
 <!-- using Json -->
 <!-- <?php
 	/*session_start();
->>>>>>> regular_user_module_final
 	if(isset($_POST['login']) && filesize('../model/AllUserDetails.json')>0)
 	{
 		if($_POST['UserName'] == "" || $_POST['Password'] == "")
@@ -33,10 +28,6 @@
 					$_SESSION['PhoneNumber'] = $userInfo['phoneNumber'];
 					if(isset($_POST['rememberMe']))
 					{
-<<<<<<< HEAD
-						setcookie('checkLogin', true, time()+86400, "/");
-						setcookie('username', $userInfo['user'], time()+86400, "/");
-=======
 						setcookie('checkLogin', true, time()+15, "/");
 						setcookie('username', $userInfo['user'], time()+15, "/");
 					}
@@ -91,7 +82,6 @@
 					{
 						setcookie('checkLogin', true, time()+86400, "/");
 						setcookie('username', $userList[$i]['username'], time()+86400, "/");
->>>>>>> regular_user_module_final
 					}
 					header('location: ../view/UserHome.php');
 				}
