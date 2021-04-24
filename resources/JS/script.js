@@ -448,11 +448,16 @@ function ajaxLogin()
 		xhttp.send('user='+user+"&&pass="+pass+"&&remember="+remember);
 		xhttp.onreadystatechange = function()
 		{
-			if(this.readyState == 4 && this.status == 200){
+			if(this.readyState == 4 && this.status == 200)
+			{
 				if(this.responseText == "Success")
 				{
 					window.location.href = "../../view/UserHome.php";
 					window.location.reload();
+				}
+				else if(this.responseText == "terminated")
+				{
+				 	alert("You have been terminated!");
 				}
 				else
 				{
