@@ -68,8 +68,22 @@
         }
     }
 
-    function insertSalePost($id, $title, $author, $post_content, $price, $photo)
-    {
+    function insertSalePost($id, $title, $author, $genre, $book_condition, $post_content, $price, $photo)
+    {   
+        $regdate = date("Y-m-d H:i:s");
+        $sql = "INSERT INTO bpageposts(from_bpage, title, author, genre, book_condition, post_text, photo, price, date) VALUES($id, '$title', '$author', '$genre', '$book_condition', '$post_content', '$photo', '$price', '$regdate')";
+        $connection = connect();
+
+        $postAddResult = mysqli_query($connection, $sql);
+        if($postAddResult == true)
+        {
+            return true;
+        }
+        else
+        {
+            return $sql;
+        }
+        
 
     }
 

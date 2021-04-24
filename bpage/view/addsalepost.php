@@ -42,6 +42,14 @@
                         <td><input type='text' name='author'/></td>
                     </tr>
                     <tr>
+                        <td align="right"><label>Genre:</label></td>
+                        <td><input type='text' name='genre'/></td>
+                    </tr>
+                    <tr>
+                        <td align="right"><label>Book Condition:</label></td>
+                        <td><input type='text' name='book_condition'/></td>
+                    </tr>
+                    <tr>
                         <td align="right"><label>Synopsis:</label></td>
                         <td><input type='text' name='post_content' value=""/></td>
                     </tr>

@@ -35,6 +35,7 @@
             {
                 $_SESSION['id'] = $bpageDetails['id'];
                 $_SESSION['name'] = $bpageDetails['name'];
+                $_SESSION['username'] = $bpageDetails['username'];
                 header('location: ../view/dashboard.php');
             }
         }

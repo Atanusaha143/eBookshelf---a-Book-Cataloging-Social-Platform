@@ -152,13 +152,13 @@
             }
             
         }
-        if($count > 0)
-        {
-            return true;
-        }
-        else if($count == 0)
+        if($count!=strlen($price))
         {
             echo "Price must contain '$' or numbers only!";
+            return true;
+        }
+        else
+        {
             return false;
         }
     }
