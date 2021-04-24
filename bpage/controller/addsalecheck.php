@@ -54,20 +54,25 @@
 
         if ($priceFlag == false && $authorFlag == false && $imageFlag == false)
         {
-            $ok = insertSalePost($id, $title, $author, $genre, $book_condition, $post_content, $price, $fileSaveName);
-            $picture = $_FILES['bookphoto'];
-            $path = '../../assets/books/'.$fileSaveName;
+            $postStatus = insertSalePost($id, $title, $author, $genre, $book_condition, $post_content, $price, $fileSaveName);
+            $postRegularStatus = insertRegularSalePost($title, $author, $genre, $book_condition, $price, $_SESSION['username'], $fileSaveName);
 
-            if(move_uploaded_file($picture['tmp_name'], $path))
+            if($postStatus == true && $postRegularStatus == true)
             {
-                //echo "You have been added successfully!<br>";
-                //echo "<a href='../view/login.php'>Go Back</a>";
-                //header('location: ../view/picchangesuccess.php');
-                echo "Added new post!";
-            }
-            else
-            {
-                echo "Book addition failed!<br>";
+                $picture = $_FILES['bookphoto'];
+                $path = '../../assets/books/'.$fileSaveName;
+
+                if(move_uploaded_file($picture['tmp_name'], $path))
+                {
+                    //echo "You have been added successfully!<br>";
+                    //echo "<a href='../view/login.php'>Go Back</a>";
+                    //header('location: ../view/picchangesuccess.php');
+                    echo "Added post successfully";
+                }
+                else
+                {
+                    echo "Book addition failed!<br>";
+                }
             }
         }
         else

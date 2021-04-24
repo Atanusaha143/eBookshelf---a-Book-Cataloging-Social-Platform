@@ -83,8 +83,25 @@
         {
             return $sql;
         }
-        
+    }
 
+    function insertRegularSalePost($title, $author, $category, $book_condition, $price, $username, $photo)
+    {
+        $price = substr($price,1);
+        $sql = "INSERT INTO regular_sell(bookname, authorname, category, book_condition, price, username, photo) VALUES('$title', '$author', '$category', '$book_condition', '$price', '$username', '$photo')";
+        $connection = connect();
+
+        $regularSalePostStatus = mysqli_query($connection, $sql);
+
+        if($regularSalePostStatus == true)
+        {
+            return true;
+        }
+        else
+        {
+            return $sql;
+        }
+        
     }
 
     function updateBpageByID($id, $name, $email, $phone)
