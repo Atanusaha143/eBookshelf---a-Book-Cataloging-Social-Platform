@@ -81,7 +81,7 @@
                                         .$regular['id'].
                                     "</td>
                                     <td align='center'>
-                                        <a href='anotherbpage.php?id=".$regular['id']."'>"
+                                        <a href='anotherregular.php?id=".$regular['id']."'>"
                                             .$regular['name'].
                                         "</a>
                                     </td>

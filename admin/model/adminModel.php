@@ -60,6 +60,15 @@
         return $result;
     }
 
+    function getRegularInfoByID($id)
+    {
+        $connection = connect();
+        $sql = "SELECT * FROM regular_userlist WHERE id = ".$id;
+        $result = mysqli_query($connection, $sql);
+        disconnect($connection);
+        return $result;
+    }
+
     function insertMessage($message, $senderID, $receiverID)
     {
         $connection = connect();
