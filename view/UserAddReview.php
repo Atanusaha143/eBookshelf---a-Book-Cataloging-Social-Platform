@@ -159,7 +159,6 @@
 	include ('footer.php');*/
 ?>
 
-
 <!-- Using DB -->
 <!-- Using Ajax -->
 <?php
