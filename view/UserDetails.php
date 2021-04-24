@@ -48,18 +48,14 @@
 					if($userDetails)
 					{
 						echo "
-						<table border = 0 cellspacing = 0 style='width:15%'>
+						<table border = 1 cellspacing = 0 style='width:30%'>
 						<tr>
-							<td> <b>Name:</b> </td>
-							<td> {$userDetails['name']}  </td>
-						</tr>
-						<tr>
-							<td> <b>Email:</b> </td>
-							<td> {$userDetails['email']}  </td>
-						</tr>
-						<tr>
-							<td> <b>Gender:</b> </td>
-							<td> {$userDetails['gender']}  </td>
+							<td>
+								&nbsp <b>Name:</b> {$userDetails['name']} <br> <br>
+								&nbsp <b>Email:</b> {$userDetails['email']} <br> <br>
+								&nbsp <b>Gender:</b> {$userDetails['gender']} <br> <br>
+							</td>
+							<td colspan='2'> <img src='../resources/img/User/{$userDetails['profile_photo']}' alt='No Profile Picture' height='150px' width='150px'/></td>
 						</tr>
 					  </table>
 					  <br>
@@ -68,11 +64,12 @@
 						<b class='titleBox'>Bookshelf List</b>
 					   </center>
 					   <br>";
-					   echo "
+					   echo "<fieldset class='fieldSetBorder' style='width:500px'>
 							<table border = 0 cellspacing = 0 style=''>";
 					   for ($i=0; $i <count($userBookshelf) ; $i++) 
 					   {
-						 echo "<tr>
+						 echo "
+						 	<tr>
 								<td>
 									<ul>
 										<li>
@@ -82,7 +79,7 @@
 								</td>
 							</tr>";
 					   }
-					   echo "</table>
+					   echo "</table> </fieldset>
 					   <br>";
 					}
 					else
