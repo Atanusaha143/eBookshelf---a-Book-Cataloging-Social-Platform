@@ -105,6 +105,24 @@
         }
     }
 
+    function updateBpageByID($id, $name, $email, $phone, $dob)
+    {
+        $connection = connect();
+        $sql = "UPDATE bpage SET name = '$name', email = '$email', phone = '$phone', dob = '$dob' WHERE id = $id";
+        $updateResult = mysqli_query($connection, $sql);
+
+        if($updateResult)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
+
     function updateRegularByID($id, $fullname, $email, $phone, $username, $status)
     {
         $connection = connect();

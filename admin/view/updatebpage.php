@@ -29,32 +29,33 @@
     <link rel='icon' href='../../assets/images/icon.png'>
     <link rel='stylesheet' href='../../assets/resources/style.css'>
     <title>Sign Up</title>
+    <script src='../../assets/resources/scripts.js'></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <div class='form'>
-        <form action='../controller/updatebpagecheck.php' method="POST">
-                <b>Update Information</b>
+        <form action='../controller/updatebpagecheck.php?id=<?php echo $_GET['id']; ?>' method="POST" onsubmit="return bpageUpdateInfo()">
+                <b>Update InformationL Business Page</b>
                 <table align="center">
                     <tr>
                         <td align="right">Business Name:</td>
-                        <td><input type='text' name='name' value="<?php echo $bpageDetails['name']; ?>"/></td>
+                        <td><input type='text' name='name' id='name' value="<?php echo $bpageDetails['name']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Email:</td>
-                        <td><input type='email' name='email' value="<?php echo $bpageDetails['email']; ?>"/></td>
+                        <td><input type='email' name='email' id='email' value="<?php echo $bpageDetails['email']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Phone:</td>
-                        <td><input type='text' name='phone' value="<?php echo $bpageDetails['phone']; ?>"/></td>
+                        <td><input type='text' name='phone' id='phone' value="<?php echo $bpageDetails['phone']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Username:</td>
-                        <td><input type='text' name='username' value="<?php echo $bpageDetails['username']; ?>"/></td>
+                        <td><input type='text' name='username' id='username' value="<?php echo $bpageDetails['username']; ?>"/></td>
                     </tr>
                     <tr>
                         <td align="right">Status:</td>
-                        <td><input type='text' name='username' value="<?php echo $bpageDetails['status']; ?>"/></td>
+                        <td><input type='text' name='status' id='status' value="<?php echo $bpageDetails['status']; ?>"/></td>
                     </tr>
                     <tr>
                         <td colspan="2"><hr></td>
