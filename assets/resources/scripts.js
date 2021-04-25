@@ -686,6 +686,123 @@ function adminUpdateInfo()
     return false;
 }
 
+function regularUpdateInfo()
+{
+    let name = document.getElementById('fullname').value;
+    let email = document.getElementById('email').value;
+    let phone = document.getElementById('phone').value;
+    let username = document.getElementById('username').value;
+    let status = document.getElementById('status').value;
+
+    let nameFlag, emailFlag, phoneFlag, usernameFlag;
+    var phoneEncode;
+
+    
+    if(name == "")
+    {
+        document.getElementById('namehint').innerHTML = 'Please enter a valid name';
+    }
+    else
+    {
+        nameFlag = nameValidation(name);
+        if(nameFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('namehint').innerHTML = '';
+        }
+    }
+    if(email == "")
+    {
+        document.getElementById('emailhint').innerHTML = 'Please enter a valid email';
+    }
+    else
+    {
+        emailFlag = emailValidation(email);
+        if(emailFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('emailhint').innerHTML = '';
+        }
+    }
+    if(phone == "")
+    {
+        document.getElementById('phonehint').innerHTML = 'Please enter a valid phone number';
+    }
+    else
+    {
+        phoneFlag = phoneValidation(phone);
+        if(phoneFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('phonehint').innerHTML = '';
+            phoneEncode = encodeURIComponent(phone);
+        }
+    }
+    if(username == "")
+    {
+        document.getElementById('usernamehint').innerHTML = 'Please enter a username';
+    }
+    else
+    {
+        usernameFlag = usernameValidation(username);
+        if(usernameFlag == true)
+        {
+
+        }
+        else
+        {
+            document.getElementById('usernamehint').innerHTML = '';
+        }
+    }
+
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var id = url.searchParams.get("id");
+    //console.log(c);
+    //alert(id);
+
+    if(nameFlag == false && emailFlag == false && usernameFlag == false && phoneFlag == false)
+    {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(this.responseText == 'Update successful!')
+                {
+                    document.getElementById('updatehint').innerHTML='Updated information successfully';
+                    //console.log('User does not exist');
+                }
+                else if(this.responseText == 'Update failed!')
+                {
+                    document.getElementById('updatehint').innerHTML='Failed to update information';
+                    //window.location.href = '../../admin/view/termination.php';
+                }
+                else
+                {
+                    alert(this.responseText);
+                }
+            }
+            else
+            {
+
+            }
+        };
+        xhttp.open("POST", "../../admin/controller/updaterusercheck.php?id="+id, true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("fullname="+name+"&email="+email+"&phone="+phoneEncode+"&username="+username+"&status="+status);
+    }
+    //console.log(name+" "+email+" "+phone+" "+dob);
+    return false;
+}
+
 function adminLoginCheck()
 {
     let username = document.getElementById('username').value;
