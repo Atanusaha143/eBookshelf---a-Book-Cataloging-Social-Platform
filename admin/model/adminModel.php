@@ -105,13 +105,15 @@
         }
     }
 
-    function updateBpageByID($id, $name, $email, $phone, $dob)
+    function updateBpageByID($id, $name, $email, $phone, $username, $status)
     {
         $connection = connect();
-        $sql = "UPDATE bpage SET name = '$name', email = '$email', phone = '$phone', dob = '$dob' WHERE id = $id";
-        $updateResult = mysqli_query($connection, $sql);
+        $sql1 = "UPDATE bpage SET name = '$name', email = '$email', phone = '$phone' WHERE id = $id";
+        $sql2 = "UPDATE bpagelogin SET username = '$username', status = '$status' WHERE id = $id";
+        $updateResult1 = mysqli_query($connection, $sql1);
+        $updateResult2 = mysqli_query($connection, $sql2);
 
-        if($updateResult)
+        if($updateResult1 && $updateResult2)
         {
             disconnect($connection);
             return true;

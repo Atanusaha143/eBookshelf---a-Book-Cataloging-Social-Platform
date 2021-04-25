@@ -73,7 +73,7 @@
                     </tr>
                     <tr>
                         <td align="center" colspan="3">
-                            <a href='./login.php'>Go Back</a>
+                            <a href='./dashboard.php'>Go Back</a>
                         </td>
                     </tr>
                     <tr>
