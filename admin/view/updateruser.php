@@ -31,7 +31,7 @@
     <title>Update Regular User Information</title>
     <script src='../../assets/resources/scripts.js'></script>
 </head>
-<body bgcolor="#c5fcf7">
+<body>
     <?php include('./header.php'); ?>
     <div class='form'>
         <form action='../controller/updaterusercheck.php?id=<?php echo $_GET['id']; ?>' method="POST" onsubmit="return regularUpdateInfo()">
