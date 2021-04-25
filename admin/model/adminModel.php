@@ -110,12 +110,15 @@
         $connection = connect();
         $sql1 = "UPDATE bpage SET name = '$name', email = '$email', phone = '$phone' WHERE id = $id";
         $sql2 = "UPDATE bpagelogin SET username = '$username', status = '$status' WHERE id = $id";
-        $updateResult1 = mysqli_query($connection, $sql1);
         $updateResult2 = mysqli_query($connection, $sql2);
+        $updateResult1 = mysqli_query($connection, $sql1);
 
-        if($updateResult1 && $updateResult2)
+        if($updateResult1==true && $updateResult2==true)
         {
             disconnect($connection);
+            // echo $sql1;
+            // echo "\n";
+            // echo $sql2;
             return true;
         }
         else

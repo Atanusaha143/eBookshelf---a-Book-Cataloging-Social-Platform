@@ -76,6 +76,11 @@
                             <a href='./dashboard.php'>Go Back</a>
                         </td>
                     </tr>
+                    <tr>
+                        <td align="center" colspan="3">
+                            <div id='updatehint'></div>
+                        </td>
+                    </tr>
                 </table>
         </form>
     </div>

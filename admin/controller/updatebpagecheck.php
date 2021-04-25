@@ -17,7 +17,8 @@
         $nameFlag = nameValidation($name);
         $emailFlag = emailValidation($email);
         $phoneFlag = phoneValidation($phone);
-        $username = usernameValidation($username);
+        $usernameFlag = usernameValidation($username);
+       
 
         $updateStatus = updateBpageByID($_GET['id'], $name, $email, $phone, $username, $status);
         if($updateStatus == true)
