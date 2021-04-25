@@ -45,36 +45,47 @@
 						$allPosts = getAllPosts();
 						foreach($allPosts as $posts) 
 						{
-							 echo "<fieldset>";
-							 echo "<br>";
-							 echo "<table>";
-						     echo "<tr>";
-						     echo "<td style='width: 6%;'>Book Name:</td>";
-						     echo "<td>".$posts['bookname']."</td>";
-						     echo "</tr>";
-						     echo "<tr><td><hr></td></tr>";
-						     echo "<tr>";
-						     echo "<td>Category:</td>";
-						     echo "<td>".$posts['category']."</td>";
-						     echo "</tr>";
-						     echo "<tr><td><hr></td></tr>";
-						     echo "<tr>";
-						     echo "<td>Author:</td>";
-						     echo "<td>".$posts['authorname']."</td>";
-						     echo "</tr>";
-						     echo "<tr><td><hr></td></tr>";
-						     echo "<tr>";
-						     echo "<td>Post:</td>";
-						     echo "<td>".$posts['post_content']."</td>";
-						     echo "</tr>";
-						     echo "<tr><td><hr></td></tr>";
-						     echo "<tr>";
-						     echo "<td>Post By:</td>";
-						     echo "<td>".$posts['username']."</td>";
-						     echo "</tr>";
-						     echo "</table>";
-						     echo "<br>";
-						     echo "</fieldset>";
+							 echo "<fieldset>
+							 			<br>
+											<table>
+												<tr>
+													<td style='width: 6%;'>Book Name:</td>
+													<td>".$posts['bookname']."</td>
+												</tr>
+												<tr>
+													<td colspan='2'><hr></td>
+												</tr>
+												<tr>
+													<td>Category:</td>
+													<td>".$posts['category']."</td>
+												</tr>
+												<tr>
+													<td colspan='2'><hr></td>
+												</tr>
+												<tr>
+													<td>Author:</td>
+													<td>".$posts['authorname']."</td>
+												</tr>
+												<tr>
+													<td colspan='2'><hr></td>
+												</tr>
+												<tr>
+													<td>Post:</td>
+													<td>".$posts['post_content']."</td>
+												</tr>
+												<tr>
+													<td colspan='2'><hr></td>
+												</tr>
+												<tr>
+													<td>Post By:</td>
+													<td>".$posts['username']."</td>
+												</tr>
+												<tr>
+													<td align='center' colspan='2'><a href='../controller/deletepost.php?id=".$posts['id']."'>Delete Post</a></td>
+												</tr>
+											</table>
+										<br>
+									</fieldset>";
 						}
 				?>
 			</td>

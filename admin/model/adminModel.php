@@ -406,5 +406,21 @@
         }
     }
 
-    
+    function deletePostByID($id)
+    {
+        $connection = connect();
+        $sqlPost = "DELETE FROM regular_post WHERE id = $id";
+        $deletePostStatus = mysqli_query($connection, $sqlPost);
+
+        if($deletePostStatus)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
 ?>
