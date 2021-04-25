@@ -78,7 +78,7 @@
                 if($addRegularStatus == true)
                 {
                     $picture = $_FILES['propic'];
-                    $path = '../../assets/profile/admin/'.$fileSaveName;
+                    $path = '../../resources/img/user/'.$fileSaveName;
 
                     if(move_uploaded_file($picture['tmp_name'], $path))
                     {

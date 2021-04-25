@@ -387,6 +387,24 @@
             return false;
         }
     }
+    
+    function deleteRegularByID($id)
+    {
+        $connection = connect();
+        $sqlRegular = "DELETE FROM regular_userlist WHERE id = $id";
+        $deleteRegularStatus = mysqli_query($connection, $sqlRegular);
+
+        if($deleteRegularStatus)
+        {
+            disconnect($connection);
+            return true;
+        }
+        else
+        {
+            disconnect($connection);
+            return false;
+        }
+    }
 
     
 ?>

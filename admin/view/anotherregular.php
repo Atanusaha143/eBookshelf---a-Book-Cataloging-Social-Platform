@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='icon' href="../../assets/images/icon.png">
     <link rel='stylesheet' href="../../assets/resources/style.css">
-    <title><?php echo $bpageDetails['name']; ?></title>
+    <title><?php echo $regularDetails['name']; ?></title>
 </head>
 <body bgcolor="#c5fcf7">
     <?php include('./header.php'); ?>
@@ -44,7 +44,7 @@
                                 Regular User
                             </td>
                             <td rowspan="6">
-                                <img src= '<?php echo "../../assets/profile/bpage/".$regularDetails['profile_photo']; ?>' height="250">
+                                <img src= '<?php echo "../../resources/img/user/".$regularDetails['profile_photo']; ?>' height="250">
                             </td>
                         </tr>
                         <tr>
@@ -81,7 +81,12 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="center">
-                                <a href="../controller/restrictruser.php?username=<?php echo $regularDetails['username']; ?>">Restrict User</a>
+                                <a href="../controller/restrictruser.php?id=<?php echo $regularDetails['id']; ?>">Restrict User</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <a href="../controller/deleteruser.php?id=<?php echo $regularDetails['id']; ?>">Delete User</a>
                             </td>
                         </tr>
                         <tr>
