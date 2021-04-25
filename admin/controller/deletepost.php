@@ -5,11 +5,11 @@
     if($deletePostStatus == true)
     {
         echo "Successfully deleted post!";
-        echo "<a href='../view/dashboard.php'>Go Back</a>";
+        echo "<br><a href='../view/dashboard.php'>Go Back</a>";
     }
     else
     {
         echo "Failed to delete post!";
-        echo "<a href='../view/dashboard.php'>Go Back</a>";
+        echo "<br><a href='../view/dashboard.php'>Go Back</a>";
     }
 ?>
